@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE4D3E0017E3053C0044A7DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D3DFF17E3053C0044A7DF /* UIKit.framework */; };
+		AE4D3E0217E3053C0044A7DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D3E0117E3053C0044A7DF /* Foundation.framework */; };
+		AE4D3E0417E3053C0044A7DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D3E0317E3053C0044A7DF /* CoreGraphics.framework */; };
+		AE4D3E0A17E3053C0044A7DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE4D3E0817E3053C0044A7DF /* InfoPlist.strings */; };
+		AE4D3E0C17E3053C0044A7DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D3E0B17E3053C0044A7DF /* main.m */; };
+		AE4D3E1017E3053C0044A7DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4D3E0F17E3053C0044A7DF /* AppDelegate.m */; };
+		AE4D3E1217E3053C0044A7DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4D3E1117E3053C0044A7DF /* Default.png */; };
+		AE4D3E1417E3053C0044A7DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4D3E1317E3053C0044A7DF /* Default@2x.png */; };
+		AE4D3E1617E3053C0044A7DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4D3E1517E3053C0044A7DF /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE4D3DFC17E3053C0044A7DF /* MathMonsters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathMonsters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4D3DFF17E3053C0044A7DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AE4D3E0117E3053C0044A7DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE4D3E0317E3053C0044A7DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AE4D3E0717E3053C0044A7DF /* MathMonsters-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MathMonsters-Info.plist"; sourceTree = "<group>"; };
+		AE4D3E0917E3053C0044A7DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE4D3E0B17E3053C0044A7DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE4D3E0D17E3053C0044A7DF /* MathMonsters-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MathMonsters-Prefix.pch"; sourceTree = "<group>"; };
+		AE4D3E0E17E3053C0044A7DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AE4D3E0F17E3053C0044A7DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE4D3E1117E3053C0044A7DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AE4D3E1317E3053C0044A7DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AE4D3E1517E3053C0044A7DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE4D3DF917E3053C0044A7DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4D3E0017E3053C0044A7DF /* UIKit.framework in Frameworks */,
+				AE4D3E0217E3053C0044A7DF /* Foundation.framework in Frameworks */,
+				AE4D3E0417E3053C0044A7DF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE4D3DF317E3053B0044A7DF = {
+			isa = PBXGroup;
+			children = (
+				AE4D3E0517E3053C0044A7DF /* MathMonsters */,
+				AE4D3DFE17E3053C0044A7DF /* Frameworks */,
+				AE4D3DFD17E3053C0044A7DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE4D3DFD17E3053C0044A7DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D3DFC17E3053C0044A7DF /* MathMonsters.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE4D3DFE17E3053C0044A7DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D3DFF17E3053C0044A7DF /* UIKit.framework */,
+				AE4D3E0117E3053C0044A7DF /* Foundation.framework */,
+				AE4D3E0317E3053C0044A7DF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE4D3E0517E3053C0044A7DF /* MathMonsters */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D3E0E17E3053C0044A7DF /* AppDelegate.h */,
+				AE4D3E0F17E3053C0044A7DF /* AppDelegate.m */,
+				AE4D3E0617E3053C0044A7DF /* Supporting Files */,
+			);
+			path = MathMonsters;
+			sourceTree = "<group>";
+		};
+		AE4D3E0617E3053C0044A7DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D3E0717E3053C0044A7DF /* MathMonsters-Info.plist */,
+				AE4D3E0817E3053C0044A7DF /* InfoPlist.strings */,
+				AE4D3E0B17E3053C0044A7DF /* main.m */,
+				AE4D3E0D17E3053C0044A7DF /* MathMonsters-Prefix.pch */,
+				AE4D3E1117E3053C0044A7DF /* Default.png */,
+				AE4D3E1317E3053C0044A7DF /* Default@2x.png */,
+				AE4D3E1517E3053C0044A7DF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE4D3DFB17E3053C0044A7DF /* MathMonsters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE4D3E1917E3053C0044A7DF /* Build configuration list for PBXNativeTarget "MathMonsters" */;
+			buildPhases = (
+				AE4D3DF817E3053C0044A7DF /* Sources */,
+				AE4D3DF917E3053C0044A7DF /* Frameworks */,
+				AE4D3DFA17E3053C0044A7DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MathMonsters;
+			productName = MathMonsters;
+			productReference = AE4D3DFC17E3053C0044A7DF /* MathMonsters.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE4D3DF417E3053C0044A7DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Xcode;
+			};
+			buildConfigurationList = AE4D3DF717E3053C0044A7DF /* Build configuration list for PBXProject "MathMonsters" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE4D3DF317E3053B0044A7DF;
+			productRefGroup = AE4D3DFD17E3053C0044A7DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE4D3DFB17E3053C0044A7DF /* MathMonsters */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE4D3DFA17E3053C0044A7DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4D3E0A17E3053C0044A7DF /* InfoPlist.strings in Resources */,
+				AE4D3E1217E3053C0044A7DF /* Default.png in Resources */,
+				AE4D3E1417E3053C0044A7DF /* Default@2x.png in Resources */,
+				AE4D3E1617E3053C0044A7DF /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE4D3DF817E3053C0044A7DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4D3E0C17E3053C0044A7DF /* main.m in Sources */,
+				AE4D3E1017E3053C0044A7DF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE4D3E0817E3053C0044A7DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE4D3E0917E3053C0044A7DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE4D3E1717E3053C0044A7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AE4D3E1817E3053C0044A7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE4D3E1A17E3053C0044A7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MathMonsters/MathMonsters-Prefix.pch";
+				INFOPLIST_FILE = "MathMonsters/MathMonsters-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AE4D3E1B17E3053C0044A7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MathMonsters/MathMonsters-Prefix.pch";
+				INFOPLIST_FILE = "MathMonsters/MathMonsters-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE4D3DF717E3053C0044A7DF /* Build configuration list for PBXProject "MathMonsters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4D3E1717E3053C0044A7DF /* Debug */,
+				AE4D3E1817E3053C0044A7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE4D3E1917E3053C0044A7DF /* Build configuration list for PBXNativeTarget "MathMonsters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4D3E1A17E3053C0044A7DF /* Debug */,
+				AE4D3E1B17E3053C0044A7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE4D3DF417E3053C0044A7DF /* Project object */;
+}
