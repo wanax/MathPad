@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "RightViewController.h"
+#import "FontListViewController.h"
+#import "CenterViewController.h"
+#import "IIViewDeckController.h"
+#import "PopListViewController.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -16,14 +22,65 @@
     [super dealloc];
 }
 
+-(void)setPonyDebugger{
+    PDDebugger *debugger = [PDDebugger defaultInstance];    
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    
+    [debugger enableViewHierarchyDebugging];
+    [debugger setDisplayedViewAttributeKeyPaths:@[@"frame", @"hidden", @"alpha", @"opaque"]];
+    
+    [debugger enableRemoteLogging];
+    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+
+    [self setPonyDebugger];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.right=[[RightViewController alloc] init];
+    self.left=[[FontListViewController alloc] init];
+
+    self.left.delegate=self.right;
+    
+    IIViewDeckController* deckController = [self generateControllerStack];
+    [self generateSplitVC];
+
+    self.window.rootViewController = self.splitViewController;
+    //[deckController shouldAutorotate];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    NSString *t=[[NSString alloc] init];
+    [t toLowerCase];
+    
     return YES;
 }
+
+-(void)generateSplitVC{
+    
+    self.splitViewController=[[UISplitViewController alloc] init];
+    self.splitViewController.delegate=self.right;
+    NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.left,[[ViewController alloc] init], nil];
+    self.splitViewController.viewControllers = viewControllers;
+    
+}
+
+- (IIViewDeckController *)generateControllerStack {
+
+    PopListViewController *center=[[PopListViewController alloc] init];
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:center
+                                                                                    leftViewController:self.left];
+    deckController.centerController.view.frame=CGRectMake(200,0,2048,748);
+
+    deckController.leftSize = 800;
+    
+    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
+    return deckController;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -51,5 +108,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

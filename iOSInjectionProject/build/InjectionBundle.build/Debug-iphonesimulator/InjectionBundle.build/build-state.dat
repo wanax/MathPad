@@ -1,0 +1,338 @@
+TInjectionBundle
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/Info.plist InjectionBundle-Info.plist
+cProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.o /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle normal i386
+cGenerateDSYMFile /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle
+cTouch /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle
+
+N/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h
+c00000000522F944D0000000000005709
+t1378849869
+s22281
+
+N/Applications/Injection Plugin.app/Contents/Resources/BundleInterface.h
+c00000000522F944D0000000000000C4D
+t1378849869
+s3149
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk
+c0000000052133F3C0000000000000110
+t1376993084
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c0000000051AD5D720000000000228FE0
+t1370316146
+s2265056
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000051AD5D7300000000003DDFA0
+t1370316147
+s4054944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c0000000051AD5D7300000000000015F7
+t1370316147
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c0000000051AD5D760000000000015400
+t1370316150
+s87040
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c0000000051AD5D7700000000001D5750
+t1370316151
+s1922896
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c0000000051AD5D770000000000000E8D
+t1370316151
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c0000000051AD5D790000000000AB6230
+t1370316153
+s11231792
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/Availability.h
+c0000000051AD5D870000000000001B73
+t1370316167
+s7027
+
+N/Users/xcode/wanax/oc/MathMonsters/MathMonsters/CommonlyMacros.h
+c00000000523957C5000000000000096E
+t1379489733
+s2414
+
+N/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Plugs/JSONKit-master/JSONKit.h
+c00000000521F68AA0000000000002DBE
+t1377790122
+s11710
+
+N/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Plugs/iConsole/iConsole.h
+c000000005180E2CE0000000000000C06
+t1367401166
+s3078
+
+N/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightViewController.m
+c00000000523977670000000000001A81
+t1379497831
+s6785
+
+N/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h
+c000000005239412E0000000000000A43
+t1379483950
+s2627
+
+N/Users/xcode/wanax/oc/MathMonsters/Pods/JSONKit/JSONKit.h
+c00000000523924B50000000000002DBE
+t1379476661
+s11710
+
+N/Users/xcode/wanax/oc/MathMonsters/Pods/NSLogger/Client Logger/iOS/LoggerClient.h
+c000000005239557C0000000000003021
+t1379489148
+s12321
+
+N/Users/xcode/wanax/oc/MathMonsters/Pods/PonyDebugger/ObjC/PonyDebugger/PonyDebugger.h
+c0000000052392208000000000000019E
+t1379475976
+s414
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/../MathMonsters/FontListViewController.h
+c000000005237ACF0000000000000020E
+t1379380464
+s526
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/../MathMonsters/FontSizeViewController.h
+c0000000052392E6200000000000001E1
+t1379479138
+s481
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/../MathMonsters/PopListViewController.h
+c000000005236AA4F00000000000001E3
+t1379314255
+s483
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/../MathMonsters/RightViewController.h
+c000000005237AF1C000000000000021A
+t1379381020
+s538
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.h
+c000000005239190800000000000000E3
+t1379473672
+s227
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m
+c00000000523E44BC0000000000000321
+t1379812540
+s801
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch
+c000000005239612F00000000000002A3
+t1379492143
+s675
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+i"Utiles.h"
+i"CommonlyMacros.h"
+i"JSONKit.h"
+i"PonyDebugger.h"
+i"LoggerClient.h"
+i"iConsole.h"
+i"/Applications/Injection Plugin.app/Contents/Resources/BundleInterface.h"
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle
+t1379489748
+s136
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM
+t1379489653
+s102
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/Info.plist
+t1379473673
+s715
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle
+t1379489748
+s28304
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.o
+t1379489748
+s103104
+
+N/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/InjectionBundle.LinkFileList
+c000000005239190900000000000000A4
+t1379473673
+s164
+
+N/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.pth
+t2
+s0
+
+N/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.pth
+t2
+s0
+
+N/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.pth
+t2
+s0
+
+N/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.pth
+t2
+s0
+
+NInjectionBundle-Info.plist
+c000000005239190800000000000003CB
+t1379473672
+s971
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies2506c93d7ceeb741^dde9563e7ceeb741^---0#1#0#--18"Check dependencies36"96B05D36-0BF6-4945-935E-8B92812B7FEB-
+
+CCompileC build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.o /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s401505342.918428
+e401505343.109277
+r1
+xCompileC
+xbuild/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.o
+x/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m425aeb3e7ceeb741^77f81b3f7ceeb741^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m0000000000000000^6692"CompileC build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.o BundleContents.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-generated-files.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-own-target-headers.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-all-target-headers.hmap -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-project-headers.hmap -iquote.. -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/include -I.. -I../iOSInjectionProject -I../MathMonsters -I../MathMonsters.xcworkspace -I../Pods -I../MathMonsters/MonsterArt -I../MathMonsters/Plugs -I../MathMonsters.xcworkspace/xcuserdata -I../Pods/AFNetworking -I../Pods/BuildHeaders -I../Pods/Headers -I../Pods/JSONKit -I../Pods/NSLogger -I../Pods/PonyDebugger -I../Pods/Reachability -I../Pods/RegexKitLite -I../Pods/SocketRocket -I../MathMonsters/Plugs/AFNetworking -I../MathMonsters/Plugs/GCDiscreetNotificationView -I../MathMonsters/Plugs/GTM -I../MathMonsters/Plugs/iConsole -I../MathMonsters/Plugs/JSONKit-master -I../MathMonsters/Plugs/NGTabBarController -I../MathMonsters/Plugs/Toast -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -I../Pods/AFNetworking/AFNetworking -I../Pods/BuildHeaders/AFNetworking -I../Pods/BuildHeaders/JSONKit -I../Pods/BuildHeaders/NSLogger -I../Pods/BuildHeaders/PonyDebugger -I../Pods/BuildHeaders/Reachability -I../Pods/BuildHeaders/RegexKitLite -I../Pods/BuildHeaders/SocketRocket -I../Pods/Headers/AFNetworking -I../Pods/Headers/JSONKit -I../Pods/Headers/NSLogger -I../Pods/Headers/PonyDebugger -I../Pods/Headers/Reachability -I../Pods/Headers/RegexKitLite -I../Pods/Headers/SocketRocket "-I../Pods/NSLogger/Client Logger" -I../Pods/PonyDebugger/ObjC -I../Pods/SocketRocket/SocketRocket -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-I../Pods/NSLogger/Client Logger/iOS" -I../Pods/PonyDebugger/ObjC/DerivedSources -I../Pods/PonyDebugger/ObjC/PonyDebugger -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources/i386 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources -F/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F.. -F../iOSInjectionProject -F../MathMonsters -F../MathMonsters.xcworkspace -F../Pods -F../MathMonsters/MonsterArt -F../MathMonsters/Plugs -F../MathMonsters.xcworkspace/xcuserdata -F../Pods/AFNetworking -F../Pods/BuildHeaders -F../Pods/Headers -F../Pods/JSONKit -F../Pods/NSLogger -F../Pods/PonyDebugger -F../Pods/Reachability -F../Pods/RegexKitLite -F../Pods/SocketRocket -F../MathMonsters/Plugs/AFNetworking -F../MathMonsters/Plugs/GCDiscreetNotificationView -F../MathMonsters/Plugs/GTM -F../MathMonsters/Plugs/iConsole -F../MathMonsters/Plugs/JSONKit-master -F../MathMonsters/Plugs/NGTabBarController -F../MathMonsters/Plugs/Toast -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -F../Pods/AFNetworking/AFNetworking -F../Pods/BuildHeaders/AFNetworking -F../Pods/BuildHeaders/JSONKit -F../Pods/BuildHeaders/NSLogger -F../Pods/BuildHeaders/PonyDebugger -F../Pods/BuildHeaders/Reachability -F../Pods/BuildHeaders/RegexKitLite -F../Pods/BuildHeaders/SocketRocket -F../Pods/Headers/AFNetworking -F../Pods/Headers/JSONKit -F../Pods/Headers/NSLogger -F../Pods/Headers/PonyDebugger -F../Pods/Headers/Reachability -F../Pods/Headers/RegexKitLite -F../Pods/Headers/SocketRocket "-F../Pods/NSLogger/Client Logger" -F../Pods/PonyDebugger/ObjC -F../Pods/SocketRocket/SocketRocket -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-F../Pods/NSLogger/Client Logger/iOS" -F../Pods/PonyDebugger/ObjC/DerivedSources -F../Pods/PonyDebugger/ObjC/PonyDebugger -include /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch -MMD -MT dependencies -MF /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.d --serialize-diagnostics /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.dia -c /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m -o /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/BundleContents.o36"29561F49-D306-4022-BE06-2A35CCC94C81-
+
+CGenerateDSYMFile /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle
+s401505343.176280
+e401505343.195097
+r1
+xGenerateDSYMFile
+x/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM
+x/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Generate /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM183f2d3f7ceeb741^02f2313f7ceeb741^---0#0#0#-19%DVTDocumentLocation2@127"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM/0000000000000000^784"GenerateDSYMFile build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle -o /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle.dSYM36"7C446AA6-1A25-41FA-B009-DB60DC68B491-
+
+CLd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle normal i386
+s401505343.116092
+e401505343.169377
+r1
+xLd
+x/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"Link /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle7ae21d3f7ceeb741^d55b2b3f7ceeb741^---0#0#0#--2879"Ld build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle normal i386    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -L/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F.. -F../iOSInjectionProject -F../MathMonsters -F../MathMonsters.xcworkspace -F../Pods -F../MathMonsters/MonsterArt -F../MathMonsters/Plugs -F../MathMonsters.xcworkspace/xcuserdata -F../Pods/AFNetworking -F../Pods/BuildHeaders -F../Pods/Headers -F../Pods/JSONKit -F../Pods/NSLogger -F../Pods/PonyDebugger -F../Pods/Reachability -F../Pods/RegexKitLite -F../Pods/SocketRocket -F../MathMonsters/Plugs/AFNetworking -F../MathMonsters/Plugs/GCDiscreetNotificationView -F../MathMonsters/Plugs/GTM -F../MathMonsters/Plugs/iConsole -F../MathMonsters/Plugs/JSONKit-master -F../MathMonsters/Plugs/NGTabBarController -F../MathMonsters/Plugs/Toast -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -F../Pods/AFNetworking/AFNetworking -F../Pods/BuildHeaders/AFNetworking -F../Pods/BuildHeaders/JSONKit -F../Pods/BuildHeaders/NSLogger -F../Pods/BuildHeaders/PonyDebugger -F../Pods/BuildHeaders/Reachability -F../Pods/BuildHeaders/RegexKitLite -F../Pods/BuildHeaders/SocketRocket -F../Pods/Headers/AFNetworking -F../Pods/Headers/JSONKit -F../Pods/Headers/NSLogger -F../Pods/Headers/PonyDebugger -F../Pods/Headers/Reachability -F../Pods/Headers/RegexKitLite -F../Pods/Headers/SocketRocket "-F../Pods/NSLogger/Client Logger" -F../Pods/PonyDebugger/ObjC -F../Pods/SocketRocket/SocketRocket -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-F../Pods/NSLogger/Client Logger/iOS" -F../Pods/PonyDebugger/ObjC/DerivedSources -F../Pods/PonyDebugger/ObjC/PonyDebugger -filelist /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/Objects-normal/i386/InjectionBundle.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -undefined dynamic_lookup -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.1 -framework UIKit -framework QuartzCore -framework OpenGLES -framework Foundation -framework CoreGraphics -o /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/InjectionBundle36"E5DBBFDF-68FC-4498-9C1D-0F3F1AAD20C0-
+
+CProcessInfoPlistFile /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/Info.plist InjectionBundle-Info.plist
+s401166473.968808
+e401166473.980682
+r1
+xProcessInfoPlistFile
+x/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/Info.plist
+xInjectionBundle-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection34"Process InjectionBundle-Info.plist467ef98950e9b741^994afb8950e9b741^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Info.plist0000000000000000^656"ProcessInfoPlistFile build/Debug-iphonesimulator/InjectionBundle.bundle/Info.plist InjectionBundle-Info.plist    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility InjectionBundle-Info.plist -expandbuildsettings -format binary -platform iphonesimulator -o /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle/Info.plist36"892EF904-CD10-4991-B1C4-E2E2F85A67FB-
+
+CProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s401182451.191828
+e401182452.091824
+r1
+xProcessPCH
+x/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.pth
+xInjectionBundle-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:
+oIn file included from ../MathMonsters/Utiles.h:13:
+o../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]
+o#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")
+o        ^
+o../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]
+o#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")
+o        ^
+o2 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Precompile InjectionBundle-Prefix.pch765031f38ee9b741^f17f17f48ee9b741^-1079"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:In file included from ../MathMonsters/Utiles.h:13:../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")        ^../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")        ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@148"SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.-401182452#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401182452#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401182452#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@96"file://localhost/Users/xcode/wanax/oc/MathMonsters/Pods/AFNetworking/AFNetworking/AFHTTPClient.h0000000000000000^83#8#83#8#4897#0#25"#pragma message Directive--2@185"MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.-401182452#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401182452#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401182452#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@96"file://localhost/Users/xcode/wanax/oc/MathMonsters/Pods/AFNetworking/AFNetworking/AFHTTPClient.h0000000000000000^88#8#88#8#5129#0#25"#pragma message Directive--0#0#0#-19%DVTDocumentLocation4@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^6434"ProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-generated-files.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-own-target-headers.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-all-target-headers.hmap -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-project-headers.hmap -iquote.. -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/include -I.. -I../iOSInjectionProject -I../MathMonsters -I../MathMonsters.xcworkspace -I../Pods -I../MathMonsters/MonsterArt -I../MathMonsters/Plugs -I../MathMonsters.xcworkspace/xcuserdata -I../Pods/AFNetworking -I../Pods/BuildHeaders -I../Pods/Headers -I../Pods/JSONKit -I../Pods/NSLogger -I../Pods/PonyDebugger -I../Pods/Reachability -I../Pods/RegexKitLite -I../Pods/SocketRocket -I../MathMonsters/Plugs/AFNetworking -I../MathMonsters/Plugs/GCDiscreetNotificationView -I../MathMonsters/Plugs/JSONKit-master -I../MathMonsters/Plugs/Toast -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -I../Pods/AFNetworking/AFNetworking -I../Pods/BuildHeaders/AFNetworking -I../Pods/BuildHeaders/JSONKit -I../Pods/BuildHeaders/NSLogger -I../Pods/BuildHeaders/PonyDebugger -I../Pods/BuildHeaders/Reachability -I../Pods/BuildHeaders/RegexKitLite -I../Pods/BuildHeaders/SocketRocket -I../Pods/Headers/AFNetworking -I../Pods/Headers/JSONKit -I../Pods/Headers/NSLogger -I../Pods/Headers/PonyDebugger -I../Pods/Headers/Reachability -I../Pods/Headers/RegexKitLite -I../Pods/Headers/SocketRocket "-I../Pods/NSLogger/Client Logger" -I../Pods/PonyDebugger/ObjC -I../Pods/SocketRocket/SocketRocket -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-I../Pods/NSLogger/Client Logger/iOS" -I../Pods/PonyDebugger/ObjC/DerivedSources -I../Pods/PonyDebugger/ObjC/PonyDebugger -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources/i386 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources -F/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F.. -F../iOSInjectionProject -F../MathMonsters -F../MathMonsters.xcworkspace -F../Pods -F../MathMonsters/MonsterArt -F../MathMonsters/Plugs -F../MathMonsters.xcworkspace/xcuserdata -F../Pods/AFNetworking -F../Pods/BuildHeaders -F../Pods/Headers -F../Pods/JSONKit -F../Pods/NSLogger -F../Pods/PonyDebugger -F../Pods/Reachability -F../Pods/RegexKitLite -F../Pods/SocketRocket -F../MathMonsters/Plugs/AFNetworking -F../MathMonsters/Plugs/GCDiscreetNotificationView -F../MathMonsters/Plugs/JSONKit-master -F../MathMonsters/Plugs/Toast -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -F../Pods/AFNetworking/AFNetworking -F../Pods/BuildHeaders/AFNetworking -F../Pods/BuildHeaders/JSONKit -F../Pods/BuildHeaders/NSLogger -F../Pods/BuildHeaders/PonyDebugger -F../Pods/BuildHeaders/Reachability -F../Pods/BuildHeaders/RegexKitLite -F../Pods/BuildHeaders/SocketRocket -F../Pods/Headers/AFNetworking -F../Pods/Headers/JSONKit -F../Pods/Headers/NSLogger -F../Pods/Headers/PonyDebugger -F../Pods/Headers/Reachability -F../Pods/Headers/RegexKitLite -F../Pods/Headers/SocketRocket "-F../Pods/NSLogger/Client Logger" -F../Pods/PonyDebugger/ObjC -F../Pods/SocketRocket/SocketRocket -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-F../Pods/NSLogger/Client Logger/iOS" -F../Pods/PonyDebugger/ObjC/DerivedSources -F../Pods/PonyDebugger/ObjC/PonyDebugger --serialize-diagnostics /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.dia -c /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch -o /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-aehcfzumcyuvavatircwjryogzhp/InjectionBundle-Prefix.pch.d36"A9BE4F01-67AD-407A-BFA7-BEFA1ED58896-
+
+CProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s401166473.993844
+e401166474.408675
+r1
+xProcessPCH
+x/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.pth
+xInjectionBundle-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:
+oIn file included from ../MathMonsters/Utiles.h:13:
+o../MathMonsters/Plugs/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]
+o#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")
+o        ^
+o../MathMonsters/Plugs/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]
+o#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")
+o        ^
+o2 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Precompile InjectionBundle-Prefix.pch0da5fe8950e9b741^7c9d688a50e9b741^-1081"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:In file included from ../MathMonsters/Utiles.h:13:../MathMonsters/Plugs/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")        ^../MathMonsters/Plugs/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")        ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@148"SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.-401166474#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401166474#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401166474#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Plugs/AFNetworking/AFHTTPClient.h0000000000000000^83#8#83#8#4897#0#25"#pragma message Directive--2@185"MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.-401166474#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401166474#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401166474#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Plugs/AFNetworking/AFHTTPClient.h0000000000000000^88#8#88#8#5129#0#25"#pragma message Directive--0#0#0#-19%DVTDocumentLocation4@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^4210"ProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-generated-files.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-own-target-headers.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-all-target-headers.hmap -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-project-headers.hmap -iquote.. -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/include -I.. -I../iOSInjectionProject -I../MathMonsters -I../MathMonsters/MonsterArt -I../MathMonsters/Plugs -I../MathMonsters/Plugs/AFNetworking -I../MathMonsters/Plugs/GCDiscreetNotificationView -I../MathMonsters/Plugs/JSONKit-master -I../MathMonsters/Plugs/Toast -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources/i386 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources -F/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F.. -F../iOSInjectionProject -F../MathMonsters -F../MathMonsters/MonsterArt -F../MathMonsters/Plugs -F../MathMonsters/Plugs/AFNetworking -F../MathMonsters/Plugs/GCDiscreetNotificationView -F../MathMonsters/Plugs/JSONKit-master -F../MathMonsters/Plugs/Toast --serialize-diagnostics /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.dia -c /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch -o /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-bctrmqcqsbnahbfxakoejhapoivq/InjectionBundle-Prefix.pch.d36"3381C411-44CC-49D6-8C76-7F09F6AE33ED-
+
+CProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s401505342.356012
+e401505342.911076
+r1
+xProcessPCH
+x/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.pth
+xInjectionBundle-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:
+oIn file included from ../MathMonsters/Utiles.h:13:
+o../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]
+o#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")
+o        ^
+o../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]
+o#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")
+o        ^
+o2 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Precompile InjectionBundle-Prefix.pchd1eb5b3e7ceeb741^b43ae93e7ceeb741^-1079"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:In file included from ../MathMonsters/Utiles.h:13:../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")        ^../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")        ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@148"SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.-401505342#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401505342#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401505342#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@96"file://localhost/Users/xcode/wanax/oc/MathMonsters/Pods/AFNetworking/AFNetworking/AFHTTPClient.h0000000000000000^83#8#83#8#4897#0#25"#pragma message Directive--2@185"MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.-401505342#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401505342#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401505342#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@96"file://localhost/Users/xcode/wanax/oc/MathMonsters/Pods/AFNetworking/AFNetworking/AFHTTPClient.h0000000000000000^88#8#88#8#5129#0#25"#pragma message Directive--0#0#0#-19%DVTDocumentLocation4@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^6642"ProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-generated-files.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-own-target-headers.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-all-target-headers.hmap -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-project-headers.hmap -iquote.. -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/include -I.. -I../iOSInjectionProject -I../MathMonsters -I../MathMonsters.xcworkspace -I../Pods -I../MathMonsters/MonsterArt -I../MathMonsters/Plugs -I../MathMonsters.xcworkspace/xcuserdata -I../Pods/AFNetworking -I../Pods/BuildHeaders -I../Pods/Headers -I../Pods/JSONKit -I../Pods/NSLogger -I../Pods/PonyDebugger -I../Pods/Reachability -I../Pods/RegexKitLite -I../Pods/SocketRocket -I../MathMonsters/Plugs/AFNetworking -I../MathMonsters/Plugs/GCDiscreetNotificationView -I../MathMonsters/Plugs/GTM -I../MathMonsters/Plugs/iConsole -I../MathMonsters/Plugs/JSONKit-master -I../MathMonsters/Plugs/NGTabBarController -I../MathMonsters/Plugs/Toast -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -I../Pods/AFNetworking/AFNetworking -I../Pods/BuildHeaders/AFNetworking -I../Pods/BuildHeaders/JSONKit -I../Pods/BuildHeaders/NSLogger -I../Pods/BuildHeaders/PonyDebugger -I../Pods/BuildHeaders/Reachability -I../Pods/BuildHeaders/RegexKitLite -I../Pods/BuildHeaders/SocketRocket -I../Pods/Headers/AFNetworking -I../Pods/Headers/JSONKit -I../Pods/Headers/NSLogger -I../Pods/Headers/PonyDebugger -I../Pods/Headers/Reachability -I../Pods/Headers/RegexKitLite -I../Pods/Headers/SocketRocket "-I../Pods/NSLogger/Client Logger" -I../Pods/PonyDebugger/ObjC -I../Pods/SocketRocket/SocketRocket -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-I../Pods/NSLogger/Client Logger/iOS" -I../Pods/PonyDebugger/ObjC/DerivedSources -I../Pods/PonyDebugger/ObjC/PonyDebugger -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources/i386 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources -F/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F.. -F../iOSInjectionProject -F../MathMonsters -F../MathMonsters.xcworkspace -F../Pods -F../MathMonsters/MonsterArt -F../MathMonsters/Plugs -F../MathMonsters.xcworkspace/xcuserdata -F../Pods/AFNetworking -F../Pods/BuildHeaders -F../Pods/Headers -F../Pods/JSONKit -F../Pods/NSLogger -F../Pods/PonyDebugger -F../Pods/Reachability -F../Pods/RegexKitLite -F../Pods/SocketRocket -F../MathMonsters/Plugs/AFNetworking -F../MathMonsters/Plugs/GCDiscreetNotificationView -F../MathMonsters/Plugs/GTM -F../MathMonsters/Plugs/iConsole -F../MathMonsters/Plugs/JSONKit-master -F../MathMonsters/Plugs/NGTabBarController -F../MathMonsters/Plugs/Toast -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -F../Pods/AFNetworking/AFNetworking -F../Pods/BuildHeaders/AFNetworking -F../Pods/BuildHeaders/JSONKit -F../Pods/BuildHeaders/NSLogger -F../Pods/BuildHeaders/PonyDebugger -F../Pods/BuildHeaders/Reachability -F../Pods/BuildHeaders/RegexKitLite -F../Pods/BuildHeaders/SocketRocket -F../Pods/Headers/AFNetworking -F../Pods/Headers/JSONKit -F../Pods/Headers/NSLogger -F../Pods/Headers/PonyDebugger -F../Pods/Headers/Reachability -F../Pods/Headers/RegexKitLite -F../Pods/Headers/SocketRocket "-F../Pods/NSLogger/Client Logger" -F../Pods/PonyDebugger/ObjC -F../Pods/SocketRocket/SocketRocket -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad/xcdebugger "-F../Pods/NSLogger/Client Logger/iOS" -F../Pods/PonyDebugger/ObjC/DerivedSources -F../Pods/PonyDebugger/ObjC/PonyDebugger --serialize-diagnostics /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.dia -c /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch -o /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-coaowdjpyyehkhbcpxcaheclwxuc/InjectionBundle-Prefix.pch.d36"F9721A41-4A63-4F43-ADFF-ADAA12AD9E82-
+
+CProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s401178431.307084
+e401178431.631314
+r1
+xProcessPCH
+x/var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.pth
+xInjectionBundle-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:
+oIn file included from ../MathMonsters/Utiles.h:13:
+o../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]
+o#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")
+o        ^
+o../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]
+o#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")
+o        ^
+o2 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Precompile InjectionBundle-Prefix.pchd8d34e3f7fe9b741^6f9ba13f7fe9b741^-1079"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:In file included from ../MathMonsters/Utiles.h:13:../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")        ^../Pods/AFNetworking/AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")        ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@148"SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.-401178431#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401178431#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401178431#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@96"file://localhost/Users/xcode/wanax/oc/MathMonsters/Pods/AFNetworking/AFNetworking/AFHTTPClient.h0000000000000000^83#8#83#8#4897#0#25"#pragma message Directive--2@185"MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.-401178431#18446744073709551615#0#2(2@107"In file included from /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch:14:-401178431#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^13#12#13#12#332#0#30"Apple LLVM compiler 4.2 Notice--2@50"In file included from ../MathMonsters/Utiles.h:13:-401178431#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@72"file://localhost/Users/xcode/wanax/oc/MathMonsters/MathMonsters/Utiles.h0000000000000000^12#8#12#8#254#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@96"file://localhost/Users/xcode/wanax/oc/MathMonsters/Pods/AFNetworking/AFNetworking/AFHTTPClient.h0000000000000000^88#8#88#8#5129#0#25"#pragma message Directive--0#0#0#-19%DVTDocumentLocation4@97"file://localhost/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch0000000000000000^5990"ProcessPCH /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.pth InjectionBundle-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wmissing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-generated-files.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-own-target-headers.hmap -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-all-target-headers.hmap -iquote /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/InjectionBundle-project-headers.hmap -iquote.. -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/include -I.. -I../iOSInjectionProject -I../MathMonsters -I../MathMonsters.xcworkspace -I../Pods -I../MathMonsters/MonsterArt -I../MathMonsters/Plugs -I../MathMonsters.xcworkspace/xcuserdata -I../Pods/AFNetworking -I../Pods/BuildHeaders -I../Pods/Headers -I../Pods/JSONKit -I../Pods/PonyDebugger -I../Pods/Reachability -I../Pods/RegexKitLite -I../Pods/SocketRocket -I../MathMonsters/Plugs/AFNetworking -I../MathMonsters/Plugs/GCDiscreetNotificationView -I../MathMonsters/Plugs/JSONKit-master -I../MathMonsters/Plugs/Toast -I../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -I../Pods/AFNetworking/AFNetworking -I../Pods/BuildHeaders/AFNetworking -I../Pods/BuildHeaders/JSONKit -I../Pods/BuildHeaders/PonyDebugger -I../Pods/BuildHeaders/Reachability -I../Pods/BuildHeaders/RegexKitLite -I../Pods/BuildHeaders/SocketRocket -I../Pods/Headers/AFNetworking -I../Pods/Headers/JSONKit -I../Pods/Headers/PonyDebugger -I../Pods/Headers/Reachability -I../Pods/Headers/RegexKitLite -I../Pods/Headers/SocketRocket -I../Pods/PonyDebugger/ObjC -I../Pods/SocketRocket/SocketRocket -I../Pods/PonyDebugger/ObjC/DerivedSources -I../Pods/PonyDebugger/ObjC/PonyDebugger -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources/i386 -I/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/InjectionBundle.build/Debug-iphonesimulator/InjectionBundle.build/DerivedSources -F/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator -F.. -F../iOSInjectionProject -F../MathMonsters -F../MathMonsters.xcworkspace -F../Pods -F../MathMonsters/MonsterArt -F../MathMonsters/Plugs -F../MathMonsters.xcworkspace/xcuserdata -F../Pods/AFNetworking -F../Pods/BuildHeaders -F../Pods/Headers -F../Pods/JSONKit -F../Pods/PonyDebugger -F../Pods/Reachability -F../Pods/RegexKitLite -F../Pods/SocketRocket -F../MathMonsters/Plugs/AFNetworking -F../MathMonsters/Plugs/GCDiscreetNotificationView -F../MathMonsters/Plugs/JSONKit-master -F../MathMonsters/Plugs/Toast -F../MathMonsters.xcworkspace/xcuserdata/xcode.xcuserdatad -F../Pods/AFNetworking/AFNetworking -F../Pods/BuildHeaders/AFNetworking -F../Pods/BuildHeaders/JSONKit -F../Pods/BuildHeaders/PonyDebugger -F../Pods/BuildHeaders/Reachability -F../Pods/BuildHeaders/RegexKitLite -F../Pods/BuildHeaders/SocketRocket -F../Pods/Headers/AFNetworking -F../Pods/Headers/JSONKit -F../Pods/Headers/PonyDebugger -F../Pods/Headers/Reachability -F../Pods/Headers/RegexKitLite -F../Pods/Headers/SocketRocket -F../Pods/PonyDebugger/ObjC -F../Pods/SocketRocket/SocketRocket -F../Pods/PonyDebugger/ObjC/DerivedSources -F../Pods/PonyDebugger/ObjC/PonyDebugger --serialize-diagnostics /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.dia -c /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/InjectionBundle-Prefix.pch -o /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/2l/70p8mcj94kqds4th5mfxj5900000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/InjectionBundle-Prefix-fwcbvbbhodsqreatecgwlwnrkjoa/InjectionBundle-Prefix.pch.d36"C5A41976-03E2-45E7-A3E9-36EE371C80DC-
+
+CTouch /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle
+s401505343.203413
+e401505343.210157
+r1
+xTouch
+x/Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Touch /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundleea23343f7ceeb741^85cc353f7ceeb741^---0#0#0#--493"Touch build/Debug-iphonesimulator/InjectionBundle.bundle    cd /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/build/Debug-iphonesimulator/InjectionBundle.bundle36"E55129E1-328D-4B0E-BCF4-811BADC8C5F7-
+
