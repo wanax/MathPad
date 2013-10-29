@@ -12,7 +12,11 @@
 #import "CenterViewController.h"
 #import "IIViewDeckController.h"
 #import "PopListViewController.h"
-#import "ViewController.h"
+#import "PieViewController.h"
+#import "MMDrawerController.h"
+#import "LeftViewController.h"
+#import "ContainerViewController.h"
+
 
 @implementation AppDelegate
 
@@ -37,48 +41,66 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    [self setPonyDebugger];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.right=[[RightViewController alloc] init];
     self.left=[[FontListViewController alloc] init];
-
-    self.left.delegate=self.right;
-    
-    IIViewDeckController* deckController = [self generateControllerStack];
-    [self generateSplitVC];
-
-    self.window.rootViewController = self.splitViewController;
-    //[deckController shouldAutorotate];
-    self.window.backgroundColor = [UIColor whiteColor];
+    //[self setPonyDebugger];
+    ContainerViewController *content=[[ContainerViewController alloc] init];
+    self.window.rootViewController = content;
     [self.window makeKeyAndVisible];
-    
-    NSString *t=[[NSString alloc] init];
-    [t toLowerCase];
-    
     return YES;
+}
+
+-(void)generateMM{
+    LeftViewController * leftDrawer = [[LeftViewController alloc] init];
+    leftDrawer.view.backgroundColor = [UIColor blackColor];
+    ContainerViewController * center = [[ContainerViewController alloc] init];
+    center.view.backgroundColor = [UIColor colorWithRed:86/255.0 green:116/255.0 blue:35/255.0 alpha:1.0];
+//    FontListViewController *list=[[[FontListViewController alloc] init] autorelease];
+    
+    MMDrawerController * drawerController = [[MMDrawerController alloc]
+                                             initWithCenterViewController:center
+                                             leftDrawerViewController:leftDrawer];
+    
+    [drawerController setMaximumLeftDrawerWidth:200];
+    //[drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.window.rootViewController = drawerController;
+}
+
+-(void)generateSplitVC2{
+    
+    self.split2ViewController=[[MGSplitViewController alloc] init];
+    self.split2ViewController.delegate=self.right;
+    self.right.view.frame=CGRectMake(0,0,824,748);
+    self.left.view.frame=CGRectMake(0,0,200,748);
+    self.split2ViewController.detailViewController=self.right;
+    self.split2ViewController.masterViewController=self.left;
+    self.window.rootViewController = self.split2ViewController;
 }
 
 -(void)generateSplitVC{
     
     self.splitViewController=[[UISplitViewController alloc] init];
     self.splitViewController.delegate=self.right;
-    NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.left,[[ViewController alloc] init], nil];
+    NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.left,[[PieViewController alloc] init], nil];
     self.splitViewController.viewControllers = viewControllers;
+    self.window.rootViewController = self.splitViewController;
     
 }
 
-- (IIViewDeckController *)generateControllerStack {
+- (void)generateControllerStack {
 
-    PopListViewController *center=[[PopListViewController alloc] init];
+    PieViewController *center=[[PieViewController alloc] init];
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:center
                                                                                     leftViewController:self.left];
-    deckController.centerController.view.frame=CGRectMake(200,0,2048,748);
 
     deckController.leftSize = 800;
     
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
-    return deckController;
+    self.window.rootViewController = deckController;
 }
 
 

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "PieChartView.h"
-@interface ViewController : UIViewController<PieChartDelegate>
+@interface PieViewController : UIViewController<PieChartDelegate>
 
 @end

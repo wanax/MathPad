@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FontListViewController.h"
 #import "PieChartView.h"
+#import "MGSplitViewController.h"
 
 
-@interface RightViewController : UIViewController<UIPopoverControllerDelegate,UISplitViewControllerDelegate,FontListDelegate,PieChartDelegate>
+@interface RightViewController : UIViewController<UIPopoverControllerDelegate,MGSplitViewControllerDelegate,UISplitViewControllerDelegate,FontListDelegate,PieChartDelegate>
 
 @property (nonatomic,retain) UIFont *font;
 

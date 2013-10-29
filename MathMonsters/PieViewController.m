@@ -6,12 +6,15 @@
 //  Copyright (c) 2013年 Moncter8. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PieViewController.h"
 #import "PieChartView.h"
 
-#define PIE_HEIGHT 280
+#define PIE_HEIGHT 350
 
-@interface ViewController ()
+#define PIE_X 50
+#define PIE_Y 200
+
+@interface PieViewController ()
 @property (nonatomic,strong) NSMutableArray *valueArray;
 @property (nonatomic,strong) NSMutableArray *colorArray;
 @property (nonatomic,strong) NSMutableArray *valueArray2;
@@ -22,8 +25,18 @@
 @property (nonatomic,strong) UILabel *selLabel;
 @end
 
-@implementation ViewController
+@implementation PieViewController
 
+- (void)dealloc
+{
+    self.valueArray = nil;
+    self.colorArray = nil;
+    self.valueArray2 = nil;
+    self.colorArray2 = nil;
+    self.pieContainer = nil;
+    self.selLabel = nil;
+    [super dealloc];
+}
 
 - (void)viewDidLoad
 {
@@ -44,12 +57,12 @@
                         nil];
     
     self.colorArray = [NSMutableArray arrayWithObjects:
-                       [UIColor colorWithHue:((0/8)%20)/20.0+0.02 saturation:(0%8+3)/10.0 brightness:91/100.0 alpha:1],
-                       [UIColor colorWithHue:((1/8)%20)/20.0+0.02 saturation:(1%8+3)/10.0 brightness:91/100.0 alpha:1],
-                       [UIColor colorWithHue:((2/8)%20)/20.0+0.02 saturation:(2%8+3)/10.0 brightness:91/100.0 alpha:1],
-                       [UIColor colorWithHue:((3/8)%20)/20.0+0.02 saturation:(3%8+3)/10.0 brightness:91/100.0 alpha:1],
-                       [UIColor colorWithHue:((4/8)%20)/20.0+0.02 saturation:(4%8+3)/10.0 brightness:91/100.0 alpha:1],
-                       [UIColor colorWithHue:((5/8)%20)/20.0+0.02 saturation:(5%8+3)/10.0 brightness:91/100.0 alpha:1],
+                       [Utiles colorWithHexString:@"#ffa42f"],
+                       [Utiles colorWithHexString:@"#42e069"],
+                       [Utiles colorWithHexString:@"#3ec4df"],
+                       [Utiles colorWithHexString:@"#ff1a49"],
+                       [Utiles colorWithHexString:@"#5a86d5"],
+                       [Utiles colorWithHexString:@"#feffa3"],
                        nil];
     self.colorArray2 = [[NSMutableArray alloc] initWithObjects:
                         [UIColor purpleColor],
@@ -58,58 +71,20 @@
                         nil];
     
     //add shadow img
-    CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 50-0, PIE_HEIGHT, PIE_HEIGHT);
-    
-    UIImage *shadowImg = [UIImage imageNamed:@"shadow.png"];
-    UIImageView *shadowImgView = [[UIImageView alloc]initWithImage:shadowImg];
-    shadowImgView.frame = CGRectMake(0, pieFrame.origin.y + PIE_HEIGHT*0.92, shadowImg.size.width/2, shadowImg.size.height/2);
-    [self.view addSubview:shadowImgView];
+    CGRect pieFrame = CGRectMake(PIE_X,PIE_Y, PIE_HEIGHT, PIE_HEIGHT);
     
     self.pieContainer = [[UIView alloc]initWithFrame:pieFrame];
-    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray];
+    self.pieChartView = [[PieChartView alloc] initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray];
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
     [self.pieChartView setAmountText:@"-2456.0"];
     [self.view addSubview:self.pieContainer];
-    
-    //add selected view
-    UIImageView *selView = [[UIImageView alloc]init];
-    selView.image = [UIImage imageNamed:@"select.png"];
-    selView.frame = CGRectMake((self.view.frame.size.width - selView.image.size.width/2)/2, self.pieContainer.frame.origin.y + self.pieContainer.frame.size.height, selView.image.size.width/2, selView.image.size.height/2);
-    [self.view addSubview:selView];
-    
-    self.selLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 24, selView.image.size.width/2, 21)];
-    self.selLabel.backgroundColor = [UIColor clearColor];
-    self.selLabel.textAlignment = NSTextAlignmentCenter;
-    self.selLabel.font = [UIFont systemFontOfSize:17];
-    self.selLabel.textColor = [UIColor whiteColor];
-    [selView addSubview:self.selLabel];
+
     [self.pieChartView setTitleText:@"支出总计"];
     self.title = @"对账单";
-    self.view.backgroundColor = [self colorFromHexRGB:@"f3f3f3"];
+    self.view.backgroundColor = [Utiles colorWithHexString:@"#f3f3f3"];
 }
 
-- (UIColor *) colorFromHexRGB:(NSString *) inColorString
-{
-    UIColor *result = nil;
-    unsigned int colorCode = 0;
-    unsigned char redByte, greenByte, blueByte;
-    
-    if (nil != inColorString)
-    {
-        NSScanner *scanner = [NSScanner scannerWithString:inColorString];
-        (void) [scanner scanHexInt:&colorCode]; // ignore error
-    }
-    redByte = (unsigned char) (colorCode >> 16);
-    greenByte = (unsigned char) (colorCode >> 8);
-    blueByte = (unsigned char) (colorCode); // masks off high bits
-    result = [UIColor
-              colorWithRed: (float)redByte / 0xff
-              green: (float)greenByte/ 0xff
-              blue: (float)blueByte / 0xff
-              alpha:1.0];
-    return result;
-}
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {

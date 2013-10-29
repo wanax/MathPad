@@ -93,7 +93,7 @@
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {
-    //self.selLabel.text = [NSString stringWithFormat:@"%2.2f%@",per*100,@"%"];
+    self.selLabel.text = [NSString stringWithFormat:@"%2.2f%@",per*100,@"%"];
 }
 
 

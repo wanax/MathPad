@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Pods-MMDrawerController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Pods-NSLogger.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -92,6 +97,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>364B71915173402ABC1E0C99</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>394C9D9817EA41549C6B7CF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3AD4BB94997E4D39BB0B3A8A</key>
 		<dict>
 			<key>primary</key>
@@ -108,6 +123,11 @@
 			<true/>
 		</dict>
 		<key>40DF118B3CE94C54AA65A08A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42E81FBDBF024B6AA90EB5F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,7 +177,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9C4FB2FEFEA94EE7991448DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9E66C949CE0544D08D8DFE32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3E8BD7C40184721B3668953</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -173,6 +203,16 @@
 			<true/>
 		</dict>
 		<key>B4A53CF70BE341D48A77B54D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B5E8C6A9D533443BA6B3739A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB2AC8765970407585FB78CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -213,6 +253,16 @@
 			<true/>
 		</dict>
 		<key>CCE718C3B0554005A20AA690</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE94051D8D7943C397656E56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4A53F8A2C094B66B51D1AD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

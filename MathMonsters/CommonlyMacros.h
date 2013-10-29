@@ -45,12 +45,17 @@
 
 #define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 
-
-
 #define BACKGROUND_COLOR [UIColor colorWithRed:242.0/255.0 green:236.0/255.0 blue:231.0/255.0 alpha:1.0]
 
 
+#define GetConfigure(A,B,C) [Utiles getConfigureInfoFrom:A andKey:B inUserDomain:C]
+#define SetConfigure(A,B,C) [Utiles setConfigureInfoTo:A forKey:B andContent:C]
 
+#define SetUserDefaults(A,B) [[NSUserDefaults standardUserDefaults] setObject:A forKey:B];
+#define GetUserDefaults(A) [[NSUserDefaults standardUserDefaults] objectForKey:A]
+
+#define UserDefaults [NSUserDefaults standardUserDefaults]
+#define Application [UIApplication sharedApplication]
 
 
 

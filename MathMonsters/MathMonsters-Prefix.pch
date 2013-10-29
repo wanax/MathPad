@@ -19,6 +19,9 @@
     #import "iConsole.h"
     #import <QuartzCore/QuartzCore.h>
     #import "NSStringWrapper.h"
+    #import "EnumSummary.h"
+    #import "MBProgressHUD.h"
+    #import "AppDelegate.h"
 #endif
 
 // From here to end of file added by Injection Plugin //

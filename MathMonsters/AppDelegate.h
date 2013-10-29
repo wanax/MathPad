@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NGTabBarController.h"
+#import "MGSplitViewController.h"
+#import "LeftBarViewController.h"
 
 @class RightViewController;
 @class FontListViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,NGTabBarControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,retain) UISplitViewController *splitViewController;
+@property (nonatomic, retain) MGSplitViewController *split2ViewController;
 @property (nonatomic,retain) RightViewController *right;
 @property (nonatomic,retain) FontListViewController *left;
+
+@property (nonatomic,retain) id<LeftBarDelegate> delegate;
 
 @end

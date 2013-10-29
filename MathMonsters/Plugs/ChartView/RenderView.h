@@ -27,8 +27,8 @@
 @end
 
 @interface RenderView : UIView
-@property(nonatomic, assign) id<RenderViewDataSource> dataSource;
-@property(nonatomic, assign) id<RenderViewtDelegate> delegate;
+@property(nonatomic, weak) id<RenderViewDataSource> dataSource;
+@property(nonatomic, weak) id<RenderViewtDelegate> delegate;
 @property(nonatomic, assign) CGFloat startPieAngle;
 @property(nonatomic, assign) CGFloat animationSpeed;
 @property(nonatomic, assign) CGPoint pieCenter;
