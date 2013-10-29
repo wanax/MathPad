@@ -96,7 +96,7 @@
     }
     
     self.rightViewController=rightViewController;
-    self.rightViewController.view.frame=CGRectMake(100,52,900,700);
+    self.rightViewController.view.frame=CGRectMake(100,52,923,720);
     [self addChildViewController:self.rightViewController];
     [self.view addSubview:self.rightViewController.view];
 

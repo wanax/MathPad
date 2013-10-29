@@ -14,4 +14,8 @@
 
 @property (nonatomic,retain) UITableView *cusTabView;
 
+@property (nonatomic,retain) NSArray *comList;
+@property (nonatomic,retain) NSMutableArray *concernStocksCodeArr;
+@property (nonatomic,retain) NSString *updateTime;
+
 @end

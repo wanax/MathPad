@@ -57,7 +57,7 @@
 @property (nonatomic) float progressAnimationDuration; // default: 0.2f
 @property (nonatomic, strong) UIColor *outsideBorderColor; // default: black
 
-@property (nonatomic, strong, readonly) NSArray *gradientColors; // must be specified via initializer method
+@property (nonatomic, strong) NSArray *gradientColors; // must be specified via initializer method
 @property (nonatomic, readonly) BOOL outsideBorder; // must be specified via initializer method
 @property (nonatomic, readonly) BOOL vertical; // must be specified via initializer method
 

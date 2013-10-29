@@ -8,6 +8,9 @@
 
 #import "ValuModelViewController.h"
 #import "ValueModelIndicator.h"
+#import "ValueModelCell.h"
+#import "AMProgressView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ValuModelViewController ()
 
@@ -31,19 +34,47 @@
     self.view.backgroundColor=[Utiles colorWithHexString:@"#25bfda"];
     
     [self initComponents];
-    
+    [self addCompanyInfo];
 
 }
 
 -(void)initComponents{
     
-    ValueModelIndicator *test=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
-    [self.view addSubview:test];
+    ValueModelIndicator *indicator=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
+    [self.view addSubview:indicator];
     
-    self.cusTabView=[[UITableView alloc] initWithFrame:CGRectMake(0,60,924,660)];
+    self.cusTabView=[[UITableView alloc] initWithFrame:CGRectMake(0,60,924,610)];
     self.cusTabView.delegate=self;
     self.cusTabView.dataSource=self;
+    self.cusTabView.backgroundColor=[Utiles colorWithHexString:@"#472A20"];
+    self.cusTabView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.cusTabView];
+    
+}
+#pragma mark -
+#pragma mark Net Get JSON Data
+
+-(void)addCompanyInfo{
+
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:self.marketType],@"market",self.updateTime,@"updatetime", nil];
+    
+    [Utiles getNetInfoWithPath:@"QueryAllCompany" andParams:params besidesBlock:^(id resObj){
+        NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+        for(id obj in self.comList){
+            [temp addObject:obj];
+        }
+        for (id data in resObj) {
+            [temp addObject:data];
+        }
+        self.comList=temp;
+        [self.cusTabView reloadData];
+        //[self.cusTabView.infiniteScrollingView stopAnimating];
+        self.updateTime=[[self.comList lastObject] objectForKey:@"updatetime"];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
+    }];
     
 }
 
@@ -54,32 +85,58 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return [self.comList count];
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60.0;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier=@"Cell";
-    
-    UITableViewCell *cell=[self.cusTabView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell==nil){
-        cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
+    ValueModelCell *c=(ValueModelCell *)cell;
+    if (indexPath.row%2==0) {
+        [c.backImg setImage:[UIImage imageNamed:@"valueModelCellBack"]];
+    } else {
+        [c.backImg setImage:[UIImage imageNamed:@"valueModelCellBack3"]];
     }
+}
 
-    if (self.marketType==HK) {
-        cell.textLabel.text=@"HK";
-    } else if (self.marketType==NANY) {
-        cell.textLabel.text=@"NANY";
-    }else if (self.marketType==SZSE) {
-        cell.textLabel.text=@"SZSE";
-    }else if (self.marketType==SHSE) {
-        cell.textLabel.text=@"SHSE";
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *ValueModelCellIdentifier = @"ValueModelCellIdentifier";
+    ValueModelCell *cell = (ValueModelCell*)[tableView dequeueReusableCellWithIdentifier:ValueModelCellIdentifier];
+    if (cell == nil) {
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueModelCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
     }
     
-    cell.textLabel.font=[UIFont fontWithName:@"Heiti SC" size:17.0];
+    if(self.comList){
+        id comInfo=[self.comList objectAtIndex:indexPath.row];
+        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"market"]];
+        [cell.comIconImg setImageWithURL:[NSURL URLWithString:[comInfo objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+        [cell.saveImg setImage:[UIImage imageNamed:@"unsavemodel"]];
+        [cell.concernImg setImage:[UIImage imageNamed:@"unconcernmodel"]];
+        
+        NSNumber *gPriceStr=[comInfo objectForKey:@"googuuprice"];
+        float g=[gPriceStr floatValue];
+        NSNumber *priceStr=[comInfo objectForKey:@"marketprice"];
+        float p = [priceStr floatValue];
+        float outLook=(g-p)/p;
+        cell.outLookLabel.text=[NSString stringWithFormat:@"%.2f%%",outLook*100];
+        if (outLook>=0) {
+            [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#BA0020"]];
+            [cell.outLookImg setImage:[UIImage imageNamed:@"riseup"]];
+        } else {
+            [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#36871A"]];
+            [cell.outLookImg setImage:[UIImage imageNamed:@"down"]];
+        }
+        
+        cell.markPriProgress=[[AMProgressView alloc] init];
+        cell.markPriProgress.minimumValue=0;
+        cell.markPriProgress.maximumValue=10;
+        cell.markPriProgress.progress=8;
+        cell.markPriProgress.emptyPartAlpha = 1.0f;
+    }
 
     return cell;
 }
@@ -88,7 +145,9 @@
 #pragma mark -
 #pragma Table Delegate Methods
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 

@@ -20,7 +20,7 @@
         self.comIconView.frame=CGRectMake(40,26,70,36);
         [self addSubview:self.comIconView];
         
-        self.comNameLabel=[self addLabel:@"TTTT" frame:CGRectMake(200,15,200,50) size:21.0];
+        self.comNameLabel=[self addLabel:@"" frame:CGRectMake(200,15,200,50) size:21.0];
         self.comNameLabel.numberOfLines=0;
         self.comNameLabel.lineBreakMode=NSLineBreakByCharWrapping;
         

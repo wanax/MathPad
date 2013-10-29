@@ -15,12 +15,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        [self setBackgroundColor:[Utiles colorWithHexString:@"#25bfda"]];
-        [self addLabel:@"上市公司" frame:CGRectMake(50,10,160,40)];
-        [self addLabel:@"营收增长率" frame:CGRectMake(260,10,160,40)];
-        [self addLabel:@"净利润增长率" frame:CGRectMake(495,10,160,40)];
-        [self addLabel:@"毛利率" frame:CGRectMake(755,10,160,40)];
-        
+        [self setBackgroundColor:[Utiles colorWithHexString:@"#291912"]];
+        [self addLabel:@"上市公司" frame:CGRectMake(34,10,160,40)];
+        [self addLabel:@"关注收藏" frame:CGRectMake(148,10,160,40)];
+        [self addLabel:@"公司名称(代码)" frame:CGRectMake(285,10,160,40)];
+        [self addLabel:@"市场价VS估股价" frame:CGRectMake(540,10,160,40)];
+        [self addLabel:@"潜在空间" frame:CGRectMake(800,10,160,40)];
     }
     return self;
 }
@@ -29,7 +29,7 @@
     UILabel *label=[[[UILabel alloc] initWithFrame:frame] autorelease];
     [label setText:name];
     [label setFont:[UIFont fontWithName:@"Heiti SC" size:18]];
-    [label setTextColor:[UIColor blackColor]];
+    [label setTextColor:[Utiles colorWithHexString:@"#e6cbc0"]];
     [self addSubview:label];
 }
 
