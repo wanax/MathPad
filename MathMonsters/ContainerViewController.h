@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LeftBarViewController.h"
 
-@interface ContainerViewController : UIViewController<UISearchBarDelegate,LeftBarDelegate>
+@interface ContainerViewController : UIViewController<UISearchBarDelegate,LeftBarDelegate>{
+    BOOL _firstLaunch;
+}
 
 @property BOOL isShowSetting;
 

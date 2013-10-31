@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle2
+#define INJECTION_BUNDLE InjectionBundle3
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModelIndicator.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/GraphExchangeViewController.m"
 
 
-@interface InjectionBundle2 : NSObject
+@interface InjectionBundle3 : NSObject
 @end
-@implementation InjectionBundle2
+@implementation InjectionBundle3
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_ValueModelIndicator;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ValueModelIndicator notify:4];
+    extern Class OBJC_CLASS_$_GraphExchangeViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_GraphExchangeViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

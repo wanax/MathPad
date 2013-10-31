@@ -12,10 +12,12 @@
 
 @class RightViewController;
 @class FontListViewController;
+@class REFrostedViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,retain) REFrostedViewController *frostedViewController;
 @property (nonatomic,retain) UISplitViewController *splitViewController;
 @property (nonatomic, retain) MGSplitViewController *split2ViewController;
 @property (nonatomic,retain) RightViewController *right;

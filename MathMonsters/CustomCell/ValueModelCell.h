@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AMProgressView.h"
 
 @interface ValueModelCell : UITableViewCell
 
@@ -18,7 +17,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *comTitleLabel;
 @property (nonatomic,retain) IBOutlet UILabel *outLookLabel;
 @property (nonatomic,retain) IBOutlet UIImageView *outLookImg;
-@property (nonatomic,retain) IBOutlet AMProgressView *markPriProgress;
-@property (nonatomic,retain) IBOutlet AMProgressView *googuuPriProgress;
+@property (nonatomic,retain) IBOutlet UILabel *markPriLabel;
+@property (nonatomic,retain) IBOutlet UILabel *googuuPriLabel;
 
 @end

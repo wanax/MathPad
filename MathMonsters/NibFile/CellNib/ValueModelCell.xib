@@ -47,16 +47,6 @@
                         <rect key="frame" x="164" y="33" width="30" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STP-kt-xaf" customClass="AMProgressView">
-                        <rect key="frame" x="517" y="8" width="240" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-yt-OSB" customClass="AMProgressView">
-                        <rect key="frame" x="517" y="34" width="240" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Nd-IK-7Ph">
                         <rect key="frame" x="822" y="13" width="72" height="36"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,6 +61,20 @@
                         <color key="textColor" red="0.9882352941176471" green="0.91764705882352937" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMX-2W-TOs">
+                        <rect key="frame" x="716" y="6" width="38" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                        <color key="textColor" red="0.90196078430000004" green="0.79607843140000001" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uX-nn-9Bi">
+                        <rect key="frame" x="716" y="31" width="38" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                        <color key="textColor" red="0.90196078430000004" green="0.79607843140000001" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -78,8 +82,8 @@
                 <outlet property="comIconImg" destination="2dM-5D-9Yg" id="Rty-U5-lBn"/>
                 <outlet property="comTitleLabel" destination="mpJ-Jl-cp7" id="qbU-6v-Vkg"/>
                 <outlet property="concernImg" destination="70a-MI-Qjr" id="0ze-Gq-jfk"/>
-                <outlet property="googuuPriProgress" destination="fcd-yt-OSB" id="dpc-nJ-C1n"/>
-                <outlet property="markPriProgress" destination="STP-kt-xaf" id="lcJ-e7-0f7"/>
+                <outlet property="googuuPriLabel" destination="0uX-nn-9Bi" id="8Bv-uq-G6w"/>
+                <outlet property="markPriLabel" destination="tMX-2W-TOs" id="Mlx-nT-esb"/>
                 <outlet property="outLookImg" destination="anc-Yy-PPW" id="LG2-Nb-aWR"/>
                 <outlet property="outLookLabel" destination="9Nd-IK-7Ph" id="Xuh-oY-WC6"/>
                 <outlet property="saveImg" destination="wm2-6v-P5t" id="XA0-Fx-93C"/>

@@ -49,15 +49,14 @@
     self.cusTabView.backgroundColor=[Utiles colorWithHexString:@"#472A20"];
     self.cusTabView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.cusTabView];
-    
 }
 #pragma mark -
 #pragma mark Net Get JSON Data
 
 -(void)addCompanyInfo{
 
+    [MBProgressHUD showHUDAddedTo:self.cusTabView animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:self.marketType],@"market",self.updateTime,@"updatetime", nil];
-    
     [Utiles getNetInfoWithPath:@"QueryAllCompany" andParams:params besidesBlock:^(id resObj){
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
         for(id obj in self.comList){
@@ -68,11 +67,9 @@
         }
         self.comList=temp;
         [self.cusTabView reloadData];
-        //[self.cusTabView.infiniteScrollingView stopAnimating];
         self.updateTime=[[self.comList lastObject] objectForKey:@"updatetime"];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:self.cusTabView animated:YES];
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
     }];
     
@@ -131,11 +128,29 @@
             [cell.outLookImg setImage:[UIImage imageNamed:@"down"]];
         }
         
-        cell.markPriProgress=[[AMProgressView alloc] init];
-        cell.markPriProgress.minimumValue=0;
-        cell.markPriProgress.maximumValue=10;
-        cell.markPriProgress.progress=8;
-        cell.markPriProgress.emptyPartAlpha = 1.0f;
+        AMProgressView *am=[[[AMProgressView alloc] initWithFrame:CGRectMake(517, 8, 180, 18)
+                            andGradientColors:[NSArray arrayWithObjects:[UIColor orangeColor], nil]
+                             andOutsideBorder:NO
+                                  andVertical:NO] autorelease];
+        AMProgressView *am2=[[[AMProgressView alloc] initWithFrame:CGRectMake(517, 34, 180, 18)
+                            andGradientColors:[NSArray arrayWithObjects:[UIColor purpleColor], nil]
+                                andOutsideBorder:NO
+                                     andVertical:NO] autorelease];
+        [cell.contentView addSubview:am];
+        [cell.contentView addSubview:am2];
+        
+        am.emptyPartAlpha = 1.0f;
+        am.minimumValue=0;
+        am.maximumValue=g+p;
+        am.progress=p;
+        cell.markPriLabel.text=[NSString stringWithFormat:@"%.2f",p];
+        
+        am2.emptyPartAlpha = 1.0f;
+        am2.minimumValue=0;
+        am2.maximumValue=g+p;
+        am2.progress=g;
+        cell.googuuPriLabel.text=[NSString stringWithFormat:@"%.2f",g];
+
     }
 
     return cell;

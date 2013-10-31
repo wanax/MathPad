@@ -70,10 +70,10 @@
 #pragma mark Net Get JSON Data
 
 -(void)addNewReport{
-    
+    [MBProgressHUD showHUDAddedTo:self.newReportTable animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];
     [Utiles getNetInfoWithPath:@"NewesAnalysereportURL" andParams:params besidesBlock:^(id resObj){
-        
+        [MBProgressHUD hideHUDForView:self.newReportTable animated:YES];
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
         for(id obj in self.arrList){
             [temp addObject:obj];
@@ -92,10 +92,10 @@
 }
 
 -(void)addComIcon{
-    
+    [MBProgressHUD showHUDAddedTo:self.newComTable animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];
     [Utiles getNetInfoWithPath:@"NewesAnalysereportURL" andParams:params besidesBlock:^(id resObj){
-        
+        [MBProgressHUD hideHUDForView:self.newComTable animated:YES];
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
         for(id obj in self.iconArr){
             [temp addObject:obj];
@@ -158,6 +158,7 @@
                 temp=[temp substringToIndex:56];
             }
             NSString *htmlString = [webviewText stringByAppendingFormat:@"%@......", temp];
+            NSURL *url = [NSURL URLWithString:[htmlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
             [cell.conciseView loadHTMLString:htmlString baseURL:nil];
         }
         

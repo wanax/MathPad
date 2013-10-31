@@ -11,6 +11,7 @@
 #import "LeftBarViewController.h"
 #import "ValuModelViewController.h"
 #import "DailyStockViewController.h"
+#import "REFrostedViewController.h"
 
 @interface ContainerViewController ()
 
@@ -23,6 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.isShowSetting=NO;
+        _firstLaunch=YES;
     }
     return self;
 }
@@ -36,7 +38,11 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self setRightDetail:[[DailyStockViewController alloc] init]];
+    if (_firstLaunch) {
+        [self setRightDetail:[[DailyStockViewController alloc] init]];
+        _firstLaunch=NO;
+    }
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 -(void)addComponents{
@@ -138,27 +144,9 @@
             SAFE_RELEASE(vc);
         }
         
-    }else{
-        
-        CATransition *animation = [CATransition animation];
-        animation.delegate = self;
-        animation.duration = 0.3f;
-        //animation.timingFunction = UIViewAnimationCurveEaseInOut;
-        animation.type = kCATransitionPush;
-        animation.subtype = kCATransitionFromLeft;
-
-        UIViewController * vc = [[NSClassFromString(controllerName) alloc] init];
-        vc.view.frame=CGRectMake(0,55,100,1024);
-        [self addChildViewController:vc];
-        [self.view addSubview:vc.view];
-        
-        self.leftViewController.view.frame=CGRectMake(100,52,100,1024);
-        self.rightViewController.view.frame=CGRectMake(200,52,824,1024);
-        
-        
-        [[self.leftViewController.view layer] addAnimation:animation forKey:@"animation"];
-        //[[self.rightViewController.view layer] addAnimation:animation forKey:@"animation"];
-        [[vc.view layer] addAnimation:animation forKey:@"animation"];
+    }else{        
+        AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
+        [delegate.frostedViewController presentMenuViewController];
     }
     
 }

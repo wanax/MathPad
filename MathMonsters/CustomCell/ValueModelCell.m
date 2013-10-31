@@ -14,8 +14,6 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.markPriProgress = [[AMProgressView alloc] init];
-        self.googuuPriProgress = [[AMProgressView alloc] init];
     }
     return self;
 }

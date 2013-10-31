@@ -16,7 +16,9 @@
 #import "MMDrawerController.h"
 #import "LeftViewController.h"
 #import "ContainerViewController.h"
-
+#import "REFrostedViewController.h"
+#import "DEMOMenuViewController.h"
+#import "DEMONavigationController.h"
 
 @implementation AppDelegate
 
@@ -43,9 +45,16 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.left=[[FontListViewController alloc] init];
-    //[self setPonyDebugger];
+    [self setPonyDebugger];
     ContainerViewController *content=[[ContainerViewController alloc] init];
-    self.window.rootViewController = content;
+    DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:content];
+    DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] init];
+    [menuController.view setFrame:CGRectMake(0,0,200,768)];
+    self.frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    self.frostedViewController.limitMenuViewSize=YES;
+    self.frostedViewController.minimumMenuViewSize=CGSizeMake(200,768);
+    self.frostedViewController.direction = REFrostedViewControllerDirectionLeft;
+    self.window.rootViewController = self.frostedViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

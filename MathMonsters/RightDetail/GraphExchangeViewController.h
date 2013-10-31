@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GraphExchangeDelegate <NSObject>
+@optional
+-(void)keyWordChanged:(NSString *)key;
+@end
+
 @interface GraphExchangeViewController : UIViewController
+
+@property (nonatomic,retain) id<GraphExchangeDelegate> delegate;
 
 @end
