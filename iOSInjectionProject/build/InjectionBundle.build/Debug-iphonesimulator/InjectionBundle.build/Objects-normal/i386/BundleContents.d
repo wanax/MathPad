@@ -2,29 +2,5 @@ dependencies: \
   /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m \
   /Applications/Injection\ Plugin.app/Contents/Resources/BundleInjection.h \
   /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.h \
-  /Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/GraphExchangeViewController.m \
-  ../MathMonsters/RightDetail/GraphExchangeViewController.h \
-  ../MathMonsters/RightDetail/GraphExchange/FinancePicViewController.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoBrowser.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhoto.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoProtocol.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoLoadingView.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoLoadingViewProtocol.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXBrowserNavBarView.h \
-  ../Pods/BuildHeaders/CXPhotoBrowser/CXBrowserToolBarView.h \
-  ../Pods/BuildHeaders/FlatUIKit/FlatUIKit.h \
-  ../Pods/BuildHeaders/FlatUIKit/FUIAlertView.h \
-  ../Pods/BuildHeaders/FlatUIKit/FUIButton.h \
-  ../Pods/BuildHeaders/FlatUIKit/FUICellBackgroundView.h \
-  ../Pods/BuildHeaders/FlatUIKit/FUISegmentedControl.h \
-  ../Pods/BuildHeaders/FlatUIKit/FUISwitch.h \
-  ../Pods/BuildHeaders/FlatUIKit/UIBarButtonItem+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UIColor+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UIFont+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UIImage+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UINavigationBar+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UIProgressView+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UIStepper+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UISlider+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UITabBar+FlatUI.h \
-  ../Pods/BuildHeaders/FlatUIKit/UITableViewCell+FlatUI.h
+  /Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/FinanceTool/FInanceDetailViewController.m \
+  ../MathMonsters/RightDetail/FinanceTool/FInanceDetailViewController.h

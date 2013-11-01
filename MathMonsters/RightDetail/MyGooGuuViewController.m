@@ -7,6 +7,7 @@
 //
 
 #import "MyGooGuuViewController.h"
+#import "NSDate+convenience.h"
 
 @interface MyGooGuuViewController ()
 
@@ -26,8 +27,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.view.backgroundColor=[Utiles colorWithHexString:@"#ff5e4d"];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    VRGCalendarView *calendar = [[VRGCalendarView alloc] init];
+    calendar.delegate=self;
+    [self.view addSubview:calendar];
+    
+    
+    
+}
+
+-(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated {
+    if (month==[[NSDate date] month]) {
+        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:5], nil];
+        [calendarView markDates:dates];
+    }
+}
+
+-(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date {
+    NSLog(@"Selected date = %@",date);
 }
 
 - (void)didReceiveMemoryWarning

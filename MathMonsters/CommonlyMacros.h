@@ -132,7 +132,7 @@
 
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
 
-#define ImageNamed(_pointer) [UIImage imageNamed:[UIUtil imageName:_pointer]]
+#define ImageNamed(imgName) [UIImage imageNamed:imgName]
 
 
 

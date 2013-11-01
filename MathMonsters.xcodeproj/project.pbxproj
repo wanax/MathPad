@@ -18,6 +18,19 @@
 		AE3FCB9317E6E879001A04A1 /* FontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB9217E6E879001A04A1 /* FontListViewController.m */; };
 		AE3FCB9617E6F2D7001A04A1 /* FontSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB9517E6F2D7001A04A1 /* FontSizeViewController.m */; };
 		AE3FCB9817E6F2F7001A04A1 /* FontSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3FCB9717E6F2F7001A04A1 /* FontSizeView.xib */; };
+		AE420AC51823494600DDE7C8 /* ASTOCK.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420ABA1823494600DDE7C8 /* ASTOCK.png */; };
+		AE420AC61823494600DDE7C8 /* BETA.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420ABB1823494600DDE7C8 /* BETA.png */; };
+		AE420AC71823494600DDE7C8 /* HSTOCK.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420ABC1823494600DDE7C8 /* HSTOCK.png */; };
+		AE420AC81823494600DDE7C8 /* PE.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420ABD1823494600DDE7C8 /* PE.png */; };
+		AE420AC91823494600DDE7C8 /* CASHCOUNT.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420ABE1823494600DDE7C8 /* CASHCOUNT.png */; };
+		AE420ACA1823494600DDE7C8 /* WACC.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420ABF1823494600DDE7C8 /* WACC.png */; };
+		AE420ACB1823494600DDE7C8 /* EXCEL.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AC01823494600DDE7C8 /* EXCEL.png */; };
+		AE420ACC1823494600DDE7C8 /* FUNDTIME.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AC11823494600DDE7C8 /* FUNDTIME.png */; };
+		AE420ACD1823494600DDE7C8 /* INVESTCOM.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AC21823494600DDE7C8 /* INVESTCOM.png */; };
+		AE420ACE1823494600DDE7C8 /* FREECRASH.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AC31823494600DDE7C8 /* FREECRASH.png */; };
+		AE420ACF1823494600DDE7C8 /* COMVALU.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AC41823494600DDE7C8 /* COMVALU.png */; };
+		AE420AD118234D8200DDE7C8 /* finToolRightBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AD018234D8200DDE7C8 /* finToolRightBack.png */; };
+		AE420AD318234D9800DDE7C8 /* finToolBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE420AD218234D9800DDE7C8 /* finToolBack.png */; };
 		AE46E6D6181FB9DE00DC1370 /* valueModelCellBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE46E6D5181FB9DD00DC1370 /* valueModelCellBack.png */; };
 		AE46E6D8181FBB4000DC1370 /* valueModelCellBack3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE46E6D7181FBB4000DC1370 /* valueModelCellBack3.png */; };
 		AE46E6DF181FBE6400DC1370 /* riseup.png in Resources */ = {isa = PBXBuildFile; fileRef = AE46E6D9181FBE6400DC1370 /* riseup.png */; };
@@ -81,6 +94,13 @@
 		AE6FCF1517E9403800DCDB77 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCF1317E9403800DCDB77 /* Toast+UIView.m */; };
 		AE6FCF1817E940DA00DCDB77 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCF1717E940DA00DCDB77 /* MBProgressHUD.m */; };
 		AE6FCF1C17E9410100DCDB77 /* GCDiscreetNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCF1B17E9410100DCDB77 /* GCDiscreetNotificationView.m */; };
+		AE739ABC182257FB00CF82C5 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AAA182257FB00CF82C5 /* NSDate+convenience.m */; };
+		AE739ABD182257FB00CF82C5 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AAC182257FB00CF82C5 /* NSMutableArray+convenience.m */; };
+		AE739ABE182257FB00CF82C5 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AAE182257FB00CF82C5 /* UIColor+expanded.m */; };
+		AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AB0182257FB00CF82C5 /* UIView+convenience.m */; };
+		AE739AC1182257FB00CF82C5 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AB4182257FB00CF82C5 /* VRGCalendarView.m */; };
+		AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */; };
+		AE745E4F1823A88B000A60A7 /* FInanceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */; };
 		AE7E5735181E3F7400A1391E /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E5730181E3F7400A1391E /* PieChartView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE7E5736181E3F7400A1391E /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E5732181E3F7400A1391E /* RenderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE7E5737181E3F7400A1391E /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E5734181E3F7400A1391E /* RotatedView.m */; };
@@ -187,6 +207,19 @@
 		AE3FCB9417E6F2D7001A04A1 /* FontSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeViewController.h; sourceTree = "<group>"; };
 		AE3FCB9517E6F2D7001A04A1 /* FontSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeViewController.m; sourceTree = "<group>"; };
 		AE3FCB9717E6F2F7001A04A1 /* FontSizeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontSizeView.xib; sourceTree = "<group>"; };
+		AE420ABA1823494600DDE7C8 /* ASTOCK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ASTOCK.png; sourceTree = "<group>"; };
+		AE420ABB1823494600DDE7C8 /* BETA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BETA.png; sourceTree = "<group>"; };
+		AE420ABC1823494600DDE7C8 /* HSTOCK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HSTOCK.png; sourceTree = "<group>"; };
+		AE420ABD1823494600DDE7C8 /* PE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PE.png; sourceTree = "<group>"; };
+		AE420ABE1823494600DDE7C8 /* CASHCOUNT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CASHCOUNT.png; sourceTree = "<group>"; };
+		AE420ABF1823494600DDE7C8 /* WACC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WACC.png; sourceTree = "<group>"; };
+		AE420AC01823494600DDE7C8 /* EXCEL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EXCEL.png; sourceTree = "<group>"; };
+		AE420AC11823494600DDE7C8 /* FUNDTIME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FUNDTIME.png; sourceTree = "<group>"; };
+		AE420AC21823494600DDE7C8 /* INVESTCOM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = INVESTCOM.png; sourceTree = "<group>"; };
+		AE420AC31823494600DDE7C8 /* FREECRASH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FREECRASH.png; sourceTree = "<group>"; };
+		AE420AC41823494600DDE7C8 /* COMVALU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = COMVALU.png; sourceTree = "<group>"; };
+		AE420AD018234D8200DDE7C8 /* finToolRightBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finToolRightBack.png; sourceTree = "<group>"; };
+		AE420AD218234D9800DDE7C8 /* finToolBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finToolBack.png; sourceTree = "<group>"; };
 		AE46E6D5181FB9DD00DC1370 /* valueModelCellBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueModelCellBack.png; sourceTree = "<group>"; };
 		AE46E6D7181FBB4000DC1370 /* valueModelCellBack3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueModelCellBack3.png; sourceTree = "<group>"; };
 		AE46E6D9181FBE6400DC1370 /* riseup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = riseup.png; sourceTree = "<group>"; };
@@ -277,6 +310,20 @@
 		AE6FCF1717E940DA00DCDB77 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AE6FCF1A17E9410100DCDB77 /* GCDiscreetNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDiscreetNotificationView.h; sourceTree = "<group>"; };
 		AE6FCF1B17E9410100DCDB77 /* GCDiscreetNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDiscreetNotificationView.m; sourceTree = "<group>"; };
+		AE739AA9182257FB00CF82C5 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
+		AE739AAA182257FB00CF82C5 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
+		AE739AAB182257FB00CF82C5 /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
+		AE739AAC182257FB00CF82C5 /* NSMutableArray+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+convenience.m"; sourceTree = "<group>"; };
+		AE739AAD182257FB00CF82C5 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		AE739AAE182257FB00CF82C5 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		AE739AAF182257FB00CF82C5 /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+convenience.h"; sourceTree = "<group>"; };
+		AE739AB0182257FB00CF82C5 /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+convenience.m"; sourceTree = "<group>"; };
+		AE739AB3182257FB00CF82C5 /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
+		AE739AB4182257FB00CF82C5 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
+		AE745E2418237EA4000A60A7 /* FinanceToolLeftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceToolLeftListViewController.h; sourceTree = "<group>"; };
+		AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceToolLeftListViewController.m; sourceTree = "<group>"; };
+		AE745E4D1823A88B000A60A7 /* FInanceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FInanceDetailViewController.h; sourceTree = "<group>"; };
+		AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FInanceDetailViewController.m; sourceTree = "<group>"; };
 		AE7E572F181E3F7400A1391E /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
 		AE7E5730181E3F7400A1391E /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
 		AE7E5731181E3F7400A1391E /* RenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderView.h; sourceTree = "<group>"; };
@@ -373,16 +420,16 @@
 		AEB3E33C17F4229900A273E9 /* GraphExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphExchangeViewController.m; path = MathMonsters/RightDetail/GraphExchangeViewController.m; sourceTree = SOURCE_ROOT; };
 		AEB3E33E17F422B100A273E9 /* DailyStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyStockViewController.h; path = MathMonsters/RightDetail/DailyStockViewController.h; sourceTree = SOURCE_ROOT; };
 		AEB3E33F17F422B100A273E9 /* DailyStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyStockViewController.m; path = MathMonsters/RightDetail/DailyStockViewController.m; sourceTree = SOURCE_ROOT; };
-		AEB3E34117F422BC00A273E9 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		AEB3E34217F422BC00A273E9 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		AEB3E34417F422C900A273E9 /* MyGooGuuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGooGuuViewController.h; sourceTree = "<group>"; };
-		AEB3E34517F422C900A273E9 /* MyGooGuuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGooGuuViewController.m; sourceTree = "<group>"; };
+		AEB3E34117F422BC00A273E9 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = ../SettingViewController.h; sourceTree = "<group>"; };
+		AEB3E34217F422BC00A273E9 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ../SettingViewController.m; sourceTree = "<group>"; };
+		AEB3E34417F422C900A273E9 /* MyGooGuuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyGooGuuViewController.h; path = MathMonsters/RightDetail/MyGooGuuViewController.h; sourceTree = SOURCE_ROOT; };
+		AEB3E34517F422C900A273E9 /* MyGooGuuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyGooGuuViewController.m; path = MathMonsters/RightDetail/MyGooGuuViewController.m; sourceTree = SOURCE_ROOT; };
 		AEB3E34717F422D700A273E9 /* NewReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewReportViewController.h; path = MathMonsters/RightDetail/NewReportViewController.h; sourceTree = SOURCE_ROOT; };
 		AEB3E34817F422D700A273E9 /* NewReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewReportViewController.m; path = MathMonsters/RightDetail/NewReportViewController.m; sourceTree = SOURCE_ROOT; };
 		AEB3E34A17F422E300A273E9 /* ValuModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuModelViewController.h; sourceTree = "<group>"; };
 		AEB3E34B17F422E300A273E9 /* ValuModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuModelViewController.m; sourceTree = "<group>"; };
-		AEB3E34D17F422EE00A273E9 /* FinanceToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceToolViewController.h; sourceTree = "<group>"; };
-		AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceToolViewController.m; sourceTree = "<group>"; };
+		AEB3E34D17F422EE00A273E9 /* FinanceToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceToolViewController.h; path = MathMonsters/RightDetail/FinanceToolViewController.h; sourceTree = SOURCE_ROOT; };
+		AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceToolViewController.m; path = MathMonsters/RightDetail/FinanceToolViewController.m; sourceTree = SOURCE_ROOT; };
 		AEB9440B17F2C03D00DFEF37 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		AEB9440C17F2C03D00DFEF37 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		AED071AF1803FD8E00C28F32 /* ValueModelIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelIndicator.h; sourceTree = "<group>"; };
@@ -428,6 +475,26 @@
 				AE3FCB8817E6D9C9001A04A1 /* Utiles.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		AE420AB91823493300DDE7C8 /* FinanceToolImg */ = {
+			isa = PBXGroup;
+			children = (
+				AE420AD218234D9800DDE7C8 /* finToolBack.png */,
+				AE420AD018234D8200DDE7C8 /* finToolRightBack.png */,
+				AE420ABA1823494600DDE7C8 /* ASTOCK.png */,
+				AE420ABB1823494600DDE7C8 /* BETA.png */,
+				AE420ABC1823494600DDE7C8 /* HSTOCK.png */,
+				AE420ABD1823494600DDE7C8 /* PE.png */,
+				AE420ABE1823494600DDE7C8 /* CASHCOUNT.png */,
+				AE420ABF1823494600DDE7C8 /* WACC.png */,
+				AE420AC01823494600DDE7C8 /* EXCEL.png */,
+				AE420AC11823494600DDE7C8 /* FUNDTIME.png */,
+				AE420AC21823494600DDE7C8 /* INVESTCOM.png */,
+				AE420AC31823494600DDE7C8 /* FREECRASH.png */,
+				AE420AC41823494600DDE7C8 /* COMVALU.png */,
+			);
+			path = FinanceToolImg;
 			sourceTree = "<group>";
 		};
 		AE4D3DF317E3053B0044A7DF = {
@@ -547,6 +614,7 @@
 		AE50F2B217F3C40200913AA2 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				AE420AB91823493300DDE7C8 /* FinanceToolImg */,
 				AE8B44F81820E8A70047F4BB /* GraphExchange */,
 				AEDD0834181FABEB0095BDA1 /* ValueModel */,
 				AE7EF605181F4A82002A3C9E /* NewReportImg */,
@@ -650,6 +718,7 @@
 		AE6FCEF017E93F6C00DCDB77 /* Plugs */ = {
 			isa = PBXGroup;
 			children = (
+				AE739AA3182257FB00CF82C5 /* Vurig Calendar */,
 				AE7EF62B181F6219002A3C9E /* EGORefreshTableHeaderView.h */,
 				AE7EF62C181F6219002A3C9E /* EGORefreshTableHeaderView.m */,
 				AE7E5741181E54B400A1391E /* AMProgressView */,
@@ -699,12 +768,53 @@
 		AE739AA11822531100CF82C5 /* UserSetting */ = {
 			isa = PBXGroup;
 			children = (
+				AEB3E34117F422BC00A273E9 /* SettingViewController.h */,
+				AEB3E34217F422BC00A273E9 /* SettingViewController.m */,
 				AE8B44FD182101290047F4BB /* DEMOMenuViewController.h */,
 				AE8B44FE182101290047F4BB /* DEMOMenuViewController.m */,
 				AE8B4506182101930047F4BB /* DEMONavigationController.h */,
 				AE8B4507182101930047F4BB /* DEMONavigationController.m */,
 			);
 			path = UserSetting;
+			sourceTree = "<group>";
+		};
+		AE739AA3182257FB00CF82C5 /* Vurig Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				AE739AA9182257FB00CF82C5 /* NSDate+convenience.h */,
+				AE739AAA182257FB00CF82C5 /* NSDate+convenience.m */,
+				AE739AAB182257FB00CF82C5 /* NSMutableArray+convenience.h */,
+				AE739AAC182257FB00CF82C5 /* NSMutableArray+convenience.m */,
+				AE739AAD182257FB00CF82C5 /* UIColor+expanded.h */,
+				AE739AAE182257FB00CF82C5 /* UIColor+expanded.m */,
+				AE739AAF182257FB00CF82C5 /* UIView+convenience.h */,
+				AE739AB0182257FB00CF82C5 /* UIView+convenience.m */,
+				AE739AB3182257FB00CF82C5 /* VRGCalendarView.h */,
+				AE739AB4182257FB00CF82C5 /* VRGCalendarView.m */,
+			);
+			path = "Vurig Calendar";
+			sourceTree = "<group>";
+		};
+		AE739AC4182259F200CF82C5 /* FinanceTool */ = {
+			isa = PBXGroup;
+			children = (
+				AEB3E34D17F422EE00A273E9 /* FinanceToolViewController.h */,
+				AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */,
+				AE745E2418237EA4000A60A7 /* FinanceToolLeftListViewController.h */,
+				AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */,
+				AE745E4D1823A88B000A60A7 /* FInanceDetailViewController.h */,
+				AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */,
+			);
+			path = FinanceTool;
+			sourceTree = "<group>";
+		};
+		AE739AC5182259F200CF82C5 /* MyGooGuu */ = {
+			isa = PBXGroup;
+			children = (
+				AEB3E34417F422C900A273E9 /* MyGooGuuViewController.h */,
+				AEB3E34517F422C900A273E9 /* MyGooGuuViewController.m */,
+			);
+			path = MyGooGuu;
 			sourceTree = "<group>";
 		};
 		AE7E572E181E3F7400A1391E /* ChartView */ = {
@@ -889,17 +999,13 @@
 		AEB3E33A17F4226F00A273E9 /* RightDetail */ = {
 			isa = PBXGroup;
 			children = (
+				AE739AC4182259F200CF82C5 /* FinanceTool */,
+				AE739AC5182259F200CF82C5 /* MyGooGuu */,
 				AE739AA11822531100CF82C5 /* UserSetting */,
 				AE641ED81820A74600E77775 /* GraphExchange */,
 				AE7EF604181F494B002A3C9E /* NewReport */,
 				AE7E5738181E3FD700A1391E /* DailyStock */,
 				AED071AE1803FD3600C28F32 /* ValueModel */,
-				AEB3E34117F422BC00A273E9 /* SettingViewController.h */,
-				AEB3E34217F422BC00A273E9 /* SettingViewController.m */,
-				AEB3E34417F422C900A273E9 /* MyGooGuuViewController.h */,
-				AEB3E34517F422C900A273E9 /* MyGooGuuViewController.m */,
-				AEB3E34D17F422EE00A273E9 /* FinanceToolViewController.h */,
-				AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */,
 			);
 			path = RightDetail;
 			sourceTree = "<group>";
@@ -1017,6 +1123,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE7EF617181F55A5002A3C9E /* NewComCell.xib in Resources */,
+				AE420AC91823494600DDE7C8 /* CASHCOUNT.png in Resources */,
+				AE420AC81823494600DDE7C8 /* PE.png in Resources */,
 				AEDD0830181FAA6D0095BDA1 /* ValueModelCell.xib in Resources */,
 				AE7E573D181E434100A1391E /* topQuestion.png in Resources */,
 				AE7EF60D181F4BCD002A3C9E /* newReportBackImg.png in Resources */,
@@ -1038,18 +1146,24 @@
 				AEA90A51181E13FD00F3E4DB /* netrequesturl.plist in Resources */,
 				AE4D3E3317E30E1C0044A7DF /* blowgun.png in Resources */,
 				AE8815B0181F85610004B0CF /* blueArrow@2x.png in Resources */,
+				AE420ACB1823494600DDE7C8 /* EXCEL.png in Resources */,
 				AE7EF5FC181F46A1002A3C9E /* dailyStockBt.png in Resources */,
+				AE420ACF1823494600DDE7C8 /* COMVALU.png in Resources */,
 				AE46E6DF181FBE6400DC1370 /* riseup.png in Resources */,
 				AE7EF621181F5708002A3C9E /* newReportCellBack1.png in Resources */,
 				AE7EF5F7181F46A1002A3C9E /* valuModelBtSe.png in Resources */,
 				AE4D3E3417E30E1C0044A7DF /* fire.png in Resources */,
 				AEA90A65181E14B800F3E4DB /* 绿色-按钮.png in Resources */,
+				AE420AD318234D9800DDE7C8 /* finToolBack.png in Resources */,
 				AEA90A5F181E142A00F3E4DB /* calu.html in Resources */,
+				AE420ACD1823494600DDE7C8 /* INVESTCOM.png in Resources */,
 				AE4D3E3517E30E1C0044A7DF /* meetcatbot.png in Resources */,
+				AE420AC71823494600DDE7C8 /* HSTOCK.png in Resources */,
 				AE4D3E3617E30E1C0044A7DF /* meetdogbot.png in Resources */,
 				AE4D3E3717E30E1C0044A7DF /* meetexplodebot.png in Resources */,
 				AE4D3E3817E30E1C0044A7DF /* meetfirebot.png in Resources */,
 				AE4D3E3917E30E1C0044A7DF /* meeticebot.png in Resources */,
+				AE420AD118234D8200DDE7C8 /* finToolRightBack.png in Resources */,
 				AE8815B2181F85610004B0CF /* grayArrow@2x.png in Resources */,
 				AE7EF601181F46A1002A3C9E /* myGooguuBtSe.png in Resources */,
 				AE4D3E3A17E30E1C0044A7DF /* meetminitomatobot.png in Resources */,
@@ -1066,13 +1180,16 @@
 				AE530CAB17E99CD2007E5143 /* liveradio.png in Resources */,
 				AE530CAC17E99CD2007E5143 /* liveradio@2x.png in Resources */,
 				AE7EF615181F5599002A3C9E /* NewReportCell.xib in Resources */,
+				AE420ACC1823494600DDE7C8 /* FUNDTIME.png in Resources */,
 				AE46E6E4181FBE6400DC1370 /* concernmodel.png in Resources */,
+				AE420ACA1823494600DDE7C8 /* WACC.png in Resources */,
 				AE530CAD17E99CD2007E5143 /* myradio.png in Resources */,
 				AE530CAE17E99CD2007E5143 /* myradio@2x.png in Resources */,
 				AEA90A67181E14B800F3E4DB /* 圆环箭头.png in Resources */,
 				AE46E6E0181FBE6400DC1370 /* unsavemodel.png in Resources */,
 				AE530CAF17E99CD2007E5143 /* news.png in Resources */,
 				AE46E6E1181FBE6400DC1370 /* savemodel.png in Resources */,
+				AE420ACE1823494600DDE7C8 /* FREECRASH.png in Resources */,
 				AEA90A4E181E13FD00F3E4DB /* TradeList.plist in Resources */,
 				AE530CB017E99CD2007E5143 /* news@2x.png in Resources */,
 				AE8815AD181F85610004B0CF /* blackArrow.png in Resources */,
@@ -1093,6 +1210,7 @@
 				AE46E6E2181FBE6400DC1370 /* down.png in Resources */,
 				AE50F2CA17F3C41600913AA2 /* title_googuu.png in Resources */,
 				AE50F2CB17F3C41600913AA2 /* 放大镜.png in Resources */,
+				AE420AC51823494600DDE7C8 /* ASTOCK.png in Resources */,
 				AE7EF5F4181F46A1002A3C9E /* IPAD-估值观点-1.png in Resources */,
 				AEA90A4F181E13FD00F3E4DB /* InterestList.plist in Resources */,
 				AE49A718182106A100D9B65F /* icon.png in Resources */,
@@ -1103,6 +1221,7 @@
 				AE8815AE181F85610004B0CF /* blackArrow@2x.png in Resources */,
 				AE641EE91820AA3F00E77775 /* PicCollectionCell.xib in Resources */,
 				AEA90A50181E13FD00F3E4DB /* OccupationalList.plist in Resources */,
+				AE420AC61823494600DDE7C8 /* BETA.png in Resources */,
 				AE50F2D717F3C41600913AA2 /* 搜索框.png in Resources */,
 				AE7EF5FB181F46A1002A3C9E /* graphExchangeBtSe.png in Resources */,
 				AE7EF5F8181F46A1002A3C9E /* financeToolBt.png in Resources */,
@@ -1155,12 +1274,14 @@
 				AE4D3E1017E3053C0044A7DF /* AppDelegate.m in Sources */,
 				AE7E5736181E3F7400A1391E /* RenderView.m in Sources */,
 				AE7E5755181E54B400A1391E /* AMProgressViewGradient.m in Sources */,
+				AE739ABC182257FB00CF82C5 /* NSDate+convenience.m in Sources */,
 				AE7E5737181E3F7400A1391E /* RotatedView.m in Sources */,
 				AE4D3E2317E308BC0044A7DF /* RightViewController.m in Sources */,
 				AE3FCB8917E6D9C9001A04A1 /* Utiles.m in Sources */,
 				AE3FCB8C17E6DA23001A04A1 /* CommonlyMacros.m in Sources */,
 				AE3FCB9017E6DE74001A04A1 /* PopListViewController.m in Sources */,
 				AE3FCB9317E6E879001A04A1 /* FontListViewController.m in Sources */,
+				AE739AC1182257FB00CF82C5 /* VRGCalendarView.m in Sources */,
 				AE641EDD1820A91600E77775 /* CustomCellBackground.m in Sources */,
 				AE3FCB9617E6F2D7001A04A1 /* FontSizeViewController.m in Sources */,
 				AE7EF61E181F564A002A3C9E /* NewComCell.m in Sources */,
@@ -1181,12 +1302,14 @@
 				AE641EE11820A94400E77775 /* FinanPicCollectCell.m in Sources */,
 				AE530CA117E99B9F007E5143 /* NGColoredViewController.m in Sources */,
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
+				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
 				AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */,
 				AE8B4508182101930047F4BB /* DEMONavigationController.m in Sources */,
 				AEAD74DE17EE7FAB00A659FA /* KLCircleViewController.m in Sources */,
 				AED071B11803FD8E00C28F32 /* ValueModelIndicator.m in Sources */,
 				AE7E5754181E54B400A1391E /* AMProgressView.m in Sources */,
 				AEAD74ED17EE965800A659FA /* CenterViewController.m in Sources */,
+				AE739ABE182257FB00CF82C5 /* UIColor+expanded.m in Sources */,
 				AE93268017F0242000224B12 /* NSStringWrapper.m in Sources */,
 				AE0D226217F172D20056C7BF /* PieViewController.m in Sources */,
 				AEDFE96117F279BE0085CA0F /* MGSplitCornersView.m in Sources */,
@@ -1198,6 +1321,8 @@
 				AEB3E33017F40D4500A273E9 /* UILabel+VerticalAlign.m in Sources */,
 				AEB3E33117F40D4500A273E9 /* UINavigationController+Autorotate.m in Sources */,
 				AEB3E33217F40D4500A273E9 /* UITabBarController+Autorotate.m in Sources */,
+				AE739ABD182257FB00CF82C5 /* NSMutableArray+convenience.m in Sources */,
+				AE745E4F1823A88B000A60A7 /* FInanceDetailViewController.m in Sources */,
 				AE7EF61B181F5630002A3C9E /* NewReportCell.m in Sources */,
 				AEB3E33517F40DA100A273E9 /* EnumSummary.m in Sources */,
 				AE656F0D1805042D006F1701 /* LeftBarViewController.m in Sources */,
@@ -1210,6 +1335,7 @@
 				AEB3E34917F422D700A273E9 /* NewReportViewController.m in Sources */,
 				AEB3E34C17F422E300A273E9 /* ValuModelViewController.m in Sources */,
 				AEB3E34F17F422EE00A273E9 /* FinanceToolViewController.m in Sources */,
+				AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

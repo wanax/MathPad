@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FinanceToolViewController : UIViewController
+@interface FinanceToolViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,retain) UITableView *cusTable;
 
 @end

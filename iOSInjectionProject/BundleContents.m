@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle3
+#define INJECTION_BUNDLE InjectionBundle6
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/GraphExchangeViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/FinanceTool/FInanceDetailViewController.m"
 
 
-@interface InjectionBundle3 : NSObject
+@interface InjectionBundle6 : NSObject
 @end
-@implementation InjectionBundle3
+@implementation InjectionBundle6
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_GraphExchangeViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_GraphExchangeViewController notify:4];
+    extern Class OBJC_CLASS_$_FInanceDetailViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_FInanceDetailViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

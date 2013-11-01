@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VRGCalendarView.h"
 
-@interface MyGooGuuViewController : UIViewController
+@interface MyGooGuuViewController : UIViewController<VRGCalendarViewDelegate>
 
 @end

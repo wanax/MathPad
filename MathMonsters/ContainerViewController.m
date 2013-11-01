@@ -139,7 +139,14 @@
             [self setRightDetail:tabBarController];
             [self.view addSubview:tabBarController.view];
         } else {
+            UINavigationController *nav=nil;
             UIViewController * vc = [[NSClassFromString(controllerName) alloc] init];
+            /*if([controllerName isEqualToString:@"FinanceToolViewController"]){
+                nav=[[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+                [self setRightDetail:nav];
+            }else{
+                [self setRightDetail:vc];
+            }*/
             [self setRightDetail:vc];
             SAFE_RELEASE(vc);
         }
