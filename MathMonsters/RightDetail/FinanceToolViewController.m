@@ -8,10 +8,9 @@
 
 #import "FinanceToolViewController.h"
 #import "FinanceToolLeftListViewController.h"
+#import "CounterViewController.h"
 #import "FInanceDetailViewController.h"
 #import "MGSplitViewController.h"
-#import "MGSplitDividerView.h"
-#import "MGSplitCornersView.h"
 #import "FlatUIKit.h"
 
 @interface FinanceToolViewController ()
@@ -32,9 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor=[Utiles colorWithHexString:@"#26160D"];
     [self initComponents];
+}
+
+-(void)toolChanged:(NSString *)pName pUnit:(NSString *)pUnit rName:(NSString *)rName rUnit:(NSString *)rUnit type:(FinancalToolsType)type{
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:pName,@"pName",pUnit,@"pUnit",rName,@"rName",rUnit,@"rUnit", nil];
+    self.detail.params=params;
+    self.detail.toolType=BetaFactor;
+    [self.detail viewWillAppear:YES];
 }
 
 -(void)initComponents{
@@ -42,32 +47,27 @@
     UIImageView *backView=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finToolBack"]] autorelease];
     [self.view addSubview:backView];
     
-    UIImageView *rightBackView=[[[UIImageView alloc] initWithFrame:CGRectMake(273,80,628,568)] autorelease];
-    [rightBackView setImage:[UIImage imageNamed:@"finToolRightBack"]];
-    //[self.view addSubview:rightBackView];
+    FinanceToolLeftListViewController *leftList=[[FinanceToolLeftListViewController alloc] init];
+    leftList.delegate=self;
+    UINavigationController *leftListNav=[[UINavigationController alloc] initWithRootViewController:leftList];
+    leftListNav.view.backgroundColor=[UIColor greenSeaColor];
     
-    FinanceToolLeftListViewController *test=[[FinanceToolLeftListViewController alloc] init];
-    //test.view.frame=CGRectMake(0,0,80,568);
-    UINavigationController *testNav=[[UINavigationController alloc] initWithRootViewController:test];
-    
-    FInanceDetailViewController *detail=[[FInanceDetailViewController alloc] init];
-    detail.view.frame=CGRectMake(0,0,50,50);
-    
+    self.detail=[[CounterViewController alloc] init];
+    UINavigationController *detailNav=[[UINavigationController alloc] initWithRootViewController:self.detail];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"贝塔系数,债务占比,有效税率",@"pName",@"0,%,%",@"pUnit",@"股权占比,无杠杆贝塔系数",@"rName",@"%,1",@"rUnit", nil];
+    self.detail.params=params;
+    self.detail.toolType=BetaFactor;
+
     MGSplitViewController *split=[[MGSplitViewController alloc] init];
-    split.view.frame=CGRectMake(80,80,1000,1000);
-    split.showsMasterInLandscape=YES;
-    split.detailViewController.view.frame=CGRectMake(0,0,200,200);
-    //split.dividerView.splitViewController.view.frame=CGRectMake(40,80,600,870);
-    split.dividerStyle=MGSplitViewDividerStylePaneSplitter;
-    split.viewControllers=@[testNav,detail];
+    split.view.frame=CGRectMake(40,80,568,860);
+    split.splitPosition=200;
+    split.viewControllers=@[leftListNav,detailNav];
     split.view.backgroundColor=[UIColor grayColor];
-    split.allowsDraggingDivider=YES;
+
     [self.view addSubview:split.view];
     [self addChildViewController:split];
     
-    //[self.view addSubview:testNav.topViewController.view];
-    //[self addChildViewController:testNav];
-    
+    //[self logViewTreeForMainWindow];
     /*self.cusTable=[[UITableView alloc] initWithFrame:CGRectMake(80,80,184,568)];
     self.cusTable.dataSource=self;
     self.cusTable.delegate=self;

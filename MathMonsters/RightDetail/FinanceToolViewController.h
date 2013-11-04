@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FinanceToolLeftListViewController.h"
 
-@interface FinanceToolViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@class CounterViewController;
+
+@interface FinanceToolViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,LeftToolListDelegate>
 
 @property (nonatomic,retain) UITableView *cusTable;
+
+@property (nonatomic,retain) CounterViewController *detail;
 
 @end

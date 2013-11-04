@@ -69,7 +69,6 @@ double rad2Deg(double radians)
 			[[UIColor redColor] set];
 			UIRectFill(self.bounds);
 		}
-		
 		float maxX = CGRectGetMaxX(self.bounds);
 		float maxY = CGRectGetMaxY(self.bounds);
 		UIBezierPath *path = [UIBezierPath bezierPath];

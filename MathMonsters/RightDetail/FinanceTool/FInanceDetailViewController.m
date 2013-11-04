@@ -7,6 +7,7 @@
 //
 
 #import "FInanceDetailViewController.h"
+#import "UIColor+FlatUI.h"
 
 @interface FInanceDetailViewController ()
 
@@ -26,13 +27,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.view.frame=CGRectMake(0,0,200,200);
-    UIViewController *fuck=[[UIViewController alloc] init];
-    fuck.view.frame=CGRectMake(0,0,200,200);
-    fuck.view.backgroundColor=[UIColor magentaColor];
-    [self.view addSubview:fuck.view];
-    self.view.backgroundColor=[UIColor purpleColor];
+    [self initComponents];
 }
+
+-(void)initComponents{
+    UIImageView *rightBackView=[[[UIImageView alloc] initWithFrame:CGRectMake(0,0,630,568)] autorelease];
+    [rightBackView setImage:[UIImage imageNamed:@"finToolRightBack"]];
+    [self.view addSubview:rightBackView];
+}
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

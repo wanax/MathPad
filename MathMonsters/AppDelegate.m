@@ -45,7 +45,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.left=[[FontListViewController alloc] init];
-    [self setPonyDebugger];
+    //[self setPonyDebugger];
     ContainerViewController *content=[[ContainerViewController alloc] init];
     DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:content];
     DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] init];

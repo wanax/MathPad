@@ -11,8 +11,10 @@
 #import "MGSplitCornersView.h"
 
 #define MG_DEFAULT_SPLIT_POSITION		184.0	// default width of master view in UISplitViewController.
+#define MG_DEFAULT_FRAME_HEIGHT         568.0
+#define MG_DEFAULT_FRAME_WIDTH          860.0
 #define MG_DEFAULT_SPLIT_WIDTH			1.0		// default width of split-gutter in UISplitViewController.
-#define MG_DEFAULT_CORNER_RADIUS		0.0		// default corner-radius of overlapping split-inner corners on the master and detail views.
+#define MG_DEFAULT_CORNER_RADIUS		1.0		// default corner-radius of overlapping split-inner corners on the master and detail views.
 #define MG_DEFAULT_CORNER_COLOR			[UIColor blackColor]	// default color of intruding inner corners (and divider background).
 
 #define MG_PANESPLITTER_CORNER_RADIUS	0.0		// corner-radius of split-inner corners for MGSplitViewDividerStylePaneSplitter style.
@@ -284,7 +286,7 @@
 				// Move off-screen.
 				newFrame.origin.x -= (_splitPosition + _splitWidth);
 			}
-			
+			newFrame.size.height=MG_DEFAULT_FRAME_HEIGHT;
 			newFrame.size.width = _splitPosition;
 			masterRect = newFrame;
 			
@@ -293,7 +295,7 @@
 			dividerRect = newFrame;
 			
 			newFrame.origin.x += newFrame.size.width;
-			newFrame.size.width = width - newFrame.origin.x;
+			newFrame.size.width =MG_DEFAULT_FRAME_WIDTH- newFrame.origin.x;
 			detailRect = newFrame;
 			
 		} else {

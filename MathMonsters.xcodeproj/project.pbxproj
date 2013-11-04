@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8A5B5A59F6984D628AD70DDF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B649E3378074894981CC885 /* libPods.a */; };
+		AE09139A1827A34C007A7B97 /* BetaFactorCountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0913991827A34C007A7B97 /* BetaFactorCountView.xib */; };
+		AE09139C1827A4A6007A7B97 /* ChoseBetaFactorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE09139B1827A4A6007A7B97 /* ChoseBetaFactorView.xib */; };
 		AE0D225D17F1721F0056C7BF /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0D225A17F1721F0056C7BF /* shadow.png */; };
 		AE0D225E17F1721F0056C7BF /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0D225B17F1721F0056C7BF /* select.png */; };
 		AE0D225F17F1721F0056C7BF /* center.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0D225C17F1721F0056C7BF /* center.png */; };
 		AE0D226217F172D20056C7BF /* PieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D226117F172D20056C7BF /* PieViewController.m */; };
+		AE0F050C1827464B00DA13D4 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F05071827464B00DA13D4 /* CounterViewController.m */; };
+		AE0F050D1827464B00DA13D4 /* BetaFactorCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F05091827464B00DA13D4 /* BetaFactorCountViewController.m */; };
+		AE0F050E1827464B00DA13D4 /* ChoseBetaFactorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F050B1827464B00DA13D4 /* ChoseBetaFactorViewController.m */; };
+		AE0F05171827484900DA13D4 /* IQKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F05141827484900DA13D4 /* IQKeyBoardManager.m */; };
+		AE0F05181827484900DA13D4 /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F05161827484900DA13D4 /* IQSegmentedNextPrevious.m */; };
+		AE0F051B182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F051A182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m */; };
+		AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F051D1827495000DA13D4 /* CounterBankViewController.m */; };
 		AE3FCB8917E6D9C9001A04A1 /* Utiles.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB8817E6D9C9001A04A1 /* Utiles.m */; };
 		AE3FCB8C17E6DA23001A04A1 /* CommonlyMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB8B17E6DA23001A04A1 /* CommonlyMacros.m */; };
 		AE3FCB9017E6DE74001A04A1 /* PopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB8F17E6DE73001A04A1 /* PopListViewController.m */; };
@@ -191,11 +200,27 @@
 /* Begin PBXFileReference section */
 		2B649E3378074894981CC885 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3340E439CB96480F951F8362 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AE0913991827A34C007A7B97 /* BetaFactorCountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetaFactorCountView.xib; sourceTree = "<group>"; };
+		AE09139B1827A4A6007A7B97 /* ChoseBetaFactorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoseBetaFactorView.xib; sourceTree = "<group>"; };
 		AE0D225A17F1721F0056C7BF /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		AE0D225B17F1721F0056C7BF /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
 		AE0D225C17F1721F0056C7BF /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
 		AE0D226017F172D20056C7BF /* PieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PieViewController.h; path = ../../PieViewController.h; sourceTree = "<group>"; };
 		AE0D226117F172D20056C7BF /* PieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PieViewController.m; path = ../../PieViewController.m; sourceTree = "<group>"; };
+		AE0F05061827464B00DA13D4 /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterViewController.h; sourceTree = "<group>"; };
+		AE0F05071827464B00DA13D4 /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterViewController.m; sourceTree = "<group>"; };
+		AE0F05081827464B00DA13D4 /* BetaFactorCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetaFactorCountViewController.h; sourceTree = "<group>"; };
+		AE0F05091827464B00DA13D4 /* BetaFactorCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetaFactorCountViewController.m; sourceTree = "<group>"; };
+		AE0F050A1827464B00DA13D4 /* ChoseBetaFactorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseBetaFactorViewController.h; sourceTree = "<group>"; };
+		AE0F050B1827464B00DA13D4 /* ChoseBetaFactorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseBetaFactorViewController.m; sourceTree = "<group>"; };
+		AE0F05131827484900DA13D4 /* IQKeyBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyBoardManager.h; sourceTree = "<group>"; };
+		AE0F05141827484900DA13D4 /* IQKeyBoardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyBoardManager.m; sourceTree = "<group>"; };
+		AE0F05151827484900DA13D4 /* IQSegmentedNextPrevious.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQSegmentedNextPrevious.h; sourceTree = "<group>"; };
+		AE0F05161827484900DA13D4 /* IQSegmentedNextPrevious.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQSegmentedNextPrevious.m; sourceTree = "<group>"; };
+		AE0F0519182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceToolGrade2LeftListViewController.h; sourceTree = "<group>"; };
+		AE0F051A182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceToolGrade2LeftListViewController.m; sourceTree = "<group>"; };
+		AE0F051C1827495000DA13D4 /* CounterBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterBankViewController.h; sourceTree = "<group>"; };
+		AE0F051D1827495000DA13D4 /* CounterBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterBankViewController.m; sourceTree = "<group>"; };
 		AE3FCB8717E6D9C9001A04A1 /* Utiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utiles.h; sourceTree = "<group>"; };
 		AE3FCB8817E6D9C9001A04A1 /* Utiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utiles.m; sourceTree = "<group>"; };
 		AE3FCB8A17E6DA23001A04A1 /* CommonlyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonlyMacros.h; sourceTree = "<group>"; };
@@ -464,6 +489,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0F05121827484900DA13D4 /* IQKeyBoardManager */ = {
+			isa = PBXGroup;
+			children = (
+				AE0F05131827484900DA13D4 /* IQKeyBoardManager.h */,
+				AE0F05141827484900DA13D4 /* IQKeyBoardManager.m */,
+				AE0F05151827484900DA13D4 /* IQSegmentedNextPrevious.h */,
+				AE0F05161827484900DA13D4 /* IQSegmentedNextPrevious.m */,
+			);
+			path = IQKeyBoardManager;
+			sourceTree = "<group>";
+		};
 		AE3FCB8D17E6DD3C001A04A1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +754,7 @@
 		AE6FCEF017E93F6C00DCDB77 /* Plugs */ = {
 			isa = PBXGroup;
 			children = (
+				AE0F05121827484900DA13D4 /* IQKeyBoardManager */,
 				AE739AA3182257FB00CF82C5 /* Vurig Calendar */,
 				AE7EF62B181F6219002A3C9E /* EGORefreshTableHeaderView.h */,
 				AE7EF62C181F6219002A3C9E /* EGORefreshTableHeaderView.m */,
@@ -802,6 +839,16 @@
 				AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */,
 				AE745E2418237EA4000A60A7 /* FinanceToolLeftListViewController.h */,
 				AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */,
+				AE0F0519182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.h */,
+				AE0F051A182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m */,
+				AE0F05061827464B00DA13D4 /* CounterViewController.h */,
+				AE0F05071827464B00DA13D4 /* CounterViewController.m */,
+				AE0F051C1827495000DA13D4 /* CounterBankViewController.h */,
+				AE0F051D1827495000DA13D4 /* CounterBankViewController.m */,
+				AE0F05081827464B00DA13D4 /* BetaFactorCountViewController.h */,
+				AE0F05091827464B00DA13D4 /* BetaFactorCountViewController.m */,
+				AE0F050A1827464B00DA13D4 /* ChoseBetaFactorViewController.h */,
+				AE0F050B1827464B00DA13D4 /* ChoseBetaFactorViewController.m */,
 				AE745E4D1823A88B000A60A7 /* FInanceDetailViewController.h */,
 				AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */,
 			);
@@ -1025,6 +1072,8 @@
 			isa = PBXGroup;
 			children = (
 				AE7EF613181F5580002A3C9E /* CellNib */,
+				AE0913991827A34C007A7B97 /* BetaFactorCountView.xib */,
+				AE09139B1827A4A6007A7B97 /* ChoseBetaFactorView.xib */,
 			);
 			path = NibFile;
 			sourceTree = "<group>";
@@ -1189,6 +1238,7 @@
 				AE46E6E0181FBE6400DC1370 /* unsavemodel.png in Resources */,
 				AE530CAF17E99CD2007E5143 /* news.png in Resources */,
 				AE46E6E1181FBE6400DC1370 /* savemodel.png in Resources */,
+				AE09139C1827A4A6007A7B97 /* ChoseBetaFactorView.xib in Resources */,
 				AE420ACE1823494600DDE7C8 /* FREECRASH.png in Resources */,
 				AEA90A4E181E13FD00F3E4DB /* TradeList.plist in Resources */,
 				AE530CB017E99CD2007E5143 /* news@2x.png in Resources */,
@@ -1199,6 +1249,7 @@
 				AE530CB117E99CD2007E5143 /* ondemand.png in Resources */,
 				AEA90A53181E13FD00F3E4DB /* userconfigure.plist in Resources */,
 				AE530CB217E99CD2007E5143 /* ondemand@2x.png in Resources */,
+				AE09139A1827A34C007A7B97 /* BetaFactorCountView.xib in Resources */,
 				AEA90A66181E14B800F3E4DB /* dailyBackImg.png in Resources */,
 				AE8B44FA1820E8C00047F4BB /* littleTag.png in Resources */,
 				AE7EF5F5181F46A1002A3C9E /* IPAD-估值观点-2.png in Resources */,
@@ -1271,6 +1322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4D3E0C17E3053C0044A7DF /* main.m in Sources */,
+				AE0F050D1827464B00DA13D4 /* BetaFactorCountViewController.m in Sources */,
 				AE4D3E1017E3053C0044A7DF /* AppDelegate.m in Sources */,
 				AE7E5736181E3F7400A1391E /* RenderView.m in Sources */,
 				AE7E5755181E54B400A1391E /* AMProgressViewGradient.m in Sources */,
@@ -1281,16 +1333,20 @@
 				AE3FCB8C17E6DA23001A04A1 /* CommonlyMacros.m in Sources */,
 				AE3FCB9017E6DE74001A04A1 /* PopListViewController.m in Sources */,
 				AE3FCB9317E6E879001A04A1 /* FontListViewController.m in Sources */,
+				AE0F05171827484900DA13D4 /* IQKeyBoardManager.m in Sources */,
+				AE0F05181827484900DA13D4 /* IQSegmentedNextPrevious.m in Sources */,
 				AE739AC1182257FB00CF82C5 /* VRGCalendarView.m in Sources */,
 				AE641EDD1820A91600E77775 /* CustomCellBackground.m in Sources */,
 				AE3FCB9617E6F2D7001A04A1 /* FontSizeViewController.m in Sources */,
 				AE7EF61E181F564A002A3C9E /* NewComCell.m in Sources */,
 				AE6FCF1517E9403800DCDB77 /* Toast+UIView.m in Sources */,
 				AE6FCF1817E940DA00DCDB77 /* MBProgressHUD.m in Sources */,
+				AE0F050E1827464B00DA13D4 /* ChoseBetaFactorViewController.m in Sources */,
 				AE7EF610181F4C93002A3C9E /* NewReportIndicator.m in Sources */,
 				AE6FCF1C17E9410100DCDB77 /* GCDiscreetNotificationView.m in Sources */,
 				AE530C8417E997B8007E5143 /* GTMStackTrace.m in Sources */,
 				AE530C8517E997B8007E5143 /* iConsole.m in Sources */,
+				AE0F050C1827464B00DA13D4 /* CounterViewController.m in Sources */,
 				AE530C9717E99B3F007E5143 /* NGTabBar.m in Sources */,
 				AE656F0C1805042D006F1701 /* ContainerViewController.m in Sources */,
 				AE530C9817E99B3F007E5143 /* NGTabBarController.m in Sources */,
@@ -1302,10 +1358,12 @@
 				AE641EE11820A94400E77775 /* FinanPicCollectCell.m in Sources */,
 				AE530CA117E99B9F007E5143 /* NGColoredViewController.m in Sources */,
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
+				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
 				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
 				AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */,
 				AE8B4508182101930047F4BB /* DEMONavigationController.m in Sources */,
 				AEAD74DE17EE7FAB00A659FA /* KLCircleViewController.m in Sources */,
+				AE0F051B182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m in Sources */,
 				AED071B11803FD8E00C28F32 /* ValueModelIndicator.m in Sources */,
 				AE7E5754181E54B400A1391E /* AMProgressView.m in Sources */,
 				AEAD74ED17EE965800A659FA /* CenterViewController.m in Sources */,
