@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        LoggerSetViewerHost(NULL, (CFStringRef)@"127.0.0.1", (UInt32)50000);
+        //LoggerSetViewerHost(NULL, (CFStringRef)@"127.0.0.1", (UInt32)50000);
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

@@ -86,6 +86,7 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
                 [temp addObject:t];
             }
         }
+        [self.photoDataSource removeAllObjects];
         for (id obj in temp) {
             CXPhoto *photo2=[[[CXPhoto alloc] initWithURL:[NSURL URLWithString:[obj objectForKey:@"url"]]] autorelease];
             [self.photoDataSource addObject:photo2];

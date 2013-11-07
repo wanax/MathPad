@@ -11,17 +11,18 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
     #import "Utiles.h"
     #import "CommonlyMacros.h"
     #import "JSONKit.h"
     #import "PonyDebugger.h"
-    #import "LoggerClient.h"
+    //#import "LoggerClient.h"
     #import "iConsole.h"
-    #import <QuartzCore/QuartzCore.h>
     #import "NSStringWrapper.h"
     #import "EnumSummary.h"
     #import "MBProgressHUD.h"
     #import "AppDelegate.h"
+    #import "FlatUIKit.h"
 #endif
 
 // From here to end of file added by Injection Plugin //

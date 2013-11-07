@@ -8,6 +8,7 @@
 
 #import "CounterBankViewController.h"
 #import "IQKeyBoardManager.h"
+#import "FlatUIKit.h"
 
 #define PARAM(x) [self getParam:x]
 #define PPARAM(x) ([self getParam:x]/100)
@@ -52,7 +53,7 @@
     [IQKeyBoardManager enableKeyboardManger];
     //添加户口类别Bt
     NSArray *acBtNames=[[self.params objectForKey:@"b1Name"] componentsSeparatedByString:@","];
-    int n=100,m=100,i=0,j=0;
+    int n=20,m=20,i=0,j=0;
     [self addLabel:@"户口类别" y:n andBt:acBtNames index:300];
     //添加交易途径
     NSArray *trBtNames=[[self.params objectForKey:@"b2Name"] componentsSeparatedByString:@","];
@@ -63,44 +64,51 @@
     NSArray *pNames=[[self.params objectForKey:@"pName"] componentsSeparatedByString:@","];
     NSArray *pUnits=[[self.params objectForKey:@"pUnit"] componentsSeparatedByString:@","];
     m=n;
-    for(NSString *name in pNames){
-        [self addLabel:name frame:CGRectMake(10,n+=30,150,25) inputFrame:CGRectMake(160,m+=30,100,25) unit:[pUnits objectAtIndex:i++] index:j++ enable:YES];
+    for(int x=0;x<[pNames count];x+=2){
+        [self addLabel:[pNames objectAtIndex:x] frame:CGRectMake(10,n+=50,200,40) inputFrame:CGRectMake(210,m+=50,100,30) unit:[pUnits objectAtIndex:i++] index:j++ enable:YES];
+        if((x+1)<=[pNames count]-1){
+            [self addLabel:[pNames objectAtIndex:(x+1)] frame:CGRectMake(320,n,200,40) inputFrame:CGRectMake(520,m,100,30) unit:[pUnits objectAtIndex:i++] index:j++ enable:YES];
+        }
     }
     
     //添加计算button
-    UIButton *calBt=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [calBt setTitle:@"计算" forState:UIControlStateNormal];
-    [calBt setBackgroundColor:[UIColor grayColor]];
-    [calBt setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
-    [calBt setFrame:CGRectMake(10,m+40,SCREEN_WIDTH-20,30)];
-    [calBt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:14.0]];
-    [calBt addTarget:self action:@selector(calBtClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:calBt];
+    [self addBt:@"计算" frame:CGRectMake(60,m+60,200,30) fun:@selector(calBtClicked:)];
+    [self addBt:@"返回" frame:CGRectMake(360,m+60,200,30) fun:@selector(backBtClicked:)];
+    
     
     //添加结果名和结果显示label
-    n+=50,m+=50;
+    n+=80,m+=80;
     [self addSingleLabel:@"买入" frame:CGRectMake(10,n+=30,150,25)];
     NSArray *r1Names=[[self.params objectForKey:@"r1Name"] componentsSeparatedByString:@","];
     NSArray *r1Units=[[self.params objectForKey:@"r1Unit"] componentsSeparatedByString:@","];
     m=n,i=0,j=0;
-    for(NSString *name in r1Names){
-        [self addLabel:name frame:CGRectMake(10,n+=30,150,25) inputFrame:CGRectMake(160,m+=30,150,25) unit:[r1Units objectAtIndex:i++] index:j++ enable:NO];
+    for(int x=0;x<[r1Names count];x+=2){
+        [self addLabel:[r1Names objectAtIndex:x] frame:CGRectMake(10,n+=50,200,40) inputFrame:CGRectMake(210,m+=50,100,30) unit:[r1Units objectAtIndex:i++] index:j++ enable:NO];
+        if((x+1)<=[r1Names count]-1){
+            [self addLabel:[r1Names objectAtIndex:(x+1)] frame:CGRectMake(320,n,200,40) inputFrame:CGRectMake(520,m,100,30) unit:[r1Units objectAtIndex:i++] index:j++ enable:NO];
+        }
     }
 
-    [self addSingleLabel:@"卖出" frame:CGRectMake(10,n+=30,150,25)];
+    [self addSingleLabel:@"卖出" frame:CGRectMake(10,n+=50,150,25)];
     NSArray *r2Names=[[self.params objectForKey:@"r2Name"] componentsSeparatedByString:@","];
     NSArray *r2Units=[[self.params objectForKey:@"r2Unit"] componentsSeparatedByString:@","];
     m=n,i=0;
-    for(NSString *name in r2Names){
-        [self addLabel:name frame:CGRectMake(10,n+=30,150,25) inputFrame:CGRectMake(160,m+=30,150,25) unit:[r2Units objectAtIndex:i++] index:j++ enable:NO];
+    for(int x=0;x<[r1Names count];x+=2){
+        [self addLabel:[r2Names objectAtIndex:x] frame:CGRectMake(10,n+=50,200,40) inputFrame:CGRectMake(210,m+=50,100,30) unit:[r2Units objectAtIndex:i++] index:j++ enable:NO];
+        if((x+1)<=[r2Names count]-1){
+            [self addLabel:[r2Names objectAtIndex:(x+1)] frame:CGRectMake(320,n,200,40) inputFrame:CGRectMake(520,m,100,30) unit:[r2Units objectAtIndex:i++] index:j++ enable:NO];
+        }
     }
     
-    [self addSingleLabel:@"统计" frame:CGRectMake(10,n+=30,150,25)];
+    [self addSingleLabel:@"统计" frame:CGRectMake(10,n+=50,150,25)];
     NSArray *r3Names=[[self.params objectForKey:@"r3Name"] componentsSeparatedByString:@","];
     NSArray *r3Units=[[self.params objectForKey:@"r3Unit"] componentsSeparatedByString:@","];
     m=n,i=0;
-    for(NSString *name in r3Names){
-        [self addLabel:name frame:CGRectMake(10,n+=30,150,25) inputFrame:CGRectMake(160,m+=30,150,25) unit:[r3Units objectAtIndex:i++] index:j++ enable:NO];
+    for(int x=0;x<[r3Names count];x+=2){
+        [self addLabel:[r3Names objectAtIndex:x] frame:CGRectMake(10,n+=50,200,40) inputFrame:CGRectMake(210,m+=50,100,30) unit:[r3Units objectAtIndex:i++] index:j++ enable:NO];
+        if((x+1)<=[r3Names count]-1){
+            [self addLabel:[r3Names objectAtIndex:(x+1)] frame:CGRectMake(320,n,200,40) inputFrame:CGRectMake(520,m,100,30) unit:[r3Units objectAtIndex:i++] index:j++ enable:NO];
+        }
     }
     
     
@@ -118,6 +126,10 @@
 
 -(void)backTap:(UITapGestureRecognizer *)tap{
     [self dismissText];
+}
+
+-(void)backBtClicked:(UIButton *)bt{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)calBtClicked:(UIButton *)bt{
@@ -271,6 +283,20 @@
     
 }
 
+-(void)addBt:(NSString *)title frame:(CGRect)rect fun:(SEL)fun{
+    FUIButton *bt=[FUIButton buttonWithType:UIButtonTypeCustom];
+    [bt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:12.0]];
+    [bt setTitle:title forState:UIControlStateNormal];
+    [bt setFrame:rect];
+    bt.buttonColor = [UIColor concreteColor];
+    [bt setSelected:YES];
+    bt.shadowHeight = 2.0f;
+    bt.cornerRadius = 0.0f;
+    [bt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [bt addTarget:self action:fun forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bt];
+}
+
 -(void)addSingleLabel:(NSString *)name frame:(CGRect)rect{
     UILabel *label=[[[UILabel alloc] initWithFrame:rect] autorelease];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -315,7 +341,8 @@
     
     UILabel *label=[[[UILabel alloc] initWithFrame:rect] autorelease];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont fontWithName:@"Heiti SC" size:13.0]];
+    [label setFont:[UIFont fontWithName:@"Heiti SC" size:18.0]];
+    [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:name];
     [self.view addSubview:label];
     
@@ -323,7 +350,7 @@
     textField.delegate=self;
     textField.keyboardType=UIKeyboardTypeDecimalPad;
     [textField setBackgroundColor:[UIColor whiteColor]];
-    textField.placeholder = [unit isEqualToString:@"2"]?@"":unit;
+    textField.placeholder = unit;
     [textField setEnabled:flag];
     [textField placeholderRectForBounds:CGRectMake(20,5,80,20)];
     textField.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
@@ -343,8 +370,8 @@
     if([unit isEqualToString:@"0"]){
         UIButton *getBetaBt=[UIButton buttonWithType:UIButtonTypeRoundedRect];
         [getBetaBt setTitle:@"获取Beta值" forState:UIControlStateNormal];
-        [getBetaBt setFrame:CGRectMake(rect2.origin.x+rect2.size.width-15,rect2.origin.y-3,70,30)];
-        [getBetaBt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:12.0]];
+        [getBetaBt setFrame:CGRectMake(rect2.origin.x+rect2.size.width-20,rect2.origin.y-3,80,30)];
+        [getBetaBt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:13.0]];
         [getBetaBt addTarget:self action:@selector(getBetaFactor:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:getBetaBt];
         [textField setFrame:CGRectMake(rect2.origin.x-20,rect2.origin.y,rect2.size.width,rect2.size.height)];

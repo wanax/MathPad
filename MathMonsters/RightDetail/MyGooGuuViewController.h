@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "VRGCalendarView.h"
 
-@interface MyGooGuuViewController : UIViewController<VRGCalendarViewDelegate>
+@interface MyGooGuuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,retain) UITableView *cusTable;
+
+@property (nonatomic,retain) NSArray *calArr;
+@property (nonatomic,retain) NSArray *monArrEn;
+@property (nonatomic,retain) NSArray *monArrCn;
 
 @end

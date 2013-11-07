@@ -9,6 +9,7 @@
 #import "CounterViewController.h"
 #import "BetaFactorCountViewController.h"
 #import "IQKeyBoardManager.h"
+#import "FlatUIKit.h"
 
 @interface CounterViewController ()
 
@@ -34,7 +35,7 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated{  
+-(void)viewWillAppear:(BOOL)animated{
     for(UIView *view in [self.view subviews]){
         [view removeFromSuperview];
     }
@@ -50,7 +51,7 @@
     
 	[self.view setBackgroundColor:[Utiles colorWithHexString:@"#FDFBE4"]];
     [self.view setFrame:CGRectMake(0,0,320,676)];
-   
+    
     UITapGestureRecognizer *backTap=[[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backTap:)] autorelease];
     [self.view addGestureRecognizer:backTap];
     
@@ -77,65 +78,53 @@
     [self dismissText];
 }
 
-- (void)dumpView:(UIView *)aView atIndent:(int)indent into:(NSMutableString *)outstring
-{
-    for (int i = 0; i < indent; i++) [outstring appendString:@"--"];
-    [outstring appendFormat:@"[%2d] %@\n", indent, [[aView class] description]];
-    for (UIView *view in [aView subviews])
-        [self dumpView:view atIndent:indent + 1 into:outstring];
-}
-
-// Start the tree recursion at level 0 with the root view
-- (NSString *) displayViews: (UIView *) aView
-{
-    NSMutableString *outstring = [[NSMutableString alloc] init];
-    [self dumpView: [[UIApplication sharedApplication] delegate].window atIndent:0 into:outstring];
-    return [outstring autorelease];
-}
-// Show the tree
-- (void)logViewTreeForMainWindow
-{
-    //  CFShow([self displayViews: self.window]);
-    NSLog(@"The view tree:\n%@", [self displayViews:[[UIApplication sharedApplication] delegate].window]);
-}
- 
 
 -(void)initComponents{
     
     [IQKeyBoardManager installKeyboardManager];
     [IQKeyBoardManager enableKeyboardManger];
-
+    
     //添加参数名和参数输入input
     NSArray *pNames=[[self.params objectForKey:@"pName"] componentsSeparatedByString:@","];
     NSArray *pUnits=[[self.params objectForKey:@"pUnit"] componentsSeparatedByString:@","];
-    int n=50,m=50,i=0,j=0;
-    for(NSString *name in pNames){
-        [self addLabel:name frame:CGRectMake(10,n+=30,150,25) inputFrame:CGRectMake(160,m+=30,100,25) unit:[pUnits objectAtIndex:i++] index:j++ enable:YES];
+    int n=10,m=15,i=0,j=0;
+    for(int x=0;x<[pNames count];x+=2){
+        [self addLabel:[pNames objectAtIndex:x] frame:CGRectMake(10,n+=50,200,40) inputFrame:CGRectMake(210,m+=50,100,30) unit:[pUnits objectAtIndex:i++] index:j++ enable:YES];
+        if((x+1)<=[pNames count]-1){
+            [self addLabel:[pNames objectAtIndex:(x+1)] frame:CGRectMake(320,n,200,40) inputFrame:CGRectMake(520,m,100,30) unit:[pUnits objectAtIndex:i++] index:j++ enable:YES];
+        }
     }
     
     //添加计算button
-    UIButton *calBt=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [calBt setTitle:@"计算" forState:UIControlStateNormal];
-    [calBt setBackgroundColor:[UIColor grayColor]];
-    [calBt setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
-    [calBt setFrame:CGRectMake(10,m+40,600,30)];
-    [calBt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:14.0]];
-    [calBt addTarget:self action:@selector(calBtClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:calBt];
+    
+    FUIButton *bt=[FUIButton buttonWithType:UIButtonTypeCustom];
+    [bt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:12.0]];
+    [bt setTitle:@"计算" forState:UIControlStateNormal];
+    [bt setFrame:CGRectMake(50,m+60,200,30)];
+    bt.buttonColor = [UIColor concreteColor];
+    [bt setSelected:YES];
+    bt.shadowHeight = 2.0f;
+    bt.cornerRadius = 0.0f;
+    [bt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [bt addTarget:self action:@selector(calBtClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bt];
+    
     
     //添加结果名和结果显示label
     NSArray *rNames=[[self.params objectForKey:@"rName"] componentsSeparatedByString:@","];
     NSArray *rUnits=[[self.params objectForKey:@"rUnit"] componentsSeparatedByString:@","];
-    n+=50,m+=50,i=0,j=0;
-    for(NSString *name in rNames){
-        [self addLabel:name frame:CGRectMake(10,n+=30,150,25) inputFrame:CGRectMake(160,m+=30,150,25) unit:[rUnits objectAtIndex:i++] index:j++ enable:NO];
-    }
+    n+=70,m+=65,i=0,j=0;
+    for(int x=0;x<[rNames count];x+=2){
+         [self addLabel:[rNames objectAtIndex:x] frame:CGRectMake(10,n+=50,200,40) inputFrame:CGRectMake(210,m+=50,100,30) unit:[rUnits objectAtIndex:i++] index:j++ enable:NO];
+         if((x+1)<=[rNames count]-1){
+             [self addLabel:[rNames objectAtIndex:(x+1)] frame:CGRectMake(320,n,200,40) inputFrame:CGRectMake(520,m,100,30) unit:[rUnits objectAtIndex:i++] index:j++ enable:NO];
+         }
+     }
     
 }
 
-
 -(void)calBtClicked:(UIButton *)bt{
-
+    
     self.floatParams=[self getParams];
     [self calTool];
 }
@@ -327,10 +316,11 @@
     
     UILabel *label=[[[UILabel alloc] initWithFrame:rect] autorelease];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont fontWithName:@"Heiti SC" size:13.0]];
+    [label setFont:[UIFont fontWithName:@"Heiti SC" size:18.0]];
+    [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:name];
     [self.view addSubview:label];
-
+    
     UITextField *textField=[[UITextField alloc] initWithFrame:rect2];
     textField.delegate=self;
     textField.keyboardType=UIKeyboardTypeDecimalPad;
@@ -355,13 +345,13 @@
     if([unit isEqualToString:@"0"]){
         UIButton *getBetaBt=[UIButton buttonWithType:UIButtonTypeRoundedRect];
         [getBetaBt setTitle:@"获取Beta值" forState:UIControlStateNormal];
-        [getBetaBt setFrame:CGRectMake(rect2.origin.x+rect2.size.width-15,rect2.origin.y-3,70,30)];
-        [getBetaBt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:12.0]];
+        [getBetaBt setFrame:CGRectMake(rect2.origin.x+rect2.size.width-20,rect2.origin.y-3,80,30)];
+        [getBetaBt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:13.0]];
         [getBetaBt addTarget:self action:@selector(getBetaFactor:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:getBetaBt];
         [textField setFrame:CGRectMake(rect2.origin.x-20,rect2.origin.y,rect2.size.width,rect2.size.height)];
     }
-
+    
 }
 
 -(void)enableKeyboardManger:(UIBarButtonItem*)barButton

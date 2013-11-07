@@ -11,6 +11,11 @@
 @interface EnumSummary : NSObject
 
 typedef enum{
+    UserHelp,
+    ExcelShortcutsHelp
+}HelpType;
+
+typedef enum{
     
     BetaFactor=0,//beta系数
     Discountrate=1,//折现率

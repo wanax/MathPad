@@ -38,7 +38,7 @@
 -(void)toolChanged:(NSString *)pName pUnit:(NSString *)pUnit rName:(NSString *)rName rUnit:(NSString *)rUnit type:(FinancalToolsType)type{
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:pName,@"pName",pUnit,@"pUnit",rName,@"rName",rUnit,@"rUnit", nil];
     self.detail.params=params;
-    self.detail.toolType=BetaFactor;
+    self.detail.toolType=type;
     [self.detail viewWillAppear:YES];
 }
 

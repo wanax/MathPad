@@ -87,9 +87,9 @@
         counter.params=[self.paramArr objectAtIndex:indexPath.row];
         counter.toolType=type;
         counter.title=[[[tableView  cellForRowAtIndexPath:indexPath] textLabel] text];
-        counter.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:counter animated:YES];
-        [self.customTabel deselectRowAtIndexPath:indexPath animated:YES];
+        counter.modalPresentationStyle=UIModalPresentationPageSheet;
+        [self presentViewController:counter animated:YES completion:nil];
+//        [self.customTabel deselectRowAtIndexPath:indexPath animated:YES];
     }else{
         [self.delegate grade2Changed:[self.paramArr objectAtIndex:indexPath.row] title:[[[tableView  cellForRowAtIndexPath:indexPath] textLabel] text] type:type];
     }

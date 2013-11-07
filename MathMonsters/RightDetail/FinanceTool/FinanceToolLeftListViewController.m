@@ -10,6 +10,7 @@
 #import "CounterViewController.h"
 #import "FinanceToolGrade2LeftListViewController.h"
 #import "UIColor+FlatUI.h"
+#import "HelpViewController.h"
 
 @interface FinanceToolLeftListViewController ()
 
@@ -247,12 +248,13 @@
             grade2Push(arr,arr2,arr3);
         }
     }else if(indexPath.section==3) {
-        /*if (indexPath.row==0) {
+        if (indexPath.row==0) {
             HelpViewController *help=[[HelpViewController alloc] init];
             help.type=ExcelShortcutsHelp;
-            [self.navigationController pushViewController:help animated:YES];
+            help.modalPresentationStyle=UIModalPresentationFormSheet;
+            [self presentViewController:help animated:YES completion:nil];
             SAFE_RELEASE(help);
-        }*/
+        }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

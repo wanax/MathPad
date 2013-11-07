@@ -54,6 +54,7 @@
     UIImageView *topBar=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topBarBack"]];
     topBar.frame=CGRectMake(0,0,SCREEN_HEIGHT,55);
     [self.view addSubview:topBar];
+    SAFE_RELEASE(topBar);
     
     UILabel *barTitle=[[UILabel alloc] initWithFrame:CGRectMake(475,10,100,35)];
     [barTitle setText:@"估股"];

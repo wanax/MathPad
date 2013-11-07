@@ -68,9 +68,9 @@
 	<string>/m/saveddata</string>
 	<key>ArticleURL</key>
 	<string>/m/article</string>
-	<key>NewesAnalysereportURL</key>
+	<key>NewestAnalyseReportURL</key>
 	<string>/m/newestanalysereports</string>
-	<key>CompanyArticleURL</key>
+	<key>CompanyCommentURL</key>
 	<string>/m/companyarticles</string>
 	<key>CompanyAnalyReportURL</key>
 	<string>/m/companyanalysereports</string>

@@ -71,7 +71,9 @@
 
 +(void)showToastView:(UIView *)view withTitle:(NSString *)title andContent:(NSString *)content duration:(float)duration;
 
++ (NSDate *)dateFromString:(NSString *)dateString;
++ (NSString *)stringFromDate:(NSDate *)date;
 
-
++ (NSString *)stringFromFileNamed:(NSString *)bundleFileName;
 
 @end

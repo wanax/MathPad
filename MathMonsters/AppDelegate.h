@@ -23,6 +23,8 @@
 @property (nonatomic,retain) RightViewController *right;
 @property (nonatomic,retain) FontListViewController *left;
 
+@property (nonatomic,strong) id comInfo;
+
 @property (nonatomic,retain) id<LeftBarDelegate> delegate;
 
 @end

@@ -112,9 +112,9 @@ static NSDateFormatter *formatter;
     }
     
     if(key!=nil){
-        return [dictionary objectForKey:key];
+        return [[dictionary objectForKey:key] autorelease];
     }else{
-        return dictionary;
+        return [dictionary autorelease];
     }
     
     
@@ -511,6 +511,33 @@ NSComparator cmptr1 = ^(id obj1, id obj2){
     }else{
         [view makeToast:content duration:duration position:@"center"];
     }
+}
+
++ (NSDate *)dateFromString:(NSString *)dateString{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat: @"yyyy-MM-dd"];
+    NSDate *destDate= [dateFormatter dateFromString:dateString];
+    [dateFormatter release];
+    return destDate;
+    
+}
+
++ (NSString *)stringFromDate:(NSDate *)date{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    [dateFormatter release];
+    return destDateString;
+    
+}
+
++ (NSString *)stringFromFileNamed:(NSString *)bundleFileName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:bundleFileName ofType:nil];
+    NSString *text = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    return text;
 }
 
 

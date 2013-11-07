@@ -50,7 +50,8 @@
     DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:content];
     DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] init];
     [menuController.view setFrame:CGRectMake(0,0,200,768)];
-    self.frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    REFrostedViewController *re=[[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    self.frostedViewController =[re autorelease];
     self.frostedViewController.limitMenuViewSize=YES;
     self.frostedViewController.minimumMenuViewSize=CGSizeMake(200,768);
     self.frostedViewController.direction = REFrostedViewControllerDirectionLeft;
