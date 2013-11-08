@@ -10,6 +10,7 @@
 #import "ValueModelIndicator.h"
 #import "ValueModelCell.h"
 #import "AMProgressView.h"
+#import "ComContainerViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ValuModelViewController ()
@@ -43,12 +44,14 @@
     ValueModelIndicator *indicator=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
     [self.view addSubview:indicator];
     
-    self.cusTabView=[[UITableView alloc] initWithFrame:CGRectMake(0,60,924,610)];
-    self.cusTabView.delegate=self;
-    self.cusTabView.dataSource=self;
-    self.cusTabView.backgroundColor=[Utiles colorWithHexString:@"#472A20"];
-    self.cusTabView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,924,610)];
+    temp.delegate=self;
+    temp.dataSource=self;
+    temp.backgroundColor=[Utiles colorWithHexString:@"#472A20"];
+    temp.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.cusTabView=temp;
     [self.view addSubview:self.cusTabView];
+    SAFE_RELEASE(temp);
 }
 #pragma mark -
 #pragma mark Net Get JSON Data
@@ -161,6 +164,11 @@
 #pragma Table Delegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
+    UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
+    comContainerVC.comInfo=[self.comList objectAtIndex:indexPath.row];
+    [self presentViewController:comNav animated:YES completion:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

@@ -110,6 +110,7 @@ typedef enum{
     BackToSuperView=4
 } ChartBtAction;
 
+//估值模型四项选择
 typedef enum{
     MainIncome=11,
     OperaFee=22,
@@ -117,6 +118,7 @@ typedef enum{
     DiscountRate=44
 } IndustoryModelType;
 
+//金融模型四项选择
 typedef enum{
     FinancialRatio=1,
     FinancialChart=2,
@@ -130,6 +132,7 @@ typedef enum{
     AddShare=33
 }ValuationModelAction;
 
+//大行图表时间间隔
 typedef enum{
     OneMonth=1,
     ThreeMonth=2,
@@ -137,11 +140,13 @@ typedef enum{
     OneYear=4
 }DahonTimeInterval;
 
+//公司详细页面图表类型
 typedef enum {
     
     FinancalModel,//金融模型
     DragabelModel,//可调整参数模型
-    DahonModel//大行数据
+    DahonModel,//大行数据
+    MyProAndLossTable//我的损益表
     
 } ChartType;
 

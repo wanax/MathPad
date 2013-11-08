@@ -10,10 +10,11 @@
 #import "AKOMultiPageTextView.h"
 #import "PageController.h"
 
-@interface NewReportArticleViewController : UIViewController  <AKOMultiColumnTextViewDataSource>
+@interface NewReportArticleViewController : UIViewController  <AKOMultiColumnTextViewDataSource,UIWebViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic, retain) AKOMultiPageTextView *multiPageView;
+@property (nonatomic,retain) UIWebView *articleWeb;
 
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) id articleContent;

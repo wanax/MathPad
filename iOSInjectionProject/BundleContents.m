@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle5
+#define INJECTION_BUNDLE InjectionBundle2
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/NewReport/NewReportArticleViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MultipleChartVC/FinancalModelChartViewController.m"
 
 
-@interface InjectionBundle5 : NSObject
+@interface InjectionBundle2 : NSObject
 @end
-@implementation InjectionBundle5
+@implementation InjectionBundle2
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_NewReportArticleViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_NewReportArticleViewController notify:4];
+    extern Class OBJC_CLASS_$_FinancalModelChartViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_FinancalModelChartViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

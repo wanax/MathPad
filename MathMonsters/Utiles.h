@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonDigest.h>
 #import "AFHTTPClient.h"
+#import "CPTColor.h"
 #import "AFHTTPRequestOperation.h"
 
 @class MBProgressHUD;
@@ -19,6 +20,7 @@
 
 //字符串转颜色
 + (UIColor *) colorWithHexString: (NSString *) stringToConvert;
++ (CPTColor *) cptcolorWithHexString: (NSString *) stringToConvert andAlpha:(float)alpha;
 
 //md5 32位 加密 （小写）
 + (NSString *)md5:(NSString *)str;

@@ -54,7 +54,6 @@
     UIImageView *topBar=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topBarBack"]];
     topBar.frame=CGRectMake(0,0,SCREEN_HEIGHT,55);
     [self.view addSubview:topBar];
-    SAFE_RELEASE(topBar);
     
     UILabel *barTitle=[[UILabel alloc] initWithFrame:CGRectMake(475,10,100,35)];
     [barTitle setText:@"估股"];
@@ -68,17 +67,19 @@
     [questionBt addTarget:self action:@selector(questionBtClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:questionBt];
 
-    self.leftViewController=[[LeftBarViewController alloc] init];
-    self.leftViewController.view.frame=CGRectMake(0,52,100,1024);
-    self.leftViewController.delegate=self;
-    [self.leftViewController.view setBackgroundColor:[UIColor blackColor]];
+    LeftBarViewController *tb=[[[LeftBarViewController alloc] init] autorelease];
+    tb.view.frame=CGRectMake(0,52,100,1024);
+    tb.delegate=self;
+    [tb.view setBackgroundColor:[UIColor blackColor]];
+    self.leftViewController=tb;
     [self addChildViewController:self.leftViewController];
     [self.view addSubview:self.leftViewController.view];
     
     [self setRightDetail:[[DailyStockViewController alloc] init]];
     
-    self.searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(736,12, 263, 33)];
-    self.searchBar.delegate=self;
+    UISearchBar *tSearchbar=[[[UISearchBar alloc] initWithFrame:CGRectMake(736,12, 263, 33)] autorelease];
+    tSearchbar.delegate=self;
+    self.searchBar=tSearchbar;
     [self.view addSubview:self.searchBar];
     
     SAFE_RELEASE(barTitle);
@@ -134,20 +135,13 @@
             [vc4 setMarketType:SHSE];
             vc1.tabBarItem=barItem;
             vc2.tabBarItem=barItem2;
-            vc3.tabBarItem=barItem3;
-            vc4.tabBarItem=barItem4;
+            vc3.tabBarItem=[barItem3 autorelease];
+            vc4.tabBarItem=[barItem4 autorelease];
             tabBarController.viewControllers=[NSArray arrayWithObjects:vc1,vc2,vc3,vc4, nil];
             [self setRightDetail:tabBarController];
             [self.view addSubview:tabBarController.view];
         } else {
-            UINavigationController *nav=nil;
             UIViewController * vc = [[NSClassFromString(controllerName) alloc] init];
-            /*if([controllerName isEqualToString:@"FinanceToolViewController"]){
-                nav=[[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
-                [self setRightDetail:nav];
-            }else{
-                [self setRightDetail:vc];
-            }*/
             [self setRightDetail:vc];
             SAFE_RELEASE(vc);
         }
