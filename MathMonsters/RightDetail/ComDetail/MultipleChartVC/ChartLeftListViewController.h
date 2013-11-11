@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FinancalModelChartViewController.h"
+#import "ChartLeftListViewController.h"
 
-@interface FinancalModelLeftListViewController : UIViewController<FinancalDataDelegate>
+@interface ChartLeftListViewController : UIViewController
 
 @property (assign)BOOL isOpen;
 
-@property (nonatomic,retain) NSMutableArray *dataList;
 @property (nonatomic,retain) id transData;
 @property (nonatomic,retain) NSArray *sectionKeys;
+@property (nonatomic,retain) NSDictionary *sectionDic;
 @property (nonatomic,retain) NSIndexPath *selectIndex;
 @property (nonatomic,retain) UITableView *expansionTableView;
 

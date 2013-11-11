@@ -6,14 +6,14 @@
 //  Copyright (c) 2012年 Jian-Ye. All rights reserved.
 //
 
-#import "FinancalModelLeftListViewController.h"
+#import "ChartLeftListViewController.h"
 #import "Cell1.h"
 #import "Cell2.h"
-@interface FinancalModelLeftListViewController()<UITableViewDataSource,UITableViewDelegate>
+@interface ChartLeftListViewController()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation FinancalModelLeftListViewController
+@implementation ChartLeftListViewController
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,9 +33,6 @@
 }
 
 -(void)initComponents{
-    
-    NSString *path  = [[NSBundle mainBundle] pathForResource:@"ExpansionTableTestData" ofType:@"plist"];
-    self.dataList = [[NSMutableArray alloc] initWithContentsOfFile:path];
 
     self.expansionTableView=[[UITableView alloc] initWithFrame:CGRectMake(0,0,340,610)];
     self.expansionTableView.dataSource=self;
@@ -68,9 +65,6 @@
     return 40;
 }
 
--(void)tableReload{
-    [self.expansionTableView reloadData];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -84,14 +78,13 @@
         NSArray *list = [self.transData objectForKey:[self.sectionKeys objectAtIndex:self.selectIndex.section]];
         cell.titleLabel.text = [[list objectAtIndex:indexPath.row-1] objectForKey:@"name"];
         return cell;
-    }else
-    {
+    }else{
         static NSString *CellIdentifier = @"Cell1";
         Cell1 *cell = (Cell1*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil] objectAtIndex:0];
         }
-        NSString *name = [self.sectionKeys objectAtIndex:indexPath.section];
+        NSString *name = [self.sectionDic objectForKey:[self.sectionKeys objectAtIndex:indexPath.section]];
         cell.titleLabel.text = name;
         [cell changeArrowWithUp:([self.selectIndex isEqual:indexPath]?YES:NO)];
         return cell;
@@ -108,21 +101,18 @@
             [self didSelectCellRowFirstDo:NO nextDo:NO];
             self.selectIndex = nil;
             
-        }else
-        {
+        }else{
             if (!self.selectIndex) {
                 self.selectIndex = indexPath;
                 [self didSelectCellRowFirstDo:YES nextDo:NO];
                 
-            }else
-            {
+            }else{
                 
                 [self didSelectCellRowFirstDo:NO nextDo:YES];
             }
         }
         
-    }else
-    {
+    }else{
         NSArray *list = [self.transData objectForKey:[self.sectionKeys objectAtIndex:indexPath.section]];
         NSString *item = [[list objectAtIndex:indexPath.row-1] objectForKey:@"name"];
         UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:item message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil] autorelease];
@@ -143,17 +133,16 @@
     
     int section = self.selectIndex.section;
     int contentCount = [[self.transData objectForKey:[self.sectionKeys objectAtIndex:section]] count];
+    
 	NSMutableArray* rowToInsert = [[NSMutableArray alloc] init];
 	for (NSUInteger i = 1; i < contentCount + 1; i++) {
 		NSIndexPath* indexPathToInsert = [NSIndexPath indexPathForRow:i inSection:section];
 		[rowToInsert addObject:indexPathToInsert];
 	}
 	
-	if (firstDoInsert)
-    {   [self.expansionTableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
-    }
-	else
-    {
+	if (firstDoInsert){
+        [self.expansionTableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
+    }else{
         [self.expansionTableView deleteRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
     }
     

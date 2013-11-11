@@ -12,13 +12,6 @@
 #import "CorePlot-CocoaTouch.h"
 #import "DrawChartTool.h"
 
-@class FinancalModelLeftListViewController;
-
-@protocol FinancalDataDelegate <NSObject>
-@optional
--(void)tableReload;
-@end
-
 //数据点个数
 #define NUM 10
 
@@ -56,22 +49,19 @@
     
 }
 
-@property (nonatomic,retain) id<FinancalDataDelegate> tableDelegate;
-
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) NSMutableArray *points;
 @property (nonatomic,retain) NSArray *colorArr;
 @property (nonatomic,retain) NSString *jsonForChart;
 @property (nonatomic,retain) NSString *trueUnit;
 @property (nonatomic,retain) NSString *yAxisUnit;
+@property (nonatomic,retain) NSString *driverId;
 
 @property (nonatomic,retain) UIWebView *webView;
 @property (nonatomic,retain) CPTXYGraph * graph ;
 @property (nonatomic,retain) CPTGraphHostingView *hostView;
 @property (nonatomic,retain) CPTXYPlotSpace *plotSpace;
 @property (nonatomic,retain) CPTBarPlot *barPlot;
-
-@property (nonatomic,retain) FinancalModelLeftListViewController *leftListVC;
 
 
 

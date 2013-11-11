@@ -132,17 +132,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    void (^combinePush) (NSString *,NSString *,NSString *,NSString *,FinancalToolsType)=^(NSString *pName,NSString *pUnit,NSString *rName,NSString *rUnit,FinancalToolsType type){
-        
-        NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:pName,@"pName",pUnit,@"pUnit",rName,@"rName",rUnit,@"rUnit", nil];
-        CounterViewController *counter=[[[CounterViewController alloc] init] autorelease];
-        counter.params=params;
-        counter.toolType=type;
-        counter.title=[[[tableView  cellForRowAtIndexPath:indexPath] textLabel] text];
-        counter.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:counter animated:YES];
-        
-    };
     void (^grade2Push) (NSArray *,NSArray *,NSArray *)=^(NSArray *paramArr,NSArray *typeNames,NSArray *types){
         
         FinanceToolGrade2LeftListViewController *grade2=[[[FinanceToolGrade2LeftListViewController alloc] init] autorelease];

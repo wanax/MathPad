@@ -142,25 +142,18 @@ NSComparator cmptr = ^(id obj1, id obj2){
     
     float xMax=[[sortXArr lastObject] integerValue];
     float xMin=0;
-    @try {
-        if(tag==DragabelModel){
-            int n=0;
-            if([sortXArr[0] intValue]<10){
-                for(id year in sortXArr){
-                    n++;
-                    if([year intValue]==10){
-                        break;
-                    }
-                }
-            }
-            xMin=[sortXArr[n] floatValue];
-        }else{
-            xMin=[sortXArr[0] floatValue];
+    
+    if(tag==DragabelModel){
+        int n=0;
+        //估值模型图表只显示2010年以后数据
+        while ([sortXArr[n] intValue]<10) {
+            n++;
         }
+        xMin=[sortXArr[n] floatValue];
+    }else{
+        xMin=[sortXArr[0] floatValue];
     }
-    @catch (NSException *exception) {
-        NSLog(@"%@",exception);
-    }
+    
     //NSInteger xTap=1;
     double yMax=[[sortYArr lastObject] doubleValue];
     double yMin=[sortYArr[0] doubleValue];
@@ -168,7 +161,7 @@ NSComparator cmptr = ^(id obj1, id obj2){
     if(tag==DahonModel){
         yTap=(yMax-yMin);
     }else{
-        yTap=(yMax-(yMin<0?yMin:0))*1.4/screenWidth;
+        yTap=(yMax-(yMin<0?yMin:0))*2/screenWidth;
     }
     
     float xLowBound=0;

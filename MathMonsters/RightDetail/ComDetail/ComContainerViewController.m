@@ -10,6 +10,7 @@
 #import "ComContainerIndicator.h"
 #import "DahonValuationViewController.h"
 #import "FinancalModelChartViewController.h"
+#import "FinancalModelContainerViewController.h"
 
 @interface ComContainerViewController ()
 
@@ -88,7 +89,7 @@
     } else if(bt.tag==DragabelModel){
         
     } else if(bt.tag==FinancalModel){
-        FinancalModelChartViewController *vc=[[FinancalModelChartViewController alloc] init];
+        FinancalModelContainerViewController *vc=[[FinancalModelContainerViewController alloc] init];
         vc.comInfo=self.comInfo;
         [self setDetailVC:vc];
         SAFE_RELEASE(vc);

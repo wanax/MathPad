@@ -52,10 +52,10 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     DrawChartTool *tool=[[DrawChartTool alloc] init];
     tool.standIn=self;
     //title
-    self.titleLabel=[tool addLabelToView:self.view withTitle:@"" Tag:6 frame:CGRectMake(0,0,SCREEN_HEIGHT,30) fontSize:19.0 color:nil textColor:@"#63573d" location:NSTextAlignmentLeft];
+    self.titleLabel=[tool addLabelToView:self.view withTitle:@"" Tag:6 frame:CGRectMake(0,5,600,30) fontSize:19.0 color:nil textColor:@"#63573d" location:NSTextAlignmentLeft];
     
     //提示信息
-    [tool addLabelToView:self.view withTitle:@"*点击图标查看大行估值" Tag:6 frame:CGRectMake(SCREEN_HEIGHT-145,SCREEN_WIDTH,140,40) fontSize:11.0 color:nil textColor:@"#63573d" location:NSTextAlignmentCenter];
+    [tool addLabelToView:self.view withTitle:@"*点击图标查看大行估值" Tag:6 frame:CGRectMake(620,5,200,30) fontSize:15.0 color:nil textColor:@"#63573d" location:NSTextAlignmentCenter];
     
     self.oneMonth=[tool addButtonToView:self.view withTitle:@"一个月" Tag:OneMonth frame:CGRectMake(10,570,80,30) andFun:@selector(changeDateInter:) withType:UIButtonTypeCustom andColor:nil textColor:@"#e97a31" normalBackGroundImg:nil highBackGroundImg:nil];
     [self.oneMonth.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:15.0]];

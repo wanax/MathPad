@@ -13,7 +13,7 @@
 #import "math.h"
 #import <AddressBook/AddressBook.h>
 #import "DrawChartTool.h"
-#import "FinancalModelLeftListViewController.h"
+#import "ChartLeftListViewController.h"
 
 @interface FinancalModelChartViewController ()
 
@@ -53,32 +53,19 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];
     self.points=[[NSMutableArray alloc] init];
     
-    [self initFinancalModelViewComponents];
     [self initBarChart];
     
 }
 
--(void)initFinancalModelViewComponents{
-    self.leftListVC=[[FinancalModelLeftListViewController alloc] init];
-    self.leftListVC.view.frame=CGRectMake(0,0,100,1024);
-    self.tableDelegate=self.leftListVC;
-    [self.view addSubview:self.leftListVC.view];
-    [self addChildViewController:self.leftListVC];
-}
 
 -(void)initBarChart{
-    //初始化图形视图
-    @try {
-        self.graph=[[CPTXYGraph alloc] initWithFrame:CGRectZero];
-        self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
-        self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(360,50,640,220)];
-        [self.view addSubview:self.hostView];
-        [self.hostView setHostedGraph : self.graph ];
-        self.hostView.collapsesLayers = YES;
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%@",exception);
-    }
+
+    self.graph=[[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
+    self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(0,50,640,220)];
+    [self.view addSubview:self.hostView];
+    [self.hostView setHostedGraph : self.graph ];
+    self.hostView.collapsesLayers = YES;
     
     self.graph . paddingLeft = 0.0f ;
     self.graph . paddingRight = 0.0f ;
@@ -91,22 +78,6 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     [self initBarPlot];
 }
 
-#pragma mark -
-#pragma Button Clicked Methods
-
--(void)selectIndustry:(UIButton *)sender forEvent:(UIEvent*)event{
-    
-    sender.showsTouchWhenHighlighted=YES;
-    
-}
-
--(void)backTo:(UIButton *)bt{
-    
-    bt.showsTouchWhenHighlighted=YES;
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
 -(id)getObjectDataFromJsFun:(NSString *)funName byData:(NSString *)data{
     NSString *arg=[[NSString alloc] initWithFormat:@"%@(\"%@\")",funName,data];
     NSString *re=[self.webView stringByEvaluatingJavaScriptFromString:arg];
@@ -117,9 +88,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 
 #pragma mark -
 #pragma mark ModelClass Methods Delegate
--(void)modelClassChanged:(NSString *)driverId isShowDisView:(BOOL)isShow{
-    [self modelClassChanged:driverId];
-}
+
 -(void)modelClassChanged:(NSString *)driverId{
     
     id temp=[self getObjectDataFromJsFun:@"returnChartData" byData:driverId];
@@ -133,6 +102,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     self.trueUnit=[temp objectForKey:@"unit"];
     NSArray *sort=[Utiles arrSort:self.points];
     self.yAxisUnit=[Utiles getUnitFromData:[[[sort lastObject] objectForKey:@"v"] stringValue] andUnit:self.trueUnit];
+    self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",[temp objectForKey:@"title"],self.yAxisUnit];
     [self setXYAxis];
     self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
     [self.graph reloadData];
@@ -144,33 +114,12 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 #pragma mark Web Didfinished CallBack
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     
-    [MBProgressHUD showHUDAddedTo:self.hostView animated:YES];
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[self.comInfo objectForKey:@"stockcode"],@"stockCode", nil];
-    [Utiles getNetInfoWithPath:@"CompanyModel" andParams:params besidesBlock:^(id resObj){
-        self.jsonForChart=[resObj JSONString];
-        self.jsonForChart=[self.jsonForChart stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\\\\\""];
-        self.jsonForChart=[self.jsonForChart stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-        
-        //获取金融模型种类
-        id transObj=[self getObjectDataFromJsFun:@"initFinancialData" byData:self.jsonForChart];
-        self.leftListVC.transData=transObj;
-        
-        NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
-        for(id key in transObj){
-            [temp addObject:key];
-        }
-        self.leftListVC.sectionKeys=temp;
-        
-        [self.leftListVC.expansionTableView reloadData];
-        [self.tableDelegate tableReload];
-        [self modelClassChanged:[[[transObj objectForKey:@"listRatio"] objectAtIndex:0] objectForKey:@"id"]];
+    //获取金融模型种类
+    id transObj=[self getObjectDataFromJsFun:@"initFinancialData" byData:self.jsonForChart];
+    if ([transObj count]>0) {
+        [self modelClassChanged:self.driverId];
         self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
-        [MBProgressHUD hideHUDForView:self.hostView animated:YES];
-        
-    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        [MBProgressHUD hideHUDForView:self.hostView animated:YES];
-        [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
-    }];
+    }
 }
 
 
