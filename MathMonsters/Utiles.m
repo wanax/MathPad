@@ -536,6 +536,9 @@ NSComparator cmptr1 = ^(id obj1, id obj2){
 +(NSArray *)arrSort:(NSArray *)arr{
     return [arr sortedArrayUsingComparator:cmptr1];
 }
++(BOOL)isNetConnected{
+    return ((AppDelegate *)[[UIApplication sharedApplication] delegate]).isReachable;
+}
 
 
 +(void)showToastView:(UIView *)view withTitle:(NSString *)title andContent:(NSString *)content duration:(float)duration{

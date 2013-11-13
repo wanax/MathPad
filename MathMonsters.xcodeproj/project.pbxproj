@@ -130,6 +130,8 @@
 		AE5C5769181E64FB00A750F2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C5768181E64FB00A750F2 /* ImageIO.framework */; };
 		AE60096F182B6EE800BB3819 /* PageController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE60096E182B6EE800BB3819 /* PageController.m */; };
 		AE600972182B70BB00BB3819 /* UIFont+CoreTextExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE600971182B70BB00BB3819 /* UIFont+CoreTextExtensions.m */; };
+		AE63E8D81830D2F8002043DC /* ValuationModelContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE63E8D71830D2F8002043DC /* ValuationModelContainerViewController.m */; };
+		AE63E8DB1830D81D002043DC /* ValueModelChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE63E8DA1830D81D002043DC /* ValueModelChartViewController.m */; };
 		AE641EDD1820A91600E77775 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = AE641EDA1820A91600E77775 /* CustomCellBackground.m */; };
 		AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE641EDC1820A91600E77775 /* FinancePicViewController.m */; };
 		AE641EE11820A94400E77775 /* FinanPicCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE641EE01820A94400E77775 /* FinanPicCollectCell.m */; };
@@ -234,6 +236,14 @@
 		AEDFE96117F279BE0085CA0F /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE95C17F279BE0085CA0F /* MGSplitCornersView.m */; };
 		AEDFE96217F279BE0085CA0F /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE95E17F279BE0085CA0F /* MGSplitDividerView.m */; };
 		AEDFE96317F279BE0085CA0F /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE96017F279BE0085CA0F /* MGSplitViewController.m */; };
+		AEF59B301831BD7000CE99D8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */; };
+		AEF59B3A1831D3D400CE99D8 /* ClientLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */; };
+		AEF59B3C1831D5DC00CE99D8 /* ClientLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */; };
+		AEFC216018320ECC00F53470 /* ValuaActionBt.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC215E18320ECC00F53470 /* ValuaActionBt.png */; };
+		AEFC216118320ECC00F53470 /* ValuaActionBtSe.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC215F18320ECC00F53470 /* ValuaActionBtSe.png */; };
+		AEFC21631832230700F53470 /* dragDot.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC21621832230700F53470 /* dragDot.png */; };
+		AEFC216618322A3800F53470 /* DiscountRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC216518322A3800F53470 /* DiscountRateViewController.m */; };
+		AEFC216818322ADF00F53470 /* DiscountRateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFC216718322ADF00F53470 /* DiscountRateView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -489,6 +499,10 @@
 		AE60096E182B6EE800BB3819 /* PageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageController.m; sourceTree = "<group>"; };
 		AE600970182B70BB00BB3819 /* UIFont+CoreTextExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CoreTextExtensions.h"; sourceTree = "<group>"; };
 		AE600971182B70BB00BB3819 /* UIFont+CoreTextExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CoreTextExtensions.m"; sourceTree = "<group>"; };
+		AE63E8D61830D2F8002043DC /* ValuationModelContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuationModelContainerViewController.h; sourceTree = "<group>"; };
+		AE63E8D71830D2F8002043DC /* ValuationModelContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuationModelContainerViewController.m; sourceTree = "<group>"; };
+		AE63E8D91830D81D002043DC /* ValueModelChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelChartViewController.h; sourceTree = "<group>"; };
+		AE63E8DA1830D81D002043DC /* ValueModelChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelChartViewController.m; sourceTree = "<group>"; };
 		AE641ED91820A91600E77775 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
 		AE641EDA1820A91600E77775 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
 		AE641EDB1820A91600E77775 /* FinancePicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancePicViewController.h; sourceTree = "<group>"; };
@@ -644,6 +658,16 @@
 		AEDFE95E17F279BE0085CA0F /* MGSplitDividerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSplitDividerView.m; sourceTree = "<group>"; };
 		AEDFE95F17F279BE0085CA0F /* MGSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSplitViewController.h; sourceTree = "<group>"; };
 		AEDFE96017F279BE0085CA0F /* MGSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSplitViewController.m; sourceTree = "<group>"; };
+		AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		AEF59B381831D3D400CE99D8 /* ClientLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientLoginViewController.h; sourceTree = "<group>"; };
+		AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientLoginViewController.m; sourceTree = "<group>"; };
+		AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientLoginView.xib; sourceTree = "<group>"; };
+		AEFC215E18320ECC00F53470 /* ValuaActionBt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ValuaActionBt.png; sourceTree = "<group>"; };
+		AEFC215F18320ECC00F53470 /* ValuaActionBtSe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ValuaActionBtSe.png; sourceTree = "<group>"; };
+		AEFC21621832230700F53470 /* dragDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragDot.png; sourceTree = "<group>"; };
+		AEFC216418322A3800F53470 /* DiscountRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountRateViewController.h; sourceTree = "<group>"; };
+		AEFC216518322A3800F53470 /* DiscountRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountRateViewController.m; sourceTree = "<group>"; };
+		AEFC216718322ADF00F53470 /* DiscountRateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscountRateView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -657,6 +681,7 @@
 				AE5C5769181E64FB00A750F2 /* ImageIO.framework in Frameworks */,
 				AEAD74EA17EE93B200A659FA /* QuartzCore.framework in Frameworks */,
 				AE4D3E0017E3053C0044A7DF /* UIKit.framework in Frameworks */,
+				AEF59B301831BD7000CE99D8 /* Crashlytics.framework in Frameworks */,
 				AE4D3E0217E3053C0044A7DF /* Foundation.framework in Frameworks */,
 				AE4D3E0417E3053C0044A7DF /* CoreGraphics.framework in Frameworks */,
 				8A5B5A59F6984D628AD70DDF /* libPods.a in Frameworks */,
@@ -884,6 +909,7 @@
 		AE4D3DFE17E3053C0044A7DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */,
 				AE38981B182C8A870059A319 /* libCorePlot-CocoaTouch.a */,
 				AE8B4509182101BE0047F4BB /* Accelerate.framework */,
 				AE8B44FB1820EC400047F4BB /* CoreText.framework */,
@@ -1052,6 +1078,7 @@
 		AE572B6A182CB6040000B193 /* MultipleChartVC */ = {
 			isa = PBXGroup;
 			children = (
+				AE63E8D51830D04E002043DC /* ValuationModel */,
 				AE67B8DA18307A9E00E00473 /* FinancalModel */,
 				AE572B7F182CE0D60000B193 /* cell */,
 				AE572B8A182CE26C0000B193 /* ChartLeftListViewController.h */,
@@ -1067,6 +1094,7 @@
 		AE572B77182CC5D40000B193 /* ComDetailImg */ = {
 			isa = PBXGroup;
 			children = (
+				AEFC215D18320EB900F53470 /* ValuationModel */,
 				AE572B8F182CE4A90000B193 /* FinancalModelLeftListImg */,
 				AE572B78182CC5DA0000B193 /* discountLabelBack.png */,
 				AE572B79182CC5DA0000B193 /* discountBack.png */,
@@ -1098,6 +1126,20 @@
 			);
 			name = FinancalModelLeftListImg;
 			path = image;
+			sourceTree = "<group>";
+		};
+		AE63E8D51830D04E002043DC /* ValuationModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEFC216718322ADF00F53470 /* DiscountRateView.xib */,
+				AEFC216418322A3800F53470 /* DiscountRateViewController.h */,
+				AEFC216518322A3800F53470 /* DiscountRateViewController.m */,
+				AE63E8D61830D2F8002043DC /* ValuationModelContainerViewController.h */,
+				AE63E8D71830D2F8002043DC /* ValuationModelContainerViewController.m */,
+				AE63E8D91830D81D002043DC /* ValueModelChartViewController.h */,
+				AE63E8DA1830D81D002043DC /* ValueModelChartViewController.m */,
+			);
+			name = ValuationModel;
 			sourceTree = "<group>";
 		};
 		AE641ED81820A74600E77775 /* GraphExchange */ = {
@@ -1206,6 +1248,7 @@
 		AE739AA11822531100CF82C5 /* UserSetting */ = {
 			isa = PBXGroup;
 			children = (
+				AEF59B311831D37500CE99D8 /* UserLogin */,
 				AE29CD3E182899D900E8E94C /* HelpViewController.h */,
 				AE29CD3F182899D900E8E94C /* HelpViewController.m */,
 				AEB3E34117F422BC00A273E9 /* SettingViewController.h */,
@@ -1531,6 +1574,26 @@
 			name = MGSplit;
 			sourceTree = "<group>";
 		};
+		AEF59B311831D37500CE99D8 /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				AEF59B381831D3D400CE99D8 /* ClientLoginViewController.h */,
+				AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */,
+				AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */,
+			);
+			name = UserLogin;
+			sourceTree = "<group>";
+		};
+		AEFC215D18320EB900F53470 /* ValuationModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEFC21621832230700F53470 /* dragDot.png */,
+				AEFC215E18320ECC00F53470 /* ValuaActionBt.png */,
+				AEFC215F18320ECC00F53470 /* ValuaActionBtSe.png */,
+			);
+			name = ValuationModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1543,6 +1606,7 @@
 				AE4D3DF917E3053C0044A7DF /* Frameworks */,
 				AE4D3DFA17E3053C0044A7DF /* Resources */,
 				F9128B4F5FD342EFA21B650D /* Copy Pods Resources */,
+				AEF59B2E1831BD0E00CE99D8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1584,6 +1648,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFC216118320ECC00F53470 /* ValuaActionBtSe.png in Resources */,
 				AE7EF617181F55A5002A3C9E /* NewComCell.xib in Resources */,
 				AE29CD4318289A3000E8E94C /* excelShortcuts.png in Resources */,
 				AE420AC91823494600DDE7C8 /* CASHCOUNT.png in Resources */,
@@ -1608,6 +1673,7 @@
 				AE4D3E1617E3053C0044A7DF /* Default-568h@2x.png in Resources */,
 				AE7EF603181F46A1002A3C9E /* newReportBtSe.png in Resources */,
 				AEA90A64181E14B800F3E4DB /* 红色-按钮.png in Resources */,
+				AEF59B3C1831D5DC00CE99D8 /* ClientLoginView.xib in Resources */,
 				AEA90A51181E13FD00F3E4DB /* netrequesturl.plist in Resources */,
 				AE1FCBB71828DBB9005D5E10 /* right_arrow@2x.png in Resources */,
 				AE4D3E3317E30E1C0044A7DF /* blowgun.png in Resources */,
@@ -1638,6 +1704,7 @@
 				AE572B97182CE4A90000B193 /* UpAccessory@2x.png in Resources */,
 				AE4D3E3A17E30E1C0044A7DF /* meetminitomatobot.png in Resources */,
 				AE4D3E3B17E30E1C0044A7DF /* ninjastar.png in Resources */,
+				AEFC216818322ADF00F53470 /* DiscountRateView.xib in Resources */,
 				AE46E6D6181FB9DE00DC1370 /* valueModelCellBack.png in Resources */,
 				AE4D3E3C17E30E1C0044A7DF /* smoke.png in Resources */,
 				AE7EF5FA181F46A1002A3C9E /* graphExchangeBt.png in Resources */,
@@ -1681,6 +1748,7 @@
 				AE09139A1827A34C007A7B97 /* BetaFactorCountView.xib in Resources */,
 				AEA90A66181E14B800F3E4DB /* dailyBackImg.png in Resources */,
 				AE8B44FA1820E8C00047F4BB /* littleTag.png in Resources */,
+				AEFC216018320ECC00F53470 /* ValuaActionBt.png in Resources */,
 				AE7EF5F5181F46A1002A3C9E /* IPAD-估值观点-2.png in Resources */,
 				AE0D225D17F1721F0056C7BF /* shadow.png in Resources */,
 				AE0D225E17F1721F0056C7BF /* select.png in Resources */,
@@ -1703,6 +1771,7 @@
 				AEA90A50181E13FD00F3E4DB /* OccupationalList.plist in Resources */,
 				AE420AC61823494600DDE7C8 /* BETA.png in Resources */,
 				AE50F2D717F3C41600913AA2 /* 搜索框.png in Resources */,
+				AEFC21631832230700F53470 /* dragDot.png in Resources */,
 				AE31F863182B4195001CD0D0 /* lorem_ipsum.txt in Resources */,
 				AE7EF5FB181F46A1002A3C9E /* graphExchangeBtSe.png in Resources */,
 				AE572B87182CE0D60000B193 /* Cell1.xib in Resources */,
@@ -1716,6 +1785,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AEF59B2E1831BD0E00CE99D8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run c59317990c405b2f42582cacbe9f4fa9abe1fefb";
+			showEnvVarsInLog = 0;
+		};
 		F72D294993204344B2F0FEBB /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1754,6 +1837,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4D3E0C17E3053C0044A7DF /* main.m in Sources */,
+				AE63E8DB1830D81D002043DC /* ValueModelChartViewController.m in Sources */,
 				AE572B86182CE0D60000B193 /* Cell1.m in Sources */,
 				AE0F050D1827464B00DA13D4 /* BetaFactorCountViewController.m in Sources */,
 				AE4D3E1017E3053C0044A7DF /* AppDelegate.m in Sources */,
@@ -1763,6 +1847,7 @@
 				AE7E5737181E3F7400A1391E /* RotatedView.m in Sources */,
 				AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */,
 				AE600972182B70BB00BB3819 /* UIFont+CoreTextExtensions.m in Sources */,
+				AEFC216618322A3800F53470 /* DiscountRateViewController.m in Sources */,
 				AE4D3E2317E308BC0044A7DF /* RightViewController.m in Sources */,
 				AE3FCB8917E6D9C9001A04A1 /* Utiles.m in Sources */,
 				AE572B88182CE0D60000B193 /* Cell2.m in Sources */,
@@ -1778,6 +1863,7 @@
 				AE3FCB9617E6F2D7001A04A1 /* FontSizeViewController.m in Sources */,
 				AE7EF61E181F564A002A3C9E /* NewComCell.m in Sources */,
 				AE6FCF1517E9403800DCDB77 /* Toast+UIView.m in Sources */,
+				AEF59B3A1831D3D400CE99D8 /* ClientLoginViewController.m in Sources */,
 				AE6FCF1817E940DA00DCDB77 /* MBProgressHUD.m in Sources */,
 				AE0F050E1827464B00DA13D4 /* ChoseBetaFactorViewController.m in Sources */,
 				AE7EF610181F4C93002A3C9E /* NewReportIndicator.m in Sources */,
@@ -1797,6 +1883,7 @@
 				AE60096F182B6EE800BB3819 /* PageController.m in Sources */,
 				AE31F831182B3085001CD0D0 /* NewReportArticleViewController.m in Sources */,
 				AE641EE11820A94400E77775 /* FinanPicCollectCell.m in Sources */,
+				AE63E8D81830D2F8002043DC /* ValuationModelContainerViewController.m in Sources */,
 				AE530CA117E99B9F007E5143 /* NGColoredViewController.m in Sources */,
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
 				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
@@ -1926,6 +2013,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/xcode/wanax/download/code,
+					/Users/xcode/wanax/oc/MathMonsters,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MathMonsters/MathMonsters-Prefix.pch";
@@ -1971,6 +2059,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/xcode/wanax/download/code,
+					/Users/xcode/wanax/oc/MathMonsters,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MathMonsters/MathMonsters-Prefix.pch";

@@ -15,6 +15,8 @@
 #import "DrawChartTool.h"
 #import "ChartLeftListViewController.h"
 
+#define HostViewHeight 250.0
+
 @interface FinancalModelChartViewController ()
 
 @end
@@ -62,7 +64,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 
     self.graph=[[CPTXYGraph alloc] initWithFrame:CGRectZero];
     self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
-    self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(0,50,640,220)];
+    self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(0,10,640,HostViewHeight)];
     [self.view addSubview:self.hostView];
     [self.hostView setHostedGraph : self.graph ];
     self.hostView.collapsesLayers = YES;
@@ -133,7 +135,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     if ( !whiteText ) {
         whiteText = [[ CPTMutableTextStyle alloc ] init ];
         whiteText.color=[CPTColor blackColor];
-        whiteText.fontSize=9.0;
+        whiteText.fontSize=12.0;
         whiteText.fontName=@"Heiti SC";
     }
     
@@ -141,11 +143,8 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     NSString *numberString =nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     if([self.trueUnit isEqualToString:@"%"]){
-        
-        //[formatter setNumberStyle:NSNumberFormatterPercentStyle];
         [formatter setPositiveFormat:@"0.00;0.00;-0.00"];
         numberString = [formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.points objectAtIndex:index] objectForKey:@"v"] floatValue]*100]];
-        
     }else{
         numberString=[[[self.points objectAtIndex:index] objectForKey:@"v"] stringValue];
         numberString=[Utiles unitConversionData:numberString andUnit:self.yAxisUnit trueUnit:self.trueUnit];
@@ -186,43 +185,31 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     if(axis.coordinate==CPTCoordinateX){
         
         NSNumberFormatter * formatter   = (NSNumberFormatter *)axis.labelFormatter;
-        // axis.fillMode=@"132";
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        //[formatter setPositiveFormat:@"0.00%;0.00%;-0.00%"];
         [formatter setPositiveFormat:@"##"];
-        //CGFloat labelOffset             = axis.labelOffset;
         NSMutableSet * newLabels        = [NSMutableSet set];
-        static CPTTextStyle * positiveStyle = nil;
+
         for (NSDecimalNumber * tickLocation in locations) {
-            CPTTextStyle *theLabelTextStyle;
-            
+
             CPTMutableTextStyle * newStyle = [axis.labelTextStyle mutableCopy];
-            newStyle.fontSize=10.0;
+            newStyle.fontSize=14.0;
             newStyle.fontName=@"Heiti SC";
-            newStyle.color=[CPTColor colorWithComponentRed:153/255.0 green:129/255.0 blue:64/255.0 alpha:1.0];
-            positiveStyle  = newStyle;
-            
-            theLabelTextStyle = positiveStyle;
-            
+            newStyle.color=[CPTColor blackColor];
+
             NSString * labelString      = [formatter stringForObjectValue:tickLocation];
             labelString=[Utiles yearFilled:labelString];
-            CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:theLabelTextStyle];
+            CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:newStyle];
             CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
             newLabel.tickLocation       = tickLocation.decimalValue;
-            newLabel.offset             = 3.0;
-            newLabel.rotation     = 0;
-            //newLabel.font=[UIFont fontWithName:@"Heiti SC" size:13.0];
+            newLabel.offset             = 13.0;
+            newLabel.rotation           = 0;
             [newLabels addObject:newLabel];
             SAFE_RELEASE(newLabel);
             SAFE_RELEASE(newLabelLayer);
         }
         
         axis.axisLabels = newLabels;
-    }else{
-        
     }
-    
-    
     return NO;
 }
 
@@ -238,21 +225,14 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     self.barPlot.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:[self.colorArr objectAtIndex:arc4random()%7] andAlpha:0.6]];
     // 图形向右偏移： 0.25
     self.barPlot.barOffset = CPTDecimalFromFloat(0.0f) ;
-    // 在 SDK 中， barCornerRadius 被 cornerRadius 替代
+
     self.barPlot.barCornerRadius=3.0;
     self.barPlot.barWidth=CPTDecimalFromFloat(1.0f);
     self.barPlot.barWidthScale=0.5f;
     self.barPlot.labelOffset=0;
     self.barPlot.identifier = BAR_IDENTIFIER;
     self.barPlot.opacity=0.0f;
-    
-    
-    CABasicAnimation *fadeInAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    fadeInAnimation.duration            = 3.0f;
-    fadeInAnimation.removedOnCompletion = NO;
-    fadeInAnimation.fillMode            = kCAFillModeForwards;
-    fadeInAnimation.toValue             = [NSNumber numberWithFloat:1.0];
-    [self.barPlot addAnimation:fadeInAnimation forKey:@"shadowOffset"];
+
     // 添加图形到绘图空间
     [self.graph addPlot :self.barPlot toPlotSpace :self.plotSpace];
 }
@@ -264,7 +244,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
         [xTmp addObject:[obj objectForKey:@"y"]];
         [yTmp addObject:[obj objectForKey:@"v"]];
     }
-    NSDictionary *xyDic=[DrawChartTool getXYAxisRangeFromxArr:xTmp andyArr:yTmp fromWhere:FinancalModel screenWidth:220];
+    NSDictionary *xyDic=[DrawChartTool getXYAxisRangeFromxArr:xTmp andyArr:yTmp fromWhere:FinancalModel screenHeight:HostViewHeight];
     XRANGEBEGIN=[[xyDic objectForKey:@"xBegin"] floatValue];
     XRANGELENGTH=[[xyDic objectForKey:@"xLength"] floatValue];
     XORTHOGONALCOORDINATE=[[xyDic objectForKey:@"xOrigin"] floatValue];

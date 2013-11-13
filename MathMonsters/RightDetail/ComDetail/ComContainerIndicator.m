@@ -25,8 +25,8 @@
     [self setBackgroundColor:[Utiles colorWithHexString:@"#291912"]];
     [self addImgView:[self.comInfo objectForKey:@"comanylogourl"] frame:CGRectMake(30,13,70,38)];
     [self addLabel:[NSString stringWithFormat:@"%@(%@%@)",[self.comInfo objectForKey:@"companyname"],[self.comInfo objectForKey:@"stockcode"],[self.comInfo objectForKey:@"marketname"]] frame:CGRectMake(150,10,300,40)];
-    [self addLabel:[NSString stringWithFormat:@"市场价:%@",[self.comInfo objectForKey:@"marketprice"]] frame:CGRectMake(470,10,160,40)];
-    [self addLabel:[NSString stringWithFormat:@"估股价:%@",[self.comInfo objectForKey:@"googuuprice"]] frame:CGRectMake(650,10,160,40)];
+    [self addLabel:[NSString stringWithFormat:@"市场价:%.2f",[[self.comInfo objectForKey:@"marketprice"] floatValue]] frame:CGRectMake(470,10,160,40)];
+    [self addLabel:[NSString stringWithFormat:@"估股价:%.2f",[[self.comInfo objectForKey:@"googuuprice"] floatValue]] frame:CGRectMake(650,10,160,40)];
     
     NSNumber *gPriceStr=[self.comInfo objectForKey:@"googuuprice"];
     float g=[gPriceStr floatValue];

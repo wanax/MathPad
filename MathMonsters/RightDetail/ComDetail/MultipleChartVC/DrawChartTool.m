@@ -32,7 +32,7 @@
     }
     
     if([dragChartChangedDriverIds count]>0){
-        NSMutableArray *tmpChartsData=[[NSMutableArray alloc] init];
+        NSMutableArray *tmpChartsData=[[[NSMutableArray alloc] init] autorelease];
         for(id key in dragChartChangedDriverIds){
             id chartData=[Utiles getObjectDataFromJsFun:webView funName:@"returnChartData" byData:key shouldTrans:YES];
             [tmpChartsData addObject:chartData];
@@ -79,30 +79,27 @@
     
 }
 
--(CGSize)getLabelSizeFromString:(NSString *)str font:(NSString *)font fontSize:(float)fontSize{
-    CGSize size = CGSizeMake(320,2000);
-    return [str sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:size lineBreakMode:NSLineBreakByCharWrapping];
-}
+/*-(CGSize)getLabelSizeFromString:(NSString *)str font:(NSString *)font fontSize:(float)fontSize{
+    //CGSize size = CGSizeMake(320,2000);
+    //return [str sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:size lineBreakMode:NSLineBreakByCharWrapping];
+}*/
 
 -(UIButton *)addButtonToView:(UIView *)view withTitle:(NSString *)title Tag:(NSInteger)tag frame:(CGRect)rect andFun:(SEL)fun withType:(UIButtonType)buttonType andColor:(NSString *)color textColor:(NSString *)txtColor normalBackGroundImg:(NSString *)bUrl highBackGroundImg:(NSString *)hUrl{
     
     UIButton *button=[UIButton buttonWithType:buttonType];
     [button setFrame:rect];
     [button setTitle:title forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:11.0f]];
+    [button.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:18.0f]];
     [button setTitleColor:[Utiles colorWithHexString:txtColor] forState:UIControlStateNormal];
     [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTag:tag];
     
     if(color){
-        if (buttonType==UIButtonTypeCustom) {
-            [button setBackgroundColor:[Utiles colorWithHexString:color]];
-        }else if(buttonType==UIButtonTypeRoundedRect){
-            [button setBackgroundColorString:color forState:UIControlStateNormal];
-        }
+        [button setBackgroundColor:[Utiles colorWithHexString:color] forState:UIControlStateNormal];
     }else{
         [button setBackgroundColor:[UIColor clearColor]];
     }
+    [button setBackgroundColor:[UIColor grayColor] forState:UIControlStateDisabled];
     if(bUrl){
         [button setBackgroundImage:[UIImage imageNamed:bUrl] forState:UIControlStateNormal];
     }
@@ -135,7 +132,7 @@ NSComparator cmptr = ^(id obj1, id obj2){
     return dic;
 }
 
-+(NSDictionary *)getXYAxisRangeFromxArr:(NSArray *)xArr andyArr:(NSArray *)yArr fromWhere:(ChartType)tag screenWidth:(int)screenWidth{
++(NSDictionary *)getXYAxisRangeFromxArr:(NSArray *)xArr andyArr:(NSArray *)yArr fromWhere:(ChartType)tag screenHeight:(int)screenHeight{
     
     NSArray *sortXArr=[xArr sortedArrayUsingComparator:cmptr];
     NSArray *sortYArr=[yArr sortedArrayUsingComparator:cmptr];
@@ -153,15 +150,14 @@ NSComparator cmptr = ^(id obj1, id obj2){
     }else{
         xMin=[sortXArr[0] floatValue];
     }
-    
-    //NSInteger xTap=1;
+
     double yMax=[[sortYArr lastObject] doubleValue];
     double yMin=[sortYArr[0] doubleValue];
     double yTap=0.0;
     if(tag==DahonModel){
         yTap=(yMax-yMin);
     }else{
-        yTap=(yMax-(yMin<0?yMin:0))*2/screenWidth;
+        yTap=(yMax-(yMin<0?yMin:0))*1.4/screenHeight;
     }
     
     float xLowBound=0;
@@ -179,22 +175,22 @@ NSComparator cmptr = ^(id obj1, id obj2){
         if(tag==DahonModel){
             yLowBound=yMin-0.2*(yMax-yMin);
         }else if(tag==DragabelModel){
-            yLowBound=0-0.2*screenWidth*yTap;
+            yLowBound=0-0.2*screenHeight*yTap;
         }else
-            yLowBound=0-0.2*screenWidth*yTap;
+            yLowBound=0-0.2*screenHeight*yTap;
     }else{
         if(tag==DahonModel){
             yLowBound=yMin-0.2*(yMax-yMin);
         }else if(tag==DragabelModel){
-            yLowBound=yMin-0.2*screenWidth*yTap;
+            yLowBound=yMin-0.2*screenHeight*yTap;
         }else
-            yLowBound=yMin-0.2*screenWidth*yTap;
+            yLowBound=yMin-0.2*screenHeight*yTap;
     }
     double yUpBound=0.0;
     if(tag==DahonModel){
         yUpBound=yMax+0.2*yTap;
     }else
-        yUpBound=yMax+0.2*screenWidth*yTap;
+        yUpBound=yMax+0.2*screenHeight*yTap;
     
     float xBegin=xLowBound;
     float xLength=xUpBound-xLowBound;
@@ -225,25 +221,22 @@ NSComparator cmptr = ^(id obj1, id obj2){
     
 }
 
-+(void)drawXYAxisIn:(CPTXYGraph *)graph toPlot:(CPTXYPlotSpace *)plotSpace withXRANGEBEGIN:(float)XRANGEBEGIN XRANGELENGTH:(float)XRANGELENGTH YRANGEBEGIN:(double)YRANGEBEGIN YRANGELENGTH:(double)YRANGELENGTH XINTERVALLENGTH:(float)XINTERVALLENGTH XORTHOGONALCOORDINATE:(double)XORTHOGONALCOORDINATE XTICKSPERINTERVAL:(float)XTICKSPERINTERVAL YINTERVALLENGTH:(double)YINTERVALLENGTH YORTHOGONALCOORDINATE:(double)YORTHOGONALCOORDINATE YTICKSPERINTERVAL:(double)YTICKSPERINTERVAL to:(id)delegate isY:(BOOL)isY isX:(BOOL)isX{
++(void)drawXYAxisIn:(CPTXYGraph *)graph toPlot:(CPTXYPlotSpace *)plotSpace withXRANGEBEGIN:(float)XRANGEBEGIN XRANGELENGTH:(float)XRANGELENGTH YRANGEBEGIN:(double)YRANGEBEGIN YRANGELENGTH:(double)YRANGELENGTH XINTERVALLENGTH:(float)XINTERVALLENGTH XORTHOGONALCOORDINATE:(double)XORTHOGONALCOORDINATE XTICKSPERINTERVAL:(float)XTICKSPERINTERVAL YINTERVALLENGTH:(double)YINTERVALLENGTH YORTHOGONALCOORDINATE:(double)YORTHOGONALCOORDINATE YTICKSPERINTERVAL:(double)YTICKSPERINTERVAL to:(id)delegate isY:(BOOL)isY isX:(BOOL)isX type:(ChartType)type{
     
     CPTMutableTextStyle *textStyle = [CPTTextStyle textStyle];
     textStyle.color                   = [CPTColor grayColor];
-    textStyle.fontSize                = 14.0f;
+    textStyle.fontSize                = 18.0f;
     textStyle.textAlignment           = CPTTextAlignmentCenter;
     graph.titleTextStyle           = textStyle;
-    graph.titleDisplacement        = CGPointMake(0.0f, -20.0f);
-    graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
-    
-    /*NSLog(@"\nXRANGEBEGIN%f\nXRANGELENGTH%f\nXORTHOGONALCOORDINATE%f\nXTICKSPERINTERVAL%f\nYRANGEBEGIN%f\nYRANGELENGTH%f\nYORTHOGONALCOORDINATE%f\nYTICKSPERINTERVAL%f\n",XRANGEBEGIN,XRANGELENGTH,XORTHOGONALCOORDINATE,XTICKSPERINTERVAL,YRANGEBEGIN,YRANGELENGTH,YORTHOGONALCOORDINATE,YINTERVALLENGTH);*/
+    graph.titleDisplacement        = CGPointMake(0.0f, -5.0f);
+    graph.titlePlotAreaFrameAnchor = CPTRectAnchorTopLeft;
     
     //设置x，y坐标范围
     plotSpace.xRange=[CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(XRANGEBEGIN)
                                                   length:CPTDecimalFromFloat(XRANGELENGTH)];
     plotSpace.yRange=[CPTPlotRange plotRangeWithLocation:
                       CPTDecimalFromCGFloat(YRANGEBEGIN)  length:CPTDecimalFromCGFloat(YRANGELENGTH)];
-    //plotSpace.allowsUserInteraction=YES;
-    
+
     //绘制坐标系
     CPTXYAxisSet *axisSet=(CPTXYAxisSet *)graph.axisSet;
     CPTXYAxis *x=axisSet.xAxis;
@@ -253,18 +246,21 @@ NSComparator cmptr = ^(id obj1, id obj2){
     lineStyle.lineCap=kCGLineCapButt;
     lineStyle.lineColor = [CPTColor colorWithComponentRed:120/255.0 green:118/255.0 blue:116/255.0 alpha:1.0];
     if(!isX){
-        lineStyle.lineWidth=0;
+        lineStyle.lineWidth=0.0;
     }
     x.axisLineStyle=lineStyle;
     x.majorIntervalLength=CPTDecimalFromLong(XINTERVALLENGTH);
     x.orthogonalCoordinateDecimal=CPTDecimalFromDouble(XORTHOGONALCOORDINATE);
     x.minorTicksPerInterval=XTICKSPERINTERVAL;
-    //lineStyle.lineWidth=1.0;
+    lineStyle.lineWidth=1.0;
+    lineStyle.lineWidth=2.0;
     x.minorTickLineStyle = lineStyle;
+    if (type == DahonModel) {
+        x.majorTickLength=10.0;
+    }
     x.majorTickLineStyle=lineStyle;
     x.delegate=delegate;
     
-    //lineStyle.lineColor = [CPTColor colorWithComponentRed:112/255.0 green:196/255.0 blue:64/255.0 alpha:1.0];
     lineStyle.lineWidth = 1.0;
     if(!isY){
         lineStyle.lineWidth=0.0;

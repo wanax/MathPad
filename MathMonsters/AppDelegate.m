@@ -19,6 +19,8 @@
 #import "REFrostedViewController.h"
 #import "DEMOMenuViewController.h"
 #import "DEMONavigationController.h"
+#import "Reachability.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -28,24 +30,20 @@
     [super dealloc];
 }
 
--(void)setPonyDebugger{
-    PDDebugger *debugger = [PDDebugger defaultInstance];    
-    [debugger enableNetworkTrafficDebugging];
-    [debugger forwardAllNetworkTraffic];
-    
-    [debugger enableViewHierarchyDebugging];
-    [debugger setDisplayedViewAttributeKeyPaths:@[@"frame", @"hidden", @"alpha", @"opaque"]];
-    
-    [debugger enableRemoteLogging];
-    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
-}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+    //[Crashlytics startWithAPIKey:@"c59317990c405b2f42582cacbe9f4fa9abe1fefb"];
+    [self netChecked];
+    [self shouldKeepLogin];
+    //[self setPonyDebugger];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.left=[[FontListViewController alloc] init];
-    //[self setPonyDebugger];
+    
     ContainerViewController *content=[[ContainerViewController alloc] init];
     DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:content];
     DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] init];
@@ -60,86 +58,83 @@
     return YES;
 }
 
--(void)generateMM{
-    LeftViewController * leftDrawer = [[LeftViewController alloc] init];
-    leftDrawer.view.backgroundColor = [UIColor blackColor];
-    ContainerViewController * center = [[ContainerViewController alloc] init];
-    center.view.backgroundColor = [UIColor colorWithRed:86/255.0 green:116/255.0 blue:35/255.0 alpha:1.0];
-//    FontListViewController *list=[[[FontListViewController alloc] init] autorelease];
-    
-    MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:center
-                                             leftDrawerViewController:leftDrawer];
-    
-    [drawerController setMaximumLeftDrawerWidth:200];
-    //[drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    
-    [drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    
-    self.window.rootViewController = drawerController;
+-(void)setPonyDebugger{
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    [debugger enableViewHierarchyDebugging];
+    [debugger setDisplayedViewAttributeKeyPaths:@[@"frame", @"hidden", @"alpha", @"opaque"]];
+    [debugger enableRemoteLogging];
+    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
 }
 
--(void)generateSplitVC2{
-    
-    self.split2ViewController=[[MGSplitViewController alloc] init];
-    self.split2ViewController.delegate=self.right;
-    self.right.view.frame=CGRectMake(0,0,824,748);
-    self.left.view.frame=CGRectMake(0,0,200,748);
-    self.split2ViewController.detailViewController=self.right;
-    self.split2ViewController.masterViewController=self.left;
-    self.window.rootViewController = self.split2ViewController;
+#pragma mark -
+#pragma mark Keep Login
+-(void)shouldKeepLogin{
+    if([Utiles isLogin]){
+        [self handleTimer:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginKeeping" object:nil];
+        [self loginKeeping:nil];
+    }
+}
+-(void)addLoginEventListen{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginKeeping:) name:@"LoginKeeping" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelLoginKeeping:) name:@"LogOut" object:nil];
 }
 
--(void)generateSplitVC{
-    
-    self.splitViewController=[[UISplitViewController alloc] init];
-    self.splitViewController.delegate=self.right;
-    NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.left,[[PieViewController alloc] init], nil];
-    self.splitViewController.viewControllers = viewControllers;
-    self.window.rootViewController = self.splitViewController;
-    
+-(void)loginKeeping:(NSNotification*)notification{
+    self.loginTimer = [NSTimer scheduledTimerWithTimeInterval: 7000 target: self selector: @selector(handleTimer:) userInfo: nil repeats: YES];
+}
+-(void)cancelLoginKeeping:(NSNotification*)notification{
+    [self.loginTimer invalidate];
 }
 
-- (void)generateControllerStack {
-
-    PieViewController *center=[[PieViewController alloc] init];
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:center
-                                                                                    leftViewController:self.left];
-
-    deckController.leftSize = 800;
+- (void) handleTimer: (NSTimer *) timer{
     
-    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
-    self.window.rootViewController = deckController;
+    NSUserDefaults *userDeaults=[NSUserDefaults standardUserDefaults];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[[[userDeaults objectForKey:@"UserInfo"] objectForKey:@"username"] lowercaseString],@"username",[Utiles md5:[[userDeaults objectForKey:@"UserInfo"] objectForKey:@"password"]],@"password",@"googuu",@"from", nil];
+    [Utiles getNetInfoWithPath:@"Login" andParams:params besidesBlock:^(id resObj){
+        
+        if([[resObj objectForKey:@"status"] isEqualToString:@"1"]){
+            NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+            [userDefaults removeObjectForKey:@"UserToke"];
+            [userDefaults setObject:[resObj objectForKey:@"token"] forKey:@"UserToken"];
+            
+            NSLog(@"%@",[resObj objectForKey:@"token"]);
+            
+        }else {
+            NSLog(@"%@",[resObj objectForKey:@"msg"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 
-- (void)applicationWillResignActive:(UIApplication *)application
+#pragma mark -
+#pragma mark Net Reachable
+-(void)netChecked{
+    Reachability* reach = [Reachability reachabilityWithHostname:GetConfigure(@"FrameParamConfig", @"NetCheckURL", NO)];
+    reach.reachableOnWWAN = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    [reach startNotifier];
+}
+
+-(void)reachabilityChanged:(NSNotification*)note
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    Reachability * reach = [note object];
+    
+    if([reach isReachable]){
+        NSLog(@"Reachable");
+        self.isReachable=YES;
+    }else{
+        NSLog(@"NReachable");
+        self.isReachable=NO;
+    }
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
 
 
 @end

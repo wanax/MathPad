@@ -53,6 +53,7 @@
     tRight.view.frame=CGRectMake(350,0,600,1100);
     tRight.comInfo=self.comInfo;
     self.delegate=tRight;
+    self.leftListVC.delegate=tRight;
     self.rightListVC=tRight;
     [self.view addSubview:self.rightListVC.view];
     [self addChildViewController:self.rightListVC];

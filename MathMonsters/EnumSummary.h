@@ -146,7 +146,7 @@ typedef enum {
     FinancalModel,//金融模型
     DragabelModel,//可调整参数模型
     DahonModel,//大行数据
-    MyProAndLossTable//我的损益表
+    MyProAndLossTable,//我的损益表
     
 } ChartType;
 

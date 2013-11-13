@@ -8,6 +8,7 @@
 
 #import "DEMOMenuViewController.h"
 #import "UIViewController+REFrostedViewController.h"
+#import "ClientLoginViewController.h"
 
 @implementation DEMOMenuViewController
 
@@ -15,7 +16,8 @@
 {
     [super viewDidLoad];
     
-    self.cusTable=[[UITableView alloc] initWithFrame:CGRectMake(0,0,200,768)];
+    UITableView *teT=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,200,768)] autorelease];
+    self.cusTable=teT;
     self.cusTable.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.cusTable.delegate = self;
     self.cusTable.dataSource = self;
@@ -75,7 +77,7 @@
     [label sizeToFit];
     [view addSubview:label];
     
-    return view;
+    return [view autorelease];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex
@@ -89,17 +91,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    /*UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
+    UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
         [delegate.frostedViewController dismissViewControllerAnimated:YES completion:nil];
-        //DEMOHomeViewController *homeViewController = [[DEMOHomeViewController alloc] init];
-        //navigationController.viewControllers = @[homeViewController];
+        ClientLoginViewController *homeViewController = [[ClientLoginViewController alloc] init];
+        navigationController.viewControllers = @[homeViewController];
     } else {
-        DEMOSecondViewController *secondViewController = [[DEMOSecondViewController alloc] init];
-        navigationController.viewControllers = @[secondViewController];
-    }*/
+        //DEMOSecondViewController *secondViewController = [[DEMOSecondViewController alloc] init];
+        //navigationController.viewControllers = @[secondViewController];
+    }
     [self.frostedViewController hideMenuViewController];
 }
 

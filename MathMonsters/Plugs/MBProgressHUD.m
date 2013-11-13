@@ -225,6 +225,18 @@
 #endif
 }
 
++ (MBProgressHUD *)showHUDAddedTo:(UIView *)view withTitle:(NSString *)title animated:(BOOL)animated {
+	MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
+    hud.labelText=title;
+    [view insertSubview:hud atIndex:view.subviews.count+1];
+	[hud show:animated];
+#if __has_feature(objc_arc)
+	return hud;
+#else
+	return [hud autorelease];
+#endif
+}
+
 + (BOOL)hideHUDForView:(UIView *)view animated:(BOOL)animated {
 	UIView *viewToRemove = nil;
 	for (UIView *v in [view subviews]) {

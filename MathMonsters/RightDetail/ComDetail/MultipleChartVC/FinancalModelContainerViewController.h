@@ -11,6 +11,7 @@
 @class ChartLeftListViewController;
 @class FinancalModelRightListViewController;
 
+//数据更新，通知右图表视图同时更新
 @protocol FinancalContainerDelegate <NSObject>
 @optional
 -(void)rightListClassChanged;

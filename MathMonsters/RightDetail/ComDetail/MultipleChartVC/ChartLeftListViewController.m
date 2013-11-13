@@ -100,23 +100,21 @@
             self.isOpen = NO;
             [self didSelectCellRowFirstDo:NO nextDo:NO];
             self.selectIndex = nil;
-            
+        }else if(indexPath.section==3){
+            [self.delegate modelChanged:[NSString stringWithFormat:@"%d",DiscountRate]];
         }else{
             if (!self.selectIndex) {
                 self.selectIndex = indexPath;
                 [self didSelectCellRowFirstDo:YES nextDo:NO];
-                
             }else{
-                
                 [self didSelectCellRowFirstDo:NO nextDo:YES];
             }
         }
         
     }else{
         NSArray *list = [self.transData objectForKey:[self.sectionKeys objectAtIndex:indexPath.section]];
-        NSString *item = [[list objectAtIndex:indexPath.row-1] objectForKey:@"name"];
-        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:item message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil] autorelease];
-        [alert show];
+        NSString *driverId = [[list objectAtIndex:indexPath.row-1] objectForKey:@"id"];
+        [self.delegate modelChanged:driverId];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -19,7 +19,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        NSMutableDictionary *temp=[[[NSMutableDictionary alloc] init] autorelease];
+        self.indexPathDic=temp;
     }
     return self;
 }
@@ -33,7 +34,7 @@
 -(void)initComponents{
     
     UITableView *tView=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,650,610)] autorelease];
-    //tView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    tView.separatorStyle=UITableViewCellSeparatorStyleNone;
     tView.dataSource=self;
     tView.delegate=self;
     self.cusTable=tView;
@@ -52,7 +53,18 @@
         }
     }
     self.classArr=tempArr;
+    for(int n=0;n<[self.classArr count];n++){
+        [self.indexPathDic setObject:[NSNumber numberWithInt:n] forKey:[[self.classArr objectAtIndex:n] objectForKey:@"id"]];
+    }
     [self.cusTable reloadData];
+}
+
+#pragma mark -
+#pragma mark ChartLeftListDelegate
+-(void)modelChanged:(NSString *)driverId{
+    
+    NSIndexPath *index=[NSIndexPath indexPathForRow:[[self.indexPathDic objectForKey:driverId] integerValue] inSection:0];
+    [self.cusTable scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -68,7 +80,7 @@
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 220.0;
+    return 280.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,12 +91,12 @@
     if(cell==nil){
         cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    FinancalModelChartViewController *chartView=[[FinancalModelChartViewController alloc] init];
+    FinancalModelChartViewController *chartView=[[[FinancalModelChartViewController alloc] init] autorelease];
     chartView.comInfo=self.comInfo;
     chartView.jsonForChart=self.jsonForChart;
     chartView.driverId=[[self.classArr objectAtIndex:indexPath.row] objectForKey:@"id"];
     [cell.contentView addSubview:chartView.view];
-    
+    [self addChildViewController:chartView];
     return cell;
 }
 
