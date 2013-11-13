@@ -3,6 +3,7 @@ PODS:
   - CXPhotoBrowser (1.1.1)
   - FlatUIKit (1.2)
   - JSONKit (1.5pre)
+  - KKProgressTimer (0.0.1)
   - MMDrawerController (0.4.0):
     - MMDrawerController/Core
     - MMDrawerController/MMDrawerBarButtonItem
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - CXPhotoBrowser
   - FlatUIKit
   - JSONKit (~> 1.4)
+  - KKProgressTimer (from `http://github.com/gin0606/KKProgressTimer.git`)
   - MMDrawerController (~> 0.4.0)
   - NSLogger
   - PonyDebugger (~> 0.3.0)
@@ -43,11 +45,16 @@ DEPENDENCIES:
   - SVPullToRefresh (~> 0.4.1)
   - ViewDeck (~> 2.3.1)
 
+EXTERNAL SOURCES:
+  KKProgressTimer:
+    :git: http://github.com/gin0606/KKProgressTimer.git
+
 SPEC CHECKSUMS:
   AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
   CXPhotoBrowser: a0644b58f96af876b4275bad62786183d3e7e11e
   FlatUIKit: 43b2acaa6f4ef57539b51b00e4ce62d506e33e11
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  KKProgressTimer: 87a1001670f911a827cab5d8afb776c5db259953
   MMDrawerController: 44baaee6b79487b4681eb61597fb790586909c0c
   NSLogger: 4567fef08d0db18a89cce91b2053823fc0950738
   PonyDebugger: b8b504d18c6fe8cfe904295d8e908b076bdfa291

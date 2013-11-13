@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle15
+#define INJECTION_BUNDLE InjectionBundle3
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MultipleChartVC/ChartLeftListViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/UserSetting/ClientLoginViewController.m"
 
 
-@interface InjectionBundle15 : NSObject
+@interface InjectionBundle3 : NSObject
 @end
-@implementation InjectionBundle15
+@implementation InjectionBundle3
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_ChartLeftListViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ChartLeftListViewController notify:4];
+    extern Class OBJC_CLASS_$_ClientLoginViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ClientLoginViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

@@ -10,6 +10,15 @@
 
 @interface EnumSummary : NSObject
 
+//用户注册信息相关
+typedef enum{
+    
+    UserRegister,
+    UserResetPwd,
+    UserFindPwd
+    
+} UserActionType;
+
 typedef enum{
     UserHelp,
     ExcelShortcutsHelp

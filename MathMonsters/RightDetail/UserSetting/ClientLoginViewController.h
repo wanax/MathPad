@@ -26,13 +26,15 @@
 @property (nonatomic,retain) IBOutlet UIButton *findPwdBt;
 @property (nonatomic,retain) IBOutlet UIButton *autoLoginBt;
 @property (nonatomic,retain) IBOutlet UIImageView *autoCheckImg;
+@property (nonatomic,retain) IBOutlet UISwitch *rememberPwd;
 
 -(IBAction)cancelBtClicked:(UIButton *)bt;
 -(IBAction)loginBtClicked:(id)sender;
 -(IBAction)backGroundIsClicked;
--(IBAction)autoBtClicked:(id)sender;
+//-(IBAction)autoBtClicked:(id)sender;
 -(IBAction)freeRegBtClicked:(id)sender;
--(IBAction)findPwdBtClicked:(id)sender;
+//-(IBAction)findPwdBtClicked:(id)sender;
+-(IBAction)rememberPwd:(UISwitch *)s;
 
 
 

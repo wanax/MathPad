@@ -9,6 +9,7 @@
 
 
 #import "ClientLoginViewController.h"
+#import "UserRegisterViewController.h"
 
 
 @interface ClientLoginViewController ()
@@ -25,26 +26,42 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    if([Utiles isLogin]){
+        //[self.navigationController popViewControllerAnimated:YES];
+    }
 
+    if([[Utiles getConfigureInfoFrom:@"userconfigure" andKey:@"rememberPwd" inUserDomain:YES] isEqual:@"1"]){
+        id userInfo=[[NSUserDefaults standardUserDefaults] objectForKey:@"UserInfo"];
+        if (userInfo) {
+            [self.userNameField setText:userInfo[@"username"]];
+            [self.userPwdField setText:userInfo[@"password"]];
+        }
+        [self.rememberPwd setOn:YES];
+    }else{
+        [self.rememberPwd setOn:NO];
+    }
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor peterRiverColor];
+    [self initComponents];
+}
+
+-(void)initComponents{
+    
     isGoIn=NO;
     self.userNameField.delegate=self;
     self.userPwdField.delegate=self;
-    
-    UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userNameImg"]];
-    image.frame=CGRectMake(0,0,20,20);
+    UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userNameFieldIcon"]];
+    image.frame=CGRectMake(15,0,24,24);
     self.userNameField.leftView=image;
-    self.userNameField.leftViewMode = UITextFieldViewModeUnlessEditing;
     
-    UIImageView *image2=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pwdImg"]];
-    image2.frame=CGRectMake(0,0,20,20);
+    UIImageView *image2=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pwdFieldIcon"]];
+    image2.frame=CGRectMake(15,0,24,24);
     self.userPwdField.leftView=image2;
-    self.userPwdField.leftViewMode = UITextFieldViewModeUnlessEditing;
-
 }
 
 
@@ -76,10 +93,29 @@
 }
 
 -(IBAction)cancelBtClicked:(UIButton *)bt{
-    //[self viewDisMiss];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(IBAction)rememberPwd:(UISwitch *)s{
+    if (s.on) {
+        [Utiles setConfigureInfoTo:@"userconfigure" forKey:@"rememberPwd" andContent:@"1"];
+    } else {
+        [Utiles setConfigureInfoTo:@"userconfigure" forKey:@"rememberPwd" andContent:@"0"];
 
+    }
+}
+
+-(IBAction)freeRegBtClicked:(id)sender{
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.googuu.net/pages/user/newRegister.htm"]];
+    UserRegisterViewController *regVC=[[[UserRegisterViewController alloc] init] autorelease];
+    regVC.actionType=UserRegister;
+    [self presentViewController:regVC animated:YES completion:nil];
+}
+
+-(IBAction)backGroundIsClicked{
+    [self.userNameField resignFirstResponder];
+    [self.userPwdField resignFirstResponder];
+}
 
 -(void)userLoginUserName:(NSString *)userName pwd:(NSString *)pwd{
     if ([Utiles isNetConnected]) {
@@ -94,6 +130,7 @@
             
             if([[info objectForKey:@"status"] isEqualToString:@"1"]){
                 
+                [self.navigationController popViewControllerAnimated:YES];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginKeeping" object:nil];
                 [[NSUserDefaults standardUserDefaults] setObject:[info objectForKey:@"token"] forKey:@"UserToken"];
                 
@@ -134,7 +171,6 @@
 
 - (void)didReceiveMemoryWarning
 {
-    NSLog(@"warning");
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
