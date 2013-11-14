@@ -39,7 +39,7 @@
 
 -(void)initComponents{
     
-    UITableView *tempTab=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,568,625)] autorelease];
+    UITableView *tempTab=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,568,665)] autorelease];
     
     tempTab.backgroundColor=[Utiles colorWithHexString:@"#2D180D"];
     tempTab.delegate=self;

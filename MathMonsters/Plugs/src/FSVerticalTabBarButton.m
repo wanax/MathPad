@@ -39,7 +39,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    CGRect bounds = self.bounds;
+    /*CGRect bounds = self.bounds;
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // flip the coordinates system
@@ -96,7 +96,10 @@
         CGContextDrawImage(context,
                            imageRect,
                            self.iconImage.CGImage);
-    }
+    }*/
+    UIImageView *im=[[UIImageView alloc] initWithImage:self.iconImage];
+    im.frame=CGRectMake(0,0,100,92);
+    self.backgroundView=im;
 }
 
 

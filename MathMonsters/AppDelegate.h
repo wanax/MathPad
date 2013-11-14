@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class VerticalTabBarViewController;
 @class REFrostedViewController;
 @class SettingNavigationController;
 @class SettingMenuViewController;
@@ -15,6 +16,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,retain) VerticalTabBarViewController *verTabBar;
 @property (nonatomic,retain) REFrostedViewController *frostedViewController;
 @property (nonatomic,retain) SettingNavigationController *navigationController;
 @property (nonatomic,retain) SettingMenuViewController *menuController;

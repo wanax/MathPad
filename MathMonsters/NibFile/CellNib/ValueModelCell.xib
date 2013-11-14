@@ -7,14 +7,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" restorationIdentifier="ValueModelCellIdentifier" selectionStyle="default" indentationWidth="10" reuseIdentifier="ValueModelCellIdentifier" id="Jvf-cj-m44" customClass="ValueModelCell">
-            <rect key="frame" x="0.0" y="0.0" width="920" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="925" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jvf-cj-m44" id="NOs-m3-iGU">
-                <rect key="frame" x="0.0" y="0.0" width="920" height="59"/>
+                <rect key="frame" x="0.0" y="0.0" width="925" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="valueModelCellBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="gdl-JO-eq0">
-                        <rect key="frame" x="0.0" y="0.0" width="920" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="925" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dM-5D-9Yg">

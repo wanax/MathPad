@@ -37,13 +37,16 @@
 
 -(void)initComponents{
  
-    self.newComTable=[[UITableView alloc] initWithFrame:CGRectMake(0,0,340,625)];
-    self.newComTable.backgroundColor=[Utiles colorWithHexString:@"#2D180D"];
-    self.newComTable.delegate=self;
-    self.newComTable.dataSource=self;
-    self.newComTable.separatorStyle=UITableViewCellSeparatorStyleNone;
+    UITableView *tView=[[UITableView alloc] initWithFrame:CGRectMake(0,0,350,665)];
+    tView.backgroundColor=[Utiles colorWithHexString:@"#2D180D"];
+    tView.showsVerticalScrollIndicator=NO;
+    tView.delegate=self;
+    tView.dataSource=self;
+    tView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.newComTable=tView;
     [self.view addSubview:self.newComTable];
     [self addTableAction];
+    SAFE_RELEASE(tView);
 }
 
 
@@ -121,7 +124,7 @@
         view.delegate = self;
         [self.newComTable addSubview:view];
         self.comRefreshHeaderView = view;
-        [view release];
+        SAFE_RELEASE(view);
     }
     [self.comRefreshHeaderView refreshLastUpdatedDate];
 }

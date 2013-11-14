@@ -47,7 +47,7 @@
     NewReportIndicator *indicator=[[[NewReportIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
     [self.view addSubview:indicator];
     
-    NewReportLeftListViewController *leftList=[[NewReportLeftListViewController alloc] init];
+    NewReportLeftListViewController *leftList=[[[NewReportLeftListViewController alloc] init] autorelease];
     leftList.view.frame=CGRectMake(4,60,568,1000);
     [self.view addSubview:leftList.view];
     [self addChildViewController:leftList];

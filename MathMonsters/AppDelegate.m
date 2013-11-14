@@ -7,13 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "ContainerViewController.h"
 #import "REFrostedViewController.h"
 #import "SettingMenuViewController.h"
 #import "SettingNavigationController.h"
 #import "Reachability.h"
 #import <Crashlytics/Crashlytics.h>
-#import "FSVerticalTabBarExampleController.h"
+#import "VerticalTabBarViewController.h"
 
 @implementation AppDelegate
 
@@ -41,19 +40,17 @@
 
 -(void)initComponents{
     
-    ContainerViewController *content=[[ContainerViewController alloc] init];
-    FSVerticalTabBarExampleController *test=[[FSVerticalTabBarExampleController alloc] init];
+    VerticalTabBarViewController *tabBar=[[[VerticalTabBarViewController alloc] init] autorelease];
+    self.verTabBar=tabBar;
     
-    SettingNavigationController *nav = [[[SettingNavigationController alloc] initWithRootViewController:test] autorelease];
+    SettingNavigationController *nav = [[[SettingNavigationController alloc] initWithRootViewController:self.verTabBar] autorelease];
     SettingMenuViewController *menu= [[[SettingMenuViewController alloc] init] autorelease];
     [menu.view setFrame:CGRectMake(0,0,200,768)];
-    
     self.navigationController=nav;
     self.menuController=menu;
     
-    REFrostedViewController *re=[[REFrostedViewController alloc] initWithContentViewController:self.navigationController menuViewController:self.menuController];
-    re.view.frame=CGRectMake(0,55,1024,713);
-    self.frostedViewController =[re autorelease];
+    REFrostedViewController *re=[[[REFrostedViewController alloc] initWithContentViewController:self.navigationController menuViewController:self.menuController] autorelease];
+    self.frostedViewController =re;
     self.frostedViewController.limitMenuViewSize=YES;
     self.frostedViewController.minimumMenuViewSize=CGSizeMake(200,768);
     self.frostedViewController.direction = REFrostedViewControllerDirectionLeft;

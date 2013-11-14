@@ -121,9 +121,3 @@
 #define COCOAPODS_VERSION_MINOR_SocketRocket 3
 #define COCOAPODS_VERSION_PATCH_SocketRocket 1
 
-// ViewDeck
-#define COCOAPODS_POD_AVAILABLE_ViewDeck
-#define COCOAPODS_VERSION_MAJOR_ViewDeck 2
-#define COCOAPODS_VERSION_MINOR_ViewDeck 3
-#define COCOAPODS_VERSION_PATCH_ViewDeck 1
-

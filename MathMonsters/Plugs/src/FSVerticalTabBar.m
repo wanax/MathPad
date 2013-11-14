@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define DEFAULT_ITEM_HEIGHT 80.0
+#define DEFAULT_ITEM_HEIGHT 89.2
 
 
 @implementation FSVerticalTabBar
@@ -72,7 +72,7 @@
         gradientLayer.endPoint = CGPointMake(1.0, 0.5);  // end point of gradient drawing (right side)
         
         [self.backgroundView.layer addSublayer:gradientLayer];
-        
+
     }
     
 }
@@ -166,12 +166,15 @@
         cell = [[FSVerticalTabBarButton alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:vtbci];
     }
     
-    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:self.selectionIndicatorImage];
-    
     UITabBarItem *item = [self.items objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.title;
     cell.iconImage = item.image;
+
+    cell.backgroundView=[[UIImageView alloc] initWithImage:item.image];
     
+    UIImageView *im=[[[UIImageView alloc] initWithImage:item.selectedImage] autorelease];
+    im.frame=CGRectMake(0,0,100,105);
+    cell.selectedBackgroundView = im;
+
     return cell;
 }
 

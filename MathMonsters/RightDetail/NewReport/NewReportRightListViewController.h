@@ -19,7 +19,7 @@
 @property (nonatomic,retain) EGORefreshTableHeaderView *comRefreshHeaderView;
 @property (nonatomic,retain) UITableView *newComTable;
 
-@property (nonatomic,retain) NSString *articleId;
+@property (nonatomic,retain) id articleId;
 @property (nonatomic,retain) NSArray *iconArr;
 
 @end

@@ -44,7 +44,8 @@
     ValueModelIndicator *indicator=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
     [self.view addSubview:indicator];
     
-    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,924,610)];
+    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,928,610)];
+    temp.showsVerticalScrollIndicator=NO;
     temp.delegate=self;
     temp.dataSource=self;
     temp.backgroundColor=[Utiles colorWithHexString:@"#472A20"];
