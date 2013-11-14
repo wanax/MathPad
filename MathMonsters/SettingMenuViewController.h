@@ -1,5 +1,5 @@
 //
-//  DEMOMenuViewController.h
+//  SettingMenuViewController.h
 //  REFrostedViewControllerExample
 //
 //  Created by Roman Efimov on 9/18/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
 
-@interface DEMOMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SettingMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic,retain) UITableView *cusTable;
 

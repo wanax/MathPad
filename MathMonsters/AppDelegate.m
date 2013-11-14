@@ -7,20 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "RightViewController.h"
-#import "FontListViewController.h"
-#import "CenterViewController.h"
-#import "IIViewDeckController.h"
-#import "PopListViewController.h"
-#import "PieViewController.h"
-#import "MMDrawerController.h"
-#import "LeftViewController.h"
 #import "ContainerViewController.h"
 #import "REFrostedViewController.h"
-#import "DEMOMenuViewController.h"
-#import "DEMONavigationController.h"
+#import "SettingMenuViewController.h"
+#import "SettingNavigationController.h"
 #import "Reachability.h"
 #import <Crashlytics/Crashlytics.h>
+#import "FSVerticalTabBarExampleController.h"
 
 @implementation AppDelegate
 
@@ -38,24 +31,34 @@
     //[Crashlytics startWithAPIKey:@"c59317990c405b2f42582cacbe9f4fa9abe1fefb"];
     [self netChecked];
     [self shouldKeepLogin];
-    //[self setPonyDebugger];
-    
-    
+    [self setPonyDebugger];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.left=[[FontListViewController alloc] init];
+    [self initComponents];
+    
+    return YES;
+}
+
+-(void)initComponents{
     
     ContainerViewController *content=[[ContainerViewController alloc] init];
-    DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:content];
-    DEMOMenuViewController *menuController = [[DEMOMenuViewController alloc] init];
-    [menuController.view setFrame:CGRectMake(0,0,200,768)];
-    REFrostedViewController *re=[[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    FSVerticalTabBarExampleController *test=[[FSVerticalTabBarExampleController alloc] init];
+    
+    SettingNavigationController *nav = [[[SettingNavigationController alloc] initWithRootViewController:test] autorelease];
+    SettingMenuViewController *menu= [[[SettingMenuViewController alloc] init] autorelease];
+    [menu.view setFrame:CGRectMake(0,0,200,768)];
+    
+    self.navigationController=nav;
+    self.menuController=menu;
+    
+    REFrostedViewController *re=[[REFrostedViewController alloc] initWithContentViewController:self.navigationController menuViewController:self.menuController];
+    re.view.frame=CGRectMake(0,55,1024,713);
     self.frostedViewController =[re autorelease];
     self.frostedViewController.limitMenuViewSize=YES;
     self.frostedViewController.minimumMenuViewSize=CGSizeMake(200,768);
     self.frostedViewController.direction = REFrostedViewControllerDirectionLeft;
     self.window.rootViewController = self.frostedViewController;
     [self.window makeKeyAndVisible];
-    return YES;
 }
 
 -(void)setPonyDebugger{

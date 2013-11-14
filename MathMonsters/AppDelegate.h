@@ -7,25 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MGSplitViewController.h"
-#import "LeftBarViewController.h"
 
-@class RightViewController;
-@class FontListViewController;
 @class REFrostedViewController;
+@class SettingNavigationController;
+@class SettingMenuViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,retain) REFrostedViewController *frostedViewController;
-@property (nonatomic,retain) UISplitViewController *splitViewController;
-@property (nonatomic, retain) MGSplitViewController *split2ViewController;
-@property (nonatomic,retain) RightViewController *right;
-@property (nonatomic,retain) FontListViewController *left;
+@property (nonatomic,retain) SettingNavigationController *navigationController;
+@property (nonatomic,retain) SettingMenuViewController *menuController;
 
 @property (nonatomic,strong) id comInfo;
 @property (nonatomic,retain) NSTimer *loginTimer;
 @property BOOL isReachable;
-@property (nonatomic,retain) id<LeftBarDelegate> delegate;
+//@property (nonatomic,retain) id<LeftBarDelegate> delegate;
 
 @end

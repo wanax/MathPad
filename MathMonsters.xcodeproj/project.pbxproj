@@ -170,6 +170,12 @@
 		AE748EB61833618200BD4F57 /* regUserFieldIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE748EB21833618200BD4F57 /* regUserFieldIcon.png */; };
 		AE748EB9183361E200BD4F57 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = AE748EB8183361E200BD4F57 /* qq.png */; };
 		AE748EBC18336C5100BD4F57 /* UserRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EBB18336C5100BD4F57 /* UserRegisterViewController.m */; };
+		AE748EC61833770500BD4F57 /* FSVerticalTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */; };
+		AE748EC71833770500BD4F57 /* FSVerticalTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EC11833770500BD4F57 /* FSVerticalTabBarButton.m */; };
+		AE748EC81833770500BD4F57 /* FSVerticalTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EC31833770500BD4F57 /* FSVerticalTabBarController.m */; };
+		AE748EC91833770500BD4F57 /* selectionIndicatorImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AE748EC41833770500BD4F57 /* selectionIndicatorImage.png */; };
+		AE748ECA1833770500BD4F57 /* selectionIndicatorImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE748EC51833770500BD4F57 /* selectionIndicatorImage@2x.png */; };
+		AE748ECD1833772B00BD4F57 /* FSVerticalTabBarExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748ECC1833772B00BD4F57 /* FSVerticalTabBarExampleController.m */; };
 		AE7E5735181E3F7400A1391E /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E5730181E3F7400A1391E /* PieChartView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE7E5736181E3F7400A1391E /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E5732181E3F7400A1391E /* RenderView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE7E5737181E3F7400A1391E /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E5734181E3F7400A1391E /* RotatedView.m */; };
@@ -212,8 +218,8 @@
 		AE8815B2181F85610004B0CF /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8815AC181F85610004B0CF /* grayArrow@2x.png */; };
 		AE8B44FA1820E8C00047F4BB /* littleTag.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8B44F91820E8C00047F4BB /* littleTag.png */; };
 		AE8B44FC1820EC400047F4BB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8B44FB1820EC400047F4BB /* CoreText.framework */; };
-		AE8B44FF182101290047F4BB /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8B44FE182101290047F4BB /* DEMOMenuViewController.m */; };
-		AE8B4508182101930047F4BB /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8B4507182101930047F4BB /* DEMONavigationController.m */; };
+		AE8B44FF182101290047F4BB /* SettingMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8B44FE182101290047F4BB /* SettingMenuViewController.m */; };
+		AE8B4508182101930047F4BB /* SettingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8B4507182101930047F4BB /* SettingNavigationController.m */; };
 		AE8B450A182101BE0047F4BB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8B4509182101BE0047F4BB /* Accelerate.framework */; };
 		AE93268017F0242000224B12 /* NSStringWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE93267F17F0242000224B12 /* NSStringWrapper.m */; };
 		AEA90A4E181E13FD00F3E4DB /* TradeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEA90A45181E13FD00F3E4DB /* TradeList.plist */; };
@@ -578,6 +584,16 @@
 		AE748EB8183361E200BD4F57 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
 		AE748EBA18336C5100BD4F57 /* UserRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegisterViewController.h; sourceTree = "<group>"; };
 		AE748EBB18336C5100BD4F57 /* UserRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegisterViewController.m; sourceTree = "<group>"; };
+		AE748EBE1833770500BD4F57 /* FSVerticalTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBar.h; sourceTree = "<group>"; };
+		AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVerticalTabBar.m; sourceTree = "<group>"; };
+		AE748EC01833770500BD4F57 /* FSVerticalTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBarButton.h; sourceTree = "<group>"; };
+		AE748EC11833770500BD4F57 /* FSVerticalTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVerticalTabBarButton.m; sourceTree = "<group>"; };
+		AE748EC21833770500BD4F57 /* FSVerticalTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBarController.h; sourceTree = "<group>"; };
+		AE748EC31833770500BD4F57 /* FSVerticalTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVerticalTabBarController.m; sourceTree = "<group>"; };
+		AE748EC41833770500BD4F57 /* selectionIndicatorImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionIndicatorImage.png; sourceTree = "<group>"; };
+		AE748EC51833770500BD4F57 /* selectionIndicatorImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectionIndicatorImage@2x.png"; sourceTree = "<group>"; };
+		AE748ECB1833772B00BD4F57 /* FSVerticalTabBarExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBarExampleController.h; sourceTree = "<group>"; };
+		AE748ECC1833772B00BD4F57 /* FSVerticalTabBarExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVerticalTabBarExampleController.m; sourceTree = "<group>"; };
 		AE7E572F181E3F7400A1391E /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
 		AE7E5730181E3F7400A1391E /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
 		AE7E5731181E3F7400A1391E /* RenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderView.h; sourceTree = "<group>"; };
@@ -630,10 +646,10 @@
 		AE8815AC181F85610004B0CF /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		AE8B44F91820E8C00047F4BB /* littleTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = littleTag.png; sourceTree = "<group>"; };
 		AE8B44FB1820EC400047F4BB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		AE8B44FD182101290047F4BB /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOMenuViewController.h; path = ../../DEMOMenuViewController.h; sourceTree = "<group>"; };
-		AE8B44FE182101290047F4BB /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMOMenuViewController.m; path = ../../DEMOMenuViewController.m; sourceTree = "<group>"; };
-		AE8B4506182101930047F4BB /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMONavigationController.h; path = ../../DEMONavigationController.h; sourceTree = "<group>"; };
-		AE8B4507182101930047F4BB /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMONavigationController.m; path = ../../DEMONavigationController.m; sourceTree = "<group>"; };
+		AE8B44FD182101290047F4BB /* SettingMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingMenuViewController.h; path = ../../SettingMenuViewController.h; sourceTree = "<group>"; };
+		AE8B44FE182101290047F4BB /* SettingMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingMenuViewController.m; path = ../../SettingMenuViewController.m; sourceTree = "<group>"; };
+		AE8B4506182101930047F4BB /* SettingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingNavigationController.h; path = ../../SettingNavigationController.h; sourceTree = "<group>"; };
+		AE8B4507182101930047F4BB /* SettingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingNavigationController.m; path = ../../SettingNavigationController.m; sourceTree = "<group>"; };
 		AE8B4509182101BE0047F4BB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AE93267E17F0242000224B12 /* NSStringWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringWrapper.h; sourceTree = "<group>"; };
 		AE93267F17F0242000224B12 /* NSStringWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringWrapper.m; sourceTree = "<group>"; };
@@ -1001,6 +1017,8 @@
 				AE4D3E2717E30E0E0044A7DF /* img */,
 				AE4D3E0E17E3053C0044A7DF /* AppDelegate.h */,
 				AE4D3E0F17E3053C0044A7DF /* AppDelegate.m */,
+				AE748ECB1833772B00BD4F57 /* FSVerticalTabBarExampleController.h */,
+				AE748ECC1833772B00BD4F57 /* FSVerticalTabBarExampleController.m */,
 				AE4D3E0617E3053C0044A7DF /* Supporting Files */,
 			);
 			path = MathMonsters;
@@ -1259,6 +1277,7 @@
 		AE6FCEF017E93F6C00DCDB77 /* Plugs */ = {
 			isa = PBXGroup;
 			children = (
+				AE748EBD1833770500BD4F57 /* FSVerticalTabBar */,
 				AE38981D182C8AB60059A319 /* CorePlotHeaders */,
 				AE31F848182B38AD001CD0D0 /* CoreTextWrapper */,
 				AE1FCBAB1828DBB9005D5E10 /* CKCalendarView */,
@@ -1318,10 +1337,10 @@
 				AE29CD3F182899D900E8E94C /* HelpViewController.m */,
 				AEB3E34117F422BC00A273E9 /* SettingViewController.h */,
 				AEB3E34217F422BC00A273E9 /* SettingViewController.m */,
-				AE8B44FD182101290047F4BB /* DEMOMenuViewController.h */,
-				AE8B44FE182101290047F4BB /* DEMOMenuViewController.m */,
-				AE8B4506182101930047F4BB /* DEMONavigationController.h */,
-				AE8B4507182101930047F4BB /* DEMONavigationController.m */,
+				AE8B44FD182101290047F4BB /* SettingMenuViewController.h */,
+				AE8B44FE182101290047F4BB /* SettingMenuViewController.m */,
+				AE8B4506182101930047F4BB /* SettingNavigationController.h */,
+				AE8B4507182101930047F4BB /* SettingNavigationController.m */,
 			);
 			path = UserSetting;
 			sourceTree = "<group>";
@@ -1373,6 +1392,22 @@
 				AEB3E34517F422C900A273E9 /* MyGooGuuViewController.m */,
 			);
 			path = MyGooGuu;
+			sourceTree = "<group>";
+		};
+		AE748EBD1833770500BD4F57 /* FSVerticalTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AE748EBE1833770500BD4F57 /* FSVerticalTabBar.h */,
+				AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */,
+				AE748EC01833770500BD4F57 /* FSVerticalTabBarButton.h */,
+				AE748EC11833770500BD4F57 /* FSVerticalTabBarButton.m */,
+				AE748EC21833770500BD4F57 /* FSVerticalTabBarController.h */,
+				AE748EC31833770500BD4F57 /* FSVerticalTabBarController.m */,
+				AE748EC41833770500BD4F57 /* selectionIndicatorImage.png */,
+				AE748EC51833770500BD4F57 /* selectionIndicatorImage@2x.png */,
+			);
+			name = FSVerticalTabBar;
+			path = src;
 			sourceTree = "<group>";
 		};
 		AE7E572E181E3F7400A1391E /* ChartView */ = {
@@ -1759,6 +1794,7 @@
 				AE7EF621181F5708002A3C9E /* newReportCellBack1.png in Resources */,
 				AE7EF5F7181F46A1002A3C9E /* valuModelBtSe.png in Resources */,
 				AE1FCBB61828DBB9005D5E10 /* right_arrow.png in Resources */,
+				AE748ECA1833770500BD4F57 /* selectionIndicatorImage@2x.png in Resources */,
 				AE3E71171833596E00A624AD /* hookImg.png in Resources */,
 				AE4D3E3417E30E1C0044A7DF /* fire.png in Resources */,
 				AEA90A65181E14B800F3E4DB /* 绿色-按钮.png in Resources */,
@@ -1789,6 +1825,7 @@
 				AE3E7105183355D300A624AD /* loginBack.png in Resources */,
 				AE7EF5F6181F46A1002A3C9E /* valuModelBt.png in Resources */,
 				AE7EF5F9181F46A1002A3C9E /* financeToolBtSe.png in Resources */,
+				AE748EC91833770500BD4F57 /* selectionIndicatorImage.png in Resources */,
 				AE572B7A182CC5DA0000B193 /* discountLabelBack.png in Resources */,
 				AE7EF602181F46A1002A3C9E /* newReportBt.png in Resources */,
 				AE7EF62F181F645A002A3C9E /* defaultIcon.png in Resources */,
@@ -1955,13 +1992,16 @@
 				AE6FCF1C17E9410100DCDB77 /* GCDiscreetNotificationView.m in Sources */,
 				AE748EBC18336C5100BD4F57 /* UserRegisterViewController.m in Sources */,
 				AE530C8417E997B8007E5143 /* GTMStackTrace.m in Sources */,
+				AE748ECD1833772B00BD4F57 /* FSVerticalTabBarExampleController.m in Sources */,
+				AE748EC61833770500BD4F57 /* FSVerticalTabBar.m in Sources */,
 				AE530C8517E997B8007E5143 /* iConsole.m in Sources */,
 				AE0F050C1827464B00DA13D4 /* CounterViewController.m in Sources */,
 				AE530C9717E99B3F007E5143 /* NGTabBar.m in Sources */,
 				AE656F0C1805042D006F1701 /* ContainerViewController.m in Sources */,
 				AE530C9817E99B3F007E5143 /* NGTabBarController.m in Sources */,
 				AE3FA9091829E53F004EC28C /* CKCalendarView.m in Sources */,
-				AE8B44FF182101290047F4BB /* DEMOMenuViewController.m in Sources */,
+				AE8B44FF182101290047F4BB /* SettingMenuViewController.m in Sources */,
+				AE748EC71833770500BD4F57 /* FSVerticalTabBarButton.m in Sources */,
 				AE7EF62D181F6219002A3C9E /* EGORefreshTableHeaderView.m in Sources */,
 				AE530C9917E99B3F007E5143 /* NGTabBarItem.m in Sources */,
 				AE530C9A17E99B3F007E5143 /* UINavigationController+NGTabBarNavigationDelegate.m in Sources */,
@@ -1975,8 +2015,9 @@
 				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
 				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
 				AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */,
-				AE8B4508182101930047F4BB /* DEMONavigationController.m in Sources */,
+				AE8B4508182101930047F4BB /* SettingNavigationController.m in Sources */,
 				AEAD74DE17EE7FAB00A659FA /* KLCircleViewController.m in Sources */,
+				AE748EC81833770500BD4F57 /* FSVerticalTabBarController.m in Sources */,
 				AE0F051B182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m in Sources */,
 				AED071B11803FD8E00C28F32 /* ValueModelIndicator.m in Sources */,
 				AE7E5754181E54B400A1391E /* AMProgressView.m in Sources */,
