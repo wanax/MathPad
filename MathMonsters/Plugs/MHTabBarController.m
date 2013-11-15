@@ -25,7 +25,7 @@
 #import "MHTabBarController.h"
 
 
-static const float TAB_BAR_HEIGHT = 30.0f;
+static const float TAB_BAR_HEIGHT = 60.0f;
 static const NSInteger TAG_OFFSET = 1000;
 
 @implementation MHTabBarController
@@ -50,18 +50,18 @@ static const NSInteger TAG_OFFSET = 1000;
 
 - (void)selectTabButton:(UIButton *)button
 {
-    button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:14.0f];
+    button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:20.0f];
 	UIImage *image = [[UIImage imageNamed:@"tabSelected"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
 	[button setBackgroundImage:image forState:UIControlStateNormal];
 	[button setBackgroundImage:image forState:UIControlStateHighlighted];
 	
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.5f] forState:UIControlStateNormal];
+	//[button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.5f] forState:UIControlStateNormal];
 }
 
 - (void)deselectTabButton:(UIButton *)button
 {
-    button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:14.0f];
+    button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:20.0f];
 	UIImage *image = [[UIImage imageNamed:@"tabUnSelected"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
 	[button setBackgroundImage:image forState:UIControlStateNormal];
 	[button setBackgroundImage:image forState:UIControlStateHighlighted];
@@ -134,8 +134,7 @@ static const NSInteger TAG_OFFSET = 1000;
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-    [Utiles iOS7StatusBar:self];
-
+    
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
 	CGRect rect = CGRectMake(0, 00, self.view.bounds.size.width, TAB_BAR_HEIGHT);

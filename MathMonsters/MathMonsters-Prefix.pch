@@ -23,6 +23,7 @@
     #import "MBProgressHUD.h"
     #import "AppDelegate.h"
     #import "FlatUIKit.h"
+    #import "EGORefreshTableHeaderView.h"
 #endif
 
 // From here to end of file added by Injection Plugin //

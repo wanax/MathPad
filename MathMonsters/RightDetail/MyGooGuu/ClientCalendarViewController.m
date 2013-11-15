@@ -1,22 +1,23 @@
 //
-//  MyGooGuuViewController.m
+//  ClientCalendarViewController.m
 //  MathMonsters
 //
-//  Created by Xcode on 13-9-26.
+//  Created by Xcode on 13-11-14.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
-#import "MyGooGuuViewController.h"
+#import "ClientCalendarViewController.h"
 #import "NSDate+convenience.h"
 #import "CKCalendarView.h"
 #import "FlatUIKit.h"
 
-@interface MyGooGuuViewController () <CKCalendarDelegate>
+@interface ClientCalendarViewController () <CKCalendarDelegate>
+
 @property(nonatomic, strong) NSArray *disabledDates;
 
 @end
 
-@implementation MyGooGuuViewController
+@implementation ClientCalendarViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,11 +37,11 @@
 }
 
 -(void)initComponents{
-    self.cusTable=[[UITableView alloc] initWithFrame:CGRectMake(12,200,900,450)];
+    self.cusTable=[[UITableView alloc] initWithFrame:CGRectMake(12,80,900,450)];
     self.cusTable.dataSource=self;
     self.cusTable.delegate=self;
     self.cusTable.separatorStyle=UITableViewCellSeparatorStyleNone;
-    self.cusTable.backgroundColor=[UIColor peterRiverColor];
+    self.cusTable.backgroundColor=[UIColor midnightBlueColor];
     [self.view addSubview:self.cusTable];
     
     NSMutableArray *calTemp=[[NSMutableArray alloc] init];
@@ -99,7 +100,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.contentView.backgroundColor=[UIColor peterRiverColor];
+    cell.contentView.backgroundColor=[UIColor midnightBlueColor];
     
     for(UIView *view in [cell.contentView subviews]){
         if([view isKindOfClass:NSClassFromString(@"UILabel")]){

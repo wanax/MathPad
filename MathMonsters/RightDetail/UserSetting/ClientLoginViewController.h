@@ -16,7 +16,6 @@
 @interface ClientLoginViewController : UIViewController<UITextFieldDelegate>{
     BOOL isGoIn;
 }
-@property TabBarType sourceType;
 
 @property (nonatomic,retain) IBOutlet UITextField *userNameField;
 @property (nonatomic,retain) IBOutlet UITextField *userPwdField;

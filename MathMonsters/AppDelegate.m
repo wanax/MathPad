@@ -30,7 +30,7 @@
     //[Crashlytics startWithAPIKey:@"c59317990c405b2f42582cacbe9f4fa9abe1fefb"];
     [self netChecked];
     [self shouldKeepLogin];
-    [self setPonyDebugger];
+    //[self setPonyDebugger];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self initComponents];
@@ -58,6 +58,9 @@
     [self.window makeKeyAndVisible];
 }
 
+#pragma mark -
+#pragma mark PonyDebugger
+
 -(void)setPonyDebugger{
     PDDebugger *debugger = [PDDebugger defaultInstance];
     [debugger enableNetworkTrafficDebugging];
@@ -70,6 +73,7 @@
 
 #pragma mark -
 #pragma mark Keep Login
+
 -(void)shouldKeepLogin{
     if([Utiles isLogin]){
         [self handleTimer:nil];
@@ -114,6 +118,7 @@
 
 #pragma mark -
 #pragma mark Net Reachable
+
 -(void)netChecked{
     Reachability* reach = [Reachability reachabilityWithHostname:GetConfigure(@"FrameParamConfig", @"NetCheckURL", NO)];
     reach.reachableOnWWAN = NO;

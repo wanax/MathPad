@@ -1,15 +1,15 @@
 //
-//  MyGooGuuViewController.h
+//  ClientCalendarViewController.h
 //  MathMonsters
 //
-//  Created by Xcode on 13-9-26.
+//  Created by Xcode on 13-11-14.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "VRGCalendarView.h"
 
-@interface MyGooGuuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ClientCalendarViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,retain) UITableView *cusTable;
 

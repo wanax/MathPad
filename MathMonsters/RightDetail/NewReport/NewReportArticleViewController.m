@@ -10,6 +10,10 @@
 
 @interface NewReportArticleViewController ()
 
+#define BROWSER_TITLE_LBL_TAG 12731
+#define BROWSER_DESCRIP_LBL_TAG 178273
+#define BROWSER_LIKE_BTN_TAG 12821
+
 @end
 
 
@@ -21,6 +25,20 @@
     self.label = nil;
     self.multiPageView = nil;
     [super dealloc];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        NSMutableArray *t=[[[NSMutableArray alloc] init] autorelease];
+        self.photoDataSource=t;
+    }
+    return self;
 }
 
 #pragma mark -
@@ -38,12 +56,16 @@
     self.view.backgroundColor=[UIColor whiteColor];
     self.title=[self.comInfo objectForKey:@"title"];
     
+    CXPhotoBrowser *c=[[[CXPhotoBrowser alloc] initWithDataSource:self delegate:self] autorelease];
+    self.browser = c;
+    
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backToRoot:)];
     self.navigationItem.leftBarButtonItem = anotherButton;
     [anotherButton release];
 
     
-    self.multiPageView=[[AKOMultiPageTextView alloc] initWithFrame:CGRectMake(0,0,1034,770)];
+    AKOMultiPageTextView *a=[[[AKOMultiPageTextView alloc] initWithFrame:CGRectMake(0,0,1034,770)] autorelease];
+    self.multiPageView=a;
     self.multiPageView.viewBackColor=[UIColor whiteColor];
     self.multiPageView.color=[UIColor blackColor];
     self.multiPageView.dataSource = self;
@@ -60,13 +82,13 @@
     [Utiles getNetInfoWithPath:@"ArticleURL" andParams:params besidesBlock:^(id article){
         
         self.articleContent=article;
-        self.articleWeb=[[UIWebView alloc] initWithFrame:CGRectMake(0,0,512,768)];
+        UIWebView *web=[[[UIWebView alloc] initWithFrame:CGRectMake(0,0,512,768)] autorelease];
+        self.articleWeb=web;
         [self.articleWeb loadHTMLString:[article objectForKey:@"content"] baseURL:nil];
         self.articleWeb.delegate=self;
-        //[articleWeb sizeToFit];
-        [(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setBounces:NO];
-        [(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setScrollEnabled:NO];
-        [(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setContentSize:CGSizeMake(200,320)];
+        //[(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setBounces:NO];
+        //[(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setScrollEnabled:NO];
+        //[(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setContentSize:CGSizeMake(200,320)];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.view addSubview:self.articleWeb];
         
@@ -81,18 +103,53 @@
 }
 
 #pragma mark -
-#pragma UIWebView Delegate
+#pragma mark UIWebView Data Source
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    [self getImgUrl];
+    int n=0;
+    NSMutableDictionary *dic=[[[NSMutableDictionary alloc] init] autorelease];
+    [self.photoDataSource removeAllObjects];
+    for (id obj in self.imageUrlList) {
+        CXPhoto *photo=[[[CXPhoto alloc] initWithURL:[NSURL URLWithString:obj]] autorelease];
+        [self.photoDataSource addObject:photo];
+        [dic setObject:[NSNumber numberWithInt:(n++)] forKey:obj];
+    }
+    self.picIndexDic=dic;
+    [self reLayoutWeb:webView];
+    [self addTapOnWebView];
+
+}
+
+-(void)getImgUrl{
+    NSString *urlStr=[self.articleWeb stringByEvaluatingJavaScriptFromString:@"var str=\"\";\
+                      function imgUrl(){\
+                      var temp = document.getElementsByTagName(\"img\");\
+                      for (var i = 0; i < temp.length; i ++) {\
+                      str+=temp[i].src+\"|\";\
+                      }\
+                      return str;\
+                      }\
+                      imgUrl();"];
+    NSMutableArray *tempArr=[[[NSMutableArray alloc] initWithArray:[urlStr componentsSeparatedByString:@"|"]] autorelease];
+    [tempArr removeLastObject];
+    self.imageUrlList=tempArr;
+}
+
+-(void)reLayoutWeb:(UIWebView *)webView{
+    
     CGFloat height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
     CGRect frame = webView.frame;
     float n=ceil(height/frame.size.height);
     
     UIScrollView *pageScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, 1024, 768)];
-    pageScroll.contentSize = CGSizeMake(n*512,768);
+    pageScroll.contentSize = CGSizeMake(n*512,708);
     pageScroll.pagingEnabled = YES;
     pageScroll.delegate = self;
     [pageScroll setShowsHorizontalScrollIndicator:YES];
+    
+    NSMutableArray *te=[[[NSMutableArray alloc] init] autorelease];
     
     for(int i=0;i<n;i++){
         
@@ -100,20 +157,117 @@
         [aWeb loadHTMLString:[self.articleContent objectForKey:@"content"] baseURL:nil];
         [(UIScrollView *)[[aWeb subviews] objectAtIndex:0] setScrollEnabled:NO];
         [pageScroll addSubview:aWeb];
+        [te addObject:aWeb];
         [aWeb release];
         
     }
+    self.webContainer=te;
     [self.view addSubview:pageScroll];
-    [UIView animateWithDuration:0.6f
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         self.articleWeb.alpha = 0;
-                     }
-                     completion:^(BOOL finished) {
-                         [self.articleWeb removeFromSuperview];
-                     }];
-    NSLog(@"%@",NSStringFromCGSize([UIScreen mainScreen].bounds.size));
+    [self.articleWeb removeFromSuperview];
+    
+}
+
+#pragma mark -
+#pragma mark UIWebView Delegate
+
+-(void)addTapOnWebView
+{
+    for (UIWebView *web in self.webContainer) {
+        UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+        [web addGestureRecognizer:singleTap];
+        singleTap.delegate = self;
+        singleTap.cancelsTouchesInView = NO;
+    }
+    
+}
+
+-(void)handleSingleTap:(UITapGestureRecognizer *)sender
+{
+    for(UIWebView *web in self.webContainer){
+        CGPoint pt = [sender locationInView:web];
+        NSString *imgURL = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).src", pt.x, pt.y];
+        NSString *urlToSave = [web stringByEvaluatingJavaScriptFromString:imgURL];
+        NSLog(@"%@",urlToSave);
+        if (urlToSave.length > 0) {
+            int index=[[self.picIndexDic objectForKey:urlToSave] intValue];
+            [self.browser setInitialPageIndex:index];
+            [self presentViewController:self.browser animated:YES completion:nil];
+        }
+    }
+    
+}
+
+#pragma mark -
+#pragma mark CXPhotoBrowserDelegate
+
+- (void)photoBrowser:(CXPhotoBrowser *)photoBrowser didChangedToPageAtIndex:(NSUInteger)index{
+    [self.imageTitleLabel setText:[NSString stringWithFormat:@"%d/%d",(index+1),[self.photoDataSource count]]];
+}
+
+#pragma mark - CXPhotoBrowserDataSource
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(CXPhotoBrowser *)photoBrowser
+{
+    return [self.photoDataSource count];
+}
+- (id <CXPhotoProtocol>)photoBrowser:(CXPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
+{
+    if (index < self.photoDataSource.count)
+        return [self.photoDataSource objectAtIndex:index];
+    return nil;
+}
+
+- (CXBrowserNavBarView *)browserNavigationBarViewOfOfPhotoBrowser:(CXPhotoBrowser *)photoBrowser withSize:(CGSize)size
+{
+    CGRect frame;
+    frame.origin = CGPointZero;
+    frame.size = size;
+    if (!navBarView)
+    {
+        navBarView = [[CXBrowserNavBarView alloc] initWithFrame:frame];
+        
+        [navBarView setBackgroundColor:[UIColor clearColor]];
+        
+        UIView *bkgView = [[[UIView alloc] initWithFrame:CGRectMake( 0, 0, size.width, size.height)] autorelease];
+        [bkgView setBackgroundColor:[UIColor blackColor]];
+        bkgView.alpha = 0.2;
+        bkgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [navBarView addSubview:bkgView];
+        
+        UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [doneButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+        [doneButton setTitle:NSLocalizedString(@"返回",@"Dismiss button title") forState:UIControlStateNormal];
+        [doneButton setFrame:CGRectMake(size.width - 60, 5, 50, 30)];
+        [doneButton addTarget:self action:@selector(photoBrowserDidTapDoneButton:) forControlEvents:UIControlEventTouchUpInside];
+        [doneButton.layer setMasksToBounds:YES];
+        [doneButton.layer setCornerRadius:4.0];
+        [doneButton.layer setBorderWidth:1.0];
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 1, 1, 1, 1 });
+        [doneButton.layer setBorderColor:colorref];
+        doneButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        [navBarView addSubview:doneButton];
+        
+        UILabel *l=[[[UILabel alloc] init] autorelease];
+        self.imageTitleLabel = l;
+        [self.imageTitleLabel setFrame:CGRectMake((size.width - 60)/2,0, 60, 40)];
+        //[self.imageTitleLabel setCenter:navBarView.center];
+        [self.imageTitleLabel setTextAlignment:NSTextAlignmentCenter];
+        [self.imageTitleLabel setFont:[UIFont boldSystemFontOfSize:20.]];
+        [self.imageTitleLabel setTextColor:[UIColor whiteColor]];
+        [self.imageTitleLabel setBackgroundColor:[UIColor clearColor]];
+        [self.imageTitleLabel setText:@""];
+        self.imageTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
+        [self.imageTitleLabel setTag:BROWSER_TITLE_LBL_TAG];
+        [navBarView addSubview:self.imageTitleLabel];
+    }
+    
+    return navBarView;
+}
+
+#pragma mark - PhotBrower Actions
+- (void)photoBrowserDidTapDoneButton:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -130,6 +284,12 @@
     
     return nil;
 }
+
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

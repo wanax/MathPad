@@ -30,6 +30,10 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -144,6 +148,7 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self.browser setInitialPageIndex:indexPath.row];
     [self presentViewController:self.browser animated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }];
 }
 
@@ -213,6 +218,7 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
 #pragma mark - PhotBrower Actions
 - (void)photoBrowserDidTapDoneButton:(UIButton *)sender
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

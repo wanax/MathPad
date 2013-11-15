@@ -10,6 +10,15 @@
 
 @interface EnumSummary : NSObject
 
+//我的估股界面用户三种功能
+typedef enum{
+    
+    ClientConcerned,
+    ClientSaved,
+    ClientCalendar
+    
+} MyGooGuuClientRelation;
+
 //用户注册信息相关
 typedef enum{
     
@@ -92,12 +101,6 @@ typedef enum {
     SearchStockList
 } BrowseSourceType;
 
-typedef enum {
-    NewsBar=0,
-    ValuationModelBar=1,
-    MyGooGuuBar=2,
-    SettingBar=3
-} TabBarType;
 
 //股票市场 CompanyListViewController
 typedef enum {

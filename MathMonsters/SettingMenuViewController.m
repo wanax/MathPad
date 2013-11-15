@@ -36,7 +36,7 @@
         imageView.layer.shouldRasterize = YES;
         imageView.clipsToBounds = YES;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)] autorelease];
         label.text = @"设置";
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         label.backgroundColor = [UIColor clearColor];

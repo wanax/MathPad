@@ -18,6 +18,7 @@
 #import "FinanceToolViewController.h"
 #import "SettingViewController.h"
 #import "REFrostedViewController.h"
+#import "GooGuuViewListViewController.h"
 
 @interface VerticalTabBarViewController () {
     NSArray* viewControllers;
@@ -63,7 +64,7 @@
     vc2.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"title" image:[UIImage imageNamed:@"newReportBt.png"] selectedImage:[UIImage imageNamed:@"newReportBtSe.png"]] autorelease];
     [controllersToAdd addObject:vc2];
     
-    UIViewController *gView=[[[UIViewController alloc] init] autorelease];
+    GooGuuViewListViewController *gView=[[[GooGuuViewListViewController alloc] init] autorelease];
     gView.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"title" image:[UIImage imageNamed:@"googuuViewBt"] selectedImage:[UIImage imageNamed:@"googuuViewBtSe"]] autorelease];
     [controllersToAdd addObject:gView];
     
@@ -117,8 +118,8 @@
 
 -(BOOL)tabBarController:(FSVerticalTabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     if ([viewControllers indexOfObject:viewController] == 7) {
-        //AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
-        //[delegate.frostedViewController presentMenuViewController];
+        AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
+        [delegate.frostedViewController presentMenuViewController];
     }
     return YES;
 }
