@@ -203,11 +203,11 @@ static CGFloat kToolBarViewHeightLadnScape = 100;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
-        _previousStatusBarStyle = UIStatusBarStyleDefault;
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+        _previousStatusBarStyle = nil;
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }
     
     [browserNavigationBarView removeFromSuperview];
@@ -254,6 +254,7 @@ static CGFloat kToolBarViewHeightLadnScape = 100;
     // Status bar
     if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle animated:animated];
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }
     
 	// Super

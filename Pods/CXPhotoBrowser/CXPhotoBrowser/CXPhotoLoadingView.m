@@ -57,7 +57,7 @@
     [self.indicator stopAnimating];
     
     [reloadButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.]];
-    [reloadButton setTitle:NSLocalizedString(@"Reload",@"Reload") forState:UIControlStateNormal];
+    [reloadButton setTitle:NSLocalizedString(@"点我试试",@"点我试试") forState:UIControlStateNormal];
     [reloadButton setFrame:CGRectMake(20, 10, 100, 30)];
     [reloadButton setCenter:self.center];
     [reloadButton addTarget:self.photo action:@selector(reloadImage) forControlEvents:UIControlEventTouchUpInside];
@@ -75,7 +75,7 @@
     [failureLabel setFrame:CGRectMake(CGRectGetMidX(reloadButton.frame) - self.bounds.size.width/2, CGRectGetMinY(reloadButton.frame) - 60, self.bounds.size.width, 44)];
     [failureLabel setNumberOfLines:0.];
     [failureLabel setTextAlignment:NSTextAlignmentCenter];
-    [failureLabel setText:NSLocalizedString(@"Sorry ! Unable to load image.",nil)];
+    [failureLabel setText:NSLocalizedString(@"oooooops,超时了~",nil)];
     [failureLabel setFont:[UIFont boldSystemFontOfSize:20.]];
     [failureLabel setTextColor:[UIColor whiteColor]];
     [failureLabel setBackgroundColor:[UIColor clearColor]];

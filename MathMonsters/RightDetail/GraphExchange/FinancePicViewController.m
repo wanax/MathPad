@@ -39,8 +39,10 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
     [super viewDidLoad];
     [self initComponents];
     page=1;
-    self.photoDataSource=[[NSMutableArray alloc] init];
-    self.browser = [[CXPhotoBrowser alloc] initWithDataSource:self delegate:self];
+    NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+    self.photoDataSource=temp;
+    CXPhotoBrowser *c=[[[CXPhotoBrowser alloc] initWithDataSource:self delegate:self] autorelease];
+    self.browser = c;
     //self.browser.wantsFullScreenLayout = NO;
     [self.view setBackgroundColor:[Utiles colorWithHexString:@"#22130B"]];
     self.images=[[NSArray alloc] init];
@@ -48,13 +50,14 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
 }
 
 -(void)initComponents{
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *flowLayout = [[[UICollectionViewFlowLayout alloc] init] autorelease];
     [flowLayout setItemSize:CGSizeMake(163, 309)];
     flowLayout.sectionInset = UIEdgeInsetsMake(10,15,5,15);
     [flowLayout setMinimumLineSpacing:5.0];
     [flowLayout setMinimumInteritemSpacing:5.0];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    UICollectionView *co=[[[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout] autorelease];
+    self.collectionView = co;
     [self.collectionView registerNib:[UINib nibWithNibName:@"PicCollectionCell" bundle:nil] forCellWithReuseIdentifier:GraphExcCellIdentifier];
     [self.collectionView setBackgroundColor:[Utiles colorWithHexString:@"#5b4d41"]];
     self.collectionView.delegate = self;
@@ -179,7 +182,7 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
         
         [navBarView setBackgroundColor:[UIColor clearColor]];
         
-        UIView *bkgView = [[UIView alloc] initWithFrame:CGRectMake( 0, 0, size.width, size.height)];
+        UIView *bkgView = [[[UIView alloc] initWithFrame:CGRectMake( 0, 0, size.width, size.height)] autorelease];
         [bkgView setBackgroundColor:[UIColor blackColor]];
         bkgView.alpha = 0.2;
         bkgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -188,7 +191,7 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [doneButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
         [doneButton setTitle:NSLocalizedString(@"返回",@"Dismiss button title") forState:UIControlStateNormal];
-        [doneButton setFrame:CGRectMake(size.width - 60, 5, 50, 30)];
+        [doneButton setFrame:CGRectMake(size.width - 120, 5, 100, 60)];
         [doneButton addTarget:self action:@selector(photoBrowserDidTapDoneButton:) forControlEvents:UIControlEventTouchUpInside];
         [doneButton.layer setMasksToBounds:YES];
         [doneButton.layer setCornerRadius:4.0];
@@ -199,7 +202,8 @@ static NSString *GraphExcCellIdentifier = @"GraphExcCellIdentifier";
         doneButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         [navBarView addSubview:doneButton];
         
-        self.imageTitleLabel = [[UILabel alloc] init];
+        UILabel *label=[[[UILabel alloc] init] autorelease];
+        self.imageTitleLabel = label;
         [self.imageTitleLabel setFrame:CGRectMake((size.width - 60)/2,0, 60, 40)];
         //[self.imageTitleLabel setCenter:navBarView.center];
         [self.imageTitleLabel setTextAlignment:NSTextAlignmentCenter];

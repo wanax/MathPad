@@ -35,11 +35,12 @@
 
 -(void)initComponents{
     
-    self.view.frame=CGRectMake(0,0,200,568);
-    self.cusTable=[[UITableView alloc] initWithFrame:CGRectMake(0,0,200,568)];
+    self.view.frame=CGRectMake(0,0,200,768);
+    UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,234,928)] autorelease];
+    self.cusTable=t;
     self.cusTable.dataSource=self;
     self.cusTable.delegate=self;
-    [self.cusTable setBackgroundColor:[UIColor wetAsphaltColor]];
+    [self.cusTable setBackgroundColor:[UIColor whiteColor]];
     self.cusTable.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.cusTable];
     
@@ -68,7 +69,7 @@
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50.0;
+    return 60.0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,7 +79,7 @@
     if(cell==nil){
         cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.textLabel.font=[UIFont fontWithName:@"Heiti SC" size:14.0];
+    cell.textLabel.font=[UIFont fontWithName:@"Heiti SC" size:15.0];
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     
     void (^setCell) (NSString *,NSString *)=^(NSString *name,NSString *img){
@@ -115,7 +116,7 @@
         }
     }else if(indexPath.section==3) {
         if (indexPath.row==0) {
-            setCell(@"Excel快捷键(2007)",@"EXCEL");
+            setCell(@"Excel快捷键",@"EXCEL");
         }
     }
     

@@ -472,7 +472,7 @@
 		AE44B0471834B1AD0074E7D9 /* ClientCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientCalendarViewController.m; sourceTree = "<group>"; };
 		AE44B04A1834D4BC0074E7D9 /* GooGuuViewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooGuuViewListViewController.h; sourceTree = "<group>"; };
 		AE44B04B1834D4BC0074E7D9 /* GooGuuViewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooGuuViewListViewController.m; sourceTree = "<group>"; };
-		AE44B04D1834D8C00074E7D9 /* GooGuuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooGuuViewCell.xib; sourceTree = "<group>"; };
+		AE44B04D1834D8C00074E7D9 /* GooGuuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GooGuuViewCell.xib; path = ../../NibFile/CellNib/GooGuuViewCell.xib; sourceTree = "<group>"; };
 		AE44B04F1834D8DA0074E7D9 /* GooGuuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooGuuViewCell.h; sourceTree = "<group>"; };
 		AE44B0501834D8DA0074E7D9 /* GooGuuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooGuuViewCell.m; sourceTree = "<group>"; };
 		AE4D3DFC17E3053C0044A7DF /* MathMonsters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathMonsters.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1090,6 +1090,7 @@
 		AE44B0491834D4AC0074E7D9 /* GooGuuView */ = {
 			isa = PBXGroup;
 			children = (
+				AE44B04D1834D8C00074E7D9 /* GooGuuViewCell.xib */,
 				AE44B04A1834D4BC0074E7D9 /* GooGuuViewListViewController.h */,
 				AE44B04B1834D4BC0074E7D9 /* GooGuuViewListViewController.m */,
 			);
@@ -1469,7 +1470,6 @@
 		AE7EF613181F5580002A3C9E /* CellNib */ = {
 			isa = PBXGroup;
 			children = (
-				AE44B04D1834D8C00074E7D9 /* GooGuuViewCell.xib */,
 			);
 			path = CellNib;
 			sourceTree = "<group>";

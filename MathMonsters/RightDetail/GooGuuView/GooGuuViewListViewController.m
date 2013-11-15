@@ -10,6 +10,7 @@
 #import "SVPullToRefresh.h"
 #import "GooGuuViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NewReportArticleViewController.h"
 
 @interface GooGuuViewListViewController ()
 
@@ -36,7 +37,7 @@
 
 -(void)initComponents{
     
-    UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,904,800)] autorelease];
+    UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,924,800)] autorelease];
     t.dataSource=self;
     t.delegate=self;
     t.separatorStyle=UITableViewCellSeparatorStyleNone;
@@ -94,7 +95,7 @@
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 300.0;
+    return 200.0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -125,15 +126,10 @@
     
     NSString *webviewText = @"<style>body{margin:0px;background-color:transparent;font:16px/22px Custom-Font-Name}</style>";
     
-    NSString *temp=[model objectForKey:@"concise"];
-    if([temp length]>80){
-        temp=[temp substringToIndex:80];
-    }
-    NSString *htmlString = [webviewText stringByAppendingFormat:@"%@......", temp];
+    NSString *htmlString = [webviewText stringByAppendingFormat:@"%@", [model objectForKey:@"concise"]];
     
     [cell.conciseWebView loadHTMLString:htmlString baseURL:nil];
-    
-    
+
     [cell.updateTimeLabel setText:[model objectForKey:@"updatetime"]];
     [cell.backLabel setBackgroundColor:[UIColor whiteColor]];
     cell.backLabel.layer.cornerRadius = 5;
@@ -142,7 +138,7 @@
     
     [cell.contentView setBackgroundColor:[Utiles colorWithHexString:[Utiles getConfigureInfoFrom:@"colorconfigure" andKey:@"NormalCellColor" inUserDomain:NO]]];
     
-    UIButton *cellBt=[[[UIButton alloc] initWithFrame:CGRectMake(0,0,320,135)] autorelease];
+    UIButton *cellBt=[[[UIButton alloc] initWithFrame:CGRectMake(0,0,924,200)] autorelease];
     cellBt.tag=indexPath.row;
     [cellBt addTarget:self action:@selector(cellBtClicked:) forControlEvents:UIControlEventTouchUpInside];
     [cell.contentView addSubview:cellBt];
@@ -154,6 +150,23 @@
 
 #pragma mark -
 #pragma mark Table Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark -
+#pragma mark General Methods
+
+-(void)cellBtClicked:(UIButton *)bt{
+    
+    int row=bt.tag;
+    NewReportArticleViewController *reportArticleVC=[[[NewReportArticleViewController alloc] init] autorelease];
+    UINavigationController *reportNav=[[[UINavigationController alloc] initWithRootViewController:reportArticleVC] autorelease];
+    reportArticleVC.comInfo=[self.viewDataArr objectAtIndex:row];
+    [self presentViewController:reportNav animated:YES completion:nil];
+    
+}
 
 
 #pragma mark -

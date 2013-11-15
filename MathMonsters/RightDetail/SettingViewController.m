@@ -28,6 +28,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor=[Utiles colorWithHexString:@"#527423"];
+    UIImageView *back=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]] autorelease];
+    [self.view addSubview:back];
 }
 
 - (void)didReceiveMemoryWarning

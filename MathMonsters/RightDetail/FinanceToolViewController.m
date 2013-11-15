@@ -53,13 +53,13 @@
     leftListNav.view.backgroundColor=[UIColor greenSeaColor];
     
     self.detail=[[CounterViewController alloc] init];
-    UINavigationController *detailNav=[[UINavigationController alloc] initWithRootViewController:self.detail];
+    UINavigationController *detailNav=[[[UINavigationController alloc] initWithRootViewController:self.detail] autorelease];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"贝塔系数,债务占比,有效税率",@"pName",@"0,%,%",@"pUnit",@"股权占比,无杠杆贝塔系数",@"rName",@"%,1",@"rUnit", nil];
     self.detail.params=params;
     self.detail.toolType=BetaFactor;
 
     MGSplitViewController *split=[[MGSplitViewController alloc] init];
-    split.view.frame=CGRectMake(40,80,568,860);
+    split.view.frame=CGRectMake(0,0,668,960);
     split.splitPosition=200;
     split.viewControllers=@[leftListNav,detailNav];
     split.view.backgroundColor=[UIColor grayColor];
@@ -67,25 +67,6 @@
     [self.view addSubview:split.view];
     [self addChildViewController:split];
     
-    //[self logViewTreeForMainWindow];
-    /*self.cusTable=[[UITableView alloc] initWithFrame:CGRectMake(80,80,184,568)];
-    self.cusTable.dataSource=self;
-    self.cusTable.delegate=self;
-    [self.cusTable setBackgroundColor:[Utiles colorWithHexString:@"#22130B"]];
-    self.cusTable.separatorStyle=UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:self.cusTable];*/
-    
-    /*[self addButtons:@"计算贝塔系数" fun:Nil frame:CGRectMake(92,80,172,52) icon:@"BETA"];
-    [self addButtons:@"计算折现率" fun:Nil frame:CGRectMake(92,132,172,52) icon:@"WACC"];
-    [self addButtons:@"自由现金流计算" fun:Nil frame:CGRectMake(92,184,172,52) icon:@"FREECRASH"];
-    [self addButtons:@"现金流折现工具" fun:Nil frame:CGRectMake(92,236,172,52) icon:@"CASHCOUNT"];
-    [self addButtons:@"初创公司估值" fun:Nil frame:CGRectMake(92,288,172,52) icon:@"COMVALU"];
-    [self addButtons:@"PE投资回报计算" fun:Nil frame:CGRectMake(92,340,172,52) icon:@"PE"];
-    [self addButtons:@"资金的时间价值计算" fun:Nil frame:CGRectMake(92,392,172,52) icon:@"FUNDTIME"];
-    [self addButtons:@"投资收益计算" fun:Nil frame:CGRectMake(92,444,172,52) icon:@"INVESTCOM"];
-    [self addButtons:@"A股交易手续费计算器" fun:Nil frame:CGRectMake(92,496,172,52) icon:@"ASTOCK"];
-    [self addButtons:@"港股交易手续费计算器" fun:Nil frame:CGRectMake(92,548,172,52) icon:@"HSTOCK"];
-    [self addButtons:@"金融建模Excel快捷键" fun:Nil frame:CGRectMake(92,600,172,52) icon:@"EXCEL"];*/
 }
 
 

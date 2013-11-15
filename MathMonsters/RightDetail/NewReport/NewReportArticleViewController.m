@@ -187,7 +187,6 @@
         CGPoint pt = [sender locationInView:web];
         NSString *imgURL = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).src", pt.x, pt.y];
         NSString *urlToSave = [web stringByEvaluatingJavaScriptFromString:imgURL];
-        NSLog(@"%@",urlToSave);
         if (urlToSave.length > 0) {
             int index=[[self.picIndexDic objectForKey:urlToSave] intValue];
             [self.browser setInitialPageIndex:index];
@@ -234,9 +233,9 @@
         [navBarView addSubview:bkgView];
         
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [doneButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12.0]];
+        [doneButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0]];
         [doneButton setTitle:NSLocalizedString(@"返回",@"Dismiss button title") forState:UIControlStateNormal];
-        [doneButton setFrame:CGRectMake(size.width - 60, 5, 50, 30)];
+        [doneButton setFrame:CGRectMake(size.width - 120, 5,100, 60)];
         [doneButton addTarget:self action:@selector(photoBrowserDidTapDoneButton:) forControlEvents:UIControlEventTouchUpInside];
         [doneButton.layer setMasksToBounds:YES];
         [doneButton.layer setCornerRadius:4.0];

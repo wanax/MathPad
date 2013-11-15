@@ -33,9 +33,11 @@
 
 -(void)initComponents{
     
-    self.customTabel=[[UITableView alloc] initWithFrame:CGRectMake(0,0,320,570) style:UITableViewStyleGrouped];
+    UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,324,920) style:UITableViewStyleGrouped] autorelease];
+    self.customTabel=t;
     self.customTabel.dataSource=self;
     self.customTabel.delegate=self;
+    self.customTabel.backgroundView.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:self.customTabel];
     
 }
@@ -52,6 +54,9 @@
     return 5;
 }
 
+-(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60.0;
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -68,7 +73,7 @@
     if(cell==nil){
         cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.textLabel.font=[UIFont fontWithName:@"Heiti SC" size:14.0];
+    cell.textLabel.font=[UIFont fontWithName:@"Heiti SC" size:15.0];
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     [cell.textLabel setText:[self.typeNames objectAtIndex:indexPath.row]];
     
