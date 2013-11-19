@@ -95,7 +95,8 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
 }
 -(void)initVariable{
     
-    self.changedDriverIds=[[NSMutableArray alloc] init];
+    NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+    self.changedDriverIds=temp;
     _inkage=YES;
     _isSaved=YES;
     self.webIsLoaded=NO;
@@ -106,7 +107,7 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
 
     CPTXYGraph *tGraph=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
     tGraph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
-    CPTGraphHostingView *tHostView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,70,700,540) ] autorelease];
+    CPTGraphHostingView *tHostView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,70,700,520) ] autorelease];
     [self.view addSubview:tHostView];
     [tHostView setHostedGraph : tGraph ];
     tGraph . paddingLeft = 0.0f ;

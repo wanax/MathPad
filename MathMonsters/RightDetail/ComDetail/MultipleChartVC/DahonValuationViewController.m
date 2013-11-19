@@ -54,7 +54,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     DrawChartTool *tool=[[DrawChartTool alloc] init];
     tool.standIn=self;
     //title
-    self.titleLabel=[tool addLabelToView:self.view withTitle:@"" Tag:6 frame:CGRectMake(0,5,600,30) fontSize:19.0 color:nil textColor:@"#63573d" location:NSTextAlignmentLeft];
+    self.titleLabel=[tool addLabelToView:self.view withTitle:@"" Tag:6 frame:CGRectMake(10,5,600,30) fontSize:19.0 color:nil textColor:@"#63573d" location:NSTextAlignmentLeft];
     
     //提示信息
     [tool addLabelToView:self.view withTitle:@"*点击图标查看大行估值" Tag:6 frame:CGRectMake(620,5,200,30) fontSize:15.0 color:nil textColor:@"#63573d" location:NSTextAlignmentCenter];
@@ -76,6 +76,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 }
 
 -(void)changeDateInter:(UIButton *)bt{
+    NSLog(@"%s",__FUNCTION__);
     bt.showsTouchWhenHighlighted=YES;
     int count=[self.dateArr count];
     if(bt.tag==OneMonth){
@@ -123,7 +124,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     graph=[[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graph.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#afcbaa" andAlpha:0.9]];
     
-    self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(0,40,SCREEN_HEIGHT-20,HostViewHeight)];
+    self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,40,SCREEN_HEIGHT-20,HostViewHeight)];
     [self.view addSubview:self.hostView];
     [self.hostView setHostedGraph : graph ];
     graph . paddingLeft = 0.0f ;
@@ -146,6 +147,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     
     NSDictionary *params=@{@"stockcode": self.comInfo[@"stockcode"]};
     [Utiles getNetInfoWithPath:@"GetStockHistoryData" andParams:params besidesBlock:^(id resObj){
+        NSLog(@"%s",__FUNCTION__);
         NSNumberFormatter * formatter   = [[NSNumberFormatter alloc] init];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         [formatter setPositiveFormat:@"##.##"];
@@ -239,7 +241,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 }
 
 -(void)setXYAxis{
-    
+    NSLog(@"%s",__FUNCTION__);
     [self lineShowWithAnimation];
     NSMutableArray *xTmp=[[NSMutableArray alloc] init];
     NSMutableArray *yTmp=[[NSMutableArray alloc] init];

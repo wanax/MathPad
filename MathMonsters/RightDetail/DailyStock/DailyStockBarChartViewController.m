@@ -1,13 +1,12 @@
 //
-//  FinancalModelChartViewController.m
+//  DailyStockBarChartViewController.m
 //  MathMonsters
 //
-//  Created by Xcode on 13-11-8.
+//  Created by Xcode on 13-11-19.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
-
-#import "FinancalModelChartViewController.h"
+#import "DailyStockBarChartViewController.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import <AddressBook/AddressBook.h>
@@ -16,11 +15,11 @@
 
 #define HostViewHeight 250.0
 
-@interface FinancalModelChartViewController ()
+@interface DailyStockBarChartViewController ()
 
 @end
 
-@implementation FinancalModelChartViewController
+@implementation DailyStockBarChartViewController
 
 static NSString * BAR_IDENTIFIER =@"bar_identifier";
 
@@ -30,7 +29,9 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.colorArr=[NSArray arrayWithObjects:@"e92058",@"b700b7",@"216dcb",@"13bbca",@"65d223",@"f09c32",@"f15a38",nil];
+        NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+        self.points=temp;
     }
     return self;
 }
@@ -45,23 +46,12 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[Utiles colorWithHexString:@"#F2EFE1"]];
-    
-    self.colorArr=[NSArray arrayWithObjects:@"e92058",@"b700b7",@"216dcb",@"13bbca",@"65d223",@"f09c32",@"f15a38",nil];
-
-    UIWebView *web=[[[UIWebView alloc] init] autorelease];
-    self.webView=web;
-    self.webView.delegate=self;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"c" ofType:@"html"];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];
-    self.points=[[NSMutableArray alloc] init];
-    
     [self initBarChart];
-    
 }
 
 
 -(void)initBarChart{
-
+    
     CPTXYGraph *tempGraph=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
     self.graph=tempGraph;
     self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
@@ -82,13 +72,6 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     [self initBarPlot];
 }
 
--(id)getObjectDataFromJsFun:(NSString *)funName byData:(NSString *)data{
-    NSString *arg=[[NSString alloc] initWithFormat:@"%@(\"%@\")",funName,data];
-    NSString *re=[self.webView stringByEvaluatingJavaScriptFromString:arg];
-    re=[re stringByReplacingOccurrencesOfString:@",]" withString:@"]"];
-    SAFE_RELEASE(arg);
-    return [re objectFromJSONString];
-}
 
 #pragma mark -
 #pragma mark ModelClass Methods Delegate
@@ -113,19 +96,6 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     SAFE_RELEASE(tempHisPoints);
     
 }
-
-#pragma mark -
-#pragma mark Web Didfinished CallBack
--(void)webViewDidFinishLoad:(UIWebView *)webView{
-    
-    //获取金融模型种类
-    id transObj=[self getObjectDataFromJsFun:@"initFinancialData" byData:self.jsonForChart];
-    if ([transObj count]>0) {
-        [self modelClassChanged:self.driverId];
-        self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
-    }
-}
-
 
 #pragma mark -
 #pragma mark Bar Data Source Delegate
@@ -190,14 +160,14 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         [formatter setPositiveFormat:@"##"];
         NSMutableSet * newLabels        = [NSMutableSet set];
-
+        
         for (NSDecimalNumber * tickLocation in locations) {
-
+            
             CPTMutableTextStyle * newStyle = [axis.labelTextStyle mutableCopy];
             newStyle.fontSize=14.0;
             newStyle.fontName=@"Heiti SC";
             newStyle.color=[CPTColor blackColor];
-
+            
             NSString * labelString      = [formatter stringForObjectValue:tickLocation];
             labelString=[Utiles yearFilled:labelString];
             CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:newStyle];
@@ -227,14 +197,14 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     self.barPlot.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:[self.colorArr objectAtIndex:arc4random()%7] andAlpha:0.6]];
     // 图形向右偏移： 0.25
     self.barPlot.barOffset = CPTDecimalFromFloat(0.0f) ;
-
+    
     self.barPlot.barCornerRadius=3.0;
     self.barPlot.barWidth=CPTDecimalFromFloat(1.0f);
     self.barPlot.barWidthScale=0.5f;
     self.barPlot.labelOffset=0;
     self.barPlot.identifier = BAR_IDENTIFIER;
     self.barPlot.opacity=0.0f;
-
+    
     // 添加图形到绘图空间
     [self.graph addPlot :self.barPlot toPlotSpace :self.plotSpace];
 }
@@ -271,6 +241,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 {
     return NO;
 }
+
 
 
 

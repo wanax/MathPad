@@ -18,7 +18,7 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/NewReport/NewReportArticleViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/PieViewController.m"
 
 
 @interface InjectionBundle2 : NSObject
@@ -27,8 +27,8 @@
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_NewReportArticleViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_NewReportArticleViewController notify:4];
+    extern Class OBJC_CLASS_$_PieViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_PieViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

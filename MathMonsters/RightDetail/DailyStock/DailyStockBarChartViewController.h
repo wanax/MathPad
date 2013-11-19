@@ -1,11 +1,10 @@
 //
-//  FinancalModelChartViewController.h
+//  DailyStockBarChartViewController.h
 //  MathMonsters
 //
-//  Created by Xcode on 13-11-8.
+//  Created by Xcode on 13-11-19.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
-
 
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
@@ -25,7 +24,7 @@
 
 #define DrawXYAxisWithoutYAxis [DrawChartTool drawXYAxisIn:self.graph toPlot:self.plotSpace withXRANGEBEGIN:XRANGEBEGIN XRANGELENGTH:XRANGELENGTH YRANGEBEGIN:YRANGEBEGIN YRANGELENGTH:YRANGELENGTH XINTERVALLENGTH:XINTERVALLENGTH XORTHOGONALCOORDINATE:XORTHOGONALCOORDINATE XTICKSPERINTERVAL:XTICKSPERINTERVAL YINTERVALLENGTH:YINTERVALLENGTH YORTHOGONALCOORDINATE:YORTHOGONALCOORDINATE YTICKSPERINTERVAL:YTICKSPERINTERVAL to:self isY:NO isX:YES type:FinancalModel]
 
-@interface FinancalModelChartViewController : UIViewController<UIWebViewDelegate,CPTBarPlotDataSource,CPTBarPlotDelegate,CPTAxisDelegate>{
+@interface DailyStockBarChartViewController : UIViewController<CPTBarPlotDataSource,CPTBarPlotDelegate,CPTAxisDelegate>{
     //x轴起点
     float XRANGEBEGIN;
     //x轴在屏幕可视范围内的范围
@@ -56,12 +55,10 @@
 @property (nonatomic,retain) NSString *yAxisUnit;
 @property (nonatomic,retain) NSString *driverId;
 
-@property (nonatomic,retain) UIWebView *webView;
 @property (nonatomic,retain) CPTXYGraph * graph ;
 @property (nonatomic,retain) CPTGraphHostingView *hostView;
 @property (nonatomic,retain) CPTXYPlotSpace *plotSpace;
 @property (nonatomic,retain) CPTBarPlot *barPlot;
-
 
 
 

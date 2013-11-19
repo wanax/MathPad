@@ -9,106 +9,93 @@
 #import "PieViewController.h"
 #import "PieChartView.h"
 
-#define PIE_HEIGHT 350
+#define PIE_HEIGHT 420
 
-#define PIE_X 50
-#define PIE_Y 200
+#define PIE_X 20
+#define PIE_Y 50
 
 @interface PieViewController ()
-@property (nonatomic,strong) NSMutableArray *valueArray;
-@property (nonatomic,strong) NSMutableArray *colorArray;
-@property (nonatomic,strong) NSMutableArray *valueArray2;
-@property (nonatomic,strong) NSMutableArray *colorArray2;
-@property (nonatomic,strong) PieChartView *pieChartView;
-@property (nonatomic,strong) UIView *pieContainer;
-@property (nonatomic)BOOL inOut;
-@property (nonatomic,strong) UILabel *selLabel;
+
+@property (nonatomic,retain) UILabel *selLabel;
+
 @end
 
 @implementation PieViewController
 
-- (void)dealloc
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)dic
 {
-    self.valueArray = nil;
-    self.colorArray = nil;
-    self.valueArray2 = nil;
-    self.colorArray2 = nil;
-    self.pieContainer = nil;
-    self.selLabel = nil;
-    [super dealloc];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.inOut = YES;
-    self.valueArray = [[NSMutableArray alloc] initWithObjects:
-                       [NSNumber numberWithInt:2],
-                       [NSNumber numberWithInt:3],
-                       [NSNumber numberWithInt:2],
-                       [NSNumber numberWithInt:3],
-                       [NSNumber numberWithInt:3],
-                       [NSNumber numberWithInt:4],
-                       nil];
-    self.valueArray2 = [[NSMutableArray alloc] initWithObjects:
-                        [NSNumber numberWithInt:3],
-                        [NSNumber numberWithInt:2],
-                        [NSNumber numberWithInt:2],
-                        nil];
-    
-    self.colorArray = [NSMutableArray arrayWithObjects:
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.valueIncomeDic=dic;
+        self.valueArray=[NSMutableArray arrayWithArray:[self.valueIncomeDic allKeys]];
+        NSArray *temp=[NSArray arrayWithObjects:
                        [Utiles colorWithHexString:@"#ffa42f"],
                        [Utiles colorWithHexString:@"#42e069"],
                        [Utiles colorWithHexString:@"#3ec4df"],
                        [Utiles colorWithHexString:@"#ff1a49"],
                        [Utiles colorWithHexString:@"#5a86d5"],
                        [Utiles colorWithHexString:@"#feffa3"],
+                       [Utiles colorWithHexString:@"#bf8fec"],
+                       [Utiles colorWithHexString:@"#0c3707"],
                        nil];
-    self.colorArray2 = [[NSMutableArray alloc] initWithObjects:
-                        [UIColor purpleColor],
-                        [UIColor orangeColor],
-                        [UIColor magentaColor],
-                        nil];
+        self.defaultColorArray=temp;
+        NSMutableArray *temp2=[[[NSMutableArray alloc] init] autorelease];
+        self.colorArray=temp2;
+    }
+    return self;
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     
-    //add shadow img
+    for(int n=0;n<[self.valueArray count];n++){
+        [self.colorArray addObject:[self.defaultColorArray objectAtIndex:n]];
+    }
+
     CGRect pieFrame = CGRectMake(PIE_X,PIE_Y, PIE_HEIGHT, PIE_HEIGHT);
     
-    self.pieContainer = [[UIView alloc]initWithFrame:pieFrame];
-    self.pieChartView = [[PieChartView alloc] initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray];
+    UIView *tv=[[[UIView alloc]initWithFrame:pieFrame] autorelease];
+    self.pieContainer = tv;
+    PieChartView *pv=[[[PieChartView alloc] initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray] autorelease];
+    self.pieChartView = pv;
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
-    [self.pieChartView setAmountText:@"-2456.0"];
+    [self.pieChartView setAmountText:@""];
     [self.view addSubview:self.pieContainer];
-
-    [self.pieChartView setTitleText:@"支出总计"];
-    self.title = @"对账单";
-    self.view.backgroundColor = [Utiles colorWithHexString:@"#f3f3f3"];
+    
+    [self.pieChartView setTitleText:@"主营收入"];
+    double sum=0.0;
+    for(id obj in self.valueArray){
+        sum+=[obj doubleValue];
+    }
+    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%f",sum]];
+    
+    UIImageView *selView = [[UIImageView alloc]init];
+    selView.image = [UIImage imageNamed:@"select.png"];
+    selView.frame = CGRectMake(100, self.pieContainer.frame.origin.y + self.pieContainer.frame.size.height, selView.image.size.width/2, selView.image.size.height/2);
+    [self.view addSubview:selView];
+    
+    UILabel *label=[[[UILabel alloc]initWithFrame:CGRectMake(0, 24, selView.image.size.width/2, 21)] autorelease];
+    self.selLabel = label;
+    self.selLabel.backgroundColor = [UIColor clearColor];
+    self.selLabel.textAlignment = NSTextAlignmentCenter;
+    self.selLabel.font = [UIFont systemFontOfSize:17];
+    self.selLabel.textColor = [UIColor whiteColor];
+    [selView addSubview:self.selLabel];
+    
 }
 
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {
-    self.selLabel.text = [NSString stringWithFormat:@"%2.2f%@",per*100,@"%"];
+    [self.selLabel setText:[NSString stringWithFormat:@"%@%2.2f%@",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"],per*100,@"%"]];
 }
 
 - (void)onCenterClick:(PieChartView *)pieChartView
 {
-    self.inOut = !self.inOut;
-    self.pieChartView.delegate = nil;
-    [self.pieChartView removeFromSuperview];
-    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.inOut?self.valueArray:self.valueArray2 withColor:self.inOut?self.colorArray:self.colorArray2];
-    self.pieChartView.delegate = self;
-    [self.pieContainer addSubview:self.pieChartView];
-    [self.pieChartView reloadChart];
     
-    if (self.inOut) {
-        [self.pieChartView setTitleText:@"支出总计"];
-        [self.pieChartView setAmountText:@"-2456.0"];
-        
-    }else{
-        [self.pieChartView setTitleText:@"收入总计"];
-        [self.pieChartView setAmountText:@"+567.23"];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

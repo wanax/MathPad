@@ -8,6 +8,7 @@
 
 #import "ComContainerViewController.h"
 #import "ComContainerIndicator.h"
+#import "MHTabBarController.h"
 #import "DahonValuationViewController.h"
 #import "FinancalModelContainerViewController.h"
 #import "ValuationModelContainerViewController.h"
@@ -28,13 +29,6 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    if (_firstLaunch) {
-        DahonValuationViewController *vc=[[DahonValuationViewController alloc] init];
-        vc.comInfo=self.comInfo;
-        [self setDetailVC:vc];
-        SAFE_RELEASE(vc);
-        _firstLaunch=NO;
-    }
 }
 
 - (void)viewDidLoad
@@ -56,66 +50,30 @@
     self.navigationItem.leftBarButtonItem = anotherButton;
     [anotherButton release];
     
-    [self addButtons:@"大行估值" fun:@selector(changeDetailVC:) frame:CGRectMake(0,100, 256, 50) type:DahonModel];
-    [self addButtons:@"财务数据" fun:@selector(changeDetailVC:) frame:CGRectMake(256,100, 256, 50) type:FinancalModel];
-    [self addButtons:@"估值模型" fun:@selector(changeDetailVC:) frame:CGRectMake(512,100, 256, 50) type:DragabelModel];
-    [self addButtons:@"我的损益表" fun:@selector(changeDetailVC:) frame:CGRectMake(768,100, 256, 50) type:MyProAndLossTable];
-}
+    ValuationModelContainerViewController *temp1=[[[ValuationModelContainerViewController alloc] init] autorelease];
+    self.valueContainer=temp1;
+    
+    FinancalModelContainerViewController *temp2=[[[FinancalModelContainerViewController alloc] init] autorelease];
+    self.finContainer=temp2;
+    
+    DahonValuationViewController *temp3=[[[DahonValuationViewController alloc] init] autorelease];
+    self.dahonContainer=temp3;
+    
+    self.valueContainer.title=@"估值模型";
+    self.valueContainer.comInfo=self.comInfo;
+    self.finContainer.title=@"财务数据";
+    self.finContainer.comInfo=self.comInfo;
+    self.dahonContainer.title=@"大行估值";
+    self.dahonContainer.comInfo=self.comInfo;
+    
+    NSArray *viewControllers = [NSArray arrayWithObjects:self.dahonContainer, self.finContainer,self.valueContainer, nil];
+    MHTabBarController *h=[[[MHTabBarController alloc] init] autorelease];
+	h.viewControllers = viewControllers;
+    h.view.frame=CGRectMake(0,100,750,1000);
+    self.tabBarController=h;
+    [self addChildViewController:self.tabBarController];
+    [self.view addSubview:self.tabBarController.view];
 
--(void)addButtons:(NSString *)title fun:(SEL)fun frame:(CGRect)rect type:(ChartType)type{
-    
-    FUIButton *bt=[FUIButton buttonWithType:UIButtonTypeCustom];
-    [bt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:20.0]];
-    [bt setTitle:title forState:UIControlStateNormal];
-    [bt setFrame:rect];
-    bt.buttonColor = [UIColor cloudsColor];
-    bt.shadowHeight = 1.0f;
-    bt.cornerRadius = 0.0f;
-    bt.tag=type;
-    [bt setTitleColor:[UIColor peterRiverColor] forState:UIControlStateNormal];
-    [bt addTarget:self action:fun forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:bt];
-}
-
-#pragma mark -
-#pragma mark Bt Methods
--(void)changeDetailVC:(UIButton *)bt{
-    
-    if (bt.tag==DahonModel) {
-        DahonValuationViewController *vc=[[DahonValuationViewController alloc] init];
-        vc.comInfo=self.comInfo;
-        [self setDetailVC:vc];
-        SAFE_RELEASE(vc);
-    } else if(bt.tag==DragabelModel){
-        ValuationModelContainerViewController *vc=[[ValuationModelContainerViewController alloc] init];
-        vc.comInfo=self.comInfo;
-        [self setDetailVC:vc];
-        SAFE_RELEASE(vc);
-    } else if(bt.tag==FinancalModel){
-        FinancalModelContainerViewController *vc=[[FinancalModelContainerViewController alloc] init];
-        vc.comInfo=self.comInfo;
-        [self setDetailVC:vc];
-        SAFE_RELEASE(vc);
-    } else if(bt.tag==MyProAndLossTable){
-        //controllerName=@"TestViewController";
-    }
-    
-}
-
--(void)setDetailVC:(UIViewController *)detailViewController{
-    
-    if (self.detailViewController) {
-        [self.detailViewController removeFromParentViewController];
-        [self.detailViewController.view removeFromSuperview];
-        self.detailViewController=nil;
-    }
- 
-    self.detailViewController=detailViewController;
-    self.detailViewController.view.frame=CGRectMake(10,150,1004,608);
-
-    [self addChildViewController:self.detailViewController];
-    [self.view addSubview:self.detailViewController.view];
-    
 }
 
 -(void)backToRoot:(UIBarButtonItem *)bt{

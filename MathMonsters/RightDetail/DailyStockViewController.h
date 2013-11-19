@@ -14,6 +14,8 @@
 
 @property (nonatomic,retain) NSString *imageUrl;
 @property (nonatomic,retain) id companyInfo;
+@property (nonatomic,retain) id driverData;
+@property (nonatomic,retain) id jsonData;
 
 @property (nonatomic,retain) DailyStockIndicator *indicator;
 

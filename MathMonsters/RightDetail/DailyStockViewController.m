@@ -10,6 +10,7 @@
 #import "PieChartView.h"
 #import "PieViewController.h"
 #import "DailyStockIndicator.h"
+#import "DailyRightListViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DailyStockViewController ()
@@ -30,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor blackColor];
+    self.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
  
     [self initComponents];
     [self getDailyStockNews];
@@ -45,21 +46,32 @@
     
     self.indicator=[[[DailyStockIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
     [self.view addSubview:self.indicator];
-    
-    [self addPieView];
+
 }
 
--(void)addPieView{
-    PieViewController *vc=[[PieViewController alloc] init];
-    vc.view.backgroundColor=[UIColor clearColor];
+-(void)addPieView:(NSDictionary *)valueDic driverIds:(NSArray *)ids{
+    PieViewController *vc=[[[PieViewController alloc] initWithNibName:nil bundle:nil data:valueDic] autorelease];
+    vc.view.frame=CGRectMake(0,90,450,570);
+    vc.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];
+    
+    DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithNibName:nil bundle:nil data:valueDic driverIds:ids] autorelease];
+    rightList.view.backgroundColor=[UIColor clearColor];
+    rightList.view.frame=CGRectMake(500,90,400,900);
+    rightList.comInfo=self.companyInfo;
+    rightList.jsonForChart=self.jsonData;
+    [self addChildViewController:rightList];
+    [self.view addSubview:rightList.view];
 }
 
 -(void)getDailyStockNews{
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [Utiles getNetInfoWithPath:@"DailyStock" andParams:nil besidesBlock:^(id obj){
         
         self.imageUrl=[NSString stringWithFormat:@"%@",[obj objectForKey:@"imageurl"]];
+        self.companyInfo=obj;
         [self.indicator.comIconView setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:[UIImage imageNamed:@"icon"]];
         NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[obj objectForKey:@"stockcode"],@"stockcode", nil];
         [Utiles getNetInfoWithPath:@"QueryCompany" andParams:params besidesBlock:^(id resObj){
@@ -78,7 +90,24 @@
             NSLog(@"%@",error.localizedDescription);
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }];
-        
+        NSDictionary *params1=[NSDictionary dictionaryWithObjectsAndKeys:[obj objectForKey:@"stockcode"],@"stockCode", nil];
+        [Utiles getNetInfoWithPath:@"CompanyModel" andParams:params1 besidesBlock:^(id resObj){
+            
+            self.jsonData=resObj;
+            NSArray *childs=resObj[@"model"][@"tree"][@"root"][@"child"];
+            self.driverData=resObj[@"model"][@"driver"];
+
+            NSMutableDictionary *valueMainIncomeDic=[[[NSMutableDictionary alloc] init] autorelease];
+            for(id obj in childs){
+                [valueMainIncomeDic setObject:obj forKey:[self nearestForecastYear:obj[@"identifier"]]];
+            }
+            [self addPieView:valueMainIncomeDic driverIds:[self getGrade2DriverIds:childs divisionData:resObj[@"model"][@"division"]]];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
+        }];
+
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){
         NSLog(@"%@",error.localizedDescription);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -86,7 +115,31 @@
     }];
 }
 
+-(NSArray *)getGrade2DriverIds:(NSArray *)childs divisionData:(id)divisionData{
+    
+    NSMutableArray *driverIds=[[[NSMutableArray alloc] init] autorelease];
+    for(id obj in childs){
+        if([obj[@"child"] count]>0){
+            for(id childObj in obj[@"child"]){
+                for(id driverId in divisionData[childObj[@"identifier"]][@"drivers"]){
+                    [driverIds addObject:driverId];
+                }
+            }
+        }
+    }
+    return [NSArray arrayWithArray:driverIds];
+}
 
+-(NSNumber *)nearestForecastYear:(id)driverId{
+    
+    NSArray *arr=self.driverData[driverId][@"array"];
+    for(id obj in arr){
+        if (![obj[@"h"] boolValue]) {
+            return [NSNumber numberWithDouble:[obj[@"v"] doubleValue]];
+        }
+    }
+    return [NSNumber numberWithDouble:0.0];
+}
 
 - (BOOL)shouldAutorotate{
     return NO;

@@ -24,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.comList=nil;
     }
     return self;
 }
@@ -96,7 +96,7 @@
                 
             }else{
                 [Utiles ToastNotification:[obj objectForKey:@"msg"] andView:self.view andLoading:NO andIsBottom:NO andIsHide:YES];
-                self.comList=[NSMutableArray arrayWithCapacity:0];
+                self.comList=nil;
             }
             [MBProgressHUD hideHUDForView:self.comListTable animated:YES];
             [self.comListRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.comListTable];
@@ -105,6 +105,7 @@
             [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
         }];
     }else{
+        self.comList=nil;
         [Utiles showToastView:self.view withTitle:nil andContent:@"请先登录" duration:1.5];
     }
     
@@ -145,7 +146,9 @@
     if(self.comList){
         id comInfo=[self.comList objectAtIndex:indexPath.row];
         cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"market"]];
-        [cell.comIconImg setImageWithURL:[NSURL URLWithString:[comInfo objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+        if(![Utiles isBlankString:[comInfo objectForKey:@"comanylogourl"]]){
+           [cell.comIconImg setImageWithURL:[NSURL URLWithString:[comInfo objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+        }
         [cell.saveImg setImage:[UIImage imageNamed:@"unsavemodel"]];
         [cell.concernImg setImage:[UIImage imageNamed:@"unconcernmodel"]];
         

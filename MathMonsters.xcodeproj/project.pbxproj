@@ -72,7 +72,6 @@
 		AE44AFF71834AADF0074E7D9 /* ValuaActionBt.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF941834AADF0074E7D9 /* ValuaActionBt.png */; };
 		AE44AFF81834AADF0074E7D9 /* ValuaActionBtSe.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF951834AADF0074E7D9 /* ValuaActionBtSe.png */; };
 		AE44AFF91834AADF0074E7D9 /* concernmodel.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF961834AADF0074E7D9 /* concernmodel.png */; };
-		AE44AFFA1834AADF0074E7D9 /* dailyBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF971834AADF0074E7D9 /* dailyBackImg.png */; };
 		AE44AFFB1834AADF0074E7D9 /* defaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF981834AADF0074E7D9 /* defaultIcon.png */; };
 		AE44AFFC1834AADF0074E7D9 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF991834AADF0074E7D9 /* down.png */; };
 		AE44AFFD1834AADF0074E7D9 /* ASTOCK.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AF9B1834AADF0074E7D9 /* ASTOCK.png */; };
@@ -229,6 +228,9 @@
 		AEB3E34917F422D700A273E9 /* NewReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34817F422D700A273E9 /* NewReportViewController.m */; };
 		AEB3E34C17F422E300A273E9 /* ValuModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34B17F422E300A273E9 /* ValuModelViewController.m */; };
 		AEB3E34F17F422EE00A273E9 /* FinanceToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */; };
+		AEBE512F1839F1600041E1EA /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE512E1839F1600041E1EA /* select.png */; };
+		AEBE51311839F4FA0041E1EA /* dailyBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE51301839F4FA0041E1EA /* dailyBackImg.png */; };
+		AEBE51341839FB8C0041E1EA /* DailyRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */; };
 		AED071B11803FD8E00C28F32 /* ValueModelIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */; };
 		AEDD0830181FAA6D0095BDA1 /* ValueModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */; };
 		AEDD0833181FAA900095BDA1 /* ValueModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDD0832181FAA900095BDA1 /* ValueModelCell.m */; };
@@ -238,6 +240,7 @@
 		AEF59B301831BD7000CE99D8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */; };
 		AEF59B3A1831D3D400CE99D8 /* ClientLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */; };
 		AEF59B3C1831D5DC00CE99D8 /* ClientLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */; };
+		AEF6E800183AF79200FD90EE /* DailyStockBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF6E7FF183AF79200FD90EE /* DailyStockBarChartViewController.m */; };
 		AEF9502D1834690B00EB1631 /* selectionIndicatorImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF9502C1834690B00EB1631 /* selectionIndicatorImage.png */; };
 		AEFC216618322A3800F53470 /* DiscountRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC216518322A3800F53470 /* DiscountRateViewController.m */; };
 		AEFC216818322ADF00F53470 /* DiscountRateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFC216718322ADF00F53470 /* DiscountRateView.xib */; };
@@ -409,7 +412,6 @@
 		AE44AF941834AADF0074E7D9 /* ValuaActionBt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ValuaActionBt.png; sourceTree = "<group>"; };
 		AE44AF951834AADF0074E7D9 /* ValuaActionBtSe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ValuaActionBtSe.png; sourceTree = "<group>"; };
 		AE44AF961834AADF0074E7D9 /* concernmodel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concernmodel.png; path = ../concernmodel.png; sourceTree = "<group>"; };
-		AE44AF971834AADF0074E7D9 /* dailyBackImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dailyBackImg.png; path = ../dailyBackImg.png; sourceTree = "<group>"; };
 		AE44AF981834AADF0074E7D9 /* defaultIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultIcon.png; path = ../defaultIcon.png; sourceTree = "<group>"; };
 		AE44AF991834AADF0074E7D9 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = ../down.png; sourceTree = "<group>"; };
 		AE44AF9B1834AADF0074E7D9 /* ASTOCK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ASTOCK.png; sourceTree = "<group>"; };
@@ -645,6 +647,10 @@
 		AEB3E34B17F422E300A273E9 /* ValuModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuModelViewController.m; sourceTree = "<group>"; };
 		AEB3E34D17F422EE00A273E9 /* FinanceToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceToolViewController.h; path = MathMonsters/RightDetail/FinanceToolViewController.h; sourceTree = SOURCE_ROOT; };
 		AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceToolViewController.m; path = MathMonsters/RightDetail/FinanceToolViewController.m; sourceTree = SOURCE_ROOT; };
+		AEBE512E1839F1600041E1EA /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
+		AEBE51301839F4FA0041E1EA /* dailyBackImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dailyBackImg.png; sourceTree = "<group>"; };
+		AEBE51321839FB8C0041E1EA /* DailyRightListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyRightListViewController.h; sourceTree = "<group>"; };
+		AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyRightListViewController.m; sourceTree = "<group>"; };
 		AED071AF1803FD8E00C28F32 /* ValueModelIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelIndicator.h; sourceTree = "<group>"; };
 		AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelIndicator.m; sourceTree = "<group>"; };
 		AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValueModelCell.xib; path = ../NibFile/CellNib/ValueModelCell.xib; sourceTree = "<group>"; };
@@ -660,6 +666,8 @@
 		AEF59B381831D3D400CE99D8 /* ClientLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientLoginViewController.h; sourceTree = "<group>"; };
 		AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientLoginViewController.m; sourceTree = "<group>"; };
 		AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientLoginView.xib; sourceTree = "<group>"; };
+		AEF6E7FE183AF79200FD90EE /* DailyStockBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyStockBarChartViewController.h; sourceTree = "<group>"; };
+		AEF6E7FF183AF79200FD90EE /* DailyStockBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyStockBarChartViewController.m; sourceTree = "<group>"; };
 		AEF9502C1834690B00EB1631 /* selectionIndicatorImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionIndicatorImage.png; sourceTree = "<group>"; };
 		AEFC216418322A3800F53470 /* DiscountRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountRateViewController.h; sourceTree = "<group>"; };
 		AEFC216518322A3800F53470 /* DiscountRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountRateViewController.m; sourceTree = "<group>"; };
@@ -1068,8 +1076,9 @@
 		AE44B03B1834AE650074E7D9 /* DailyStockImg */ = {
 			isa = PBXGroup;
 			children = (
+				AEBE51301839F4FA0041E1EA /* dailyBackImg.png */,
+				AEBE512E1839F1600041E1EA /* select.png */,
 				AE44AF981834AADF0074E7D9 /* defaultIcon.png */,
-				AE44AF971834AADF0074E7D9 /* dailyBackImg.png */,
 			);
 			path = DailyStockImg;
 			sourceTree = "<group>";
@@ -1223,15 +1232,14 @@
 		AE572B6A182CB6040000B193 /* MultipleChartVC */ = {
 			isa = PBXGroup;
 			children = (
+				AE572B7F182CE0D60000B193 /* cell */,
+				AEE809921839AF27008088A5 /* DahonValuation */,
 				AE63E8D51830D04E002043DC /* ValuationModel */,
 				AE67B8DA18307A9E00E00473 /* FinancalModel */,
-				AE572B7F182CE0D60000B193 /* cell */,
 				AE572B8A182CE26C0000B193 /* ChartLeftListViewController.h */,
 				AE572B8B182CE26C0000B193 /* ChartLeftListViewController.m */,
 				AE572B6E182CB62A0000B193 /* DrawChartTool.h */,
 				AE572B6F182CB62A0000B193 /* DrawChartTool.m */,
-				AE572B71182CB67E0000B193 /* DahonValuationViewController.h */,
-				AE572B72182CB67E0000B193 /* DahonValuationViewController.m */,
 			);
 			path = MultipleChartVC;
 			sourceTree = "<group>";
@@ -1431,6 +1439,10 @@
 				AEB3E33F17F422B100A273E9 /* DailyStockViewController.m */,
 				AE7E573E181E51EB00A1391E /* DailyStockIndicator.h */,
 				AE7E573F181E51EB00A1391E /* DailyStockIndicator.m */,
+				AEBE51321839FB8C0041E1EA /* DailyRightListViewController.h */,
+				AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */,
+				AEF6E7FE183AF79200FD90EE /* DailyStockBarChartViewController.h */,
+				AEF6E7FF183AF79200FD90EE /* DailyStockBarChartViewController.m */,
 			);
 			path = DailyStock;
 			sourceTree = "<group>";
@@ -1577,6 +1589,15 @@
 			name = MGSplit;
 			sourceTree = "<group>";
 		};
+		AEE809921839AF27008088A5 /* DahonValuation */ = {
+			isa = PBXGroup;
+			children = (
+				AE572B71182CB67E0000B193 /* DahonValuationViewController.h */,
+				AE572B72182CB67E0000B193 /* DahonValuationViewController.m */,
+			);
+			name = DahonValuation;
+			sourceTree = "<group>";
+		};
 		AEF59B311831D37500CE99D8 /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1694,6 +1715,7 @@
 				AE44B0211834AADF0074E7D9 /* loginLBtBack.png in Resources */,
 				AE1FCBB61828DBB9005D5E10 /* right_arrow.png in Resources */,
 				AE44B0051834AADF0074E7D9 /* FUNDTIME.png in Resources */,
+				AEBE512F1839F1600041E1EA /* select.png in Resources */,
 				AE44AFFE1834AADF0074E7D9 /* BETA.png in Resources */,
 				AE748ECA1833770500BD4F57 /* selectionIndicatorImage@2x.png in Resources */,
 				AE44AFF61834AADF0074E7D9 /* UpAccessory@2x.png in Resources */,
@@ -1740,6 +1762,7 @@
 				AE44B0011834AADF0074E7D9 /* EXCEL.png in Resources */,
 				AE09139A1827A34C007A7B97 /* BetaFactorCountView.xib in Resources */,
 				AEA90A56181E13FD00F3E4DB /* FrameParamConfig.plist in Resources */,
+				AEBE51311839F4FA0041E1EA /* dailyBackImg.png in Resources */,
 				AE3E70FC18334FA100A624AD /* Default@2x.png in Resources */,
 				AE44AFF91834AADF0074E7D9 /* concernmodel.png in Resources */,
 				AE44AFDE1834AADF0074E7D9 /* graphExchangeBtSe.png in Resources */,
@@ -1763,7 +1786,6 @@
 				AE44AFE61834AADF0074E7D9 /* settingBtSe.png in Resources */,
 				AE572B87182CE0D60000B193 /* Cell1.xib in Resources */,
 				AEA90A5C181E142A00F3E4DB /* cnew.html in Resources */,
-				AE44AFFA1834AADF0074E7D9 /* dailyBackImg.png in Resources */,
 				AE44B02D1834AADF0074E7D9 /* unconcernmodel.png in Resources */,
 				AE44B0191834AADF0074E7D9 /* checkImg.png in Resources */,
 				AE44B00F1834AADF0074E7D9 /* 1.png in Resources */,
@@ -1852,6 +1874,7 @@
 				AE7EF61E181F564A002A3C9E /* NewComCell.m in Sources */,
 				AE6FCF1517E9403800DCDB77 /* Toast+UIView.m in Sources */,
 				AEF59B3A1831D3D400CE99D8 /* ClientLoginViewController.m in Sources */,
+				AEBE51341839FB8C0041E1EA /* DailyRightListViewController.m in Sources */,
 				AE6FCF1817E940DA00DCDB77 /* MBProgressHUD.m in Sources */,
 				AE0F050E1827464B00DA13D4 /* ChoseBetaFactorViewController.m in Sources */,
 				AE7EF610181F4C93002A3C9E /* NewReportIndicator.m in Sources */,
@@ -1883,6 +1906,7 @@
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
 				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
 				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
+				AEF6E800183AF79200FD90EE /* DailyStockBarChartViewController.m in Sources */,
 				AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */,
 				AE8B4508182101930047F4BB /* SettingNavigationController.m in Sources */,
 				AEAD74DE17EE7FAB00A659FA /* KLCircleViewController.m in Sources */,

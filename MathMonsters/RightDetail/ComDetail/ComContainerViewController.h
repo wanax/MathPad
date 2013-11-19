@@ -8,11 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
+@class MHTabBarController;
+@class ValuationModelContainerViewController;
+@class FinancalModelContainerViewController;
+@class DahonValuationViewController;
+
 @interface ComContainerViewController : UIViewController{
     BOOL _firstLaunch;
 }
 
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) UIViewController *detailViewController;
+
+
+@property (nonatomic,retain) ValuationModelContainerViewController *valueContainer;
+@property (nonatomic,retain) FinancalModelContainerViewController *finContainer;
+@property (nonatomic,retain) DahonValuationViewController *dahonContainer;
+@property (nonatomic,retain) MHTabBarController* tabBarController;
+
+
+
+
+
+
+
+
+
+
+
 
 @end
