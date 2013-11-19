@@ -15,12 +15,30 @@
 
 @implementation FinancalModelRightListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithClassDic:(NSDictionary *)classDic comInfo:(id)comInfo jsonData:(id)jsonData
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         NSMutableDictionary *temp=[[[NSMutableDictionary alloc] init] autorelease];
         self.indexPathDic=temp;
+        
+        NSMutableArray *tempArr=[[[NSMutableArray alloc] init] autorelease];
+        for(id key in classDic){
+            for(id obj in [classDic objectForKey:key]){
+                [tempArr addObject:obj];
+            }
+        }
+        self.classArr=tempArr;
+        
+        NSMutableArray *temp2Arr=[[[NSMutableArray alloc] init] autorelease];
+        for(id obj in self.classArr){
+            FinancalModelChartViewController *chartView=[[[FinancalModelChartViewController alloc] init] autorelease];
+            chartView.comInfo=comInfo;
+            chartView.jsonForChart=jsonData;
+            chartView.driverId=[obj objectForKey:@"id"];
+            [temp2Arr addObject:chartView];
+        }
+        self.barChartArr=temp2Arr;
     }
     return self;
 }
@@ -46,13 +64,7 @@
 
 -(void)rightListClassChanged{
     
-    NSMutableArray *tempArr=[[[NSMutableArray alloc] init] autorelease];
-    for(id key in self.classDic){
-        for(id obj in [self.classDic objectForKey:key]){
-            [tempArr addObject:obj];
-        }
-    }
-    self.classArr=tempArr;
+    
     for(int n=0;n<[self.classArr count];n++){
         [self.indexPathDic setObject:[NSNumber numberWithInt:n] forKey:[[self.classArr objectAtIndex:n] objectForKey:@"id"]];
     }
@@ -91,10 +103,8 @@
     if(cell==nil){
         cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    FinancalModelChartViewController *chartView=[[[FinancalModelChartViewController alloc] init] autorelease];
-    chartView.comInfo=self.comInfo;
-    chartView.jsonForChart=self.jsonForChart;
-    chartView.driverId=[[self.classArr objectAtIndex:indexPath.row] objectForKey:@"id"];
+    
+    FinancalModelChartViewController *chartView=[self.barChartArr objectAtIndex:indexPath.row];
     [cell.contentView addSubview:chartView.view];
     [self addChildViewController:chartView];
     return cell;

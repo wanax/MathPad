@@ -48,9 +48,10 @@
 }
 
 @property (nonatomic,retain) id comInfo;
+@property (nonatomic,retain) id jsonData;
+
 @property (nonatomic,retain) NSMutableArray *points;
 @property (nonatomic,retain) NSArray *colorArr;
-@property (nonatomic,retain) NSString *jsonForChart;
 @property (nonatomic,retain) NSString *trueUnit;
 @property (nonatomic,retain) NSString *yAxisUnit;
 @property (nonatomic,retain) NSString *driverId;

@@ -12,12 +12,13 @@
 
 @property (nonatomic,retain) NSDictionary *valueIncomeDic;
 @property (nonatomic,retain) NSArray *valueArr;
+@property (nonatomic,retain) NSArray *barChartArr;
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) id driverIds;
-@property (nonatomic,retain) id jsonForChart;
+@property (nonatomic,retain) id jsonData;
 
 @property (nonatomic,retain) UITableView *dailyTable;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)data driverIds:(NSArray *)ids;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)data driverIds:(NSArray *)ids jsonData:(id)jsonData;
 
 @end

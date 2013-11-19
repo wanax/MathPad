@@ -48,16 +48,7 @@
     self.leftListVC=tLeft;
     [self.view addSubview:self.leftListVC.view];
     [self addChildViewController:self.leftListVC];
-    
-    FinancalModelRightListViewController *tRight=[[[FinancalModelRightListViewController alloc] init] autorelease];
-    tRight.view.frame=CGRectMake(350,0,600,1100);
-    tRight.comInfo=self.comInfo;
-    self.delegate=tRight;
-    self.leftListVC.delegate=tRight;
-    self.rightListVC=tRight;
-    [self.view addSubview:self.rightListVC.view];
-    [self addChildViewController:self.rightListVC];
-    
+
 }
 
 #pragma mark -
@@ -82,8 +73,14 @@
         self.leftListVC.sectionDic=@{@"listRatio":@"财务比例",@"listChart":@"财务图表",@"listOther":@"其它指标"};
         [self.leftListVC.expansionTableView reloadData];
         
-        self.rightListVC.jsonForChart=self.jsonForChart;
-        self.rightListVC.classDic=transObj;
+        
+        FinancalModelRightListViewController *tRight=[[[FinancalModelRightListViewController alloc] initWithClassDic:transObj comInfo:self.comInfo jsonData:self.jsonForChart] autorelease];
+        tRight.view.frame=CGRectMake(350,0,600,1100);
+        self.delegate=tRight;
+        self.leftListVC.delegate=tRight;
+        self.rightListVC=tRight;
+        [self.view addSubview:self.rightListVC.view];
+        [self addChildViewController:self.rightListVC];
         [self.delegate rightListClassChanged];
         
         NSLog(@"getNetInfo:%d",[transObj count]);

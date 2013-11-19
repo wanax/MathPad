@@ -13,7 +13,7 @@
 #import "DrawChartTool.h"
 #import "ChartLeftListViewController.h"
 
-#define HostViewHeight 250.0
+#define HostViewHeight 280.0
 
 @interface DailyStockBarChartViewController ()
 
@@ -55,7 +55,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     CPTXYGraph *tempGraph=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
     self.graph=tempGraph;
     self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
-    CPTGraphHostingView *tempView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(0,10,640,HostViewHeight)] autorelease];
+    CPTGraphHostingView *tempView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(00,0,470,HostViewHeight)] autorelease];
     self.hostView=tempView;
     [self.view addSubview:self.hostView];
     [self.hostView setHostedGraph : self.graph ];
@@ -70,6 +70,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     self.plotSpace=(CPTXYPlotSpace *)self.graph.defaultPlotSpace;
     DrawXYAxisWithoutYAxis;
     [self initBarPlot];
+    [self modelClassChanged:self.driverId];
 }
 
 
@@ -78,18 +79,18 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 
 -(void)modelClassChanged:(NSString *)driverId{
     
-    id temp=[self getObjectDataFromJsFun:@"returnChartData" byData:driverId];
+    id driverData=self.jsonData[@"model"][@"driver"][driverId];
     NSMutableArray *tempHisPoints=[[NSMutableArray alloc] init];
-    for(id obj in [temp objectForKey:@"array"]){
+    for(id obj in [driverData objectForKey:@"array"]){
         if([[obj objectForKey:@"h"] boolValue]){
             [tempHisPoints addObject:obj];
         }
     }
     self.points=tempHisPoints;
-    self.trueUnit=[temp objectForKey:@"unit"];
+    self.trueUnit=[driverData objectForKey:@"unit"];
     NSArray *sort=[Utiles arrSort:self.points];
     self.yAxisUnit=[Utiles getUnitFromData:[[[sort lastObject] objectForKey:@"v"] stringValue] andUnit:self.trueUnit];
-    self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",[temp objectForKey:@"title"],self.yAxisUnit];
+    self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",[driverData objectForKey:@"name"],self.yAxisUnit];
     [self setXYAxis];
     self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
     [self.graph reloadData];

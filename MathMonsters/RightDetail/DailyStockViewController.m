@@ -56,11 +56,10 @@
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];
     
-    DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithNibName:nil bundle:nil data:valueDic driverIds:ids] autorelease];
+    DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithNibName:nil bundle:nil data:valueDic driverIds:ids jsonData:self.jsonData] autorelease];
     rightList.view.backgroundColor=[UIColor clearColor];
-    rightList.view.frame=CGRectMake(500,90,400,900);
+    rightList.view.frame=CGRectMake(450,90,500,900);
     rightList.comInfo=self.companyInfo;
-    rightList.jsonForChart=self.jsonData;
     [self addChildViewController:rightList];
     [self.view addSubview:rightList.view];
 }

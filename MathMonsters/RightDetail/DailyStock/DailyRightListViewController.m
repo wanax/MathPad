@@ -11,6 +11,7 @@
 #import "MHTabBarController.h"
 #import "ValueModelChartViewController.h"
 #import "FinancalModelChartViewController.h"
+#import "DailyStockBarChartViewController.h"
 
 @interface DailyRightListViewController ()
 
@@ -18,13 +19,22 @@
 
 @implementation DailyRightListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)data driverIds:(NSArray *)ids
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)data driverIds:(NSArray *)ids jsonData:(id)jsonData
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.valueIncomeDic=data;
         self.driverIds=ids;
         self.valueArr=[self.valueIncomeDic allKeys];
+        NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+        for(id driverId in self.driverIds){
+            DailyStockBarChartViewController *chartView=[[[DailyStockBarChartViewController alloc] init] autorelease];
+            chartView.comInfo=self.comInfo;
+            chartView.jsonData=jsonData;
+            chartView.driverId=driverId;
+            [temp addObject:chartView];
+        }
+        self.barChartArr=temp;
     }
     return self;
 }
@@ -36,11 +46,11 @@
 }
 
 -(void)initComponents{
-    UITableView *temp=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,400,570)] autorelease];
+    UITableView *temp=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,470,570)] autorelease];
     temp.dataSource=self;
     temp.delegate=self;
     temp.separatorStyle=UITableViewCellSeparatorStyleNone;
-    temp.backgroundColor=[UIColor peterRiverColor];
+    temp.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
     self.dailyTable=temp;
     [self.view addSubview:self.dailyTable];
 }
@@ -69,11 +79,7 @@
     if(cell==nil){
         cell=[[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    FinancalModelChartViewController *chartView=[[[FinancalModelChartViewController alloc] init] autorelease];
-    chartView.comInfo=self.comInfo;
-    chartView.jsonForChart=self.jsonForChart;
-    NSLog(@"%@",[self.driverIds objectAtIndex:indexPath.row]);
-    chartView.driverId=[self.driverIds objectAtIndex:indexPath.row];
+    DailyStockBarChartViewController *chartView=[self.barChartArr objectAtIndex:indexPath.row];
     [cell.contentView addSubview:chartView.view];
     [self addChildViewController:chartView];
     return cell;

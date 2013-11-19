@@ -1433,12 +1433,12 @@
 		AE7E5738181E3FD700A1391E /* DailyStock */ = {
 			isa = PBXGroup;
 			children = (
+				AE7E573E181E51EB00A1391E /* DailyStockIndicator.h */,
+				AE7E573F181E51EB00A1391E /* DailyStockIndicator.m */,
 				AE0D226017F172D20056C7BF /* PieViewController.h */,
 				AE0D226117F172D20056C7BF /* PieViewController.m */,
 				AEB3E33E17F422B100A273E9 /* DailyStockViewController.h */,
 				AEB3E33F17F422B100A273E9 /* DailyStockViewController.m */,
-				AE7E573E181E51EB00A1391E /* DailyStockIndicator.h */,
-				AE7E573F181E51EB00A1391E /* DailyStockIndicator.m */,
 				AEBE51321839FB8C0041E1EA /* DailyRightListViewController.h */,
 				AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */,
 				AEF6E7FE183AF79200FD90EE /* DailyStockBarChartViewController.h */,

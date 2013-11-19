@@ -14,10 +14,10 @@
 
 @property (nonatomic,retain) UITableView *cusTable;
 
-@property (nonatomic,retain) id comInfo;
-@property (nonatomic,retain) id jsonForChart;
-@property (nonatomic,retain) id classDic;
 @property (nonatomic,retain) NSArray *classArr;
+@property (nonatomic,retain) NSArray *barChartArr;
 @property (nonatomic,retain) NSMutableDictionary *indexPathDic;
+
+- (id)initWithClassDic:(NSDictionary *)classDic comInfo:(id)comInfo jsonData:(id)jsonData;
 
 @end
