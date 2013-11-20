@@ -161,6 +161,8 @@
 		AE5C5769181E64FB00A750F2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C5768181E64FB00A750F2 /* ImageIO.framework */; };
 		AE60096F182B6EE800BB3819 /* PageController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE60096E182B6EE800BB3819 /* PageController.m */; };
 		AE600972182B70BB00BB3819 /* UIFont+CoreTextExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE600971182B70BB00BB3819 /* UIFont+CoreTextExtensions.m */; };
+		AE62F152183B3EAD00FD75D7 /* MyProLossListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62F151183B3EAD00FD75D7 /* MyProLossListViewController.m */; };
+		AE62F155183B3EFD00FD75D7 /* MyProLossContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62F154183B3EFD00FD75D7 /* MyProLossContainerViewController.m */; };
 		AE63E8D81830D2F8002043DC /* ValuationModelContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE63E8D71830D2F8002043DC /* ValuationModelContainerViewController.m */; };
 		AE63E8DB1830D81D002043DC /* ValueModelChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE63E8DA1830D81D002043DC /* ValueModelChartViewController.m */; };
 		AE641EDD1820A91600E77775 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = AE641EDA1820A91600E77775 /* CustomCellBackground.m */; };
@@ -232,6 +234,8 @@
 		AEBE51311839F4FA0041E1EA /* dailyBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE51301839F4FA0041E1EA /* dailyBackImg.png */; };
 		AEBE51341839FB8C0041E1EA /* DailyRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */; };
 		AED071B11803FD8E00C28F32 /* ValueModelIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */; };
+		AED98534183C571F00E97093 /* MyProLossCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED98533183C571F00E97093 /* MyProLossCell.m */; };
+		AED98536183C573400E97093 /* MyProLossCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED98535183C573400E97093 /* MyProLossCell.xib */; };
 		AEDD0830181FAA6D0095BDA1 /* ValueModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */; };
 		AEDD0833181FAA900095BDA1 /* ValueModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDD0832181FAA900095BDA1 /* ValueModelCell.m */; };
 		AEDFE96117F279BE0085CA0F /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE95C17F279BE0085CA0F /* MGSplitCornersView.m */; };
@@ -532,6 +536,10 @@
 		AE60096E182B6EE800BB3819 /* PageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageController.m; sourceTree = "<group>"; };
 		AE600970182B70BB00BB3819 /* UIFont+CoreTextExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CoreTextExtensions.h"; sourceTree = "<group>"; };
 		AE600971182B70BB00BB3819 /* UIFont+CoreTextExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CoreTextExtensions.m"; sourceTree = "<group>"; };
+		AE62F150183B3EAD00FD75D7 /* MyProLossListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProLossListViewController.h; sourceTree = "<group>"; };
+		AE62F151183B3EAD00FD75D7 /* MyProLossListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProLossListViewController.m; sourceTree = "<group>"; };
+		AE62F153183B3EFD00FD75D7 /* MyProLossContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProLossContainerViewController.h; sourceTree = "<group>"; };
+		AE62F154183B3EFD00FD75D7 /* MyProLossContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProLossContainerViewController.m; sourceTree = "<group>"; };
 		AE63E8D61830D2F8002043DC /* ValuationModelContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuationModelContainerViewController.h; sourceTree = "<group>"; };
 		AE63E8D71830D2F8002043DC /* ValuationModelContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuationModelContainerViewController.m; sourceTree = "<group>"; };
 		AE63E8D91830D81D002043DC /* ValueModelChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelChartViewController.h; sourceTree = "<group>"; };
@@ -653,6 +661,9 @@
 		AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyRightListViewController.m; sourceTree = "<group>"; };
 		AED071AF1803FD8E00C28F32 /* ValueModelIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelIndicator.h; sourceTree = "<group>"; };
 		AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelIndicator.m; sourceTree = "<group>"; };
+		AED98532183C571F00E97093 /* MyProLossCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProLossCell.h; sourceTree = "<group>"; };
+		AED98533183C571F00E97093 /* MyProLossCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProLossCell.m; sourceTree = "<group>"; };
+		AED98535183C573400E97093 /* MyProLossCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProLossCell.xib; sourceTree = "<group>"; };
 		AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValueModelCell.xib; path = ../NibFile/CellNib/ValueModelCell.xib; sourceTree = "<group>"; };
 		AEDD0831181FAA900095BDA1 /* ValueModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelCell.h; sourceTree = "<group>"; };
 		AEDD0832181FAA900095BDA1 /* ValueModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelCell.m; sourceTree = "<group>"; };
@@ -831,6 +842,7 @@
 		AE38986C182C8EBF0059A319 /* ComDetail */ = {
 			isa = PBXGroup;
 			children = (
+				AE62F14C183B3E8E00FD75D7 /* MyProLoss */,
 				AE572B6A182CB6040000B193 /* MultipleChartVC */,
 				AE38986D182C8EFE0059A319 /* ComContainerViewController.h */,
 				AE38986E182C8EFE0059A319 /* ComContainerViewController.m */,
@@ -1257,6 +1269,17 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		AE62F14C183B3E8E00FD75D7 /* MyProLoss */ = {
+			isa = PBXGroup;
+			children = (
+				AE62F153183B3EFD00FD75D7 /* MyProLossContainerViewController.h */,
+				AE62F154183B3EFD00FD75D7 /* MyProLossContainerViewController.m */,
+				AE62F150183B3EAD00FD75D7 /* MyProLossListViewController.h */,
+				AE62F151183B3EAD00FD75D7 /* MyProLossListViewController.m */,
+			);
+			name = MyProLoss;
+			sourceTree = "<group>";
+		};
 		AE63E8D51830D04E002043DC /* ValuationModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1482,6 +1505,7 @@
 		AE7EF613181F5580002A3C9E /* CellNib */ = {
 			isa = PBXGroup;
 			children = (
+				AED98535183C573400E97093 /* MyProLossCell.xib */,
 			);
 			path = CellNib;
 			sourceTree = "<group>";
@@ -1497,6 +1521,8 @@
 				AEDD0832181FAA900095BDA1 /* ValueModelCell.m */,
 				AE44B04F1834D8DA0074E7D9 /* GooGuuViewCell.h */,
 				AE44B0501834D8DA0074E7D9 /* GooGuuViewCell.m */,
+				AED98532183C571F00E97093 /* MyProLossCell.h */,
+				AED98533183C571F00E97093 /* MyProLossCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -1690,6 +1716,7 @@
 				AE44B02C1834AADF0074E7D9 /* topQuestion.png in Resources */,
 				AE44B0141834AADF0074E7D9 /* newReportCellBack.png in Resources */,
 				AE44B0071834AADF0074E7D9 /* INVESTCOM.png in Resources */,
+				AED98536183C573400E97093 /* MyProLossCell.xib in Resources */,
 				AE4D3E1617E3053C0044A7DF /* Default-568h@2x.png in Resources */,
 				AEF59B3C1831D5DC00CE99D8 /* ClientLoginView.xib in Resources */,
 				AE44B02B1834AADF0074E7D9 /* topBarBack.png in Resources */,
@@ -1863,6 +1890,7 @@
 				AEFC216618322A3800F53470 /* DiscountRateViewController.m in Sources */,
 				AE3FCB8917E6D9C9001A04A1 /* Utiles.m in Sources */,
 				AE572B88182CE0D60000B193 /* Cell2.m in Sources */,
+				AE62F152183B3EAD00FD75D7 /* MyProLossListViewController.m in Sources */,
 				AE44B0421834B0610074E7D9 /* MyGooGuuViewController.m in Sources */,
 				AE3FCB8C17E6DA23001A04A1 /* CommonlyMacros.m in Sources */,
 				AE31F860182B38AD001CD0D0 /* AKOMultiPageTextView.m in Sources */,
@@ -1880,6 +1908,7 @@
 				AE7EF610181F4C93002A3C9E /* NewReportIndicator.m in Sources */,
 				AE6FCF1C17E9410100DCDB77 /* GCDiscreetNotificationView.m in Sources */,
 				AE748EBC18336C5100BD4F57 /* UserRegisterViewController.m in Sources */,
+				AED98534183C571F00E97093 /* MyProLossCell.m in Sources */,
 				AE530C8417E997B8007E5143 /* GTMStackTrace.m in Sources */,
 				AE44B0451834B0920074E7D9 /* ClientRelationStockListViewController.m in Sources */,
 				AE748ECD1833772B00BD4F57 /* VerticalTabBarViewController.m in Sources */,
@@ -1906,6 +1935,7 @@
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
 				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
 				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
+				AE62F155183B3EFD00FD75D7 /* MyProLossContainerViewController.m in Sources */,
 				AEF6E800183AF79200FD90EE /* DailyStockBarChartViewController.m in Sources */,
 				AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */,
 				AE8B4508182101930047F4BB /* SettingNavigationController.m in Sources */,

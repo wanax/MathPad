@@ -118,13 +118,16 @@
     
     NSMutableArray *driverIds=[[[NSMutableArray alloc] init] autorelease];
     for(id obj in childs){
-        if([obj[@"child"] count]>0){
+        for(id driverId in divisionData[obj[@"identifier"]][@"drivers"]){
+            [driverIds addObject:driverId];
+        }
+        /*if([obj[@"child"] count]>0){
             for(id childObj in obj[@"child"]){
                 for(id driverId in divisionData[childObj[@"identifier"]][@"drivers"]){
                     [driverIds addObject:driverId];
                 }
             }
-        }
+        }*/
     }
     return [NSArray arrayWithArray:driverIds];
 }

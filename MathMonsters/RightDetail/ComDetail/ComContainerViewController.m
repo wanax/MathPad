@@ -12,6 +12,7 @@
 #import "DahonValuationViewController.h"
 #import "FinancalModelContainerViewController.h"
 #import "ValuationModelContainerViewController.h"
+#import "MyProLossContainerViewController.h"
 
 @interface ComContainerViewController ()
 
@@ -59,14 +60,19 @@
     DahonValuationViewController *temp3=[[[DahonValuationViewController alloc] init] autorelease];
     self.dahonContainer=temp3;
     
+    MyProLossContainerViewController *temp4=[[[MyProLossContainerViewController alloc] init] autorelease];
+    self.myProLossContainer=temp4;
+    
     self.valueContainer.title=@"估值模型";
     self.valueContainer.comInfo=self.comInfo;
     self.finContainer.title=@"财务数据";
     self.finContainer.comInfo=self.comInfo;
     self.dahonContainer.title=@"大行估值";
     self.dahonContainer.comInfo=self.comInfo;
+    self.myProLossContainer.title=@"我的损益表";
+    self.myProLossContainer.comInfo=self.comInfo;
     
-    NSArray *viewControllers = [NSArray arrayWithObjects:self.dahonContainer, self.finContainer,self.valueContainer, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:self.dahonContainer, self.finContainer,self.valueContainer,self.myProLossContainer, nil];
     MHTabBarController *h=[[[MHTabBarController alloc] init] autorelease];
 	h.viewControllers = viewControllers;
     h.view.frame=CGRectMake(0,100,750,1000);

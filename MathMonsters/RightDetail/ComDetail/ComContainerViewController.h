@@ -12,6 +12,7 @@
 @class ValuationModelContainerViewController;
 @class FinancalModelContainerViewController;
 @class DahonValuationViewController;
+@class MyProLossContainerViewController;
 
 @interface ComContainerViewController : UIViewController{
     BOOL _firstLaunch;
@@ -24,6 +25,7 @@
 @property (nonatomic,retain) ValuationModelContainerViewController *valueContainer;
 @property (nonatomic,retain) FinancalModelContainerViewController *finContainer;
 @property (nonatomic,retain) DahonValuationViewController *dahonContainer;
+@property (nonatomic,retain) MyProLossContainerViewController *myProLossContainer;
 @property (nonatomic,retain) MHTabBarController* tabBarController;
 
 
