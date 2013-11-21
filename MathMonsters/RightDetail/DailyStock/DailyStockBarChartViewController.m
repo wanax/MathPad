@@ -87,13 +87,15 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
         }
     }
     self.points=tempHisPoints;
-    self.trueUnit=[driverData objectForKey:@"unit"];
-    NSArray *sort=[Utiles arrSort:self.points];
-    self.yAxisUnit=[Utiles getUnitFromData:[[[sort lastObject] objectForKey:@"v"] stringValue] andUnit:self.trueUnit];
-    self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",[driverData objectForKey:@"name"],self.yAxisUnit];
-    [self setXYAxis];
-    self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
-    [self.graph reloadData];
+    if([self.points count]>0){
+        self.trueUnit=[driverData objectForKey:@"unit"];
+        NSArray *sort=[Utiles arrSort:self.points];
+        self.yAxisUnit=[Utiles getUnitFromData:[[[sort lastObject] objectForKey:@"v"] stringValue] andUnit:self.trueUnit];
+        self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",[driverData objectForKey:@"name"],self.yAxisUnit];
+        [self setXYAxis];
+        self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
+        [self.graph reloadData];
+    }
     SAFE_RELEASE(tempHisPoints);
     
 }

@@ -70,7 +70,7 @@
     for(id obj in self.valueArray){
         sum+=[obj doubleValue];
     }
-    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%f",sum]];
+    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%.2f",sum]];
     
     UIImageView *selView = [[UIImageView alloc]init];
     selView.image = [UIImage imageNamed:@"select.png"];

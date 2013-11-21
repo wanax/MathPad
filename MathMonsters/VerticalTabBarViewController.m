@@ -9,7 +9,7 @@
 #import "VerticalTabBarViewController.h"
 #import "FSVerticalTabBarController.h"
 #import "PieViewController.h"
-#import "ValuModelViewController.h"
+#import "ValuModelContainerViewController.h"
 #import "DailyStockViewController.h"
 #import "NewReportViewController.h"
 #import "ValueModelChartViewController.h"
@@ -74,14 +74,10 @@
     UITabBarItem *barItem2=[[[UITabBarItem alloc] initWithTitle:@"美股" image:[UIImage imageNamed:@"NASC"] tag:2] autorelease];
     UITabBarItem *barItem3=[[[UITabBarItem alloc] initWithTitle:@"深市" image:[UIImage imageNamed:@"SZ"] tag:3] autorelease];
     UITabBarItem *barItem4=[[[UITabBarItem alloc] initWithTitle:@"沪市" image:[UIImage imageNamed:@"SH"] tag:4] autorelease];
-    ValuModelViewController * vc11 = [[[ValuModelViewController alloc] init] autorelease];
-    [vc11 setMarketType:HK];
-    ValuModelViewController * vc22 = [[[ValuModelViewController alloc] init] autorelease];
-    [vc22 setMarketType:NANY];
-    ValuModelViewController * vc33 = [[[ValuModelViewController alloc] init] autorelease];
-    [vc33 setMarketType:SZSE];
-    ValuModelViewController * vc44 = [[[ValuModelViewController alloc] init] autorelease];
-    [vc44 setMarketType:SHSE];
+    ValuModelContainerViewController * vc11 = [[[ValuModelContainerViewController alloc] initWithType:HK] autorelease];
+    ValuModelContainerViewController * vc22 = [[[ValuModelContainerViewController alloc] initWithType:NANY] autorelease];
+    ValuModelContainerViewController * vc33 = [[[ValuModelContainerViewController alloc] initWithType:SZSE] autorelease];
+    ValuModelContainerViewController * vc44 = [[[ValuModelContainerViewController alloc] initWithType:SHSE] autorelease];
     vc11.tabBarItem=barItem;
     vc22.tabBarItem=barItem2;
     vc33.tabBarItem=barItem3;

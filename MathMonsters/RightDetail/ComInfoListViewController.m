@@ -1,29 +1,29 @@
 //
-//  ValuModelViewController.m
+//  ComInfoListViewController.m
 //  MathMonsters
 //
-//  Created by Xcode on 13-9-26.
+//  Created by Xcode on 13-11-20.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
-#import "ValuModelViewController.h"
+#import "ComInfoListViewController.h"
 #import "ValueModelIndicator.h"
 #import "ValueModelCell.h"
 #import "AMProgressView.h"
 #import "ComContainerViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface ValuModelViewController ()
+@interface ComInfoListViewController ()
 
 @end
 
-@implementation ValuModelViewController
+@implementation ComInfoListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithMarkType:(MarketType)type
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        self.marketType=type;
     }
     return self;
 }
@@ -32,19 +32,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor=[Utiles colorWithHexString:@"#25bfda"];
+    self.view.backgroundColor=[Utiles colorWithHexString:@"#472A20"];
     
     [self initComponents];
     [self addCompanyInfo];
-
+    
 }
 
 -(void)initComponents{
     
-    ValueModelIndicator *indicator=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
+    ValueModelIndicator *indicator=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 790, 60)] autorelease];
     [self.view addSubview:indicator];
     
-    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,928,610)];
+    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,790,610)];
     temp.showsVerticalScrollIndicator=NO;
     temp.delegate=self;
     temp.dataSource=self;
@@ -58,16 +58,16 @@
 #pragma mark Net Get JSON Data
 
 -(void)addCompanyInfo{
-
+    
     [MBProgressHUD showHUDAddedTo:self.cusTabView animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:self.marketType],@"market",self.updateTime,@"updatetime", nil];
-    [Utiles getNetInfoWithPath:@"QueryAllCompany" andParams:params besidesBlock:^(id resObj){
+    [Utiles getNetInfoWithPath:@"QueryIpadAllCompany" andParams:params besidesBlock:^(id resObj){
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
         for(id obj in self.comList){
             [temp addObject:obj];
         }
         for (id data in resObj) {
-            [temp addObject:data];
+            [temp addObject:data[@"info"]];
         }
         self.comList=temp;
         [self.cusTabView reloadData];
@@ -114,7 +114,7 @@
     if(self.comList){
         id comInfo=[self.comList objectAtIndex:indexPath.row];
         cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"market"]];
-        [cell.comIconImg setImageWithURL:[NSURL URLWithString:[comInfo objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+
         [cell.saveImg setImage:[UIImage imageNamed:@"unsavemodel"]];
         [cell.concernImg setImage:[UIImage imageNamed:@"unconcernmodel"]];
         
@@ -132,14 +132,14 @@
             [cell.outLookImg setImage:[UIImage imageNamed:@"down"]];
         }
         
-        AMProgressView *am=[[[AMProgressView alloc] initWithFrame:CGRectMake(517, 8, 180, 18)
-                            andGradientColors:[NSArray arrayWithObjects:[UIColor orangeColor], nil]
-                             andOutsideBorder:NO
-                                  andVertical:NO] autorelease];
-        AMProgressView *am2=[[[AMProgressView alloc] initWithFrame:CGRectMake(517, 34, 180, 18)
-                            andGradientColors:[NSArray arrayWithObjects:[UIColor purpleColor], nil]
-                                andOutsideBorder:NO
-                                     andVertical:NO] autorelease];
+        AMProgressView *am=[[[AMProgressView alloc] initWithFrame:CGRectMake(383, 8, 180, 18)
+                                                andGradientColors:[NSArray arrayWithObjects:[UIColor orangeColor], nil]
+                                                 andOutsideBorder:NO
+                                                      andVertical:NO] autorelease];
+        AMProgressView *am2=[[[AMProgressView alloc] initWithFrame:CGRectMake(383, 34, 180, 18)
+                                                 andGradientColors:[NSArray arrayWithObjects:[UIColor purpleColor], nil]
+                                                  andOutsideBorder:NO
+                                                       andVertical:NO] autorelease];
         [cell.contentView addSubview:am];
         [cell.contentView addSubview:am2];
         
@@ -154,9 +154,9 @@
         am2.maximumValue=g+p;
         am2.progress=g;
         cell.googuuPriLabel.text=[NSString stringWithFormat:@"%.2f",g];
-
+        
     }
-
+    
     return cell;
 }
 
@@ -185,11 +185,11 @@
 
 
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

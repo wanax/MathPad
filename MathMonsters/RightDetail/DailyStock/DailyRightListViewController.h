@@ -19,6 +19,6 @@
 
 @property (nonatomic,retain) UITableView *dailyTable;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)data driverIds:(NSArray *)ids jsonData:(id)jsonData;
+- (id)initWithValueIncomeDic:(NSDictionary *)data driverIds:(NSArray *)ids jsonData:(id)jsonData comInfo:(id)comInfo;
 
 @end

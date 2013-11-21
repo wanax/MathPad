@@ -25,6 +25,7 @@
 		AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD3F182899D900E8E94C /* HelpViewController.m */; };
 		AE29CD4618289DE800E8E94C /* NewReportLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */; };
 		AE29CD4918289DFC00E8E94C /* NewReportRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */; };
+		AE309633183DD9100074B84C /* ComListController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309632183DD9100074B84C /* ComListController.m */; };
 		AE31F831182B3085001CD0D0 /* NewReportArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F830182B3085001CD0D0 /* NewReportArticleViewController.m */; };
 		AE31F85F182B38AD001CD0D0 /* AKOMultiColumnTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F858182B38AD001CD0D0 /* AKOMultiColumnTextView.m */; };
 		AE31F860182B38AD001CD0D0 /* AKOMultiPageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F85A182B38AD001CD0D0 /* AKOMultiPageTextView.m */; };
@@ -228,12 +229,16 @@
 		AEB3E34017F422B100A273E9 /* DailyStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E33F17F422B100A273E9 /* DailyStockViewController.m */; };
 		AEB3E34317F422BC00A273E9 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34217F422BC00A273E9 /* SettingViewController.m */; };
 		AEB3E34917F422D700A273E9 /* NewReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34817F422D700A273E9 /* NewReportViewController.m */; };
-		AEB3E34C17F422E300A273E9 /* ValuModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34B17F422E300A273E9 /* ValuModelViewController.m */; };
+		AEB3E34C17F422E300A273E9 /* ValuModelContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34B17F422E300A273E9 /* ValuModelContainerViewController.m */; };
 		AEB3E34F17F422EE00A273E9 /* FinanceToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */; };
 		AEBE512F1839F1600041E1EA /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE512E1839F1600041E1EA /* select.png */; };
 		AEBE51311839F4FA0041E1EA /* dailyBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE51301839F4FA0041E1EA /* dailyBackImg.png */; };
 		AEBE51341839FB8C0041E1EA /* DailyRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */; };
 		AED071B11803FD8E00C28F32 /* ValueModelIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */; };
+		AED54F22183CC2D000A6E965 /* ComIconListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED54F21183CC2D000A6E965 /* ComIconListViewController.m */; };
+		AED54F25183CC3F700A6E965 /* ComInfoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED54F24183CC3F700A6E965 /* ComInfoListViewController.m */; };
+		AED54F27183CC8BB00A6E965 /* ComIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED54F26183CC8BB00A6E965 /* ComIconCell.xib */; };
+		AED54F2A183CC95000A6E965 /* ComIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED54F29183CC95000A6E965 /* ComIconCell.m */; };
 		AED98534183C571F00E97093 /* MyProLossCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED98533183C571F00E97093 /* MyProLossCell.m */; };
 		AED98536183C573400E97093 /* MyProLossCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED98535183C573400E97093 /* MyProLossCell.xib */; };
 		AEDD0830181FAA6D0095BDA1 /* ValueModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */; };
@@ -281,6 +286,8 @@
 		AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportLeftListViewController.m; sourceTree = "<group>"; };
 		AE29CD4718289DFC00E8E94C /* NewReportRightListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportRightListViewController.h; sourceTree = "<group>"; };
 		AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportRightListViewController.m; sourceTree = "<group>"; };
+		AE309631183DD9100074B84C /* ComListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComListController.h; sourceTree = "<group>"; };
+		AE309632183DD9100074B84C /* ComListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComListController.m; sourceTree = "<group>"; };
 		AE31F82F182B3085001CD0D0 /* NewReportArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportArticleViewController.h; sourceTree = "<group>"; };
 		AE31F830182B3085001CD0D0 /* NewReportArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportArticleViewController.m; sourceTree = "<group>"; };
 		AE31F857182B38AD001CD0D0 /* AKOMultiColumnTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKOMultiColumnTextView.h; path = Views/AKOMultiColumnTextView.h; sourceTree = "<group>"; };
@@ -651,8 +658,8 @@
 		AEB3E34217F422BC00A273E9 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = ../SettingViewController.m; sourceTree = "<group>"; };
 		AEB3E34717F422D700A273E9 /* NewReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewReportViewController.h; path = MathMonsters/RightDetail/NewReportViewController.h; sourceTree = SOURCE_ROOT; };
 		AEB3E34817F422D700A273E9 /* NewReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewReportViewController.m; path = MathMonsters/RightDetail/NewReportViewController.m; sourceTree = SOURCE_ROOT; };
-		AEB3E34A17F422E300A273E9 /* ValuModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuModelViewController.h; sourceTree = "<group>"; };
-		AEB3E34B17F422E300A273E9 /* ValuModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuModelViewController.m; sourceTree = "<group>"; };
+		AEB3E34A17F422E300A273E9 /* ValuModelContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuModelContainerViewController.h; sourceTree = "<group>"; };
+		AEB3E34B17F422E300A273E9 /* ValuModelContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuModelContainerViewController.m; sourceTree = "<group>"; };
 		AEB3E34D17F422EE00A273E9 /* FinanceToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceToolViewController.h; path = MathMonsters/RightDetail/FinanceToolViewController.h; sourceTree = SOURCE_ROOT; };
 		AEB3E34E17F422EE00A273E9 /* FinanceToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceToolViewController.m; path = MathMonsters/RightDetail/FinanceToolViewController.m; sourceTree = SOURCE_ROOT; };
 		AEBE512E1839F1600041E1EA /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
@@ -661,6 +668,13 @@
 		AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyRightListViewController.m; sourceTree = "<group>"; };
 		AED071AF1803FD8E00C28F32 /* ValueModelIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelIndicator.h; sourceTree = "<group>"; };
 		AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelIndicator.m; sourceTree = "<group>"; };
+		AED54F20183CC2D000A6E965 /* ComIconListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComIconListViewController.h; sourceTree = "<group>"; };
+		AED54F21183CC2D000A6E965 /* ComIconListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComIconListViewController.m; sourceTree = "<group>"; };
+		AED54F23183CC3F700A6E965 /* ComInfoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInfoListViewController.h; sourceTree = "<group>"; };
+		AED54F24183CC3F700A6E965 /* ComInfoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComInfoListViewController.m; sourceTree = "<group>"; };
+		AED54F26183CC8BB00A6E965 /* ComIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComIconCell.xib; sourceTree = "<group>"; };
+		AED54F28183CC95000A6E965 /* ComIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComIconCell.h; sourceTree = "<group>"; };
+		AED54F29183CC95000A6E965 /* ComIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComIconCell.m; sourceTree = "<group>"; };
 		AED98532183C571F00E97093 /* MyProLossCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProLossCell.h; sourceTree = "<group>"; };
 		AED98533183C571F00E97093 /* MyProLossCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProLossCell.m; sourceTree = "<group>"; };
 		AED98535183C573400E97093 /* MyProLossCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProLossCell.xib; sourceTree = "<group>"; };
@@ -1506,6 +1520,7 @@
 			isa = PBXGroup;
 			children = (
 				AED98535183C573400E97093 /* MyProLossCell.xib */,
+				AED54F26183CC8BB00A6E965 /* ComIconCell.xib */,
 			);
 			path = CellNib;
 			sourceTree = "<group>";
@@ -1523,6 +1538,8 @@
 				AE44B0501834D8DA0074E7D9 /* GooGuuViewCell.m */,
 				AED98532183C571F00E97093 /* MyProLossCell.h */,
 				AED98533183C571F00E97093 /* MyProLossCell.m */,
+				AED54F28183CC95000A6E965 /* ComIconCell.h */,
+				AED54F29183CC95000A6E965 /* ComIconCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -1596,8 +1613,14 @@
 				AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */,
 				AED071AF1803FD8E00C28F32 /* ValueModelIndicator.h */,
 				AED071B01803FD8E00C28F32 /* ValueModelIndicator.m */,
-				AEB3E34A17F422E300A273E9 /* ValuModelViewController.h */,
-				AEB3E34B17F422E300A273E9 /* ValuModelViewController.m */,
+				AEB3E34A17F422E300A273E9 /* ValuModelContainerViewController.h */,
+				AEB3E34B17F422E300A273E9 /* ValuModelContainerViewController.m */,
+				AE309631183DD9100074B84C /* ComListController.h */,
+				AE309632183DD9100074B84C /* ComListController.m */,
+				AED54F20183CC2D000A6E965 /* ComIconListViewController.h */,
+				AED54F21183CC2D000A6E965 /* ComIconListViewController.m */,
+				AED54F23183CC3F700A6E965 /* ComInfoListViewController.h */,
+				AED54F24183CC3F700A6E965 /* ComInfoListViewController.m */,
 			);
 			name = ValueModel;
 			sourceTree = "<group>";
@@ -1732,6 +1755,7 @@
 				AE44B0281834AADF0074E7D9 /* userNameFieldIcon.png in Resources */,
 				AEA90A51181E13FD00F3E4DB /* netrequesturl.plist in Resources */,
 				AE44AFEC1834AADF0074E7D9 /* blackArrow@2x.png in Resources */,
+				AED54F27183CC8BB00A6E965 /* ComIconCell.xib in Resources */,
 				AE44B0001834AADF0074E7D9 /* COMVALU.png in Resources */,
 				AE44AFF11834AADF0074E7D9 /* dragDot.png in Resources */,
 				AE1FCBB71828DBB9005D5E10 /* right_arrow@2x.png in Resources */,
@@ -1925,6 +1949,7 @@
 				AE44AF6C1834A9020074E7D9 /* MHTabBarController.m in Sources */,
 				AE530C9917E99B3F007E5143 /* NGTabBarItem.m in Sources */,
 				AE530C9A17E99B3F007E5143 /* UINavigationController+NGTabBarNavigationDelegate.m in Sources */,
+				AED54F2A183CC95000A6E965 /* ComIconCell.m in Sources */,
 				AE530C9B17E99B3F007E5143 /* UIViewController+NGTabBarItem.m in Sources */,
 				AE60096F182B6EE800BB3819 /* PageController.m in Sources */,
 				AE31F831182B3085001CD0D0 /* NewReportArticleViewController.m in Sources */,
@@ -1933,6 +1958,7 @@
 				AE63E8D81830D2F8002043DC /* ValuationModelContainerViewController.m in Sources */,
 				AE530CA117E99B9F007E5143 /* NGColoredViewController.m in Sources */,
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
+				AE309633183DD9100074B84C /* ComListController.m in Sources */,
 				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
 				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
 				AE62F155183B3EFD00FD75D7 /* MyProLossContainerViewController.m in Sources */,
@@ -1948,6 +1974,7 @@
 				AE389872182C93110059A319 /* ComContainerIndicator.m in Sources */,
 				AE572B70182CB62A0000B193 /* DrawChartTool.m in Sources */,
 				AE93268017F0242000224B12 /* NSStringWrapper.m in Sources */,
+				AED54F22183CC2D000A6E965 /* ComIconListViewController.m in Sources */,
 				AE0D226217F172D20056C7BF /* PieViewController.m in Sources */,
 				AEDFE96117F279BE0085CA0F /* MGSplitCornersView.m in Sources */,
 				AEDD0833181FAA900095BDA1 /* ValueModelCell.m in Sources */,
@@ -1955,6 +1982,7 @@
 				AE29CD4918289DFC00E8E94C /* NewReportRightListViewController.m in Sources */,
 				AEDFE96217F279BE0085CA0F /* MGSplitDividerView.m in Sources */,
 				AEDFE96317F279BE0085CA0F /* MGSplitViewController.m in Sources */,
+				AED54F25183CC3F700A6E965 /* ComInfoListViewController.m in Sources */,
 				AEB3E32F17F40D4500A273E9 /* UIButton+BGColor.m in Sources */,
 				AEB3E33017F40D4500A273E9 /* UILabel+VerticalAlign.m in Sources */,
 				AEB3E33117F40D4500A273E9 /* UINavigationController+Autorotate.m in Sources */,
@@ -1972,7 +2000,7 @@
 				AE572B8C182CE26C0000B193 /* ChartLeftListViewController.m in Sources */,
 				AE7E5740181E51EB00A1391E /* DailyStockIndicator.m in Sources */,
 				AEB3E34917F422D700A273E9 /* NewReportViewController.m in Sources */,
-				AEB3E34C17F422E300A273E9 /* ValuModelViewController.m in Sources */,
+				AEB3E34C17F422E300A273E9 /* ValuModelContainerViewController.m in Sources */,
 				AEB3E34F17F422EE00A273E9 /* FinanceToolViewController.m in Sources */,
 				AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */,
 				AE67B8D91830749100E00473 /* FinancalModelContainerViewController.m in Sources */,

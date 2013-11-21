@@ -56,10 +56,9 @@
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];
     
-    DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithNibName:nil bundle:nil data:valueDic driverIds:ids jsonData:self.jsonData] autorelease];
+    DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithValueIncomeDic:valueDic driverIds:ids jsonData:self.jsonData comInfo:self.companyInfo] autorelease];
     rightList.view.backgroundColor=[UIColor clearColor];
     rightList.view.frame=CGRectMake(450,90,500,900);
-    rightList.comInfo=self.companyInfo;
     [self addChildViewController:rightList];
     [self.view addSubview:rightList.view];
 }
@@ -118,16 +117,20 @@
     
     NSMutableArray *driverIds=[[[NSMutableArray alloc] init] autorelease];
     for(id obj in childs){
-        for(id driverId in divisionData[obj[@"identifier"]][@"drivers"]){
+        /*for(id driverId in divisionData[obj[@"identifier"]][@"drivers"]){
             [driverIds addObject:driverId];
-        }
-        /*if([obj[@"child"] count]>0){
+        }*/
+        if([obj[@"child"] count]>0){
             for(id childObj in obj[@"child"]){
                 for(id driverId in divisionData[childObj[@"identifier"]][@"drivers"]){
                     [driverIds addObject:driverId];
                 }
             }
-        }*/
+        }else{
+            for(id driverId in divisionData[obj[@"identifier"]][@"drivers"]){
+                [driverIds addObject:driverId];
+            }
+        }
     }
     return [NSArray arrayWithArray:driverIds];
 }

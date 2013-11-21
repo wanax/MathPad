@@ -48,6 +48,8 @@
 	<string>/m/userinfo</string>
 	<key>QueryAllCompany</key>
 	<string>/m/queryAllCompany</string>
+	<key>QueryIpadAllCompany</key>
+	<string>/m/queryIpadAllCompany</string>
 	<key>DailyStock</key>
 	<string>/m/dailystock</string>
 	<key>UserStockCalendar</key>

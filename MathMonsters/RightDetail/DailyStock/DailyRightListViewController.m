@@ -19,9 +19,9 @@
 
 @implementation DailyRightListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)data driverIds:(NSArray *)ids jsonData:(id)jsonData
+- (id)initWithValueIncomeDic:(NSDictionary *)data driverIds:(NSArray *)ids jsonData:(id)jsonData comInfo:(id)comInfo
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         self.valueIncomeDic=data;
         self.driverIds=ids;
@@ -29,7 +29,7 @@
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
         for(id driverId in self.driverIds){
             DailyStockBarChartViewController *chartView=[[[DailyStockBarChartViewController alloc] init] autorelease];
-            chartView.comInfo=self.comInfo;
+            chartView.comInfo=comInfo;
             chartView.jsonData=jsonData;
             chartView.driverId=driverId;
             [temp addObject:chartView];
