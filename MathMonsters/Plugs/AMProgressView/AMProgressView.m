@@ -82,7 +82,7 @@
         
         UIView *wv = [[UIView alloc] init];
         self.whiteView = wv;
-        self.whiteView.backgroundColor = [UIColor whiteColor];
+        self.whiteView.backgroundColor = [Utiles colorWithHexString:@"#452A21"];
         
         // Setting default values for properties (begin)
         self.minimumValue = 0.0f;

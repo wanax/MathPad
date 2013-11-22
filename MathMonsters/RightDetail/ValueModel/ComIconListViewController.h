@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class ComInfoListViewController;
-
 @interface ComIconListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property MarketType marketType;
@@ -17,7 +15,7 @@
 @property (nonatomic,retain) NSArray *comList;
 
 @property (nonatomic,retain) UITableView *iconTable;
-@property (nonatomic,retain) ComInfoListViewController *comInfoList;
+@property (nonatomic,retain) NSArray *comTableArr;
 
 - (id)initWithMarkType:(MarketType)type;
 

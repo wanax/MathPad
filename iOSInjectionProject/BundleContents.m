@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle46
+#define INJECTION_BUNDLE InjectionBundle3
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MyProLossListViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
 
 
-@interface InjectionBundle46 : NSObject
+@interface InjectionBundle3 : NSObject
 @end
-@implementation InjectionBundle46
+@implementation InjectionBundle3
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_MyProLossListViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_MyProLossListViewController notify:4];
+    extern Class OBJC_CLASS_$_ComInfoListColumn2;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ComInfoListColumn2 notify:4];
     [bundleInjection loadedNotify:4];
 }
 
