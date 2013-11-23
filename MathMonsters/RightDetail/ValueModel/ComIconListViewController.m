@@ -17,11 +17,20 @@
 
 @implementation ComIconListViewController
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
+
 - (id)initWithMarkType:(MarketType)type
 {
     self = [super init];
     if (self) {
         self.marketType=type;
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(comListDataLoaded)
+                                                     name: @"ComListDataLoaded"
+                                                   object: nil];
     }
     return self;
 }
@@ -52,8 +61,13 @@
     self.iconTable.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.iconTable.showsVerticalScrollIndicator=NO;
     [self.view addSubview:self.iconTable];
-    
+
 }
+
+-(void)comListDataLoaded{
+    [self.iconTable reloadData];
+}
+
 
 #pragma mark -
 #pragma mark Table Data Source

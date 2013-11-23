@@ -24,6 +24,14 @@
     if (self) {
         self.marketType=type;
         self.iconTableVC=iconTableVC;
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(comListDataLoaded)
+                                                     name: @"addCompanyInfo"
+                                                   object: nil];
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(comListDataAdd)
+                                                     name: @"addCompanyInfo"
+                                                   object: nil];
     }
     return self;
 }
@@ -92,14 +100,8 @@
             list.comList=self.comList;
             [list.comTable reloadData];
         }
-        [((ComInfoListColumn *)self.modelColumnArr[0]) produceProgressForTable];
-        [((ComInfoListColumn *)self.modelColumnArr[0]).comTable reloadData];
-
-        [((ComInfoListColumn *)self.modelColumnArr[1]) produceProgressForTable];
-        [((ComInfoListColumn *)self.modelColumnArr[1]).comTable reloadData];
-        
         self.iconTableVC.comList=self.comList;
-        [self.iconTableVC.iconTable reloadData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ComListDataLoaded" object:self];
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){

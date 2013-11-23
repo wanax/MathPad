@@ -25,15 +25,15 @@
         self.row21=[self addLabel:CGRectMake(223, 30, 42, 12)];
         self.row31=[self addLabel:CGRectMake(223, 45, 42, 12)];
         
-        self.row02=[self addLabel:CGRectMake(275, 0, 42, 12)];
-        self.row12=[self addLabel:CGRectMake(275, 15, 42, 12)];
-        self.row22=[self addLabel:CGRectMake(275, 30, 42, 12)];
-        self.row32=[self addLabel:CGRectMake(275, 45, 42, 12)];
+        self.row02=[self addLabel:CGRectMake(265, 0, 42, 12)];
+        self.row12=[self addLabel:CGRectMake(265, 15, 42, 12)];
+        self.row22=[self addLabel:CGRectMake(265, 30, 42, 12)];
+        self.row32=[self addLabel:CGRectMake(265, 45, 42, 12)];
         
-        self.row03=[self addLabel:CGRectMake(475, 0, 42, 12)];
-        self.row13=[self addLabel:CGRectMake(475, 15, 42, 12)];
-        self.row23=[self addLabel:CGRectMake(475, 30, 42, 12)];
-        self.row33=[self addLabel:CGRectMake(475, 45, 42, 12)];
+        self.row03=[self addLabel:CGRectMake(480, 0, 42, 12)];
+        self.row13=[self addLabel:CGRectMake(480, 15, 42, 12)];
+        self.row23=[self addLabel:CGRectMake(480, 30, 42, 12)];
+        self.row33=[self addLabel:CGRectMake(480, 45, 42, 12)];
         
         self.row04=[self addLabel:CGRectMake(522, 0, 42, 12)];
         self.row14=[self addLabel:CGRectMake(522, 15, 42, 12)];
@@ -52,7 +52,7 @@
 -(UILabel *)addLabel:(CGRect)frame{
     UILabel *label=[[[UILabel alloc] initWithFrame:frame] autorelease];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont fontWithName:@"Heiti SC" size:9]];
+    [label setFont:[UIFont fontWithName:@"Heiti SC" size:11]];
     [label setTextColor:[UIColor whiteColor]];
     [label setBackgroundColor:[UIColor clearColor]];
     [self addSubview:label];

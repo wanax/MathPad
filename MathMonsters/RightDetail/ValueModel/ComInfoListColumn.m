@@ -17,9 +17,15 @@
 
 @implementation ComInfoListColumn
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)dealloc
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
+}
+
+- (id)init
+{
+    self = [super init];
     if (self) {
         [self initOverAllComponents];
     }
@@ -43,7 +49,7 @@
     [self.view addSubview:self.comTable];
 
     [self.comTable addInfiniteScrollingWithActionHandler:^{
-        //[self getValueViewData:self.articleId code:@""];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ComListDataAdd" object:self];
     }];
     if(_refreshHeaderView == nil)
     {
@@ -57,7 +63,32 @@
     [_refreshHeaderView refreshLastUpdatedDate];
     
     SAFE_RELEASE(temp);
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(comListDataLoaded)
+                                                 name: @"ComListDataLoaded"
+                                               object: nil];
 }
+
+-(void)produceProgressForTable{
+    
+}
+
+-(void)comListDataLoaded{
+    [self produceProgressForTable];
+    [self.comTable reloadData];
+}
+
+#pragma mark -
+#pragma Table Data Source
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.comList count];
+}
+
 
 #pragma mark -
 #pragma Table Delegate Methods
@@ -77,7 +108,7 @@
 
 - (void)doneLoadingTableViewData{
     
-    //[self getValueViewData:@"" code:@""];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ComListDataRefresh" object:self];
     _reloading = NO;
     
 }

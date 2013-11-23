@@ -26,6 +26,7 @@
 
 @property (nonatomic,retain) ComIconListViewController *iconTableVC;
 
+- (id)init;
 -(void)produceProgressForTable;
 
 @end

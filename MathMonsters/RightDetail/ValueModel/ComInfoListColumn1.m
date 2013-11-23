@@ -19,6 +19,8 @@
 
 @implementation ComInfoListColumn1
 
+
+
 - (id)initWithMarkType:(MarketType)type
 {
     self = [super init];

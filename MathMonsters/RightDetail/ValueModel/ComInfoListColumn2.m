@@ -64,8 +64,6 @@
     static NSString *ValueModelCell2Identifier = @"ValueModelCell2Identifier";
     ValueModelCell2 *cell = (ValueModelCell2 *)[tableView dequeueReusableCellWithIdentifier:ValueModelCell2Identifier];
     if (cell == nil) {
-//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueModelCell" owner:self options:nil];
-//        cell = [array objectAtIndex:1];
         cell=[[[ValueModelCell2 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ValueModelCell2Identifier] autorelease];
     }
     if(self.comList){
@@ -96,6 +94,13 @@
 
 -(void)setCellProcess:(ValueModelCell2 *)cell yearValueDic:(id)dic yearLableArr:(NSArray *)labels1 valueLable:(NSArray *)labels2 x:(int)x{
     
+    for(UILabel *label in labels1){
+        [label setText:@""];
+    }
+    for(UILabel *label in labels2){
+        [label setText:@""];
+    }
+    
     NSComparator cmptr = ^(id obj1, id obj2){
         if ([obj1 integerValue] > [obj2 integerValue]) {
             return (NSComparisonResult)NSOrderedDescending;
@@ -114,8 +119,10 @@
         NSArray *keys=[[dic allKeys] sortedArrayUsingComparator:cmptr];
         for(id key in keys){
             UILabel *label= labels1[n];
+            [label setText:@""];
             [label setText:[NSString stringWithFormat:@"20%@",key]];
             label=labels2[n];
+            [label setText:@""];
             [label setText:[formatter stringFromNumber:dic[key]]];
             n++;
         }
