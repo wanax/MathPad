@@ -21,9 +21,11 @@
 
 @property (nonatomic,retain) UITableView *comTable;
 @property (nonatomic,retain) NSArray *comList;
+@property (nonatomic,retain) NSArray *progressArr;
+@property (nonatomic,retain) NSArray *yearValueArr;
 
-@property (nonatomic,retain) ComIconListViewController *iconList;
+@property (nonatomic,retain) ComIconListViewController *iconTableVC;
 
--(void)produceProgress;
+-(void)produceProgressForTable;
 
 @end

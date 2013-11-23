@@ -18,12 +18,12 @@
 
 @implementation ComListController
 
-- (id)initWithType:(MarketType)type iconList:(ComIconListViewController *)iconList
+- (id)initWithType:(MarketType)type iconTableVC:(ComIconListViewController *)iconTableVC
 {
     self = [super init];
     if (self) {
         self.marketType=type;
-        self.iconList=iconList;
+        self.iconTableVC=iconTableVC;
     }
     return self;
 }
@@ -46,18 +46,18 @@
     
     ComInfoListColumn1 *list1=[[[ComInfoListColumn1 alloc] init] autorelease];
     list1.view.frame=CGRectMake(0,0,790,800);
-    list1.iconList=self.iconList;
+    list1.iconTableVC=self.iconTableVC;
     
     ComInfoListColumn2 *list2=[[[ComInfoListColumn2 alloc] init] autorelease];
     list2.view.frame=CGRectMake(790,0,790,800);
-    list2.iconList=self.iconList;
+    list2.iconTableVC=self.iconTableVC;
     
     ComInfoListColumn3 *list3=[[[ComInfoListColumn3 alloc] init] autorelease];
     list3.view.frame=CGRectMake(1580,0,790,800);
-    list3.iconList=self.iconList;
+    list3.iconTableVC=self.iconTableVC;
     
     self.modelColumnArr=[NSArray arrayWithObjects:list1,list2,list3, nil];
-    self.iconList.comTableArr=[NSArray arrayWithObjects:list1,list2,list3, nil];
+    self.iconTableVC.comTableArr=[NSArray arrayWithObjects:list1,list2,list3, nil];
     
     [pageScroll addSubview:list1.view];
     [pageScroll addSubview:list2.view];
@@ -90,10 +90,16 @@
         
         for(ComInfoListColumn *list in self.modelColumnArr){
             list.comList=self.comList;
-            //[list.comTable reloadData];
+            [list.comTable reloadData];
         }
-        [((ComInfoListColumn *)self.modelColumnArr[0]) produceProgress];
+        [((ComInfoListColumn *)self.modelColumnArr[0]) produceProgressForTable];
         [((ComInfoListColumn *)self.modelColumnArr[0]).comTable reloadData];
+
+        [((ComInfoListColumn *)self.modelColumnArr[1]) produceProgressForTable];
+        [((ComInfoListColumn *)self.modelColumnArr[1]).comTable reloadData];
+        
+        self.iconTableVC.comList=self.comList;
+        [self.iconTableVC.iconTable reloadData];
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){

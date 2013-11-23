@@ -19,8 +19,8 @@
 @property (nonatomic,retain) id comList;
 @property (nonatomic,retain) NSArray *modelColumnArr;
 
-@property (nonatomic,retain) ComIconListViewController *iconList;
+@property (nonatomic,retain) ComIconListViewController *iconTableVC;
 
-- (id)initWithType:(MarketType)type iconList:(ComIconListViewController *)iconList;
+- (id)initWithType:(MarketType)type iconTableVC:(ComIconListViewController *)iconTableVC;
 
 @end

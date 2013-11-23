@@ -11,6 +11,4 @@
 
 @interface ComInfoListColumn1 : ComInfoListColumn<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,retain) NSArray *progressArr;
-
 @end

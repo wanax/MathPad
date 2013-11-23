@@ -102,8 +102,11 @@
                 [view removeFromSuperview];
             }
         }
-        [cell.contentView addSubview:self.progressArr[indexPath.row][0]];
-        [cell.contentView addSubview:self.progressArr[indexPath.row][1]];
+        if([self.progressArr count]>0){
+            for(UIView *view in self.progressArr[indexPath.row]){
+                [cell.contentView addSubview:view];
+            }
+        }
         cell.markPriLabel.text=[NSString stringWithFormat:@"%.2f",p];
         cell.googuuPriLabel.text=[NSString stringWithFormat:@"%.2f",g];
         
@@ -112,7 +115,7 @@
     return cell;
 }
 
--(void)produceProgress{
+-(void)produceProgressForTable{
     
     NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
     for(id obj in self.progressArr){

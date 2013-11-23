@@ -10,34 +10,34 @@
 
 @interface ValueModelCell2 : UITableViewCell
 
-@property (nonatomic,retain) IBOutlet UILabel *row00;
-@property (nonatomic,retain) IBOutlet UILabel *row10;
-@property (nonatomic,retain) IBOutlet UILabel *row20;
-@property (nonatomic,retain) IBOutlet UILabel *row30;
+@property (nonatomic,retain) UILabel *row00;
+@property (nonatomic,retain) UILabel *row10;
+@property (nonatomic,retain) UILabel *row20;
+@property (nonatomic,retain) UILabel *row30;
 
-@property (nonatomic,retain) IBOutlet UILabel *row01;
-@property (nonatomic,retain) IBOutlet UILabel *row11;
-@property (nonatomic,retain) IBOutlet UILabel *row21;
-@property (nonatomic,retain) IBOutlet UILabel *row31;
+@property (nonatomic,retain) UILabel *row01;
+@property (nonatomic,retain) UILabel *row11;
+@property (nonatomic,retain) UILabel *row21;
+@property (nonatomic,retain) UILabel *row31;
 
-@property (nonatomic,retain) IBOutlet UILabel *row02;
-@property (nonatomic,retain) IBOutlet UILabel *row12;
-@property (nonatomic,retain) IBOutlet UILabel *row22;
-@property (nonatomic,retain) IBOutlet UILabel *row32;
+@property (nonatomic,retain) UILabel *row02;
+@property (nonatomic,retain) UILabel *row12;
+@property (nonatomic,retain) UILabel *row22;
+@property (nonatomic,retain) UILabel *row32;
 
-@property (nonatomic,retain) IBOutlet UILabel *row03;
-@property (nonatomic,retain) IBOutlet UILabel *row13;
-@property (nonatomic,retain) IBOutlet UILabel *row23;
-@property (nonatomic,retain) IBOutlet UILabel *row33;
+@property (nonatomic,retain) UILabel *row03;
+@property (nonatomic,retain) UILabel *row13;
+@property (nonatomic,retain) UILabel *row23;
+@property (nonatomic,retain) UILabel *row33;
 
-@property (nonatomic,retain) IBOutlet UILabel *row04;
-@property (nonatomic,retain) IBOutlet UILabel *row14;
-@property (nonatomic,retain) IBOutlet UILabel *row24;
-@property (nonatomic,retain) IBOutlet UILabel *row34;
+@property (nonatomic,retain) UILabel *row04;
+@property (nonatomic,retain) UILabel *row14;
+@property (nonatomic,retain) UILabel *row24;
+@property (nonatomic,retain) UILabel *row34;
 
-@property (nonatomic,retain) IBOutlet UILabel *row05;
-@property (nonatomic,retain) IBOutlet UILabel *row15;
-@property (nonatomic,retain) IBOutlet UILabel *row25;
-@property (nonatomic,retain) IBOutlet UILabel *row35;
+@property (nonatomic,retain) UILabel *row05;
+@property (nonatomic,retain) UILabel *row15;
+@property (nonatomic,retain) UILabel *row25;
+@property (nonatomic,retain) UILabel *row35;
 
 @end

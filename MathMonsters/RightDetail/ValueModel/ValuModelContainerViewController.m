@@ -34,12 +34,12 @@
 
 -(void)initComponents{
     
-    ComIconListViewController *iconList=[[[ComIconListViewController alloc] initWithMarkType:self.marketType] autorelease];
-    iconList.view.frame=CGRectMake(0,0,130,1000);
-    [self.view addSubview:iconList.view];
-    [self addChildViewController:iconList];
+    ComIconListViewController *iconTableVC=[[[ComIconListViewController alloc] initWithMarkType:self.marketType] autorelease];
+    iconTableVC.view.frame=CGRectMake(0,0,130,1000);
+    [self.view addSubview:iconTableVC.view];
+    [self addChildViewController:iconTableVC];
     
-    ComListController *controller=[[[ComListController alloc] initWithType:self.marketType iconList:iconList] autorelease];
+    ComListController *controller=[[[ComListController alloc] initWithType:self.marketType iconTableVC:iconTableVC] autorelease];
     controller.view.frame=CGRectMake(130,0,894,1000);
     [self.view addSubview:controller.view];
     [self addChildViewController:controller];

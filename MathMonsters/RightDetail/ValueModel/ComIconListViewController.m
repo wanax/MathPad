@@ -30,7 +30,6 @@
 {
     [super viewDidLoad];
 	[self initComponents];
-    [self addCompanyIconUrl];
 }
 
 -(void)initComponents{
@@ -45,7 +44,7 @@
     [label setTextColor:[Utiles colorWithHexString:@"#e6cbc0"]];
     [self.view addSubview:label];
     
-    UITableView *temp=[[[UITableView alloc] initWithFrame:CGRectMake(0,60,130,655)] autorelease];
+    UITableView *temp=[[[UITableView alloc] initWithFrame:CGRectMake(0,60,130,600)] autorelease];
     self.iconTable=temp;
     self.iconTable.dataSource=self;
     self.iconTable.delegate=self;
@@ -53,27 +52,6 @@
     self.iconTable.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.iconTable.showsVerticalScrollIndicator=NO;
     [self.view addSubview:self.iconTable];
-    
-}
-
--(void)addCompanyIconUrl{
-
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:self.marketType],@"market",self.updateTime,@"updatetime", nil];
-    [Utiles getNetInfoWithPath:@"QueryIpadAllCompany" andParams:params besidesBlock:^(id resObj){
-        NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
-        for(id obj in self.comList){
-            [temp addObject:obj];
-        }
-        for (id data in resObj) {
-            [temp addObject:data[@"info"]];
-        }
-        self.comList=temp;
-        [self.iconTable reloadData];
-        self.updateTime=[[self.comList lastObject] objectForKey:@"updatetime"];
-       
-    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
-    }];
     
 }
 
@@ -110,7 +88,7 @@
         cell = [array objectAtIndex:0];
     }
     
-    [cell.iconImg setImageWithURL:[NSURL URLWithString:[[self.comList objectAtIndex:indexPath.row] objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+    [cell.iconImg setImageWithURL:[NSURL URLWithString:self.comList[indexPath.row][@"info"][@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
     
     return cell;
 }

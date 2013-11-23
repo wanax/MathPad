@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle3
+#define INJECTION_BUNDLE InjectionBundle4
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -21,9 +21,9 @@
 #import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
 
 
-@interface InjectionBundle3 : NSObject
+@interface InjectionBundle4 : NSObject
 @end
-@implementation InjectionBundle3
+@implementation InjectionBundle4
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");

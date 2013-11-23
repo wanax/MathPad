@@ -88,7 +88,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
-    self.iconList.iconTable.contentOffset=scrollView.contentOffset;
+    self.iconTableVC.iconTable.contentOffset=scrollView.contentOffset;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{

@@ -63,8 +63,8 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *ValueModelCellIdentifier = @"ValueModelCellIdentifier";
-    ValueModelCell2 *cell = (ValueModelCell2*)[tableView dequeueReusableCellWithIdentifier:ValueModelCellIdentifier];
+    static NSString *ValueModelCell2Identifier = @"ValueModelCell2Identifier";
+    ValueModelCell2 *cell = (ValueModelCell2*)[tableView dequeueReusableCellWithIdentifier:ValueModelCell2Identifier];
     if (cell == nil) {
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueModelCell" owner:self options:nil];
         cell = [array objectAtIndex:1];

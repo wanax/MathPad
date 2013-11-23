@@ -8,6 +8,7 @@
 
 #import "ComInfoListColumn2.h"
 #import "ValueModelIndicator2.h"
+#import "ValueModelCell.h"
 #import "ValueModelCell2.h"
 #import "AMProgressView.h"
 #import "ComContainerViewController.h"
@@ -58,18 +59,15 @@
     return 60.0;
 }
 
-- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
-}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *ValueModelCellIdentifier = @"ValueModelCellIdentifier";
-    ValueModelCell2 *cell = (ValueModelCell2*)[tableView dequeueReusableCellWithIdentifier:ValueModelCellIdentifier];
+    static NSString *ValueModelCell2Identifier = @"ValueModelCell2Identifier";
+    ValueModelCell2 *cell = (ValueModelCell2 *)[tableView dequeueReusableCellWithIdentifier:ValueModelCell2Identifier];
     if (cell == nil) {
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueModelCell" owner:self options:nil];
-        cell = [array objectAtIndex:1];
+//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueModelCell" owner:self options:nil];
+//        cell = [array objectAtIndex:1];
+        cell=[[[ValueModelCell2 alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ValueModelCell2Identifier] autorelease];
     }
-    
     if(self.comList){
         id comData=[self.comList objectAtIndex:indexPath.row][@"data"];
         for(UIView *view in cell.contentView.subviews){
@@ -77,8 +75,12 @@
                 [view removeFromSuperview];
             }
         }
+        if([self.progressArr count]>0){
+            for(UIView *view in self.progressArr[indexPath.row]){
+                [cell.contentView addSubview:view];
+            }
+        }
         [self setCell:cell comData:comData];
-
         cell.contentView.backgroundColor=[Utiles colorWithHexString:@"#452A21"];
     }
     return cell;
@@ -97,9 +99,6 @@
     
     NSNumberFormatter *formatter=[[[NSNumberFormatter alloc] init] autorelease];
     [formatter setNumberStyle:NSNumberFormatterPercentStyle];
-    
-    NSArray *colorArr=[NSArray arrayWithObjects:[Utiles colorWithHexString:@"#fd9e1b"],[Utiles colorWithHexString:@"#f60933"],[Utiles colorWithHexString:@"#03d234"],[Utiles colorWithHexString:@"#0db4b4"], nil];
-    
     if (![data isKindOfClass:[NSNull class]]) {
         NSArray *dataArr=nil;
         if ([data[@"array"] count]>4) {
@@ -118,25 +117,67 @@
             [label setText:[NSString stringWithFormat:@"20%@",obj[@"y"]]];
             label=labels2[n];
             [label setText:[formatter stringFromNumber:obj[@"v"]]];
-            
-            AMProgressView *am=[[[AMProgressView alloc] initWithFrame:CGRectMake(x,n*15+2, 165, 10)
-                                                    andGradientColors:[NSArray arrayWithObjects:[colorArr objectAtIndex:n], nil]
-                                                     andOutsideBorder:NO
-                                                          andVertical:NO] autorelease];
-            
-            am.emptyPartAlpha = 1.0f;
-            am.minimumValue=0;
-            am.maximumValue=1;
-            am.progress=[obj[@"v"] doubleValue];
-            [cell.contentView addSubview:am];
             n++;
         }
     }
 }
 
+-(void)produceProgressForTable{
+    
+    NSArray *colorArr=[NSArray arrayWithObjects:[Utiles colorWithHexString:@"#fd9e1b"],[Utiles colorWithHexString:@"#f60933"],[Utiles colorWithHexString:@"#03d234"],[Utiles colorWithHexString:@"#0db4b4"], nil];
+    
+    NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+    for(id obj in self.progressArr){
+        [temp addObject:obj];
+    }
+    for(id comInfo in self.comList){
+        NSMutableArray *tempGrade2=[[[NSMutableArray alloc] init] autorelease];
+        
+        [self produceProgressForClass:comInfo[@"data"][@"Revenue growth rate"] tempGrade2:tempGrade2 color:colorArr x:55];
+        [self produceProgressForClass:comInfo[@"data"][@"Net income growth rate"] tempGrade2:tempGrade2 color:colorArr x:310];
+        [self produceProgressForClass:comInfo[@"data"][@"Gross profit margin"] tempGrade2:tempGrade2 color:colorArr x:570];
+        
+        [temp addObject:tempGrade2];
+    }
+    self.progressArr=temp;
+}
 
+-(void)produceProgressForClass:(id)classData tempGrade2:(NSMutableArray *)tempArr color:(NSArray *)colorArr x:(int)x{
 
+    if (![classData isKindOfClass:[NSNull class]]) {
+        NSArray *dataArr=nil;
+        if ([classData[@"array"] count]>4) {
+            NSMutableArray *temp=[NSMutableArray arrayWithCapacity:4];
+            for(int i=[classData[@"array"] count]-1,j=3;j>=0;j--,i--){
+                [temp addObject:classData[@"array"][i]];
+            }
+            dataArr=[[temp reverseObjectEnumerator] allObjects];;
+        } else {
+            dataArr=classData[@"array"];
+        }
+        
+        int n=0;
+        for(id obj in dataArr){
+            [tempArr addObject:[self makeAProgress:[obj[@"v"] doubleValue] max:1 frame:CGRectMake(x,n*15+2, 165, 10) color:[colorArr objectAtIndex:n]]];
+            n++;
+        }
+    }
+    
+}
 
+-(AMProgressView *)makeAProgress:(float)current max:(float)max frame:(CGRect)rect color:(UIColor *)color{
+    
+    AMProgressView *am=[[[AMProgressView alloc] initWithFrame:rect
+                                            andGradientColors:[NSArray arrayWithObjects:color, nil]
+                                             andOutsideBorder:NO
+                                                  andVertical:NO] autorelease];
+    
+    am.emptyPartAlpha = 1.0f;
+    am.minimumValue=0;
+    am.maximumValue=max;
+    am.progress=current;
+    return am;
+}
 
 
 
