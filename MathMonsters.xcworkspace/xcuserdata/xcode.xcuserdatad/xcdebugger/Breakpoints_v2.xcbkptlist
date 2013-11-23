@@ -968,12 +968,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
-            timestampString = "406890770.892928"
+            timestampString = "406891013.952774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "-setCellProcess:data:yearLableArr:valueLable:x:"
+            landmarkName = "-setCellProcess:yearValueDic:yearLableArr:valueLable:x:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -984,12 +984,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
-            timestampString = "406890770.892928"
+            timestampString = "406891013.952774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-setCellProcess:data:yearLableArr:valueLable:x:"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-setCellProcess:yearValueDic:yearLableArr:valueLable:x:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1000,11 +1000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
-            timestampString = "406885154.648825"
+            timestampString = "406891013.952774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-setCell:classDic:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1016,12 +1016,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
-            timestampString = "406890770.892928"
+            timestampString = "406891013.952774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-produceProgressForClass:tempGrade2:color:x:"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-produceProgressForClass:className:tempGrade2:cellValueDic:color:x:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1032,11 +1032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
-            timestampString = "406890547.328093"
+            timestampString = "406891013.952774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-setCellProcess:yearValueDic:yearLableArr:valueLable:x:"
             landmarkType = "5">
          </BreakpointContent>
