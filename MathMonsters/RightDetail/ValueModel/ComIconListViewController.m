@@ -65,6 +65,7 @@
 }
 
 -(void)comListDataLoaded{
+    
     [self.iconTable reloadData];
 }
 
@@ -110,7 +111,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     for(ComInfoListColumn *column in self.comTableArr){
-        column.comTable.contentOffset=scrollView.contentOffset;
+        //column.comTable.contentOffset=scrollView.contentOffset;
     }
     
 }

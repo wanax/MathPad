@@ -858,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComListController.m"
-            timestampString = "406898971.355053"
+            timestampString = "407043239.282473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-addCompanyInfo"
             landmarkType = "5">
          </BreakpointContent>
@@ -874,11 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComIconListViewController.m"
-            timestampString = "406898492.23497"
+            timestampString = "407038087.464413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -890,11 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComIconListViewController.m"
-            timestampString = "406898492.23497"
+            timestampString = "407038087.464413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -906,11 +906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComListController.m"
-            timestampString = "406898971.355053"
+            timestampString = "407043239.282473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-addCompanyInfo"
             landmarkType = "5">
             <Locations>
@@ -1019,22 +1019,6 @@
             timestampString = "406894094.365975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-produceProgressForClass:className:tempGrade2:cellValueDic:color:x:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn2.m"
-            timestampString = "406894094.365975"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118"
             landmarkName = "-setCellProcess:yearValueDic:yearLableArr:valueLable:x:"
@@ -1126,11 +1110,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComInfoListColumn.m"
-            timestampString = "406898721.778466"
+            timestampString = "407042025.386742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "@implementation ComInfoListColumn"
             landmarkType = "3">
          </BreakpointContent>
@@ -1142,11 +1126,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MathMonsters/RightDetail/ValueModel/ComListController.m"
-            timestampString = "406899002.059881"
+            timestampString = "407043239.282473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-addCompanyInfo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MathMonsters/RightDetail/ValueModel/ComListController.m"
+            timestampString = "407043239.282473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-addCompanyInfo"
             landmarkType = "5">
          </BreakpointContent>

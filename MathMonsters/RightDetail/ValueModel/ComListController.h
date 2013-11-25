@@ -14,6 +14,7 @@
 
 @interface ComListController : UIViewController<UIScrollViewDelegate>
 
+@property CGPoint contentOffset;
 @property MarketType marketType;
 @property (nonatomic,retain) NSString *updateTime;
 @property (nonatomic,retain) id comInfo;

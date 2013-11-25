@@ -228,6 +228,9 @@ static NSDateFormatter *formatter;
             return YES;
         }
     }
+    if ([string isKindOfClass:[NSNumber class]]) {
+        return NO;
+    }
     if([string isEqualToString:@"<null>"]||[string isEqualToString:@"<NUll>"]){
         return YES;
     }

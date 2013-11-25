@@ -134,19 +134,6 @@
     self.progressArr=temp;
 }
 
--(AMProgressView *)makeAProgress:(float)current max:(float)max frame:(CGRect)rect color:(UIColor *)color{
-    
-    AMProgressView *am=[[[AMProgressView alloc] initWithFrame:rect
-                                            andGradientColors:[NSArray arrayWithObjects:color, nil]
-                                             andOutsideBorder:NO
-                                                  andVertical:NO] autorelease];
-    
-    am.emptyPartAlpha = 1.0f;
-    am.minimumValue=0;
-    am.maximumValue=max;
-    am.progress=current;
-    return am;
-}
 
 
 

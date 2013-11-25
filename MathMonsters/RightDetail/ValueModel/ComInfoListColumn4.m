@@ -1,24 +1,23 @@
 //
-//  ComInfoListColumn2.m
+//  ComInfoListColumn4.m
 //  MathMonsters
 //
-//  Created by Xcode on 13-11-21.
+//  Created by Xcode on 13-11-25.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
-#import "ComInfoListColumn2.h"
-#import "ValueModelIndicator2.h"
-#import "ValueModelCell.h"
+#import "ComInfoListColumn4.h"
+#import "ValueModelIndicator4.h"
 #import "ValueModelCell2.h"
 #import "AMProgressView.h"
 #import "ComContainerViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface ComInfoListColumn2 ()
+@interface ComInfoListColumn4 ()
 
 @end
 
-@implementation ComInfoListColumn2
+@implementation ComInfoListColumn4
 
 - (id)initWithMarkType:(MarketType)type
 {
@@ -39,9 +38,9 @@
 
 -(void)initComponents{
     
-    ValueModelIndicator2 *indicator=[[[ValueModelIndicator2 alloc] initWithFrame:CGRectMake(0,0, 790, 60)] autorelease];
+    ValueModelIndicator4 *indicator=[[[ValueModelIndicator4 alloc] initWithFrame:CGRectMake(0,0, 790, 60)] autorelease];
     [self.view addSubview:indicator];
-
+    
 }
 
 
@@ -57,6 +56,9 @@
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60.0;
+}
+
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -84,22 +86,14 @@
 }
 
 -(void)setCell:(ValueModelCell2 *)cell classDic:(NSDictionary *)dic{
+    
+    [self setCellProcess:cell yearValueDic:dic[@"Current ratio"] yearLableArr:[NSArray arrayWithObjects:cell.row00,cell.row10,cell.row20,cell.row30, nil] valueLable:[NSArray arrayWithObjects:cell.row01,cell.row11,cell.row21,cell.row31, nil] x:55];
+    
+    [self setCellProcess:cell yearValueDic:dic[@"Discount Rate"] yearLableArr:[NSArray arrayWithObjects:cell.row02,cell.row12,cell.row22,cell.row32, nil] valueLable:[NSArray arrayWithObjects:cell.row03,cell.row13,cell.row23,cell.row33, nil] x:310];
 
-    [self setCellProcess:cell yearValueDic:dic[@"Revenue growth rate"] yearLableArr:[NSArray arrayWithObjects:cell.row00,cell.row10,cell.row20,cell.row30, nil] valueLable:[NSArray arrayWithObjects:cell.row01,cell.row11,cell.row21,cell.row31, nil] x:55];
-    
-    [self setCellProcess:cell yearValueDic:dic[@"Net income growth rate"] yearLableArr:[NSArray arrayWithObjects:cell.row02,cell.row12,cell.row22,cell.row32, nil] valueLable:[NSArray arrayWithObjects:cell.row03,cell.row13,cell.row23,cell.row33, nil] x:310];
-    
-    [self setCellProcess:cell yearValueDic:dic[@"Gross profit margin"] yearLableArr:[NSArray arrayWithObjects:cell.row04,cell.row14,cell.row24,cell.row34, nil] valueLable:[NSArray arrayWithObjects:cell.row05,cell.row15,cell.row25,cell.row35, nil] x:570];
 }
 
 -(void)setCellProcess:(ValueModelCell2 *)cell yearValueDic:(id)dic yearLableArr:(NSArray *)labels1 valueLable:(NSArray *)labels2 x:(int)x{
-    
-    for(UILabel *label in labels1){
-        [label setText:@""];
-    }
-    for(UILabel *label in labels2){
-        [label setText:@""];
-    }
     
     NSComparator cmptr = ^(id obj1, id obj2){
         if ([obj1 integerValue] > [obj2 integerValue]) {
@@ -119,10 +113,8 @@
         NSArray *keys=[[dic allKeys] sortedArrayUsingComparator:cmptr];
         for(id key in keys){
             UILabel *label= labels1[n];
-            [label setText:@""];
             [label setText:[NSString stringWithFormat:@"20%@",key]];
             label=labels2[n];
-            [label setText:@""];
             [label setText:[formatter stringFromNumber:dic[key]]];
             n++;
         }
@@ -146,9 +138,8 @@
         
         NSMutableDictionary *cellValueDic=[[[NSMutableDictionary alloc] init] autorelease];
         
-        [self produceProgressForClass:comInfo[@"data"] className:@"Revenue growth rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
-        [self produceProgressForClass:comInfo[@"data"] className:@"Net income growth rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:310];
-        [self produceProgressForClass:comInfo[@"data"] className:@"Gross profit margin" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:570];
+        [self produceProgressForClass:comInfo[@"data"] className:@"Current ratio" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
+        [self produceProgressForClass:comInfo[@"data"] className:@"Discount Rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:310];
         
         [temp addObject:tempGrade2];
         [tempYearValueArr addObject:cellValueDic];
@@ -157,15 +148,27 @@
     self.yearValueArr=tempYearValueArr;
 }
 
-
-
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

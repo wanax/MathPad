@@ -9,7 +9,9 @@
 #import "ComInfoListColumn.h"
 #import "ComIconListViewController.h"
 #import "ComContainerViewController.h"
+#import "ComListController.h"
 #import "SVPullToRefresh.h"
+#import "AMProgressView.h"
 
 @interface ComInfoListColumn ()
 
@@ -39,7 +41,7 @@
 
 -(void)initOverAllComponents{
     
-    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,790,610)];
+    UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,790,600)];
     temp.showsVerticalScrollIndicator=NO;
     temp.delegate=self;
     temp.dataSource=self;
@@ -77,6 +79,49 @@
 -(void)comListDataLoaded{
     [self produceProgressForTable];
     [self.comTable reloadData];
+    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.comTable];
+    [self.comTable.infiniteScrollingView stopAnimating];
+}
+
+-(void)produceProgressForClass:(id)data className:(NSString *)className tempGrade2:(NSMutableArray *)tempArr cellValueDic:(NSMutableDictionary *)cellValueDic color:(NSArray *)colorArr x:(int)x{
+    
+    id classData=data[className];
+    if (![classData isKindOfClass:[NSNull class]]) {
+        NSArray *dataArr=nil;
+        if ([classData[@"array"] count]>4) {
+            NSMutableArray *temp=[NSMutableArray arrayWithCapacity:4];
+            for(int i=[classData[@"array"] count]-1,j=3;j>=0;j--,i--){
+                [temp addObject:classData[@"array"][i]];
+            }
+            dataArr=[[temp reverseObjectEnumerator] allObjects];;
+        } else {
+            dataArr=classData[@"array"];
+        }
+        
+        int n=0;
+        NSMutableDictionary *tempGrade2Dic=[[[NSMutableDictionary alloc] init] autorelease];
+        for(id obj in dataArr){
+            [tempArr addObject:[self makeAProgress:[obj[@"v"] doubleValue] max:1 frame:CGRectMake(x,n*15+2, 165, 10) color:[colorArr objectAtIndex:n]]];
+            [tempGrade2Dic setObject:obj[@"v"] forKey:obj[@"y"]];
+            n++;
+        }
+        [cellValueDic setObject:tempGrade2Dic forKey:className];
+    }
+    
+}
+
+-(AMProgressView *)makeAProgress:(float)current max:(float)max frame:(CGRect)rect color:(UIColor *)color{
+    
+    AMProgressView *am=[[[AMProgressView alloc] initWithFrame:rect
+                                            andGradientColors:[NSArray arrayWithObjects:color, nil]
+                                             andOutsideBorder:NO
+                                                  andVertical:NO] autorelease];
+    
+    am.emptyPartAlpha = 1.0f;
+    am.minimumValue=0;
+    am.maximumValue=max;
+    am.progress=current;
+    return am;
 }
 
 #pragma mark -
@@ -108,6 +153,7 @@
 
 - (void)doneLoadingTableViewData{
     
+    self.listController.updateTime=@"";
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ComListDataRefresh" object:self];
     _reloading = NO;
     
@@ -119,6 +165,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    self.listController.contentOffset=scrollView.contentOffset;
     self.iconTableVC.iconTable.contentOffset=scrollView.contentOffset;
 }
 

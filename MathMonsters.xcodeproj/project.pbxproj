@@ -253,6 +253,8 @@
 		AEDFE96217F279BE0085CA0F /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE95E17F279BE0085CA0F /* MGSplitDividerView.m */; };
 		AEDFE96317F279BE0085CA0F /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE96017F279BE0085CA0F /* MGSplitViewController.m */; };
 		AEE4ED2E183F043C00DD63AB /* ComInfoListColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE4ED2D183F043C00DD63AB /* ComInfoListColumn.m */; };
+		AEF3336A1842F606000D0C65 /* ValueModelIndicator4.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF333691842F606000D0C65 /* ValueModelIndicator4.m */; };
+		AEF3336D1842F69D000D0C65 /* ComInfoListColumn4.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF3336C1842F69D000D0C65 /* ComInfoListColumn4.m */; };
 		AEF59B301831BD7000CE99D8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */; };
 		AEF59B3A1831D3D400CE99D8 /* ClientLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */; };
 		AEF59B3C1831D5DC00CE99D8 /* ClientLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */; };
@@ -708,6 +710,10 @@
 		AEDFE96017F279BE0085CA0F /* MGSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSplitViewController.m; sourceTree = "<group>"; };
 		AEE4ED2C183F043C00DD63AB /* ComInfoListColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInfoListColumn.h; sourceTree = "<group>"; };
 		AEE4ED2D183F043C00DD63AB /* ComInfoListColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComInfoListColumn.m; sourceTree = "<group>"; };
+		AEF333681842F606000D0C65 /* ValueModelIndicator4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelIndicator4.h; sourceTree = "<group>"; };
+		AEF333691842F606000D0C65 /* ValueModelIndicator4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelIndicator4.m; sourceTree = "<group>"; };
+		AEF3336B1842F69D000D0C65 /* ComInfoListColumn4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInfoListColumn4.h; sourceTree = "<group>"; };
+		AEF3336C1842F69D000D0C65 /* ComInfoListColumn4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComInfoListColumn4.m; sourceTree = "<group>"; };
 		AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		AEF59B381831D3D400CE99D8 /* ClientLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientLoginViewController.h; sourceTree = "<group>"; };
 		AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientLoginViewController.m; sourceTree = "<group>"; };
@@ -798,6 +804,8 @@
 				AE30965B183DE66C0074B84C /* ValueModelIndicator2.m */,
 				AE30965D183DE6750074B84C /* ValueModelIndicator3.h */,
 				AE30965E183DE6750074B84C /* ValueModelIndicator3.m */,
+				AEF333681842F606000D0C65 /* ValueModelIndicator4.h */,
+				AEF333691842F606000D0C65 /* ValueModelIndicator4.m */,
 				AEE4ED2C183F043C00DD63AB /* ComInfoListColumn.h */,
 				AEE4ED2D183F043C00DD63AB /* ComInfoListColumn.m */,
 				AE309646183DDC7A0074B84C /* ComInfoListColumn1.h */,
@@ -806,6 +814,8 @@
 				AE309655183DE6440074B84C /* ComInfoListColumn2.m */,
 				AE309657183DE6520074B84C /* ComInfoListColumn3.h */,
 				AE309658183DE6520074B84C /* ComInfoListColumn3.m */,
+				AEF3336B1842F69D000D0C65 /* ComInfoListColumn4.h */,
+				AEF3336C1842F69D000D0C65 /* ComInfoListColumn4.m */,
 			);
 			name = ValueModelColumn;
 			sourceTree = "<group>";
@@ -1979,6 +1989,7 @@
 				AE6FCF1C17E9410100DCDB77 /* GCDiscreetNotificationView.m in Sources */,
 				AE748EBC18336C5100BD4F57 /* UserRegisterViewController.m in Sources */,
 				AED98534183C571F00E97093 /* MyProLossCell.m in Sources */,
+				AEF3336A1842F606000D0C65 /* ValueModelIndicator4.m in Sources */,
 				AE530C8417E997B8007E5143 /* GTMStackTrace.m in Sources */,
 				AE44B0451834B0920074E7D9 /* ClientRelationStockListViewController.m in Sources */,
 				AE748ECD1833772B00BD4F57 /* VerticalTabBarViewController.m in Sources */,
@@ -1997,6 +2008,7 @@
 				AE44AF6C1834A9020074E7D9 /* MHTabBarController.m in Sources */,
 				AE530C9917E99B3F007E5143 /* NGTabBarItem.m in Sources */,
 				AE530C9A17E99B3F007E5143 /* UINavigationController+NGTabBarNavigationDelegate.m in Sources */,
+				AEF3336D1842F69D000D0C65 /* ComInfoListColumn4.m in Sources */,
 				AED54F2A183CC95000A6E965 /* ComIconCell.m in Sources */,
 				AE530C9B17E99B3F007E5143 /* UIViewController+NGTabBarItem.m in Sources */,
 				AE60096F182B6EE800BB3819 /* PageController.m in Sources */,
