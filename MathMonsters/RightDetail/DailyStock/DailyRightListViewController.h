@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PieViewController.h"
 
-@interface DailyRightListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface DailyRightListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,PieViewDelegate>
 
 @property (nonatomic,retain) NSDictionary *valueIncomeDic;
+@property (nonatomic,retain) NSDictionary *classToChildIds;
 @property (nonatomic,retain) NSArray *valueArr;
 @property (nonatomic,retain) NSArray *barChartArr;
 @property (nonatomic,retain) id comInfo;

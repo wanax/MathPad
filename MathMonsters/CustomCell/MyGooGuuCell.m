@@ -1,14 +1,14 @@
 //
-//  ValueModelCell3.m
+//  MyGooGuuCell.m
 //  MathMonsters
 //
-//  Created by Xcode on 13-11-21.
+//  Created by Xcode on 13-11-25.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
-#import "ValueModelCell3.h"
+#import "MyGooGuuCell.h"
 
-@implementation ValueModelCell3
+@implementation MyGooGuuCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

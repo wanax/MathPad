@@ -1,13 +1,13 @@
 //
-//  ValueModelCell3.h
+//  MyGooGuuIndicator.h
 //  MathMonsters
 //
-//  Created by Xcode on 13-11-21.
+//  Created by Xcode on 13-11-25.
 //  Copyright (c) 2013年 Xcode. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ValueModelCell3 : UITableViewCell
+@interface MyGooGuuIndicator : UIView
 
 @end

@@ -25,6 +25,9 @@
 		AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD3F182899D900E8E94C /* HelpViewController.m */; };
 		AE29CD4618289DE800E8E94C /* NewReportLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */; };
 		AE29CD4918289DFC00E8E94C /* NewReportRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */; };
+		AE2CDA921843354F00226CDD /* MyGooGuuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */; };
+		AE2CDA951843364100226CDD /* MyGooGuuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2CDA941843364100226CDD /* MyGooGuuCell.m */; };
+		AE2CDA98184337DF00226CDD /* MyGooGuuIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2CDA97184337DF00226CDD /* MyGooGuuIndicator.m */; };
 		AE30964E183DDC7A0074B84C /* ComIconListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309645183DDC7A0074B84C /* ComIconListViewController.m */; };
 		AE30964F183DDC7A0074B84C /* ComInfoListColumn1.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309647183DDC7A0074B84C /* ComInfoListColumn1.m */; };
 		AE309650183DDC7A0074B84C /* ComListController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309649183DDC7A0074B84C /* ComListController.m */; };
@@ -35,7 +38,7 @@
 		AE30965C183DE66C0074B84C /* ValueModelIndicator2.m in Sources */ = {isa = PBXBuildFile; fileRef = AE30965B183DE66C0074B84C /* ValueModelIndicator2.m */; };
 		AE30965F183DE6750074B84C /* ValueModelIndicator3.m in Sources */ = {isa = PBXBuildFile; fileRef = AE30965E183DE6750074B84C /* ValueModelIndicator3.m */; };
 		AE309666183DF1A50074B84C /* ValueModelCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309665183DF1A50074B84C /* ValueModelCell2.m */; };
-		AE309669183DF1AE0074B84C /* ValueModelCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309668183DF1AE0074B84C /* ValueModelCell3.m */; };
+		AE309669183DF1AE0074B84C /* ValueModelCell4.m in Sources */ = {isa = PBXBuildFile; fileRef = AE309668183DF1AE0074B84C /* ValueModelCell4.m */; };
 		AE31F831182B3085001CD0D0 /* NewReportArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F830182B3085001CD0D0 /* NewReportArticleViewController.m */; };
 		AE31F85F182B38AD001CD0D0 /* AKOMultiColumnTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F858182B38AD001CD0D0 /* AKOMultiColumnTextView.m */; };
 		AE31F860182B38AD001CD0D0 /* AKOMultiPageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F85A182B38AD001CD0D0 /* AKOMultiPageTextView.m */; };
@@ -295,6 +298,11 @@
 		AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportLeftListViewController.m; sourceTree = "<group>"; };
 		AE29CD4718289DFC00E8E94C /* NewReportRightListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportRightListViewController.h; sourceTree = "<group>"; };
 		AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportRightListViewController.m; sourceTree = "<group>"; };
+		AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyGooGuuCell.xib; path = ../../NibFile/CellNib/MyGooGuuCell.xib; sourceTree = "<group>"; };
+		AE2CDA931843364100226CDD /* MyGooGuuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGooGuuCell.h; sourceTree = "<group>"; };
+		AE2CDA941843364100226CDD /* MyGooGuuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGooGuuCell.m; sourceTree = "<group>"; };
+		AE2CDA96184337DF00226CDD /* MyGooGuuIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGooGuuIndicator.h; sourceTree = "<group>"; };
+		AE2CDA97184337DF00226CDD /* MyGooGuuIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGooGuuIndicator.m; sourceTree = "<group>"; };
 		AE309644183DDC7A0074B84C /* ComIconListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComIconListViewController.h; sourceTree = "<group>"; };
 		AE309645183DDC7A0074B84C /* ComIconListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComIconListViewController.m; sourceTree = "<group>"; };
 		AE309646183DDC7A0074B84C /* ComInfoListColumn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInfoListColumn1.h; sourceTree = "<group>"; };
@@ -315,8 +323,8 @@
 		AE30965E183DE6750074B84C /* ValueModelIndicator3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelIndicator3.m; sourceTree = "<group>"; };
 		AE309664183DF1A50074B84C /* ValueModelCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelCell2.h; sourceTree = "<group>"; };
 		AE309665183DF1A50074B84C /* ValueModelCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelCell2.m; sourceTree = "<group>"; };
-		AE309667183DF1AE0074B84C /* ValueModelCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelCell3.h; sourceTree = "<group>"; };
-		AE309668183DF1AE0074B84C /* ValueModelCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelCell3.m; sourceTree = "<group>"; };
+		AE309667183DF1AE0074B84C /* ValueModelCell4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelCell4.h; sourceTree = "<group>"; };
+		AE309668183DF1AE0074B84C /* ValueModelCell4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelCell4.m; sourceTree = "<group>"; };
 		AE31F82F182B3085001CD0D0 /* NewReportArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportArticleViewController.h; sourceTree = "<group>"; };
 		AE31F830182B3085001CD0D0 /* NewReportArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportArticleViewController.m; sourceTree = "<group>"; };
 		AE31F857182B38AD001CD0D0 /* AKOMultiColumnTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKOMultiColumnTextView.h; path = Views/AKOMultiColumnTextView.h; sourceTree = "<group>"; };
@@ -1179,6 +1187,9 @@
 		AE44B03F1834B0580074E7D9 /* MyGooGuu */ = {
 			isa = PBXGroup;
 			children = (
+				AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */,
+				AE2CDA96184337DF00226CDD /* MyGooGuuIndicator.h */,
+				AE2CDA97184337DF00226CDD /* MyGooGuuIndicator.m */,
 				AE44B0401834B0610074E7D9 /* MyGooGuuViewController.h */,
 				AE44B0411834B0610074E7D9 /* MyGooGuuViewController.m */,
 				AE44B0431834B0920074E7D9 /* ClientRelationStockListViewController.h */,
@@ -1609,8 +1620,10 @@
 				AED54F29183CC95000A6E965 /* ComIconCell.m */,
 				AE309664183DF1A50074B84C /* ValueModelCell2.h */,
 				AE309665183DF1A50074B84C /* ValueModelCell2.m */,
-				AE309667183DF1AE0074B84C /* ValueModelCell3.h */,
-				AE309668183DF1AE0074B84C /* ValueModelCell3.m */,
+				AE309667183DF1AE0074B84C /* ValueModelCell4.h */,
+				AE309668183DF1AE0074B84C /* ValueModelCell4.m */,
+				AE2CDA931843364100226CDD /* MyGooGuuCell.h */,
+				AE2CDA941843364100226CDD /* MyGooGuuCell.m */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -1777,6 +1790,7 @@
 				AE44AFF21834AADF0074E7D9 /* DownAccessory.png in Resources */,
 				AEDD0830181FAA6D0095BDA1 /* ValueModelCell.xib in Resources */,
 				AE44AFEA1834AADF0074E7D9 /* valuModelBtSe.png in Resources */,
+				AE2CDA921843354F00226CDD /* MyGooGuuCell.xib in Resources */,
 				AEA90A5E181E142A00F3E4DB /* c.html in Resources */,
 				AE44B02E1834AADF0074E7D9 /* unsavemodel.png in Resources */,
 				AEA90A54181E13FD00F3E4DB /* BenchmarkIndex.plist in Resources */,
@@ -1969,6 +1983,7 @@
 				AE309650183DDC7A0074B84C /* ComListController.m in Sources */,
 				AE572B88182CE0D60000B193 /* Cell2.m in Sources */,
 				AE62F152183B3EAD00FD75D7 /* MyProLossListViewController.m in Sources */,
+				AE2CDA951843364100226CDD /* MyGooGuuCell.m in Sources */,
 				AE44B0421834B0610074E7D9 /* MyGooGuuViewController.m in Sources */,
 				AE309656183DE6440074B84C /* ComInfoListColumn2.m in Sources */,
 				AE3FCB8C17E6DA23001A04A1 /* CommonlyMacros.m in Sources */,
@@ -2028,7 +2043,7 @@
 				AEAD74DE17EE7FAB00A659FA /* KLCircleViewController.m in Sources */,
 				AE748EC81833770500BD4F57 /* FSVerticalTabBarController.m in Sources */,
 				AE0F051B182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m in Sources */,
-				AE309669183DF1AE0074B84C /* ValueModelCell3.m in Sources */,
+				AE309669183DF1AE0074B84C /* ValueModelCell4.m in Sources */,
 				AE7E5754181E54B400A1391E /* AMProgressView.m in Sources */,
 				AE739ABE182257FB00CF82C5 /* UIColor+expanded.m in Sources */,
 				AE389872182C93110059A319 /* ComContainerIndicator.m in Sources */,
@@ -2042,6 +2057,7 @@
 				AEDFE96217F279BE0085CA0F /* MGSplitDividerView.m in Sources */,
 				AEDFE96317F279BE0085CA0F /* MGSplitViewController.m in Sources */,
 				AEB3E32F17F40D4500A273E9 /* UIButton+BGColor.m in Sources */,
+				AE2CDA98184337DF00226CDD /* MyGooGuuIndicator.m in Sources */,
 				AEB3E33017F40D4500A273E9 /* UILabel+VerticalAlign.m in Sources */,
 				AEB3E33117F40D4500A273E9 /* UINavigationController+Autorotate.m in Sources */,
 				AE572B73182CB67E0000B193 /* DahonValuationViewController.m in Sources */,

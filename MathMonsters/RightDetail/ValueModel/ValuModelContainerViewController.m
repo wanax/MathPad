@@ -43,6 +43,8 @@
     controller.view.frame=CGRectMake(130,0,894,1000);
     [self.view addSubview:controller.view];
     [self addChildViewController:controller];
+    
+    iconTableVC.comListController=controller;
 }
 
 

@@ -10,6 +10,8 @@
 
 @interface ValueModelCell2 : UITableViewCell
 
+@property (nonatomic,retain) UIImageView *backImg;
+
 @property (nonatomic,retain) UILabel *row00;
 @property (nonatomic,retain) UILabel *row10;
 @property (nonatomic,retain) UILabel *row20;

@@ -91,6 +91,7 @@
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {
     [self.selLabel setText:[NSString stringWithFormat:@"%@%2.2f%@",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"],per*100,@"%"]];
+    [self.delegate pieWasChoosen:[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"]];
 }
 
 - (void)onCenterClick:(PieChartView *)pieChartView

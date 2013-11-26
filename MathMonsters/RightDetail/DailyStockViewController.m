@@ -49,7 +49,7 @@
 
 }
 
--(void)addPieView:(NSDictionary *)valueDic driverIds:(NSArray *)ids{
+-(void)addPieView:(NSDictionary *)valueDic driverIds:(NSArray *)ids classWithChildId:(NSDictionary *)dic{
     PieViewController *vc=[[[PieViewController alloc] initWithNibName:nil bundle:nil data:valueDic] autorelease];
     vc.view.frame=CGRectMake(0,90,450,570);
     vc.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
@@ -59,8 +59,11 @@
     DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithValueIncomeDic:valueDic driverIds:ids jsonData:self.jsonData comInfo:self.companyInfo] autorelease];
     rightList.view.backgroundColor=[UIColor clearColor];
     rightList.view.frame=CGRectMake(450,90,500,900);
+    rightList.classToChildIds=dic;
+    vc.delegate=rightList;
     [self addChildViewController:rightList];
     [self.view addSubview:rightList.view];
+
 }
 
 -(void)getDailyStockNews{
@@ -99,7 +102,8 @@
             for(id obj in childs){
                 [valueMainIncomeDic setObject:obj forKey:[self nearestForecastYear:obj[@"identifier"]]];
             }
-            [self addPieView:valueMainIncomeDic driverIds:[self getGrade2DriverIds:childs divisionData:resObj[@"model"][@"division"]]];
+            NSMutableDictionary *dic=[[[NSMutableDictionary alloc] init] autorelease];
+            [self addPieView:valueMainIncomeDic driverIds:[self getGrade2DriverIds:childs divisionData:resObj[@"model"][@"division"] classWithChildId:dic] classWithChildId:dic];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         } failure:^(AFHTTPRequestOperation *operation,NSError *error){
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -113,7 +117,7 @@
     }];
 }
 
--(NSArray *)getGrade2DriverIds:(NSArray *)childs divisionData:(id)divisionData{
+-(NSArray *)getGrade2DriverIds:(NSArray *)childs divisionData:(id)divisionData classWithChildId:(NSMutableDictionary *)classWithChildIdDic{
     
     NSMutableArray *driverIds=[[[NSMutableArray alloc] init] autorelease];
     for(id obj in childs){
@@ -121,15 +125,21 @@
             [driverIds addObject:driverId];
         }*/
         if([obj[@"child"] count]>0){
+            NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
             for(id childObj in obj[@"child"]){
                 for(id driverId in divisionData[childObj[@"identifier"]][@"drivers"]){
                     [driverIds addObject:driverId];
+                    [temp addObject:driverId];
                 }
             }
+            [classWithChildIdDic setObject:temp forKey:obj[@"text"]];
         }else{
+            NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
             for(id driverId in divisionData[obj[@"identifier"]][@"drivers"]){
                 [driverIds addObject:driverId];
+                [temp addObject:driverId];
             }
+            [classWithChildIdDic setObject:temp forKey:obj[@"text"]];
         }
     }
     return [NSArray arrayWithArray:driverIds];

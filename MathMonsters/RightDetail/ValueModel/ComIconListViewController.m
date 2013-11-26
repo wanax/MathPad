@@ -9,6 +9,7 @@
 #import "ComIconListViewController.h"
 #import "ComIconCell.h"
 #import "ComInfoListColumn1.h"
+#import "ComListController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ComIconListViewController ()
@@ -110,9 +111,10 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    for(ComInfoListColumn *column in self.comTableArr){
-        //column.comTable.contentOffset=scrollView.contentOffset;
-    }
+    /*for(ComInfoListColumn *column in self.comTableArr){
+        column.comTable.contentOffset=scrollView.contentOffset;
+    }*/
+    self.comListController.contentOffset=scrollView.contentOffset;
     
 }
 

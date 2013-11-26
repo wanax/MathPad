@@ -87,15 +87,21 @@
     
     id classData=data[className];
     if (![classData isKindOfClass:[NSNull class]]) {
+        NSMutableArray *hisClassDatas=[[[NSMutableArray alloc] init] autorelease];
+        for (id obj in classData[@"array"]){
+            if([obj[@"h"] boolValue]){
+                [hisClassDatas addObject:obj];
+            }
+        }
         NSArray *dataArr=nil;
-        if ([classData[@"array"] count]>4) {
+        if ([hisClassDatas count]>4) {
             NSMutableArray *temp=[NSMutableArray arrayWithCapacity:4];
-            for(int i=[classData[@"array"] count]-1,j=3;j>=0;j--,i--){
-                [temp addObject:classData[@"array"][i]];
+            for(int i=[hisClassDatas count]-1,j=3;j>=0;j--,i--){
+                [temp addObject:hisClassDatas[i]];
             }
             dataArr=[[temp reverseObjectEnumerator] allObjects];;
         } else {
-            dataArr=classData[@"array"];
+            dataArr=hisClassDatas;
         }
         
         int n=0;

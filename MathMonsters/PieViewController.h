@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "PieChartView.h"
+
+@protocol PieViewDelegate <NSObject>
+
+@optional
+-(void)pieWasChoosen:(NSString *)className;
+
+@end
+
 @interface PieViewController : UIViewController<PieChartDelegate>
+
+@property (nonatomic,assign) id<PieViewDelegate> delegate;
 
 @property (nonatomic,retain) NSDictionary *valueIncomeDic;
 @property (nonatomic,strong) NSMutableArray *valueArray;

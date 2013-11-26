@@ -59,6 +59,8 @@
 }
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
+    ValueModelCell2 *c=(ValueModelCell2 *)cell;
+    [c.backImg setImage:[UIImage imageNamed:@"valueModelCellBack3"]];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

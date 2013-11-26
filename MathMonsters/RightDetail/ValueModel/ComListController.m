@@ -108,7 +108,6 @@
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
         if ([Utiles isBlankString:self.updateTime]) {
             [self.comList removeAllObjects];
-            NSLog(@"remove");
         }
         for(id obj in self.comList){
             [temp addObject:obj];

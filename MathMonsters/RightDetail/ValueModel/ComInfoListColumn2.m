@@ -59,6 +59,11 @@
     return 60.0;
 }
 
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
+    ValueModelCell2 *c=(ValueModelCell2 *)cell;
+    [c.backImg setImage:[UIImage imageNamed:@"valueModelCellBack3"]];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *ValueModelCell2Identifier = @"ValueModelCell2Identifier";

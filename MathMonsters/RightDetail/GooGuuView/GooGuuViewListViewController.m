@@ -40,7 +40,7 @@
     UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,924,800)] autorelease];
     t.dataSource=self;
     t.delegate=self;
-    t.separatorStyle=UITableViewCellSeparatorStyleNone;
+    t.separatorStyle=UITableViewCellSeparatorStyleSingleLineEtched;
     self.ggViewTable=t;
     [self.view addSubview:self.ggViewTable];
     

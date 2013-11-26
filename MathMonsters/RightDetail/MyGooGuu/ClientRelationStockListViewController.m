@@ -7,8 +7,8 @@
 //
 
 #import "ClientRelationStockListViewController.h"
-#import "ValueModelIndicator.h"
-#import "ValueModelCell.h"
+#import "MyGooGuuIndicator.h"
+#import "MyGooGuuCell.h"
 #import "AMProgressView.h"
 #import "ComContainerViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -42,7 +42,7 @@
 
 -(void)initComponents{
     
-    ValueModelIndicator *indicator=[[[ValueModelIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
+    MyGooGuuIndicator *indicator=[[[MyGooGuuIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
     [self.view addSubview:indicator];
     
     UITableView *temp=[[UITableView alloc] initWithFrame:CGRectMake(0,60,928,595)];
@@ -126,7 +126,7 @@
 }
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
-    ValueModelCell *c=(ValueModelCell *)cell;
+    MyGooGuuCell *c=(MyGooGuuCell *)cell;
     if (indexPath.row%2==0) {
         [c.backImg setImage:[UIImage imageNamed:@"valueModelCellBack"]];
     } else {
@@ -136,10 +136,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *ValueModelCellIdentifier = @"ValueModelCellIdentifier";
-    ValueModelCell *cell = (ValueModelCell*)[tableView dequeueReusableCellWithIdentifier:ValueModelCellIdentifier];
+    static NSString *MyGooGuuCellIdentifier = @"MyGooGuuCellIdentifier";
+    MyGooGuuCell *cell = (MyGooGuuCell*)[tableView dequeueReusableCellWithIdentifier:MyGooGuuCellIdentifier];
     if (cell == nil) {
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueModelCell" owner:self options:nil];
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"MyGooGuuCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     }
     

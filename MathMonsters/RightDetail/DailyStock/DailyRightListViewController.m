@@ -56,6 +56,21 @@
 }
 
 #pragma mark -
+#pragma PieView Delegate
+
+-(void)pieWasChoosen:(NSString *)className{
+    
+    int n=0;
+    id driverId=self.classToChildIds[className][0];
+    for(n=0;n<[self.driverIds count];n++){
+        if([driverId equals:self.driverIds[n]]){
+            NSIndexPath *index=[NSIndexPath indexPathForRow:n inSection:0];
+            [self.dailyTable scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }
+    }
+}
+
+#pragma mark -
 #pragma mark Table Data Source
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
