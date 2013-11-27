@@ -24,7 +24,6 @@
 		AE1FCBB71828DBB9005D5E10 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1FCBB21828DBB9005D5E10 /* right_arrow@2x.png */; };
 		AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD3F182899D900E8E94C /* HelpViewController.m */; };
 		AE29CD4618289DE800E8E94C /* NewReportLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */; };
-		AE29CD4918289DFC00E8E94C /* NewReportRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */; };
 		AE2CDA921843354F00226CDD /* MyGooGuuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */; };
 		AE2CDA951843364100226CDD /* MyGooGuuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2CDA941843364100226CDD /* MyGooGuuCell.m */; };
 		AE2CDA98184337DF00226CDD /* MyGooGuuIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2CDA97184337DF00226CDD /* MyGooGuuIndicator.m */; };
@@ -45,6 +44,7 @@
 		AE38981C182C8A870059A319 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38981B182C8A870059A319 /* libCorePlot-CocoaTouch.a */; };
 		AE38986F182C8EFE0059A319 /* ComContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38986E182C8EFE0059A319 /* ComContainerViewController.m */; };
 		AE389872182C93110059A319 /* ComContainerIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE389871182C93110059A319 /* ComContainerIndicator.m */; };
+		AE3DE1BC1844775900F0FE64 /* NewReportRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3DE1BB1844775900F0FE64 /* NewReportRightListViewController.m */; };
 		AE3E70FB18334FA100A624AD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E70F918334FA100A624AD /* Default.png */; };
 		AE3E70FC18334FA100A624AD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E70FA18334FA100A624AD /* Default@2x.png */; };
 		AE3FA9091829E53F004EC28C /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FA9071829E53F004EC28C /* CKCalendarView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -296,8 +296,6 @@
 		AE29CD3F182899D900E8E94C /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		AE29CD4418289DE800E8E94C /* NewReportLeftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportLeftListViewController.h; sourceTree = "<group>"; };
 		AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportLeftListViewController.m; sourceTree = "<group>"; };
-		AE29CD4718289DFC00E8E94C /* NewReportRightListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportRightListViewController.h; sourceTree = "<group>"; };
-		AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportRightListViewController.m; sourceTree = "<group>"; };
 		AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyGooGuuCell.xib; path = ../../NibFile/CellNib/MyGooGuuCell.xib; sourceTree = "<group>"; };
 		AE2CDA931843364100226CDD /* MyGooGuuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGooGuuCell.h; sourceTree = "<group>"; };
 		AE2CDA941843364100226CDD /* MyGooGuuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGooGuuCell.m; sourceTree = "<group>"; };
@@ -415,6 +413,8 @@
 		AE38986E182C8EFE0059A319 /* ComContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComContainerViewController.m; sourceTree = "<group>"; };
 		AE389870182C93110059A319 /* ComContainerIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComContainerIndicator.h; sourceTree = "<group>"; };
 		AE389871182C93110059A319 /* ComContainerIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComContainerIndicator.m; sourceTree = "<group>"; };
+		AE3DE1BA1844775900F0FE64 /* NewReportRightListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportRightListViewController.h; sourceTree = "<group>"; };
+		AE3DE1BB1844775900F0FE64 /* NewReportRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportRightListViewController.m; sourceTree = "<group>"; };
 		AE3E70F918334FA100A624AD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AE3E70FA18334FA100A624AD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AE3FA9071829E53F004EC28C /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
@@ -1586,10 +1586,10 @@
 				AEB3E34817F422D700A273E9 /* NewReportViewController.m */,
 				AE29CD4418289DE800E8E94C /* NewReportLeftListViewController.h */,
 				AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */,
+				AE3DE1BA1844775900F0FE64 /* NewReportRightListViewController.h */,
+				AE3DE1BB1844775900F0FE64 /* NewReportRightListViewController.m */,
 				AE31F82F182B3085001CD0D0 /* NewReportArticleViewController.h */,
 				AE31F830182B3085001CD0D0 /* NewReportArticleViewController.m */,
-				AE29CD4718289DFC00E8E94C /* NewReportRightListViewController.h */,
-				AE29CD4818289DFC00E8E94C /* NewReportRightListViewController.m */,
 			);
 			path = NewReport;
 			sourceTree = "<group>";
@@ -2053,10 +2053,10 @@
 				AEDFE96117F279BE0085CA0F /* MGSplitCornersView.m in Sources */,
 				AEDD0833181FAA900095BDA1 /* ValueModelCell.m in Sources */,
 				AE38986F182C8EFE0059A319 /* ComContainerViewController.m in Sources */,
-				AE29CD4918289DFC00E8E94C /* NewReportRightListViewController.m in Sources */,
 				AEDFE96217F279BE0085CA0F /* MGSplitDividerView.m in Sources */,
 				AEDFE96317F279BE0085CA0F /* MGSplitViewController.m in Sources */,
 				AEB3E32F17F40D4500A273E9 /* UIButton+BGColor.m in Sources */,
+				AE3DE1BC1844775900F0FE64 /* NewReportRightListViewController.m in Sources */,
 				AE2CDA98184337DF00226CDD /* MyGooGuuIndicator.m in Sources */,
 				AEB3E33017F40D4500A273E9 /* UILabel+VerticalAlign.m in Sources */,
 				AEB3E33117F40D4500A273E9 /* UINavigationController+Autorotate.m in Sources */,
@@ -2196,7 +2196,6 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0F321FC4-2E65-4C02-B3F5-86E13F2FC7F5";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -2242,7 +2241,6 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0F321FC4-2E65-4C02-B3F5-86E13F2FC7F5";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};

@@ -148,8 +148,8 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
         [self.priceLabel setHidden:YES];
     }
 
-    [tool addLabelToView:self.view withTitle:@"市场价:HK$" Tag:11 frame:CGRectMake(290,70,100,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
-    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%.2f",[self.netComInfo[@"MarketPrice"] floatValue]] Tag:11 frame:CGRectMake(410,70,120,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
+    [tool addLabelToView:self.view withTitle:@"市场价:HK$" Tag:11 frame:CGRectMake(540,70,100,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
+    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%.2f",[self.netComInfo[@"MarketPrice"] floatValue]] Tag:11 frame:CGRectMake(650,70,120,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
     
     [self addScatterChart];
     SAFE_RELEASE(tool);

@@ -59,16 +59,18 @@
     pageScroll.pagingEnabled = YES;
     pageScroll.delegate = self;
     [pageScroll setShowsHorizontalScrollIndicator:YES];
-    
 
     MyProLossListViewController *list1=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(0),@"end":@(5),@"count":@(6)}] autorelease];
     list1.view.frame=CGRectMake(0,0,1024,768);
+    list1.delegate=self;
     
     MyProLossListViewController *list2=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(6),@"end":@(11),@"count":@(6)}] autorelease];
     list2.view.frame=CGRectMake(1024,0,1024,768);
+    list2.delegate=self;
     
     MyProLossListViewController *list3=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(12),@"end":@(17),@"count":@(6)}] autorelease];
     list3.view.frame=CGRectMake(2048,0,1024,768);
+    list3.delegate=self;
     
     [pageScroll addSubview:list1.view];
     [pageScroll addSubview:list2.view];
@@ -77,11 +79,19 @@
     [self addChildViewController:list2];
     [self addChildViewController:list3];
 
+    self.proLossLists=[NSArray arrayWithObjects:list1,list2,list3, nil];
     [self.view addSubview:pageScroll];
     
 }
 
+#pragma mark -
+#pragma MyProLossList Methods Delegate
 
+-(void)theTableIsScroll:(CGPoint)contentOffset{
+    for(MyProLossListViewController *list in self.proLossLists){
+        list.proLossTable.contentOffset=contentOffset;
+    }
+}
 
 
 - (void)didReceiveMemoryWarning

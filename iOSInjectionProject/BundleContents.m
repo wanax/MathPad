@@ -18,7 +18,7 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModel/ComListController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MyProLossListViewController.m"
 
 
 @interface InjectionBundle2 : NSObject
@@ -27,8 +27,8 @@
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_ComListController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ComListController notify:4];
+    extern Class OBJC_CLASS_$_MyProLossListViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_MyProLossListViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

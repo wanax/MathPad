@@ -8,20 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewReportLeftListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,EGORefreshTableHeaderDelegate>{
+@interface NewReportLeftListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,EGORefreshTableHeaderDelegate>{
     
-    BOOL _reportReloading;
-    __strong UIActivityIndicatorView *_activityReportIndicatorView;
+    EGORefreshTableHeaderView *_refreshHeaderView;
+    BOOL _reloading;//主要是记录是否在刷新中
+    
+    __strong UIActivityIndicatorView *_activityIndicatorView;
     
 }
 
-@property (nonatomic,retain) EGORefreshTableHeaderView *reportRefreshHeaderView;
-
-@property (nonatomic,retain) UITableView *newReportTable;
-
-@property (nonatomic,retain) NSMutableArray *arrList;
-@property (nonatomic,retain) NSString *imageUrl;
-@property (nonatomic,retain) id companyInfo;
+@property (nonatomic,retain) NSArray *reports;
 @property (nonatomic,retain) NSString *articleId;
+
+@property (nonatomic,retain) UITableView *reportTable;
 
 @end

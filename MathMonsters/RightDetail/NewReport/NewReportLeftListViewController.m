@@ -12,6 +12,7 @@
 #import "SVPullToRefresh.h"
 #import "NewReportArticleViewController.h"
 #import "PageController.h"
+#import "NewComCell.h"
 
 @interface NewReportLeftListViewController ()
 
@@ -31,53 +32,64 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor=[UIColor blackColor];
-    [self initComponents];
-    [self addNewReport];
+	[self initComponents];
+    [self addReport];
 }
+
 
 -(void)initComponents{
     
-    UITableView *tempTab=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,568,665)] autorelease];
+    UITableView *tView=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,568,665)] autorelease];
+    tView.backgroundColor=[Utiles colorWithHexString:@"#2D180D"];
+    tView.showsVerticalScrollIndicator=NO;
+    tView.delegate=self;
+    tView.dataSource=self;
+    tView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.reportTable=tView;
+    [self.view addSubview:self.reportTable];
     
-    tempTab.backgroundColor=[Utiles colorWithHexString:@"#2D180D"];
-    tempTab.delegate=self;
-    tempTab.dataSource=self;
-    tempTab.separatorStyle=UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:tempTab];
-    self.newReportTable=tempTab;
+    [self.reportTable addInfiniteScrollingWithActionHandler:^{
+        [self addReport];
+    }];
+    if(_refreshHeaderView == nil)
+    {
+        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.reportTable.bounds.size.height, self.reportTable.frame.size.width, self.reportTable.bounds.size.height)];
+        
+        view.delegate = self;
+        [self.reportTable addSubview:view];
+        _refreshHeaderView = view;
+        [view release];
+    }
+    [_refreshHeaderView refreshLastUpdatedDate];
     
-    [self addTableAction];
 }
 
-
-
 #pragma mark -
-#pragma mark Net Get JSON Data
+#pragma Net Get JSON Data
 
--(void)addNewReport{
-    [MBProgressHUD showHUDAddedTo:self.newReportTable animated:YES];
+-(void)addReport{
+    [MBProgressHUD showHUDAddedTo:self.reportTable animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];
     [Utiles getNetInfoWithPath:@"NewestAnalyseReportURL" andParams:params besidesBlock:^(id resObj){
-        [MBProgressHUD hideHUDForView:self.newReportTable animated:YES];
+        
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
-        for(id obj in self.arrList){
+        for(id obj in self.reports){
             [temp addObject:obj];
         }
         for (id data in [resObj objectForKey:@"data"]) {
             [temp addObject:data];
         }
-        self.arrList=temp;
-        [self.newReportTable reloadData];
-        self.articleId=[[self.arrList lastObject] objectForKey:@"articleid"];
-        [self.reportRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.newReportTable];
+        self.reports=temp;
+        [self.reportTable reloadData];
+        self.articleId=[[self.reports lastObject] objectForKey:@"articleid"];
+        [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.reportTable];
+        [self.reportTable.infiniteScrollingView stopAnimating];
+        [MBProgressHUD hideHUDForView: self.reportTable animated:YES];
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){
         [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
     }];
     
 }
-
 
 #pragma mark -
 #pragma Table DataSource
@@ -86,7 +98,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.arrList count];
+    return [self.reports count];
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -102,8 +114,8 @@
         cell = [array objectAtIndex:0];
     }
     
-    if(self.arrList){
-        id model=[self.arrList objectAtIndex:indexPath.row];
+    if(self.reports){
+        id model=[self.reports objectAtIndex:indexPath.row];
         
         [cell.comIconImg setImageWithURL:[NSURL URLWithString:[model objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defauleIcon"]];
         [cell.comTitleLabel setText:[model objectForKey:@"companyname"]];
@@ -131,76 +143,71 @@
     
 }
 
+
+#pragma mark -
+#pragma mark Table Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark -
+#pragma mark General Methods
+
 -(void)cellBtClicked:(UIButton *)bt{
     
     int row=bt.tag;
     NewReportArticleViewController *reportArticleVC=[[[NewReportArticleViewController alloc] init] autorelease];
     UINavigationController *reportNav=[[[UINavigationController alloc] initWithRootViewController:reportArticleVC] autorelease];
-    reportArticleVC.comInfo=[self.arrList objectAtIndex:row];
+    reportArticleVC.comInfo=[self.reports objectAtIndex:row];
     [self presentViewController:reportNav animated:YES completion:nil];
     
 }
-
--(void)addTableAction{
-    [self.newReportTable addInfiniteScrollingWithActionHandler:^{
-        [self addNewReport];
-    }];
-    
-    if(self.reportRefreshHeaderView == nil)
-    {
-        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.newReportTable.bounds.size.height, self.newReportTable.frame.size.width, self.newReportTable.bounds.size.height)];
-        view.delegate = self;
-        [self.newReportTable addSubview:view];
-        self.reportRefreshHeaderView = view;
-        SAFE_RELEASE(view);
-    }
-    [self.reportRefreshHeaderView refreshLastUpdatedDate];
-}
-
-
-#pragma mark -
-#pragma Table Delegate Methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"here");
-}
-
-
-
 
 #pragma mark -
 #pragma mark - Table Header View Methods
 
 
-- (void)doneLoadingReportTableViewData{
-    [self addNewReport];
-    _reportReloading = NO;
+- (void)doneLoadingTableViewData{
+    
+    [self addReport];
+    _reloading = NO;
+    
 }
+
 
 #pragma mark –
 #pragma mark UIScrollViewDelegate Methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.reportRefreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+    [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self.reportRefreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+    
+    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
     
 }
 
 #pragma mark –
 #pragma mark EGORefreshTableHeaderDelegate Methods
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
-   
-    [_activityReportIndicatorView startAnimating];
-    [self performSelector:@selector(doneLoadingReportTableViewData) withObject:nil afterDelay:1.0];
-  
+    
+    [_activityIndicatorView startAnimating];
+    [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
+    
 }
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
-    return _reportReloading;
+    
+    
+    return _reloading; // should return if data source model is reloading
+    
 }
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
     
-    return [NSDate date];
+    return [NSDate date]; // should return date data source was last changed
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -100,6 +100,7 @@
             }
             [MBProgressHUD hideHUDForView:self.comListTable animated:YES];
             [self.comListRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.comListTable];
+            [self.comListTable.infiniteScrollingView stopAnimating];
         } failure:^(AFHTTPRequestOperation *operation,NSError *error){
             [MBProgressHUD hideHUDForView:self.comListTable animated:YES];
             [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];

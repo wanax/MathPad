@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyProLossListViewController.h"
 
-@interface MyProLossContainerViewController : UIViewController<UIScrollViewDelegate>
+@interface MyProLossContainerViewController : UIViewController<UIScrollViewDelegate,MyProLossListDelegate>
 
 @property (nonatomic,retain) id comInfo;
+@property (nonatomic,retain) NSArray *proLossLists;
 
 @end

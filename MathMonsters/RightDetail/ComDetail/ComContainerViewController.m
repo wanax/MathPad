@@ -72,7 +72,7 @@
     self.myProLossContainer.title=@"我的损益表";
     self.myProLossContainer.comInfo=self.comInfo;
     
-    NSArray *viewControllers = [NSArray arrayWithObjects:self.dahonContainer, self.finContainer,self.valueContainer,self.myProLossContainer, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:self.valueContainer, self.finContainer,self.dahonContainer,self.myProLossContainer, nil];
     MHTabBarController *h=[[[MHTabBarController alloc] init] autorelease];
 	h.viewControllers = viewControllers;
     h.view.frame=CGRectMake(0,100,750,1000);

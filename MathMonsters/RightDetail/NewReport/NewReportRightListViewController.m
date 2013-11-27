@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SVPullToRefresh.h"
 #import "NewComCell.h"
+#import "ComContainerViewController.h"
 
 @interface NewReportRightListViewController ()
 
@@ -21,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        doubleLoad=NO;
     }
     return self;
 }
@@ -29,54 +30,69 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor=[UIColor blackColor];
-    [self initComponents];
+	[self initComponents];
+    [MBProgressHUD showHUDAddedTo:self.comIconTable animated:YES];
     [self addComIcon];
 }
 
+
 -(void)initComponents{
- 
-    UITableView *tView=[[UITableView alloc] initWithFrame:CGRectMake(0,0,350,665)];
+    
+    UITableView *tView=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,350,655)] autorelease];
     tView.backgroundColor=[Utiles colorWithHexString:@"#2D180D"];
     tView.showsVerticalScrollIndicator=NO;
     tView.delegate=self;
     tView.dataSource=self;
     tView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    self.newComTable=tView;
-    [self.view addSubview:self.newComTable];
-    [self addTableAction];
-    SAFE_RELEASE(tView);
+    self.comIconTable=tView;
+    [self.view addSubview:self.comIconTable];
+    
+    [self.comIconTable addInfiniteScrollingWithActionHandler:^{
+        [self addComIcon];
+    }];
+    if(_refreshHeaderView == nil)
+    {
+        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.comIconTable.bounds.size.height, self.comIconTable.frame.size.width, self.comIconTable.bounds.size.height)];
+        
+        view.delegate = self;
+        [self.comIconTable addSubview:view];
+        _refreshHeaderView = view;
+        [view release];
+    }
+    [_refreshHeaderView refreshLastUpdatedDate];
+    
 }
 
-
-
 #pragma mark -
-#pragma mark Net Get JSON Data
-
+#pragma Net Get JSON Data
 
 -(void)addComIcon{
-    [MBProgressHUD showHUDAddedTo:self.newComTable animated:YES];
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];
+    
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];;
     [Utiles getNetInfoWithPath:@"NewestAnalyseReportURL" andParams:params besidesBlock:^(id resObj){
-        [MBProgressHUD hideHUDForView:self.newComTable animated:YES];
+        
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
-        for(id obj in self.iconArr){
+        for(id obj in self.comIcons){
             [temp addObject:obj];
         }
         for (id data in [resObj objectForKey:@"data"]) {
             [temp addObject:data];
         }
-        self.iconArr=temp;
-        [self.newComTable reloadData];
-        self.articleId=[[self.iconArr lastObject] objectForKey:@"articleid"];
-        [self.comRefreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.newComTable];
+        self.comIcons=temp;
+        [self.comIconTable reloadData];
+        self.articleId=[[self.comIcons lastObject] objectForKey:@"articleid"];
+        [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.comIconTable];
+        [self.comIconTable.infiniteScrollingView stopAnimating];
+        if(!doubleLoad){
+            [self addComIcon];
+            doubleLoad=YES;
+        }
+        [MBProgressHUD hideHUDForView:self.comIconTable animated:YES];
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){
         [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
     }];
     
 }
-
 
 #pragma mark -
 #pragma Table DataSource
@@ -85,7 +101,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.iconArr count];
+    return [self.comIcons count]/4;
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -100,79 +116,101 @@
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"NewComCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     }
-    if(self.iconArr){
-        id model=[self.iconArr objectAtIndex:indexPath.row];
+    if(self.comIcons){
         
-        [cell.comIconImg setImageWithURL:[NSURL URLWithString:[model objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defauleIcon"]];
-        [cell.comIconImg2 setImageWithURL:[NSURL URLWithString:[model objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defauleIcon"]];
-        [cell.comIconImg3 setImageWithURL:[NSURL URLWithString:[model objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defauleIcon"]];
-        [cell.comIconImg4 setImageWithURL:[NSURL URLWithString:[model objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defauleIcon"]];
+        id model=[self.comIcons objectAtIndex:(indexPath.row*4)];
+        id model2=[self.comIcons objectAtIndex:(indexPath.row*4)+1];
+        id model3=[self.comIcons objectAtIndex:(indexPath.row*4)+2];
+        id model4=[self.comIcons objectAtIndex:(indexPath.row*4)+3];
+        
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        
+        [self setBtBackImg:[NSArray arrayWithObjects:cell.comIconBt,cell.comIconBt2,cell.comIconBt3,cell.comIconBt4, nil]
+                    models:[NSArray arrayWithObjects:model,model2,model3,model4, nil]
+                    index:indexPath.row
+                   manager:manager];
+
     }
     return cell;
     
 }
 
--(void)addTableAction{
-    
-    [self.newComTable addInfiniteScrollingWithActionHandler:^{
-        //[self addNewReport];
-    }];
-    
-    if(self.comRefreshHeaderView == nil)
-    {
-        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.newComTable.bounds.size.height, self.newComTable.frame.size.width, self.newComTable.bounds.size.height)];
-        view.delegate = self;
-        [self.newComTable addSubview:view];
-        self.comRefreshHeaderView = view;
-        SAFE_RELEASE(view);
+-(void)setBtBackImg:(NSArray *)bts models:(NSArray *)models index:(int)index manager:(SDWebImageManager *)manager{
+    for(int i=0;i<[bts count];i++){
+        [manager downloadWithURL:[NSURL URLWithString:[models[i] objectForKey:@"comanylogourl"]]
+                         options:0
+                        progress:^(NSUInteger receivedSize, long long expectedSize){}
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished){
+                           if (image){
+                               [bts[i] setBackgroundImage:image forState:UIControlStateNormal];
+                           }
+                       }];
+        ((UIButton *)bts[i]).tag=index*4+i;
+        [(UIButton *)bts[i] addTarget:self action:@selector(comIconBtClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
-    [self.comRefreshHeaderView refreshLastUpdatedDate];
+}
+
+-(void)comIconBtClicked:(UIButton *)bt{
+    
+    ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
+    UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
+    comContainerVC.comInfo=[self.comIcons objectAtIndex:bt.tag];
+    [self presentViewController:comNav animated:YES completion:nil];
+
 }
 
 
 #pragma mark -
-#pragma Table Delegate Methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+#pragma mark Table Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
 
 
 #pragma mark -
 #pragma mark - Table Header View Methods
 
-- (void)doneLoadingComTableViewData{
+
+- (void)doneLoadingTableViewData{
+    
     [self addComIcon];
-    _comReloading = NO;
+    _reloading = NO;
+    
 }
 
 
 #pragma mark –
 #pragma mark UIScrollViewDelegate Methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.comRefreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+    [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self.comRefreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+    
+    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
     
 }
 
 #pragma mark –
 #pragma mark EGORefreshTableHeaderDelegate Methods
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
-
-    [_activityComIndicatorView startAnimating];
-    [self performSelector:@selector(doneLoadingComTableViewData) withObject:nil afterDelay:1.0];
-
+    
+    [_activityIndicatorView startAnimating];
+    [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:1.0];
+    
 }
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
-    return _comReloading;
+    
+    
+    return _reloading; // should return if data source model is reloading
+    
 }
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
     
-    return [NSDate date];
+    return [NSDate date]; // should return date data source was last changed
     
 }
 

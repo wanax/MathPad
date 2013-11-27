@@ -62,6 +62,7 @@
 
 -(void)getValueViewData:(NSString *)articleID code:(NSString *)stockCode{
     
+    [MBProgressHUD showHUDAddedTo:self.ggViewTable animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:articleID,@"articleid",stockCode,@"stockcode", nil];
     [Utiles getNetInfoWithPath:@"GooGuuView" andParams:params besidesBlock:^(id obj) {
         
@@ -77,6 +78,7 @@
         [self.ggViewTable reloadData];
         [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.ggViewTable];
         [self.ggViewTable.infiniteScrollingView stopAnimating];
+        [MBProgressHUD hideHUDForView:self.ggViewTable animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];

@@ -17,31 +17,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="76"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cK-6h-vEH">
-                        <rect key="frame" x="14" y="15" width="67" height="45"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhl-DN-Mmr">
+                        <rect key="frame" x="11" y="15" width="67" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKw-jY-9pL">
-                        <rect key="frame" x="95" y="15" width="67" height="45"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ob-z9-2GR">
+                        <rect key="frame" x="98" y="15" width="67" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2m-ZD-beC">
-                        <rect key="frame" x="176" y="15" width="67" height="45"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKd-5H-Zb9">
+                        <rect key="frame" x="184" y="15" width="67" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-4c-SBH">
-                        <rect key="frame" x="258" y="15" width="67" height="45"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VN-tI-VfJ">
+                        <rect key="frame" x="271" y="15" width="67" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="comIconBt" destination="yhl-DN-Mmr" id="mdJ-T9-Q86"/>
+                <outlet property="comIconBt2" destination="0ob-z9-2GR" id="4E9-AC-Y8f"/>
+                <outlet property="comIconBt3" destination="vKd-5H-Zb9" id="TGn-eU-gPO"/>
+                <outlet property="comIconBt4" destination="9VN-tI-VfJ" id="fH1-5I-Ggp"/>
                 <outlet property="comIconImg" destination="0cK-6h-vEH" id="tgM-sb-icX"/>
                 <outlet property="comIconImg2" destination="qKw-jY-9pL" id="cdN-o5-2rh"/>
                 <outlet property="comIconImg3" destination="z2m-ZD-beC" id="hGV-jB-rxW"/>
                 <outlet property="comIconImg4" destination="zX8-4c-SBH" id="2HA-ka-kR9"/>
             </connections>
         </tableViewCell>
+        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0cK-6h-vEH">
+            <rect key="frame" x="0.0" y="0.0" width="67" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
+        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qKw-jY-9pL">
+            <rect key="frame" x="0.0" y="0.0" width="67" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
+        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="z2m-ZD-beC">
+            <rect key="frame" x="0.0" y="0.0" width="67" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
+        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zX8-4c-SBH">
+            <rect key="frame" x="0.0" y="0.0" width="67" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
     </objects>
     <resources>
         <image name="newReportCellBack.png" width="574" height="77"/>

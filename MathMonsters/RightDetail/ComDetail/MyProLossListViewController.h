@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyProLossListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@protocol MyProLossListDelegate <NSObject>
+
+@optional
+-(void)theTableIsScroll:(CGPoint)contentOffset;
+
+@end
+
+@interface MyProLossListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,retain) UITableView *proLossTable;
 
@@ -17,6 +24,8 @@
 @property (nonatomic,retain) NSDictionary *rangeDic;
 @property (nonatomic,retain) NSArray *yearToValueDicArr;
 @property (nonatomic,retain) NSArray *labelArr;
+
+@property (nonatomic,assign) id<MyProLossListDelegate> delegate;
 
 - (id)initWithClassArr:(NSArray *)classArr andRangDic:(NSDictionary *)rangDic;
 

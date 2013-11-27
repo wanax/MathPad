@@ -15,4 +15,9 @@
 @property (nonatomic,retain) IBOutlet UIImageView *comIconImg3;
 @property (nonatomic,retain) IBOutlet UIImageView *comIconImg4;
 
+@property (nonatomic,retain) IBOutlet UIButton *comIconBt;
+@property (nonatomic,retain) IBOutlet UIButton *comIconBt2;
+@property (nonatomic,retain) IBOutlet UIButton *comIconBt3;
+@property (nonatomic,retain) IBOutlet UIButton *comIconBt4;
+
 @end

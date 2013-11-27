@@ -58,7 +58,14 @@
     
     UIView *tv=[[[UIView alloc]initWithFrame:pieFrame] autorelease];
     self.pieContainer = tv;
-    PieChartView *pv=[[[PieChartView alloc] initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray] autorelease];
+    NSMutableArray *values=[[[NSMutableArray alloc] init] autorelease];
+    for(NSNumber *number in self.valueArray){
+        [values addObject:[NSNumber numberWithLongLong:[number longLongValue]>>4]];
+    }
+
+    PieChartView *pv=[[[PieChartView alloc] initWithFrame:self.pieContainer.bounds
+                                                withValue:values
+                                                withColor:self.colorArray] autorelease];
     self.pieChartView = pv;
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];

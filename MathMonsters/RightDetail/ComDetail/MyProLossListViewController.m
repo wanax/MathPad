@@ -81,6 +81,13 @@
 }
 
 #pragma mark -
+#pragma Scroller Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.delegate theTableIsScroll:scrollView.contentOffset];
+}
+
+#pragma mark -
 #pragma mark Table Data Source
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -89,6 +96,15 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
+}
+
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
+    MyProLossCell *c=(MyProLossCell *)cell;
+    if (indexPath.row%2==0) {
+        c.backgroundColor=[UIColor belizeHoleColor];
+    } else {
+        c.backgroundColor=[UIColor whiteColor];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
