@@ -324,6 +324,9 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
                 NSString *chartStr=[tempChartData JSONString];
                 chartStr=[chartStr stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
                 [Utiles getObjectDataFromJsFun:self.webView funName: @"chartCalu" byData:chartStr shouldTrans:NO];
+                
+               // NSMutableArray *ite
+                
             }
             if(self.wantSavedType==DiscountSaved){
                 [self.discountBt sendActionsForControlEvents: UIControlEventTouchUpInside];

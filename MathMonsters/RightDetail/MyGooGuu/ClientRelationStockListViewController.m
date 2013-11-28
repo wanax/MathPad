@@ -83,7 +83,7 @@
                                 [Utiles getUserToken], @"token",@"googuu",@"from",
                                 nil];
         NSString *reqUrl=@"";
-        if (self.clientType==ClientConcerned) {
+        if (self.clientType==MyConcernedType) {
             reqUrl=@"AttentionData";
         } else {
             reqUrl=@"SavedData";
@@ -204,6 +204,7 @@
     ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
     UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
     comContainerVC.comInfo=[self.comList objectAtIndex:indexPath.row];
+    comContainerVC.sourceType=self.clientType;
     [self presentViewController:comNav animated:YES completion:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -42,9 +42,20 @@
     [tagImg setImage:[UIImage imageNamed:@"littleTag"]];
     [self.view addSubview:tagImg];
     
-    [self addButtons:@"全部" fun:@selector(tagBtClicked:) frame:CGRectMake(130,140,80,30)];
-    [self addButtons:@"亚马逊中国" fun:@selector(tagBtClicked:) frame:CGRectMake(240,140,80,30)];
-    [self addButtons:@"易迅网" fun:@selector(tagBtClicked:) frame:CGRectMake(353,140,80,30)];
+    UISearchBar *bar=[[[UISearchBar alloc] initWithFrame:CGRectMake(700,30,200,44)] autorelease];
+    bar.delegate=self;
+    bar.backgroundColor=[UIColor clearColor];
+    bar.barTintColor=[UIColor clearColor];
+    [self.view addSubview:bar];
+    
+    [self addButtons:@"全部" fun:@selector(tagBtClicked:) frame:CGRectMake(130,140,70,30)];
+    [self addButtons:@"中国" fun:@selector(tagBtClicked:) frame:CGRectMake(220,140,70,30)];
+    [self addButtons:@"互联网" fun:@selector(tagBtClicked:) frame:CGRectMake(300,140,70,30)];
+    [self addButtons:@"经济" fun:@selector(tagBtClicked:) frame:CGRectMake(380,140,70,30)];
+    [self addButtons:@"投资" fun:@selector(tagBtClicked:) frame:CGRectMake(460,140,70,30)];
+    [self addButtons:@"营销" fun:@selector(tagBtClicked:) frame:CGRectMake(540,140,70,30)];
+    [self addButtons:@"美国" fun:@selector(tagBtClicked:) frame:CGRectMake(620,140,70,30)];
+    [self addButtons:@"房地产" fun:@selector(tagBtClicked:) frame:CGRectMake(700,140,70,30)];
     
     FinancePicViewController *picVC=[[[FinancePicViewController alloc] init] autorelease];
     [picVC.view setFrame:CGRectMake(30,170,725,845)];
@@ -52,6 +63,18 @@
     [self addChildViewController:picVC];
     self.delegate=picVC;
     
+}
+
+#pragma mark -
+#pragma Search Bar Methods Delegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.delegate keyWordChanged:searchBar.text];
+    [self.searchBar resignFirstResponder];
 }
 
 #pragma mark -
@@ -82,7 +105,7 @@
 -(void)addButtons:(NSString *)title fun:(SEL)fun frame:(CGRect)rect{
     
     FUIButton *bt=[FUIButton buttonWithType:UIButtonTypeCustom];
-    [bt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:12.0]];
+    [bt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:14.0]];
     [bt setTitle:title forState:UIControlStateNormal];
     [bt setFrame:rect];
     bt.buttonColor = [Utiles colorWithHexString:@"#E1B58D"];

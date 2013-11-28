@@ -15,7 +15,8 @@
     
 }
 
-@property MyGooGuuClientRelation clientType;
+@property BrowseSourceType clientType;
+
 @property (nonatomic,retain) NSArray *comList;
 
 @property (nonatomic,retain) EGORefreshTableHeaderView *comListRefreshHeaderView;

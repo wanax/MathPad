@@ -49,6 +49,7 @@
     ValueModelChartViewController *tRight=[[[ValueModelChartViewController alloc] init] autorelease];
     tRight.view.frame=CGRectMake(300,0,600,1100);
     tRight.comInfo=self.comInfo;
+    tRight.sourceType=self.sourceType;
     self.leftListVC.delegate=tRight;
     self.delegate=tRight;
     self.rightListVC=tRight;

@@ -36,11 +36,11 @@
 -(void)initComponents{
     
     ClientRelationStockListViewController *t=[[[ClientRelationStockListViewController alloc] init] autorelease];
-    t.clientType=ClientConcerned;
+    t.clientType=MyConcernedType;
     self.concernedListViewController=t;
     
     ClientRelationStockListViewController *tt=[[[ClientRelationStockListViewController alloc] init] autorelease];
-    tt.clientType=ClientSaved;
+    tt.clientType=MySavedType;
     self.savedListViewControler=tt;
     
     ClientCalendarViewController *c=[[[ClientCalendarViewController alloc] init] autorelease];

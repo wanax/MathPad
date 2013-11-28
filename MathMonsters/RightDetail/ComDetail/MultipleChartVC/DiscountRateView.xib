@@ -12,7 +12,7 @@
                 <outlet property="defaultMarketBetaLabel" destination="388" id="1325"/>
                 <outlet property="defaultMarketPremiumLabel" destination="393" id="1326"/>
                 <outlet property="defaultUnRiskRateLabel" destination="383" id="1327"/>
-                <outlet property="ggPriceLabel" destination="34" id="685"/>
+                <outlet property="ggPriceLabel" destination="j4I-g0-Rba" id="9aO-xj-gjp"/>
                 <outlet property="marketBetaLabel" destination="422" id="689"/>
                 <outlet property="marketBetaSlider" destination="578" id="692"/>
                 <outlet property="marketPremiumLabel" destination="427" id="690"/>
@@ -20,6 +20,7 @@
                 <outlet property="marketPremiumMinLabel" destination="1441" id="1489"/>
                 <outlet property="marketPremiumSlider" destination="582" id="693"/>
                 <outlet property="marketPriceLabel" destination="170" id="684"/>
+                <outlet property="myGGPriceLabel" destination="34" id="eJZ-Ln-VpH"/>
                 <outlet property="myRateLabel" destination="260" id="687"/>
                 <outlet property="resetBt" destination="39" id="681"/>
                 <outlet property="saveBt" destination="45" id="682"/>
@@ -35,100 +36,109 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="911">
-                    <rect key="frame" x="13" y="106" width="994" height="650"/>
+                    <rect key="frame" x="13" y="107" width="994" height="650"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1441">
-                    <rect key="frame" x="559" y="522" width="30" height="30"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4I-g0-Rba">
+                    <rect key="frame" x="796" y="123" width="140" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Oss-LH-udP"/>
+                        <constraint firstAttribute="width" constant="140" id="0dY-DV-0Lt"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
-                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="22"/>
+                    <color key="textColor" red="0.88235294119999996" green="0.5568627451" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1450">
-                    <rect key="frame" x="929" y="522" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
-                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1417">
-                    <rect key="frame" x="559" y="672" width="30" height="30"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="估股价" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEX-mp-7nZ">
+                    <rect key="frame" x="587" y="123" width="80" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="mxU-oA-ZfN"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
-                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1427">
-                    <rect key="frame" x="940" y="672" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Gwv-4W-rAd"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
-                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="7%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1400">
-                    <rect key="frame" x="929" y="388" width="30" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="xWD-30-My7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
-                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountLabelBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="1302">
-                    <rect key="frame" x="31" y="618" width="240" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountLabelBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="1291">
-                    <rect key="frame" x="31" y="468" width="240" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountLabelBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="1236">
-                    <rect key="frame" x="31" y="324" width="240" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="13" y="27" width="120" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="dLz-qK-5jw"/>
+                        <constraint firstAttribute="height" constant="60" id="Way-St-5ad"/>
+                        <constraint firstAttribute="width" constant="80" id="tSM-cp-LSb"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="市场价:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                    <rect key="frame" x="157" y="27" width="80" height="60"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1441">
+                    <rect key="frame" x="390" y="561" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1450">
+                    <rect key="frame" x="930" y="561" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1417">
+                    <rect key="frame" x="390" y="684" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1427">
+                    <rect key="frame" x="930" y="684" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="7%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1400">
+                    <rect key="frame" x="930" y="437" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="CVG-lc-ZyZ"/>
+                        <constraint firstAttribute="width" constant="40" id="poU-O6-wPT"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountLabelBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="1302">
+                    <rect key="frame" x="26" y="630" width="240" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountLabelBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="1291">
+                    <rect key="frame" x="26" y="508" width="240" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="discountLabelBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="1236">
+                    <rect key="frame" x="26" y="383" width="240" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                    <rect key="frame" x="121" y="24" width="600" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="23"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="市场价:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                    <rect key="frame" x="587" y="212" width="80" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="ZGF-BK-ihE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="我的估值:HK$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29">
-                    <rect key="frame" x="336" y="27" width="120" height="60"/>
+                    <rect key="frame" x="587" y="302" width="140" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="FEc-nz-NVH"/>
+                        <constraint firstAttribute="width" constant="140" id="sjR-b9-A4o"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34">
-                    <rect key="frame" x="459" y="27" width="140" height="60"/>
+                    <rect key="frame" x="796" y="302" width="140" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="22"/>
                     <color key="textColor" red="0.88235294119999996" green="0.5568627451" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,7 +149,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.96470588239999999" green="0.94901960780000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="yye-wM-Gex"/>
+                        <constraint firstAttribute="width" constant="100" id="701-RD-XJv"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
                     <state key="normal" title="复位">
@@ -157,6 +167,9 @@
                     <rect key="frame" x="894" y="34" width="100" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.96470588239999999" green="0.94901960780000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="t8B-Mh-73L"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
                     <state key="normal" title="保存">
                         <color key="titleColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,156 +183,150 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="170">
-                    <rect key="frame" x="240" y="27" width="80" height="60"/>
+                    <rect key="frame" x="796" y="212" width="140" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="80" id="V5C-nh-cSx"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="22"/>
                     <color key="textColor" red="0.88235294119999996" green="0.5568627451" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="建议折现率：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="213">
-                    <rect key="frame" x="37" y="179" width="120" height="50"/>
+                    <rect key="frame" x="37" y="179" width="150" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="3qw-aY-Yjt"/>
+                        <constraint firstAttribute="width" constant="150" id="a0V-7q-fsh"/>
+                        <constraint firstAttribute="height" constant="50" id="nag-jt-U3S"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="22"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="238">
-                    <rect key="frame" x="157" y="179" width="62" height="50"/>
+                    <rect key="frame" x="240" y="179" width="80" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="62" id="skX-Is-mVM"/>
+                        <constraint firstAttribute="width" constant="80" id="ufe-sN-6l3"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="21"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="我的折现率:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="252">
-                    <rect key="frame" x="559" y="179" width="120" height="50"/>
+                    <rect key="frame" x="37" y="258" width="150" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="Nd6-UQ-lYW"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="22"/>
                     <color key="textColor" red="1" green="0.44705882349999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="260">
-                    <rect key="frame" x="677" y="179" width="62" height="50"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="260">
+                    <rect key="frame" x="240" y="258" width="80" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="62" id="jut-iV-Vpw"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="21"/>
                     <color key="textColor" red="1" green="0.44705882349999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="无风险利率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="383">
-                    <rect key="frame" x="33" y="329" width="220" height="50"/>
+                    <rect key="frame" x="31" y="388" width="220" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="VPS-lb-wsK"/>
-                        <constraint firstAttribute="width" constant="220" id="y65-Ev-Mhm"/>
+                        <constraint firstAttribute="height" constant="50" id="GeB-YA-tXg"/>
+                        <constraint firstAttribute="width" constant="220" id="cFi-Af-nKg"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="21"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="市场贝塔值" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="388">
-                    <rect key="frame" x="33" y="473" width="220" height="50"/>
+                    <rect key="frame" x="31" y="513" width="220" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="9Ox-eq-uqT"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="市场溢价" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="393">
-                    <rect key="frame" x="33" y="623" width="220" height="50"/>
+                    <rect key="frame" x="31" y="635" width="220" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="20"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="417">
-                    <rect key="frame" x="287" y="341" width="45" height="25"/>
+                    <rect key="frame" x="287" y="395" width="55" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="6DL-dm-EvF"/>
-                        <constraint firstAttribute="width" constant="45" id="mtD-Gm-MhF"/>
+                        <constraint firstAttribute="height" constant="35" id="ebP-xW-hDR"/>
+                        <constraint firstAttribute="width" constant="55" id="qc1-2a-MWP"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="422">
-                    <rect key="frame" x="287" y="485" width="45" height="25"/>
+                    <rect key="frame" x="287" y="520" width="55" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="Hl8-on-10z"/>
+                        <constraint firstAttribute="height" constant="35" id="88E-ab-rGb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="427">
-                    <rect key="frame" x="287" y="635" width="45" height="25"/>
+                    <rect key="frame" x="287" y="643" width="55" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="zAR-hn-ABW"/>
+                        <constraint firstAttribute="height" constant="35" id="hr7-hC-tAx"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="16"/>
                     <color key="textColor" red="0.61960784310000006" green="0.29411764709999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="454">
-                    <rect key="frame" x="557" y="337" width="404" height="34"/>
+                    <rect key="frame" x="388" y="396" width="584" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="400" id="IDi-1g-azy"/>
+                        <constraint firstAttribute="height" constant="33" id="g64-g8-Qk7"/>
                     </constraints>
                     <connections>
                         <action selector="sliderChanged:" destination="-1" eventType="valueChanged" id="736"/>
                     </connections>
                 </slider>
                 <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-2" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="578">
-                    <rect key="frame" x="557" y="481" width="404" height="34"/>
+                    <rect key="frame" x="388" y="520" width="584" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="OTv-0J-PBw"/>
+                    </constraints>
                     <connections>
                         <action selector="sliderChanged:" destination="-1" eventType="valueChanged" id="737"/>
                     </connections>
                 </slider>
                 <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="582">
-                    <rect key="frame" x="557" y="631" width="404" height="34"/>
+                    <rect key="frame" x="388" y="643" width="584" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="g3c-f8-TKH"/>
+                    </constraints>
                     <connections>
                         <action selector="sliderChanged:" destination="-1" eventType="valueChanged" id="738"/>
                     </connections>
                 </slider>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1352">
-                    <rect key="frame" x="559" y="388" width="30" height="30"/>
+                    <rect key="frame" x="390" y="437" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="gzr-Y1-Fed"/>
-                        <constraint firstAttribute="height" constant="30" id="vAD-vN-vxg"/>
+                        <constraint firstAttribute="width" constant="40" id="a4T-Po-dIi"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X5-Zq-FrJ">
-                    <rect key="frame" x="677" y="34" width="100" height="40"/>
+                    <rect key="frame" x="13" y="11" width="100" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.96470588239999999" green="0.94901960780000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="MoI-FR-VX7"/>
-                        <constraint firstAttribute="height" constant="40" id="fkl-f5-mU1"/>
+                        <constraint firstAttribute="height" constant="40" id="8ab-gl-jZq"/>
+                        <constraint firstAttribute="width" constant="100" id="k7d-vG-va1"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
                     <state key="normal" title="返回">
@@ -336,103 +343,115 @@
             </subviews>
             <color key="backgroundColor" red="0.96470588239999999" green="0.94509803920000002" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="1352" firstAttribute="leading" secondItem="454" secondAttribute="leading" id="0Ux-FO-xwB"/>
-                <constraint firstItem="1302" firstAttribute="top" secondItem="1291" secondAttribute="bottom" constant="90" id="0kX-fU-yDX"/>
-                <constraint firstItem="45" firstAttribute="bottom" secondItem="39" secondAttribute="bottom" id="29z-SI-vS4"/>
-                <constraint firstItem="582" firstAttribute="leading" secondItem="1441" secondAttribute="leading" id="2Fi-ul-GR1"/>
-                <constraint firstAttribute="bottom" secondItem="911" secondAttribute="bottom" constant="12" id="2gI-qC-MO7"/>
-                <constraint firstItem="19" firstAttribute="top" secondItem="170" secondAttribute="top" id="3I2-um-7xx"/>
-                <constraint firstItem="393" firstAttribute="trailing" secondItem="388" secondAttribute="trailing" id="6UT-dh-Ydo"/>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="911" secondAttribute="leading" id="7UV-c4-rdI"/>
-                <constraint firstItem="1400" firstAttribute="baseline" secondItem="1352" secondAttribute="baseline" id="7eo-at-LbC"/>
-                <constraint firstItem="1236" firstAttribute="top" secondItem="213" secondAttribute="bottom" constant="95" id="7ih-c1-j4u"/>
-                <constraint firstItem="1291" firstAttribute="top" secondItem="1236" secondAttribute="bottom" constant="84" id="7vH-hp-H8i"/>
-                <constraint firstItem="1291" firstAttribute="leading" secondItem="1236" secondAttribute="leading" id="8OX-kM-3iD"/>
-                <constraint firstAttribute="trailing" secondItem="454" secondAttribute="trailing" constant="65" id="8PG-WT-0fx"/>
-                <constraint firstItem="1400" firstAttribute="leading" secondItem="1450" secondAttribute="leading" id="8cJ-iO-tFT"/>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="13" id="9sH-RC-IHB"/>
-                <constraint firstItem="1441" firstAttribute="trailing" secondItem="1417" secondAttribute="trailing" id="A1Y-DV-KT8"/>
-                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="top" secondItem="39" secondAttribute="top" id="A2a-QD-RHr"/>
-                <constraint firstItem="238" firstAttribute="top" secondItem="252" secondAttribute="top" id="A9J-HI-Rta"/>
-                <constraint firstAttribute="trailing" secondItem="911" secondAttribute="trailing" constant="17" id="ClD-ia-xlL"/>
-                <constraint firstItem="417" firstAttribute="leading" secondItem="1236" secondAttribute="trailing" constant="16" id="D1r-vU-Nef"/>
-                <constraint firstItem="1417" firstAttribute="top" secondItem="582" secondAttribute="bottom" constant="8" symbolic="YES" id="DZb-7X-G4h"/>
-                <constraint firstAttribute="bottom" secondItem="1302" secondAttribute="bottom" constant="90" id="E1C-Dc-RTE"/>
-                <constraint firstItem="170" firstAttribute="baseline" secondItem="29" secondAttribute="baseline" id="Ena-3n-hMM"/>
-                <constraint firstItem="417" firstAttribute="leading" secondItem="383" secondAttribute="trailing" constant="34" id="Fl7-n8-pwC"/>
-                <constraint firstItem="1450" firstAttribute="top" secondItem="578" secondAttribute="bottom" constant="8" symbolic="YES" id="G4B-a9-prb"/>
-                <constraint firstItem="1352" firstAttribute="top" secondItem="454" secondAttribute="bottom" constant="18" id="GEd-96-shD"/>
-                <constraint firstItem="170" firstAttribute="leading" secondItem="19" secondAttribute="trailing" constant="3" id="GyW-09-hHV"/>
-                <constraint firstItem="454" firstAttribute="leading" secondItem="252" secondAttribute="leading" id="IEA-iI-iHL"/>
-                <constraint firstItem="911" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="19" id="Ifd-mr-nLI"/>
-                <constraint firstItem="19" firstAttribute="baseline" secondItem="170" secondAttribute="baseline" id="K95-65-3AJ"/>
-                <constraint firstItem="383" firstAttribute="leading" secondItem="388" secondAttribute="leading" id="L49-Ka-H6s"/>
-                <constraint firstItem="582" firstAttribute="top" secondItem="1441" secondAttribute="bottom" constant="79" id="LEd-dX-K6a"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="27" id="Nb9-45-1Cw"/>
-                <constraint firstItem="422" firstAttribute="centerY" secondItem="578" secondAttribute="centerY" id="OKg-v3-nkF"/>
-                <constraint firstItem="1400" firstAttribute="trailing" secondItem="578" secondAttribute="trailing" id="PDI-be-Xni"/>
-                <constraint firstItem="422" firstAttribute="leading" secondItem="427" secondAttribute="leading" id="PRF-eB-4lI"/>
-                <constraint firstItem="383" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="33" id="QRO-MW-Tqa"/>
-                <constraint firstItem="1291" firstAttribute="trailing" secondItem="1302" secondAttribute="trailing" id="RTY-Wx-vzf"/>
-                <constraint firstItem="213" firstAttribute="baseline" secondItem="238" secondAttribute="baseline" id="Rrk-w3-kga"/>
-                <constraint firstItem="578" firstAttribute="top" secondItem="1352" secondAttribute="bottom" constant="63" id="Rx6-En-qZD"/>
-                <constraint firstItem="29" firstAttribute="leading" secondItem="170" secondAttribute="trailing" constant="16" id="RzY-1w-baZ"/>
-                <constraint firstItem="383" firstAttribute="centerY" secondItem="1236" secondAttribute="centerY" id="SWH-Ne-yL2"/>
-                <constraint firstItem="454" firstAttribute="centerY" secondItem="417" secondAttribute="centerY" id="SbB-TW-fWx"/>
-                <constraint firstItem="213" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="92" id="TFn-0P-j7s"/>
-                <constraint firstItem="393" firstAttribute="centerY" secondItem="1302" secondAttribute="centerY" id="Tkl-Ft-gWg"/>
-                <constraint firstItem="427" firstAttribute="centerY" secondItem="582" secondAttribute="centerY" id="UgO-lh-60e"/>
-                <constraint firstItem="45" firstAttribute="top" secondItem="39" secondAttribute="top" id="Uqf-DW-fdr"/>
-                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="leading" secondItem="260" secondAttribute="leading" id="VJJ-q5-8Ny"/>
-                <constraint firstItem="388" firstAttribute="trailing" secondItem="383" secondAttribute="trailing" id="VLj-1t-mxg"/>
-                <constraint firstItem="45" firstAttribute="leading" secondItem="39" secondAttribute="trailing" constant="8" symbolic="YES" id="ViY-dq-eft"/>
-                <constraint firstItem="1441" firstAttribute="top" secondItem="578" secondAttribute="bottom" constant="8" symbolic="YES" id="WMw-cj-0pM"/>
-                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="leading" secondItem="34" secondAttribute="trailing" constant="78" id="Xgf-nK-BZt"/>
-                <constraint firstItem="578" firstAttribute="leading" secondItem="1441" secondAttribute="leading" id="Zc4-lf-Ml9"/>
-                <constraint firstItem="39" firstAttribute="leading" secondItem="9X5-Zq-FrJ" secondAttribute="trailing" constant="9" id="Zkq-Tv-oZb"/>
-                <constraint firstItem="170" firstAttribute="top" secondItem="29" secondAttribute="top" id="beA-Wn-TV1"/>
-                <constraint firstItem="238" firstAttribute="top" secondItem="213" secondAttribute="top" id="cA2-8i-cNm"/>
-                <constraint firstItem="1450" firstAttribute="baseline" secondItem="1441" secondAttribute="baseline" id="cWR-1k-hN1"/>
-                <constraint firstItem="1352" firstAttribute="trailing" secondItem="1441" secondAttribute="trailing" id="cy7-y1-Fta"/>
-                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="34" id="dEE-ow-Ofq"/>
-                <constraint firstItem="34" firstAttribute="baseline" secondItem="29" secondAttribute="baseline" id="dw4-yi-eka"/>
-                <constraint firstItem="417" firstAttribute="leading" secondItem="422" secondAttribute="leading" id="e7X-sw-CMz"/>
-                <constraint firstItem="1352" firstAttribute="top" secondItem="1400" secondAttribute="top" id="ebd-dZ-gtY"/>
-                <constraint firstItem="1400" firstAttribute="centerX" secondItem="45" secondAttribute="centerX" id="feW-Wa-wpG"/>
-                <constraint firstItem="1291" firstAttribute="trailing" secondItem="1236" secondAttribute="trailing" id="gFG-H7-45i"/>
-                <constraint firstItem="213" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="37" id="gbS-Fc-Swj"/>
-                <constraint firstItem="422" firstAttribute="trailing" secondItem="417" secondAttribute="trailing" id="gcc-eh-MQf"/>
-                <constraint firstItem="388" firstAttribute="centerY" secondItem="1291" secondAttribute="centerY" id="hVp-f3-Nmg"/>
-                <constraint firstItem="260" firstAttribute="baseline" secondItem="252" secondAttribute="baseline" id="hW3-iD-cMr"/>
-                <constraint firstItem="582" firstAttribute="leading" secondItem="1417" secondAttribute="leading" id="hyB-gs-pWN"/>
-                <constraint firstItem="393" firstAttribute="top" secondItem="1291" secondAttribute="bottom" constant="95" id="iI4-Ue-LFs"/>
-                <constraint firstItem="39" firstAttribute="baseline" secondItem="9X5-Zq-FrJ" secondAttribute="baseline" id="icG-3b-LyB"/>
-                <constraint firstAttribute="bottom" secondItem="1417" secondAttribute="bottom" constant="66" id="j26-Vm-SPR"/>
-                <constraint firstItem="19" firstAttribute="baseline" secondItem="4" secondAttribute="baseline" id="j3a-nQ-3dK"/>
-                <constraint firstItem="1352" firstAttribute="leading" secondItem="578" secondAttribute="leading" id="jCN-fj-F70"/>
-                <constraint firstItem="388" firstAttribute="top" secondItem="1236" secondAttribute="bottom" constant="89" id="jXG-bt-oqo"/>
-                <constraint firstItem="1427" firstAttribute="top" secondItem="582" secondAttribute="bottom" constant="8" symbolic="YES" id="jZ1-oq-vDQ"/>
-                <constraint firstItem="238" firstAttribute="leading" secondItem="213" secondAttribute="trailing" id="kZT-Gl-p9O"/>
-                <constraint firstItem="388" firstAttribute="leading" secondItem="393" secondAttribute="leading" id="l33-NE-oBq"/>
-                <constraint firstItem="19" firstAttribute="leading" secondItem="4" secondAttribute="trailing" constant="24" id="lNz-mg-2c4"/>
-                <constraint firstItem="260" firstAttribute="top" secondItem="252" secondAttribute="top" id="myZ-tP-Rc7"/>
-                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="bottom" secondItem="39" secondAttribute="bottom" id="pWc-ui-kAN"/>
-                <constraint firstItem="1400" firstAttribute="trailing" secondItem="454" secondAttribute="trailing" id="pWd-NX-MKq"/>
-                <constraint firstItem="911" firstAttribute="top" secondItem="9X5-Zq-FrJ" secondAttribute="bottom" constant="32" id="q0N-VX-E6h"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="19" secondAttribute="top" id="rLb-wG-8u2"/>
-                <constraint firstItem="252" firstAttribute="baseline" secondItem="238" secondAttribute="baseline" id="sjO-2a-9u9"/>
-                <constraint firstAttribute="trailing" secondItem="45" secondAttribute="trailing" constant="30" id="td0-ew-pgJ"/>
-                <constraint firstItem="1236" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="31" id="uWq-rM-eD1"/>
-                <constraint firstItem="1291" firstAttribute="top" secondItem="383" secondAttribute="bottom" constant="89" id="uY9-mk-bzx"/>
-                <constraint firstItem="1291" firstAttribute="leading" secondItem="1302" secondAttribute="leading" id="uqY-55-bL9"/>
-                <constraint firstItem="422" firstAttribute="trailing" secondItem="427" secondAttribute="trailing" id="v11-4j-QnB"/>
-                <constraint firstAttribute="trailing" secondItem="1427" secondAttribute="trailing" constant="54" id="v1z-dT-GLd"/>
-                <constraint firstItem="1450" firstAttribute="trailing" secondItem="578" secondAttribute="trailing" id="v6C-9v-AaT"/>
-                <constraint firstItem="1417" firstAttribute="baseline" secondItem="1427" secondAttribute="baseline" id="wiz-tf-rPA"/>
-                <constraint firstItem="34" firstAttribute="leading" secondItem="29" secondAttribute="trailing" constant="3" id="xLm-sf-TpZ"/>
-                <constraint firstItem="238" firstAttribute="leading" secondItem="19" secondAttribute="leading" id="zDX-XU-QFd"/>
-                <constraint firstItem="34" firstAttribute="top" secondItem="29" secondAttribute="top" id="zQa-qb-uvt"/>
-                <constraint firstItem="582" firstAttribute="trailing" secondItem="1450" secondAttribute="trailing" id="zT1-CV-BX8"/>
+                <constraint firstItem="422" firstAttribute="trailing" secondItem="417" secondAttribute="trailing" id="03K-Wm-Czp"/>
+                <constraint firstItem="417" firstAttribute="leading" secondItem="383" secondAttribute="trailing" constant="36" id="0ZS-PY-bBj"/>
+                <constraint firstItem="34" firstAttribute="trailing" secondItem="170" secondAttribute="trailing" id="0hc-5a-pXZ"/>
+                <constraint firstItem="578" firstAttribute="leading" secondItem="1352" secondAttribute="leading" id="11D-dX-NDT"/>
+                <constraint firstItem="417" firstAttribute="top" secondItem="260" secondAttribute="bottom" constant="87" id="1FG-ad-IQ6"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="24" id="2gh-Xo-oCZ"/>
+                <constraint firstAttribute="bottom" secondItem="427" secondAttribute="bottom" constant="90" id="3cs-IJ-urs"/>
+                <constraint firstItem="1291" firstAttribute="top" secondItem="383" secondAttribute="bottom" constant="70" id="3qT-pG-E6N"/>
+                <constraint firstItem="29" firstAttribute="top" secondItem="34" secondAttribute="top" id="4eX-jh-0bi"/>
+                <constraint firstItem="393" firstAttribute="leading" secondItem="388" secondAttribute="leading" id="4oQ-Hu-ESE"/>
+                <constraint firstItem="1291" firstAttribute="leading" secondItem="1236" secondAttribute="leading" id="65I-xO-iUA"/>
+                <constraint firstItem="911" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="23" id="6ND-SE-DBY"/>
+                <constraint firstItem="238" firstAttribute="top" secondItem="213" secondAttribute="top" id="7Mk-nD-ssP"/>
+                <constraint firstItem="422" firstAttribute="leading" secondItem="417" secondAttribute="leading" id="8Ik-Uy-E9l"/>
+                <constraint firstItem="454" firstAttribute="leading" secondItem="417" secondAttribute="trailing" constant="48" id="8vv-EF-P5H"/>
+                <constraint firstItem="170" firstAttribute="baseline" secondItem="19" secondAttribute="baseline" id="8wV-I5-acv"/>
+                <constraint firstItem="19" firstAttribute="top" secondItem="nEX-mp-7nZ" secondAttribute="bottom" constant="29" id="9CK-ab-Xcg"/>
+                <constraint firstItem="582" firstAttribute="top" secondItem="1441" secondAttribute="bottom" constant="42" id="9ay-LX-K4q"/>
+                <constraint firstItem="1427" firstAttribute="leading" secondItem="1450" secondAttribute="leading" id="A7y-vp-lLO"/>
+                <constraint firstItem="417" firstAttribute="leading" secondItem="1236" secondAttribute="trailing" constant="21" id="Ail-AV-8nQ"/>
+                <constraint firstItem="39" firstAttribute="leading" secondItem="4" secondAttribute="trailing" constant="65" id="AuF-ix-Dyl"/>
+                <constraint firstItem="nEX-mp-7nZ" firstAttribute="baseline" secondItem="j4I-g0-Rba" secondAttribute="baseline" id="B7U-qF-GkM"/>
+                <constraint firstAttribute="bottom" secondItem="1302" secondAttribute="bottom" constant="78" id="BLH-SU-Jr2"/>
+                <constraint firstItem="1302" firstAttribute="top" secondItem="1291" secondAttribute="bottom" constant="62" id="Bwr-v4-aF1"/>
+                <constraint firstItem="1236" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="26" id="CQJ-Lh-6T2"/>
+                <constraint firstItem="1236" firstAttribute="centerY" secondItem="383" secondAttribute="centerY" id="Czh-EL-1nf"/>
+                <constraint firstItem="170" firstAttribute="leading" secondItem="j4I-g0-Rba" secondAttribute="leading" id="DAk-fV-pQ4"/>
+                <constraint firstItem="213" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="95" id="DYc-bn-bEM"/>
+                <constraint firstItem="1400" firstAttribute="top" secondItem="454" secondAttribute="bottom" constant="8" symbolic="YES" id="Dho-N0-D8k"/>
+                <constraint firstItem="1450" firstAttribute="trailing" secondItem="582" secondAttribute="trailing" id="ERO-Dc-Ljt"/>
+                <constraint firstItem="nEX-mp-7nZ" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="39" id="FAz-LH-2Vw"/>
+                <constraint firstItem="1352" firstAttribute="top" secondItem="454" secondAttribute="bottom" constant="8" symbolic="YES" id="Fb5-sR-hf7"/>
+                <constraint firstItem="911" firstAttribute="top" secondItem="39" secondAttribute="bottom" constant="33" id="Fbt-qz-SeW"/>
+                <constraint firstAttribute="bottom" secondItem="911" secondAttribute="bottom" constant="11" id="FmI-iP-L19"/>
+                <constraint firstItem="1291" firstAttribute="top" secondItem="1236" secondAttribute="bottom" constant="65" id="HJA-QX-1dl"/>
+                <constraint firstItem="170" firstAttribute="trailing" secondItem="j4I-g0-Rba" secondAttribute="trailing" id="J8M-NQ-lvc"/>
+                <constraint firstItem="578" firstAttribute="leading" secondItem="1441" secondAttribute="leading" id="Lsm-Ls-inc"/>
+                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="leading" secondItem="911" secondAttribute="leading" id="MHX-Do-D3P"/>
+                <constraint firstItem="388" firstAttribute="trailing" secondItem="383" secondAttribute="trailing" id="MhR-HT-bEh"/>
+                <constraint firstAttribute="trailing" secondItem="911" secondAttribute="trailing" constant="17" id="NRL-Br-y1u"/>
+                <constraint firstItem="39" firstAttribute="bottom" secondItem="45" secondAttribute="bottom" id="NSL-1C-pfY"/>
+                <constraint firstItem="nEX-mp-7nZ" firstAttribute="leading" secondItem="19" secondAttribute="leading" id="O7X-B2-c4M"/>
+                <constraint firstItem="393" firstAttribute="centerY" secondItem="427" secondAttribute="centerY" id="OdW-L2-ViU"/>
+                <constraint firstItem="582" firstAttribute="top" secondItem="427" secondAttribute="top" id="OnR-2u-kXE"/>
+                <constraint firstItem="422" firstAttribute="top" secondItem="417" secondAttribute="bottom" constant="90" id="PDz-VV-I4m"/>
+                <constraint firstItem="427" firstAttribute="top" secondItem="422" secondAttribute="bottom" constant="88" id="RcN-Rq-TqN"/>
+                <constraint firstItem="170" firstAttribute="top" secondItem="19" secondAttribute="top" id="SbA-uu-Gzo"/>
+                <constraint firstItem="1352" firstAttribute="baseline" secondItem="1400" secondAttribute="baseline" id="Sup-Fg-OOF"/>
+                <constraint firstItem="1450" firstAttribute="trailing" secondItem="578" secondAttribute="trailing" id="SxI-2X-YlV"/>
+                <constraint firstItem="1441" firstAttribute="baseline" secondItem="1450" secondAttribute="baseline" id="TNa-H6-Gps"/>
+                <constraint firstItem="29" firstAttribute="leading" secondItem="19" secondAttribute="leading" id="TY8-vX-1UE"/>
+                <constraint firstItem="34" firstAttribute="baseline" secondItem="29" secondAttribute="baseline" id="URi-CD-7RR"/>
+                <constraint firstItem="45" firstAttribute="leading" secondItem="39" secondAttribute="trailing" constant="8" symbolic="YES" id="UT6-Ur-zjH"/>
+                <constraint firstItem="1291" firstAttribute="trailing" secondItem="1236" secondAttribute="trailing" id="Ud4-Of-mZo"/>
+                <constraint firstItem="39" firstAttribute="top" secondItem="45" secondAttribute="top" id="Uog-vJ-6kD"/>
+                <constraint firstItem="213" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="37" id="V7R-ag-OhA"/>
+                <constraint firstItem="582" firstAttribute="leading" secondItem="1417" secondAttribute="leading" id="VLc-gQ-1Gj"/>
+                <constraint firstAttribute="trailing" secondItem="454" secondAttribute="trailing" constant="54" id="VMb-F1-21R"/>
+                <constraint firstItem="1441" firstAttribute="leading" secondItem="582" secondAttribute="leading" id="VOI-hQ-NUb"/>
+                <constraint firstItem="1302" firstAttribute="top" secondItem="388" secondAttribute="bottom" constant="67" id="WQm-vb-g7c"/>
+                <constraint firstItem="19" firstAttribute="trailing" secondItem="nEX-mp-7nZ" secondAttribute="trailing" id="Wa1-D4-VxX"/>
+                <constraint firstItem="170" firstAttribute="leading" secondItem="34" secondAttribute="leading" id="X5I-Pd-iMh"/>
+                <constraint firstItem="1400" firstAttribute="trailing" secondItem="454" secondAttribute="trailing" id="YFO-0H-Ugb"/>
+                <constraint firstItem="388" firstAttribute="trailing" secondItem="393" secondAttribute="trailing" id="YTv-cx-hWq"/>
+                <constraint firstItem="427" firstAttribute="leading" secondItem="422" secondAttribute="leading" id="Yb1-oy-dLW"/>
+                <constraint firstAttribute="bottom" secondItem="1417" secondAttribute="bottom" constant="44" id="YeH-oV-q8e"/>
+                <constraint firstItem="911" firstAttribute="top" secondItem="9X5-Zq-FrJ" secondAttribute="bottom" constant="56" id="Yih-IR-YGf"/>
+                <constraint firstItem="1417" firstAttribute="top" secondItem="582" secondAttribute="bottom" constant="8" symbolic="YES" id="ZpN-qP-kvf"/>
+                <constraint firstItem="213" firstAttribute="trailing" secondItem="252" secondAttribute="trailing" id="Zw2-pn-FN3"/>
+                <constraint firstItem="1352" firstAttribute="leading" secondItem="454" secondAttribute="leading" id="ape-Df-YRw"/>
+                <constraint firstItem="260" firstAttribute="top" secondItem="252" secondAttribute="top" id="bj0-CZ-agk"/>
+                <constraint firstItem="582" firstAttribute="trailing" secondItem="1427" secondAttribute="trailing" id="cK5-Ol-Uaj"/>
+                <constraint firstItem="252" firstAttribute="leading" secondItem="213" secondAttribute="leading" id="d0Y-NP-kbB"/>
+                <constraint firstAttribute="trailing" secondItem="45" secondAttribute="trailing" constant="30" id="d1o-a8-lfr"/>
+                <constraint firstItem="1450" firstAttribute="leading" secondItem="1400" secondAttribute="leading" id="d9h-Ny-AS6"/>
+                <constraint firstItem="1302" firstAttribute="trailing" secondItem="1291" secondAttribute="trailing" id="dAP-5B-wbO"/>
+                <constraint firstItem="1427" firstAttribute="top" secondItem="582" secondAttribute="bottom" constant="8" symbolic="YES" id="dGo-Qt-fC5"/>
+                <constraint firstItem="1427" firstAttribute="baseline" secondItem="1417" secondAttribute="baseline" id="eSF-bi-EK2"/>
+                <constraint firstItem="34" firstAttribute="leading" secondItem="29" secondAttribute="trailing" constant="69" id="epl-a3-pOG"/>
+                <constraint firstItem="1441" firstAttribute="trailing" secondItem="1417" secondAttribute="trailing" id="f1s-xC-xGp"/>
+                <constraint firstItem="393" firstAttribute="centerY" secondItem="1302" secondAttribute="centerY" id="fQC-JH-iVV"/>
+                <constraint firstAttribute="trailing" secondItem="j4I-g0-Rba" secondAttribute="trailing" constant="88" id="ffv-bl-mMj"/>
+                <constraint firstItem="388" firstAttribute="centerY" secondItem="1291" secondAttribute="centerY" id="gqG-Uf-zaM"/>
+                <constraint firstItem="238" firstAttribute="baseline" secondItem="213" secondAttribute="baseline" id="iRc-tB-pVP"/>
+                <constraint firstItem="388" firstAttribute="leading" secondItem="383" secondAttribute="leading" id="jMg-Xx-A3e"/>
+                <constraint firstItem="238" firstAttribute="leading" secondItem="260" secondAttribute="leading" id="kL1-Ji-WL7"/>
+                <constraint firstItem="260" firstAttribute="baseline" secondItem="252" secondAttribute="baseline" id="kWH-Fy-hXa"/>
+                <constraint firstItem="1400" firstAttribute="trailing" secondItem="578" secondAttribute="trailing" id="lPP-kD-cF7"/>
+                <constraint firstItem="1302" firstAttribute="leading" secondItem="1291" secondAttribute="leading" id="mMM-1f-32x"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="9X5-Zq-FrJ" secondAttribute="trailing" constant="8" symbolic="YES" id="mcW-ut-4aZ"/>
+                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="13" id="mfX-oO-Udn"/>
+                <constraint firstItem="578" firstAttribute="top" secondItem="1352" secondAttribute="bottom" constant="43" id="nO1-5x-NGb"/>
+                <constraint firstItem="578" firstAttribute="top" secondItem="422" secondAttribute="top" id="npp-dU-Www"/>
+                <constraint firstItem="4" firstAttribute="centerY" secondItem="39" secondAttribute="centerY" id="nt5-jn-gwF"/>
+                <constraint firstItem="252" firstAttribute="top" secondItem="213" secondAttribute="bottom" constant="29" id="oIW-j4-jpK"/>
+                <constraint firstItem="393" firstAttribute="top" secondItem="1291" secondAttribute="bottom" constant="67" id="pPD-iW-OeQ"/>
+                <constraint firstItem="9X5-Zq-FrJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="11" id="q0W-iq-ffO"/>
+                <constraint firstItem="1236" firstAttribute="top" secondItem="252" secondAttribute="bottom" constant="75" id="qMz-BC-yH1"/>
+                <constraint firstItem="383" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="31" id="r3A-77-Ta8"/>
+                <constraint firstItem="1441" firstAttribute="top" secondItem="578" secondAttribute="bottom" constant="8" symbolic="YES" id="rDR-TP-Njf"/>
+                <constraint firstItem="nEX-mp-7nZ" firstAttribute="top" secondItem="j4I-g0-Rba" secondAttribute="top" id="raA-cs-9H2"/>
+                <constraint firstItem="1450" firstAttribute="top" secondItem="578" secondAttribute="bottom" constant="8" symbolic="YES" id="rhb-fH-Jbw"/>
+                <constraint firstItem="454" firstAttribute="top" secondItem="29" secondAttribute="bottom" constant="34" id="rxT-xh-cB0"/>
+                <constraint firstItem="454" firstAttribute="centerY" secondItem="417" secondAttribute="centerY" id="sEo-xv-pIE"/>
+                <constraint firstItem="422" firstAttribute="trailing" secondItem="427" secondAttribute="trailing" id="vHW-4x-Oa9"/>
+                <constraint firstItem="238" firstAttribute="trailing" secondItem="260" secondAttribute="trailing" id="vQ6-r1-M2K"/>
+                <constraint firstItem="1352" firstAttribute="trailing" secondItem="1441" secondAttribute="trailing" id="vQj-ni-kH0"/>
+                <constraint firstItem="29" firstAttribute="top" secondItem="19" secondAttribute="bottom" constant="30" id="vRW-l4-zge"/>
+                <constraint firstItem="238" firstAttribute="leading" secondItem="213" secondAttribute="trailing" constant="53" id="xtA-D8-bJu"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

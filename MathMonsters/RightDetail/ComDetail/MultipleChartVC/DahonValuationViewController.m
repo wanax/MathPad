@@ -76,7 +76,6 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 }
 
 -(void)changeDateInter:(UIButton *)bt{
-    NSLog(@"%s",__FUNCTION__);
     bt.showsTouchWhenHighlighted=YES;
     int count=[self.dateArr count];
     if(bt.tag==OneMonth){
@@ -122,15 +121,22 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 
 -(void)initChart{
     graph=[[CPTXYGraph alloc] initWithFrame:CGRectZero];
-    graph.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#afcbaa" andAlpha:0.9]];
+    graph.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#ffffff" andAlpha:0.9]];
     
-    self.hostView=[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,40,SCREEN_HEIGHT-20,HostViewHeight)];
+    CPTGraphHostingView *tHostView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,40,SCREEN_HEIGHT-20,HostViewHeight)] autorelease];
+    self.hostView=tHostView;
     [self.view addSubview:self.hostView];
     [self.hostView setHostedGraph : graph ];
     graph . paddingLeft = 0.0f ;
     graph . paddingRight = 0.0f ;
     graph . paddingTop = 0 ;
     graph . paddingBottom = 0 ;
+    
+    graph.plotAreaFrame.paddingTop    = 10.0;
+    graph.plotAreaFrame.paddingBottom = 50.0;
+    graph.plotAreaFrame.paddingLeft   = 70.0;
+    graph.plotAreaFrame.paddingRight  = 0.0;
+    graph.plotAreaFrame.masksToBorder = NO;
     
     //graph.title=@"大行估值";
     [self.titleLabel setText:@"大行估值"];
@@ -241,10 +247,10 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 }
 
 -(void)setXYAxis{
-    NSLog(@"%s",__FUNCTION__);
+
     [self lineShowWithAnimation];
-    NSMutableArray *xTmp=[[NSMutableArray alloc] init];
-    NSMutableArray *yTmp=[[NSMutableArray alloc] init];
+    NSMutableArray *xTmp=[[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *yTmp=[[[NSMutableArray alloc] init] autorelease];
     int n=0;
     for(id obj in self.dateArr){
         [xTmp addObject:@(n++)];
@@ -361,8 +367,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 #pragma mark Scatter Plot Methods Delegate
 -(NSDictionary *)getDataFromDic:(NSDictionary *)dic dateMap:(NSMutableDictionary *)map andArr:(NSArray *)sets byIndex:(NSUInteger)idx{
     
-    NSString *msg=[[NSString alloc] init];
-    NSString *title=[[NSString alloc] init];
+    NSString *msg=[[[NSString alloc] init] autorelease];
+    NSString *title=nil;
     NSNumber *trueIndex=@([sets[idx] intValue]);
     NSString *date=map[[NSString stringWithFormat:@"%@",trueIndex]];
     id data=dic[date];
@@ -406,7 +412,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
         
         for (NSDecimalNumber * tickLocation in locations) {
             
-            CPTMutableTextStyle * newStyle = [axis.labelTextStyle mutableCopy];
+            CPTMutableTextStyle * newStyle = [[axis.labelTextStyle mutableCopy] autorelease];
             newStyle.fontSize=16.0;
             newStyle.fontName=@"Heiti SC";
             newStyle.color=[CPTColor blackColor];
@@ -420,8 +426,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
                     str=@"";
                 }
             }
-            CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:str style:newStyle];
-            CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
+            CPTTextLayer * newLabelLayer= [[[CPTTextLayer alloc] initWithText:str style:newStyle] autorelease];
+            CPTAxisLabel * newLabel     = [[[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer] autorelease];
             newLabel.tickLocation       = tickLocation.decimalValue;
             
             [newLabels addObject:newLabel];
@@ -436,16 +442,16 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 
         for (NSDecimalNumber * tickLocation in locations) {
 
-            CPTMutableTextStyle * newStyle = [axis.labelTextStyle mutableCopy];
+            CPTMutableTextStyle * newStyle = [[axis.labelTextStyle mutableCopy] autorelease];
             newStyle.fontSize=15.0;
             newStyle.fontName=@"Heiti SC";
             newStyle.color=[CPTColor blackColor];
 
             NSString * labelString      = [formatter stringForObjectValue:tickLocation];
-            CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:newStyle];
-            CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
+            CPTTextLayer * newLabelLayer= [[[CPTTextLayer alloc] initWithText:labelString style:newStyle] autorelease];
+            CPTAxisLabel * newLabel     = [[[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer] autorelease];
             newLabel.tickLocation       = tickLocation.decimalValue;
-            newLabel.offset             = 0;
+            newLabel.offset             = 20;
             [newLabels addObject:newLabel];
         }
         axis.axisLabels = newLabels;
@@ -456,18 +462,23 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
 -(void)addScatterChart{
     
     CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
-    //修改折线图线段样式,创建可调整数据线段
-    self.historyLinePlot=[[CPTScatterPlot alloc] init];
+
+    CPTScatterPlot *c1=[[[CPTScatterPlot alloc] init] autorelease];
+    self.historyLinePlot=c1;
     lineStyle.miterLimit=2.0f;
-    lineStyle.lineWidth=4.0f;
-    lineStyle.lineColor=[Utiles cptcolorWithHexString:@"#F1C40F" andAlpha:1.0];
+    lineStyle.lineWidth=2.0f;
+    //[UIColor peterRiverColor]
+    lineStyle.lineColor=[Utiles cptcolorWithHexString:@"#2980B9" andAlpha:1.0];
     self.historyLinePlot.dataLineStyle=lineStyle;
     self.historyLinePlot.identifier=HISTORY_DATALINE_IDENTIFIER;
     self.historyLinePlot.labelOffset=5;
     self.historyLinePlot.dataSource=self;
     self.historyLinePlot.delegate=self;
     
-    self.daHonLinePlot=[[CPTScatterPlot alloc] init];
+    
+    
+    CPTScatterPlot *c2=[[[CPTScatterPlot alloc] init] autorelease];
+    self.daHonLinePlot=c2;
     lineStyle.miterLimit=0.0f;
     lineStyle.lineWidth=0.0f;
     lineStyle.lineColor=[CPTColor clearColor];
@@ -477,7 +488,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     self.daHonLinePlot.dataSource=self;
     self.daHonLinePlot.delegate=self;
     
-    self.gooGuuLinePlot=[[CPTScatterPlot alloc] init];
+    CPTScatterPlot *c3=[[[CPTScatterPlot alloc] init] autorelease];
+    self.gooGuuLinePlot=c3;
     lineStyle.miterLimit=0.0f;
     lineStyle.lineWidth=0.0f;
     lineStyle.lineColor=[CPTColor clearColor];
@@ -488,11 +500,11 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     self.gooGuuLinePlot.delegate=self;
     
     CPTMutableLineStyle * symbolLineStyle = [CPTMutableLineStyle lineStyle];
-    symbolLineStyle.lineColor = [CPTColor colorWithComponentRed:102/255.0 green:204/255.0 blue:255/255.0 alpha:1.0];
-    symbolLineStyle.lineWidth = 2.0;
+    symbolLineStyle.lineColor = [Utiles cptcolorWithHexString:@"#2980B9" andAlpha:1.0];
+    symbolLineStyle.lineWidth = 1.0;
     
     CPTPlotSymbol * plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
-    plotSymbol.fill          = [CPTFill fillWithColor: [CPTColor colorWithComponentRed:226/255.0 green:93/255.0 blue:31/255.0 alpha:0.7]];
+    plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#9B59B6" andAlpha:0.8]];
     plotSymbol.lineStyle     = symbolLineStyle;
     plotSymbol.size          = CGSizeMake(20, 20);
     
@@ -502,13 +514,20 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     plotSymbol.lineStyle     = symbolLineStyle;
     symbolLineStyle.lineWidth = 0.0;
     plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#498641" andAlpha:1.0]];
-    plotSymbol.size          = CGSizeMake(17, 17);
+    plotSymbol.size          = CGSizeMake(20, 20);
     self.gooGuuLinePlot.plotSymbol=plotSymbol;
     
     self.historyLinePlot.opacity = 0.0f;
     self.daHonLinePlot.opacity = 0.0f;
     self.gooGuuLinePlot.opacity=0.0f;
     [self lineShowWithAnimation];
+    
+    CPTColor *areaColor       = [CPTColor purpleColor];
+    CPTGradient *areaGradient = [CPTGradient gradientWithBeginningColor:areaColor endingColor:[CPTColor blackColor]];
+    areaGradient.angle = 0.0f;
+    self.historyLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
+    self.daHonLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
+    self.gooGuuLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
     
     [graph addPlot:self.historyLinePlot];
     [graph addPlot:self.daHonLinePlot];

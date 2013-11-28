@@ -18,9 +18,10 @@
     BOOL _firstLaunch;
 }
 
+@property BrowseSourceType sourceType;
+
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) UIViewController *detailViewController;
-
 
 @property (nonatomic,retain) ValuationModelContainerViewController *valueContainer;
 @property (nonatomic,retain) FinancalModelContainerViewController *finContainer;

@@ -18,6 +18,8 @@
 
 @interface ValuationModelContainerViewController : UIViewController<UIWebViewDelegate>
 
+@property BrowseSourceType sourceType;
+
 @property (nonatomic,retain) UIWebView *webView;
 @property (nonatomic,retain) ChartLeftListViewController *leftListVC;
 @property (nonatomic,retain) ValueModelChartViewController *rightListVC;

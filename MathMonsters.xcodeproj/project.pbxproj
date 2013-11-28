@@ -41,7 +41,6 @@
 		AE31F831182B3085001CD0D0 /* NewReportArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F830182B3085001CD0D0 /* NewReportArticleViewController.m */; };
 		AE31F85F182B38AD001CD0D0 /* AKOMultiColumnTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F858182B38AD001CD0D0 /* AKOMultiColumnTextView.m */; };
 		AE31F860182B38AD001CD0D0 /* AKOMultiPageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE31F85A182B38AD001CD0D0 /* AKOMultiPageTextView.m */; };
-		AE38981C182C8A870059A319 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38981B182C8A870059A319 /* libCorePlot-CocoaTouch.a */; };
 		AE38986F182C8EFE0059A319 /* ComContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38986E182C8EFE0059A319 /* ComContainerViewController.m */; };
 		AE389872182C93110059A319 /* ComContainerIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE389871182C93110059A319 /* ComContainerIndicator.m */; };
 		AE3DE1BC1844775900F0FE64 /* NewReportRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3DE1BB1844775900F0FE64 /* NewReportRightListViewController.m */; };
@@ -173,6 +172,7 @@
 		AE572B89182CE0D60000B193 /* Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE572B85182CE0D60000B193 /* Cell2.xib */; };
 		AE572B8C182CE26C0000B193 /* ChartLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE572B8B182CE26C0000B193 /* ChartLeftListViewController.m */; };
 		AE5C5769181E64FB00A750F2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5C5768181E64FB00A750F2 /* ImageIO.framework */; };
+		AE5E0A2F1845EBFE00A9ABE8 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5E0A2E1845EBFE00A9ABE8 /* libCorePlot-CocoaTouch.a */; };
 		AE60096F182B6EE800BB3819 /* PageController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE60096E182B6EE800BB3819 /* PageController.m */; };
 		AE600972182B70BB00BB3819 /* UIFont+CoreTextExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE600971182B70BB00BB3819 /* UIFont+CoreTextExtensions.m */; };
 		AE62F152183B3EAD00FD75D7 /* MyProLossListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62F151183B3EAD00FD75D7 /* MyProLossListViewController.m */; };
@@ -267,6 +267,23 @@
 		AEFC216818322ADF00F53470 /* DiscountRateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFC216718322ADF00F53470 /* DiscountRateView.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AE5E0A571845F1C200A9ABE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5E0A511845F1C200A9ABE8 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		AEF914D01846E5E400729959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE5E0A511845F1C200A9ABE8 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2B649E3378074894981CC885 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3340E439CB96480F951F8362 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -330,7 +347,6 @@
 		AE31F859182B38AD001CD0D0 /* AKOMultiPageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKOMultiPageTextView.h; path = Views/AKOMultiPageTextView.h; sourceTree = "<group>"; };
 		AE31F85A182B38AD001CD0D0 /* AKOMultiPageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AKOMultiPageTextView.m; path = Views/AKOMultiPageTextView.m; sourceTree = "<group>"; };
 		AE31F861182B3931001CD0D0 /* AKOMultiColumnTextViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AKOMultiColumnTextViewDataSource.h; path = Views/AKOMultiColumnTextViewDataSource.h; sourceTree = "<group>"; };
-		AE38981B182C8A870059A319 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCorePlot-CocoaTouch.a"; path = "../../download/code/CorePlot_1.4/Binaries/iOS/libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		AE38981E182C8AB60059A319 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		AE38981F182C8AB60059A319 /* CPTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimation.h; sourceTree = "<group>"; };
 		AE389820182C8AB60059A319 /* CPTAnimationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimationOperation.h; sourceTree = "<group>"; };
@@ -576,6 +592,8 @@
 		AE572B8B182CE26C0000B193 /* ChartLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartLeftListViewController.m; sourceTree = "<group>"; };
 		AE5C5766181E64D200A750F2 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ../../download/code/SDWebImage.framework; sourceTree = "<group>"; };
 		AE5C5768181E64FB00A750F2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AE5E0A2E1845EBFE00A9ABE8 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		AE5E0A511845F1C200A9ABE8 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../../download/code/core-plot-master/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		AE60096D182B6EE800BB3819 /* PageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageController.h; sourceTree = "<group>"; };
 		AE60096E182B6EE800BB3819 /* PageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageController.m; sourceTree = "<group>"; };
 		AE600970182B70BB00BB3819 /* UIFont+CoreTextExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CoreTextExtensions.h"; sourceTree = "<group>"; };
@@ -739,7 +757,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE38981C182C8A870059A319 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				AE8B450A182101BE0047F4BB /* Accelerate.framework in Frameworks */,
 				AE8B44FC1820EC400047F4BB /* CoreText.framework in Frameworks */,
 				AE5C5769181E64FB00A750F2 /* ImageIO.framework in Frameworks */,
@@ -749,6 +766,7 @@
 				AE4D3E0217E3053C0044A7DF /* Foundation.framework in Frameworks */,
 				AE4D3E0417E3053C0044A7DF /* CoreGraphics.framework in Frameworks */,
 				8A5B5A59F6984D628AD70DDF /* libPods.a in Frameworks */,
+				AE5E0A2F1845EBFE00A9ABE8 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1213,6 +1231,7 @@
 		AE4D3DF317E3053B0044A7DF = {
 			isa = PBXGroup;
 			children = (
+				AE5E0A511845F1C200A9ABE8 /* CorePlot-CocoaTouch.xcodeproj */,
 				AE4D3E0517E3053C0044A7DF /* MathMonsters */,
 				AE4D3DFE17E3053C0044A7DF /* Frameworks */,
 				AE4D3DFD17E3053C0044A7DF /* Products */,
@@ -1231,8 +1250,8 @@
 		AE4D3DFE17E3053C0044A7DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE5E0A2E1845EBFE00A9ABE8 /* libCorePlot-CocoaTouch.a */,
 				AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */,
-				AE38981B182C8A870059A319 /* libCorePlot-CocoaTouch.a */,
 				AE8B4509182101BE0047F4BB /* Accelerate.framework */,
 				AE8B44FB1820EC400047F4BB /* CoreText.framework */,
 				AE5C5768181E64FB00A750F2 /* ImageIO.framework */,
@@ -1359,6 +1378,14 @@
 				AE572B85182CE0D60000B193 /* Cell2.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		AE5E0A521845F1C200A9ABE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE5E0A581845F1C200A9ABE8 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AE62F14C183B3E8E00FD75D7 /* MyProLoss */ = {
@@ -1742,6 +1769,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AEF914D11846E5E400729959 /* PBXTargetDependency */,
 			);
 			name = MathMonsters;
 			productName = MathMonsters;
@@ -1767,12 +1795,28 @@
 			mainGroup = AE4D3DF317E3053B0044A7DF;
 			productRefGroup = AE4D3DFD17E3053C0044A7DF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE5E0A521845F1C200A9ABE8 /* Products */;
+					ProjectRef = AE5E0A511845F1C200A9ABE8 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AE4D3DFB17E3053C0044A7DF /* MathMonsters */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE5E0A581845F1C200A9ABE8 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = AE5E0A571845F1C200A9ABE8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AE4D3DFA17E3053C0044A7DF /* Resources */ = {
@@ -2089,6 +2133,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AEF914D11846E5E400729959 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = AEF914D01846E5E400729959 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AE4D3E0817E3053C0044A7DF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -2175,6 +2227,7 @@
 					"$(inherited)",
 					"/Users/xcode/wanax/download/code/core-plot-master/build/Debug-iphonesimulator",
 					/Users/xcode/wanax/download/code/CorePlot_1.4/Binaries/iOS,
+					/Users/xcode/wanax/oc/MathMonsters,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2220,6 +2273,7 @@
 					"$(inherited)",
 					"/Users/xcode/wanax/download/code/core-plot-master/build/Debug-iphonesimulator",
 					/Users/xcode/wanax/download/code/CorePlot_1.4/Binaries/iOS,
+					/Users/xcode/wanax/oc/MathMonsters,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

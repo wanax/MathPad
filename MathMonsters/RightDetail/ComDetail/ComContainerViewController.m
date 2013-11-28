@@ -52,6 +52,7 @@
     [anotherButton release];
     
     ValuationModelContainerViewController *temp1=[[[ValuationModelContainerViewController alloc] init] autorelease];
+    temp1.sourceType=self.sourceType;
     self.valueContainer=temp1;
     
     FinancalModelContainerViewController *temp2=[[[FinancalModelContainerViewController alloc] init] autorelease];

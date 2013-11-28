@@ -17,81 +17,6 @@
 
 @implementation DiscountRateViewController
 
-@synthesize isSaved;
-@synthesize comInfo;
-@synthesize disCountIsChanged;
-@synthesize jsonData;
-@synthesize valuesStr;
-@synthesize defaultTransData;
-@synthesize transData;
-@synthesize webIsLoaded;
-@synthesize dragChartChangedDriverIds;
-@synthesize sourceType;
-
-@synthesize resetBt;
-@synthesize saveBt;
-@synthesize backBt;
-
-@synthesize companyNameLabel;
-@synthesize marketPriceLabel;
-@synthesize ggPriceLabel;
-@synthesize suggestRateLabel;
-@synthesize myRateLabel;
-@synthesize unRiskRateLabel;
-@synthesize marketBetaLabel;
-@synthesize marketPremiumLabel;
-@synthesize defaultUnRiskRateLabel;
-@synthesize defaultMarketBetaLabel;
-@synthesize defaultMarketPremiumLabel;
-@synthesize unRiskRateMinLabel;
-@synthesize unRiskRateMaxLabel;
-@synthesize marketBetaMinLabel;
-@synthesize marketBetaMaxLabel;
-@synthesize marketPremiumMinLabel;
-@synthesize marketPremiumMaxLabel;
-
-@synthesize unRiskRateSlider;
-@synthesize marketBetaSlider;
-@synthesize marketPremiumSlider;
-
-@synthesize webView;
-@synthesize chartViewController;
-
-- (void)dealloc
-{
-    SAFE_RELEASE(unRiskRateMinLabel);
-    SAFE_RELEASE(unRiskRateMaxLabel);
-    SAFE_RELEASE(marketBetaMinLabel);
-    SAFE_RELEASE(marketBetaMaxLabel);
-    SAFE_RELEASE(marketPremiumMinLabel);
-    SAFE_RELEASE(marketPremiumMaxLabel);
-    SAFE_RELEASE(defaultUnRiskRateLabel);
-    SAFE_RELEASE(defaultMarketBetaLabel);
-    SAFE_RELEASE(defaultMarketPremiumLabel);
-    SAFE_RELEASE(dragChartChangedDriverIds);
-    SAFE_RELEASE(chartViewController);
-    SAFE_RELEASE(valuesStr);
-    SAFE_RELEASE(defaultTransData);
-    SAFE_RELEASE(comInfo);
-    SAFE_RELEASE(transData);
-    SAFE_RELEASE(webView);
-    SAFE_RELEASE(companyNameLabel);
-    SAFE_RELEASE(jsonData);
-    SAFE_RELEASE(resetBt);
-    SAFE_RELEASE(saveBt);
-    SAFE_RELEASE(backBt);
-    SAFE_RELEASE(marketPriceLabel);
-    SAFE_RELEASE(ggPriceLabel);
-    SAFE_RELEASE(suggestRateLabel);
-    SAFE_RELEASE(myRateLabel);
-    SAFE_RELEASE(unRiskRateLabel);
-    SAFE_RELEASE(marketBetaLabel);
-    SAFE_RELEASE(marketPremiumLabel);
-    SAFE_RELEASE(unRiskRateSlider);
-    SAFE_RELEASE(marketBetaSlider);
-    SAFE_RELEASE(marketPremiumSlider);
-    [super dealloc];
-}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -118,27 +43,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    webIsLoaded=NO;
-    isSaved=NO;
+    self.webIsLoaded=NO;
+    self.isSaved=NO;
     self.transData=[[NSMutableArray alloc] init];
     
-    webView=[[UIWebView alloc] init];
-    webView.delegate=self;
+    UIWebView *tView=[[[UIWebView alloc] init] autorelease];
+    self.webView=tView;
+    self.webView.delegate=self;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"c" ofType:@"html"];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];
 
-    [marketBetaSlider setMinimumTrackTintColor:[Utiles colorWithHexString:@"#EA7A1F"]];
-    [marketBetaSlider setMaximumTrackTintColor:[Utiles colorWithHexString:@"#0B0B0B"]];
-    [unRiskRateSlider setMinimumTrackTintColor:[Utiles colorWithHexString:@"#EA7A1F"]];
-    [unRiskRateSlider setMaximumTrackTintColor:[Utiles colorWithHexString:@"#0B0B0B"]];
-    [marketPremiumSlider setMinimumTrackTintColor:[Utiles colorWithHexString:@"#EA7A1F"]];
-    [marketPremiumSlider setMaximumTrackTintColor:[Utiles colorWithHexString:@"#0B0B0B"]];
+    [self.marketBetaSlider setMinimumTrackTintColor:[Utiles colorWithHexString:@"#EA7A1F"]];
+    [self.marketBetaSlider setMaximumTrackTintColor:[Utiles colorWithHexString:@"#0B0B0B"]];
+    [self.unRiskRateSlider setMinimumTrackTintColor:[Utiles colorWithHexString:@"#EA7A1F"]];
+    [self.unRiskRateSlider setMaximumTrackTintColor:[Utiles colorWithHexString:@"#0B0B0B"]];
+    [self.marketPremiumSlider setMinimumTrackTintColor:[Utiles colorWithHexString:@"#EA7A1F"]];
+    [self.marketPremiumSlider setMaximumTrackTintColor:[Utiles colorWithHexString:@"#0B0B0B"]];
     
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     
-    webIsLoaded=YES;
+    self.webIsLoaded=YES;
     [Utiles getObjectDataFromJsFun:self.webView funName:@"initData" byData:self.jsonData shouldTrans:YES];
 
     id tempData=[Utiles getObjectDataFromJsFun:self.webView funName:@"returnDefaultWaccData" byData:@"" shouldTrans:YES];
@@ -161,7 +87,7 @@
         [self updateComponents];
         SAFE_RELEASE(tmpArr);
     }else{
-        [self adjustChartDataForSaved:[comInfo objectForKey:@"stockcode"] andToken:[Utiles getUserToken]];
+        [self adjustChartDataForSaved:[self.comInfo objectForKey:@"stockcode"] andToken:[Utiles getUserToken]];
     }
 }
 
@@ -180,19 +106,19 @@
         [self updateComponents];
     }else if(bt.tag==SaveData){
         
-        id combinedData=[DrawChartTool changedDataCombinedWebView:self.webView comInfo:comInfo ggPrice:[self.ggPriceLabel text] dragChartChangedDriverIds:self.dragChartChangedDriverIds disCountIsChanged:self.disCountIsChanged];
+        id combinedData=[DrawChartTool changedDataCombinedWebView:self.webView comInfo:self.comInfo ggPrice:[self.myGGPriceLabel text] dragChartChangedDriverIds:self.dragChartChangedDriverIds disCountIsChanged:self.disCountIsChanged];
         
         NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[Utiles getUserToken],@"token",@"googuu",@"from",[combinedData JSONString],@"data", nil];
         [Utiles postNetInfoWithPath:@"AddModelData" andParams:params besidesBlock:^(id resObj){
             if([resObj objectForKey:@"status"]){
                 [Utiles showToastView:self.view withTitle:nil andContent:[resObj objectForKey:@"msg"] duration:1.5];
                 self.disCountIsChanged=NO;
-                [saveBt setBackgroundImage:[UIImage imageNamed:@"savedBt"] forState:UIControlStateNormal];
-                [saveBt setEnabled:NO];
-                isSaved=YES;
+                [self.saveBt setBackgroundImage:[UIImage imageNamed:@"savedBt"] forState:UIControlStateNormal];
+                [self.saveBt setEnabled:NO];
+                self.isSaved=YES;
             }
         } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-            [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
+            [Utiles showToastView:self.view withTitle:nil andContent:@"用户未登录" duration:1.5];
         }];
     }else if(bt.tag==BackToSuperView){
         self.chartViewController.isShowDiscountView=NO;
@@ -204,23 +130,23 @@
 }
 
 -(IBAction)sliderChanged:(UISlider *)slider{
-    if(isSaved){
-        [saveBt setEnabled:YES];
-        [saveBt setBackgroundImage:[UIImage imageNamed:@"saveBt"] forState:UIControlStateNormal];
-        isSaved=NO;
+    if(self.isSaved){
+        [self.saveBt setEnabled:YES];
+        [self.saveBt setBackgroundImage:[UIImage imageNamed:@"saveBt"] forState:UIControlStateNormal];
+        self.isSaved=NO;
     }
     self.disCountIsChanged=YES;
     NSNumberFormatter *formatter=[[NSNumberFormatter alloc] init];
     [formatter setPositiveFormat:@"##0.##"];
     float progress = slider.value;
     if(slider.tag==1){
-        unRiskRateLabel.text = [NSString stringWithFormat:@"%@%%", [formatter stringFromNumber:[NSNumber numberWithFloat:progress]]];
+        self.unRiskRateLabel.text = [NSString stringWithFormat:@"%@%%", [formatter stringFromNumber:[NSNumber numberWithFloat:progress]]];
         [self resetValue:progress index:0];
     }else if(slider.tag==2){
-        marketBetaLabel.text = [NSString stringWithFormat:@"%.2f", progress];
+        self.marketBetaLabel.text = [NSString stringWithFormat:@"%.2f", progress];
         [self resetValue:progress index:1];
     }else if(slider.tag==3){
-        marketPremiumLabel.text = [NSString stringWithFormat:@"%@%%", [formatter stringFromNumber:[NSNumber numberWithFloat:progress]]];
+        self.marketPremiumLabel.text = [NSString stringWithFormat:@"%@%%", [formatter stringFromNumber:[NSNumber numberWithFloat:progress]]];
         [self resetValue:progress index:2];
     }
     SAFE_RELEASE(formatter);
@@ -283,7 +209,7 @@
     NSNumberFormatter *formatter=[[NSNumberFormatter alloc] init];
     [formatter setPositiveFormat:@"##0.##"];
     self.myRateLabel.text=[NSString stringWithFormat:@"%@%%",[formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.transData objectAtIndex:5] objectForKey:@"datanew"] floatValue]*100]]];
-    self.ggPriceLabel.text=[NSString stringWithFormat:@"%@",[formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.transData objectAtIndex:6] objectForKey:@"ggPrice"] floatValue]]]];
+    self.myGGPriceLabel.text=[NSString stringWithFormat:@"%@",[formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.transData objectAtIndex:6] objectForKey:@"ggPrice"] floatValue]]]];
     SAFE_RELEASE(formatter);
     SAFE_RELEASE(temp);
 }
@@ -294,9 +220,10 @@
     NSNumberFormatter *formatter=[[NSNumberFormatter alloc] init];
     [formatter setPositiveFormat:@"##0.##"];
     
-    [self.companyNameLabel setText:[NSString stringWithFormat:@"%@\n(%@.%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"marketname"]]];
-    [self.marketPriceLabel setText:[[comInfo objectForKey:@"marketprice"] stringValue]];
-    self.ggPriceLabel.text=[NSString stringWithFormat:@"%@",[formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.transData objectAtIndex:6] objectForKey:@"ggPrice"] floatValue]]]];
+    [self.companyNameLabel setText:[NSString stringWithFormat:@"%@  (%@.%@)",[self.comInfo objectForKey:@"companyname"],[self.comInfo objectForKey:@"stockcode"],[self.comInfo objectForKey:@"marketname"]]];
+    [self.marketPriceLabel setText:[NSString stringWithFormat:@"%.2f",[self.comInfo[@"marketprice"] floatValue]]];
+    [self.ggPriceLabel setText:[NSString stringWithFormat:@"%.2f",[self.comInfo[@"googuuprice"] floatValue]]];
+    self.myGGPriceLabel.text=[NSString stringWithFormat:@"%@",[formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.transData objectAtIndex:6] objectForKey:@"ggPrice"] floatValue]]]];
     ggPrice=[[[self.transData objectAtIndex:6] objectForKey:@"ggPrice"] floatValue];
  
     myRate=[[[self.transData objectAtIndex:5] objectForKey:@"datanew"] floatValue];

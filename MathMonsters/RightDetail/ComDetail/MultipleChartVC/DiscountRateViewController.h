@@ -36,6 +36,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *companyNameLabel;
 @property (nonatomic,retain) IBOutlet UILabel *marketPriceLabel;
 @property (nonatomic,retain) IBOutlet UILabel *ggPriceLabel;
+@property (nonatomic,retain) IBOutlet UILabel *myGGPriceLabel;
 @property (nonatomic,retain) IBOutlet UILabel *suggestRateLabel;
 @property (nonatomic,retain) IBOutlet UILabel *myRateLabel;
 @property (nonatomic,retain) IBOutlet UILabel *defaultUnRiskRateLabel;

@@ -13,8 +13,10 @@
 -(void)keyWordChanged:(NSString *)key;
 @end
 
-@interface GraphExchangeViewController : UIViewController
+@interface GraphExchangeViewController : UIViewController<UISearchBarDelegate>
 
 @property (nonatomic,retain) id<GraphExchangeDelegate> delegate;
+
+@property (nonatomic,retain) UISearchBar *searchBar;
 
 @end

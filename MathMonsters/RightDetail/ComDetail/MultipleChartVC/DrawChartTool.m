@@ -252,12 +252,18 @@ NSComparator cmptr = ^(id obj1, id obj2){
     x.majorIntervalLength=CPTDecimalFromLong(XINTERVALLENGTH);
     x.orthogonalCoordinateDecimal=CPTDecimalFromDouble(XORTHOGONALCOORDINATE);
     x.minorTicksPerInterval=XTICKSPERINTERVAL;
+    
+    //x.orthogonalCoordinateDecimal=[[NSNumber numberWithInt:0] decimalValue];
+    //x.axisConstraints  = [CPTConstraints constraintWithLowerOffset:60];
     lineStyle.lineWidth=1.0;
-    lineStyle.lineWidth=2.0;
-    x.minorTickLineStyle = lineStyle;
     if (type == DahonModel) {
-        x.majorTickLength=10.0;
+        lineStyle.lineWidth=0.2;
+        x.majorTickLength=0.0;
+        x.tickDirection=CPTSignNegative;
+        x.majorGridLineStyle=lineStyle;
+        x.axisConstraints  = [CPTConstraints constraintWithLowerOffset:0.2];
     }
+    x.minorTickLineStyle = lineStyle;
     x.majorTickLineStyle=lineStyle;
     x.delegate=delegate;
     
@@ -265,14 +271,25 @@ NSComparator cmptr = ^(id obj1, id obj2){
     if(!isY){
         lineStyle.lineWidth=0.0;
     }
-    lineStyle.lineColor = [CPTColor colorWithComponentRed:153/255.0 green:129/255.0 blue:64/255.0 alpha:1.0];
+    lineStyle.lineColor = [CPTColor grayColor];;
+    
     CPTXYAxis *y=axisSet.yAxis;
+
+    if (type==DahonModel) {
+       lineStyle.lineWidth=0.2;
+       CPTLineCap *lineCap = [CPTLineCap sweptArrowPlotLineCap];
+       lineCap.fill      = [CPTFill fillWithColor:lineCap.lineStyle.lineColor];
+       lineCap.size = CGSizeMake(15.0, 15.0);
+       y.axisLineCapMax  = lineCap;
+       y.axisLineCapMin  = lineCap;
+       y.axisConstraints  = [CPTConstraints constraintWithLowerOffset:0];
+    }
+
     y.axisLineStyle=lineStyle;
     y.majorIntervalLength=CPTDecimalFromFloat(YINTERVALLENGTH);
     y.orthogonalCoordinateDecimal=CPTDecimalFromFloat(YORTHOGONALCOORDINATE);
     y.minorTicksPerInterval=YTICKSPERINTERVAL;
-    
-    lineStyle.lineWidth=1.0;
+
     y.tickDirection=CPTSignNegative;
     y.majorGridLineStyle=lineStyle;
     y.majorTickLineStyle=lineStyle;
