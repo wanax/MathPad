@@ -18,9 +18,9 @@
 
 @implementation DahonValuationViewController
 
-static NSString * DAHON_DATALINE_IDENTIFIER =@"dahon_dataline_identifier";
-static NSString * GOOGUU_DATALINE_IDENTIFIER =@"googuu_dataline_identifier";
-static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
+static NSString * DAHON_DATALINE_IDENTIFIER =@"大行股价";
+static NSString * GOOGUU_DATALINE_IDENTIFIER =@"估股估值";
+static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -532,6 +532,18 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"history_dataline_identifier";
     [graph addPlot:self.historyLinePlot];
     [graph addPlot:self.daHonLinePlot];
     [graph addPlot:self.gooGuuLinePlot];
+    
+    // Add legend
+    graph.legend                    = [CPTLegend legendWithGraph:graph];
+    //graph.legend.textStyle          = lineStyle;
+    graph.legend.fill               = graph.plotAreaFrame.fill;
+    graph.legend.borderLineStyle    = graph.plotAreaFrame.borderLineStyle;
+    graph.legend.cornerRadius       = 5.0;
+    graph.legend.swatchSize         = CGSizeMake(25.0, 25.0);
+    graph.legend.swatchCornerRadius = 5.0;
+    graph.legend.numberOfRows       = 1;
+    graph.legendAnchor              = CPTRectAnchorTopLeft;
+    graph.legendDisplacement        = CGPointMake(80.0, 0.0);
     
 }
 -(void)lineShowWithAnimation{

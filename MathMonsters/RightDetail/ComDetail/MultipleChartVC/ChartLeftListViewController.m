@@ -34,7 +34,8 @@
 
 -(void)initComponents{
 
-    self.expansionTableView=[[UITableView alloc] initWithFrame:CGRectMake(0,0,340,610)];
+    UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,340,610)] autorelease];
+    self.expansionTableView=t;
     self.expansionTableView.dataSource=self;
     self.expansionTableView.delegate=self;
     [self.view addSubview:self.expansionTableView];
@@ -42,6 +43,15 @@
     self.expansionTableView.sectionHeaderHeight = 0;
     self.isOpen = NO;
 
+}
+
+#pragma mark -
+#pragma ValueModelChart Methods Delegate
+
+-(void)savedItemsHasLoaded:(NSArray *)items block:(void (^)(NSString *))block{
+    self.savedRowItems=items;
+    [self.expansionTableView reloadData];
+    block(@"OK");
 }
 
 #pragma mark - Table view data source
@@ -63,6 +73,13 @@
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 40;
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell  forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.isOpen&&self.selectIndex.section == indexPath.section&&indexPath.row!=0){
+        if([self.savedRowItems containsObject:[self.transData objectForKey:[self.sectionKeys objectAtIndex:self.selectIndex.section]][indexPath.row-1][@"name"]]){
+            [cell setBackgroundColor:[Utiles colorWithHexString:@"#ccd4d9"]];
+        }
+    }
 }
 
 

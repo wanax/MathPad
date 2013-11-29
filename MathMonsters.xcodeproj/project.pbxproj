@@ -725,6 +725,8 @@
 		AED98532183C571F00E97093 /* MyProLossCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProLossCell.h; sourceTree = "<group>"; };
 		AED98533183C571F00E97093 /* MyProLossCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProLossCell.m; sourceTree = "<group>"; };
 		AED98535183C573400E97093 /* MyProLossCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProLossCell.xib; sourceTree = "<group>"; };
+		AEDCE52218483418008F3FD3 /* ChartLeftListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartLeftListDelegate.h; sourceTree = "<group>"; };
+		AEDCE5251848358F008F3FD3 /* ValueModelChartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueModelChartDelegate.h; sourceTree = "<group>"; };
 		AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValueModelCell.xib; path = ../../NibFile/CellNib/ValueModelCell.xib; sourceTree = "<group>"; };
 		AEDD0831181FAA900095BDA1 /* ValueModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelCell.h; sourceTree = "<group>"; };
 		AEDD0832181FAA900095BDA1 /* ValueModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelCell.m; sourceTree = "<group>"; };
@@ -1359,6 +1361,7 @@
 				AEE809921839AF27008088A5 /* DahonValuation */,
 				AE63E8D51830D04E002043DC /* ValuationModel */,
 				AE67B8DA18307A9E00E00473 /* FinancalModel */,
+				AEDCE52218483418008F3FD3 /* ChartLeftListDelegate.h */,
 				AE572B8A182CE26C0000B193 /* ChartLeftListViewController.h */,
 				AE572B8B182CE26C0000B193 /* ChartLeftListViewController.m */,
 				AE572B6E182CB62A0000B193 /* DrawChartTool.h */,
@@ -1409,6 +1412,7 @@
 				AE63E8D71830D2F8002043DC /* ValuationModelContainerViewController.m */,
 				AE63E8D91830D81D002043DC /* ValueModelChartViewController.h */,
 				AE63E8DA1830D81D002043DC /* ValueModelChartViewController.m */,
+				AEDCE5251848358F008F3FD3 /* ValueModelChartDelegate.h */,
 			);
 			name = ValuationModel;
 			sourceTree = "<group>";

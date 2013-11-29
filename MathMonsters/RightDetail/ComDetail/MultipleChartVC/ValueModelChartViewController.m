@@ -318,16 +318,18 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
     [Utiles getNetInfoWithPath:@"AdjustedData" andParams:params besidesBlock:^(id resObj){
         if(resObj!=nil){
             id saveData=resObj[@"data"];
-
+            NSMutableArray *items=[[[NSMutableArray alloc] init] autorelease];
             for(id data in saveData){
                 id tempChartData=data[@"data"];
                 NSString *chartStr=[tempChartData JSONString];
                 chartStr=[chartStr stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
                 [Utiles getObjectDataFromJsFun:self.webView funName: @"chartCalu" byData:chartStr shouldTrans:NO];
                 
-               // NSMutableArray *ite
-                
+                [items addObject:data[@"itemname"]];
             }
+            [self.delegate savedItemsHasLoaded:items block:^(NSString *title) {
+                //NSLog(@"%@",title);
+            }];
             if(self.wantSavedType==DiscountSaved){
                 [self.discountBt sendActionsForControlEvents: UIControlEventTouchUpInside];
             }else{

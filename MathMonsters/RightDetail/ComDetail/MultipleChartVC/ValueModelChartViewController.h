@@ -11,6 +11,9 @@
 #import "CorePlot-CocoaTouch.h"
 #import "ChartLeftListViewController.h"
 #import "ValuationModelContainerViewController.h"
+#import "ChartLeftListDelegate.h"
+#import "ValueModelChartDelegate.h"
+
 
 @class CQMFloatingController;
 @class DiscountRateViewController;
@@ -33,7 +36,7 @@
 #define DrawXYAxis [DrawChartTool drawXYAxisIn:self.graph toPlot:self.plotSpace withXRANGEBEGIN:XRANGEBEGIN XRANGELENGTH:XRANGELENGTH YRANGEBEGIN:YRANGEBEGIN YRANGELENGTH:YRANGELENGTH XINTERVALLENGTH:XINTERVALLENGTH XORTHOGONALCOORDINATE:XORTHOGONALCOORDINATE XTICKSPERINTERVAL:XTICKSPERINTERVAL YINTERVALLENGTH:YINTERVALLENGTH YORTHOGONALCOORDINATE:YORTHOGONALCOORDINATE YTICKSPERINTERVAL:YTICKSPERINTERVAL to:self isY:YES isX:YES type:DragabelModel]
 
 
-@interface ValueModelChartViewController : UIViewController<CPTScatterPlotDataSource,CPTScatterPlotDelegate,CPTBarPlotDataSource,CPTBarPlotDelegate,UIWebViewDelegate,CPTAxisDelegate,ChartLeftListDelegate,ValuationModelContainerDelegate>{
+@interface ValueModelChartViewController : UIViewController<CPTScatterPlotDataSource,CPTScatterPlotDelegate,CPTBarPlotDataSource,CPTBarPlotDelegate,UIWebViewDelegate,CPTAxisDelegate,ValuationModelContainerDelegate,ChartLeftListDelegate>{
     //x轴起点
     float XRANGEBEGIN;
     //x轴在屏幕可视范围内的范围
@@ -58,6 +61,8 @@
     BOOL _inkage;
     
 }
+
+@property (nonatomic,assign) id<ValueModelChartDelegate> delegate;
 
 @property BOOL webIsLoaded;
 @property BOOL disCountIsChanged;
