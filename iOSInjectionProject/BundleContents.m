@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle4
+#define INJECTION_BUNDLE InjectionBundle2
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -21,9 +21,9 @@
 #import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MultipleChartVC/DahonValuationViewController.m"
 
 
-@interface InjectionBundle4 : NSObject
+@interface InjectionBundle2 : NSObject
 @end
-@implementation InjectionBundle4
+@implementation InjectionBundle2
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");

@@ -55,11 +55,11 @@
     isGoIn=NO;
     self.userNameField.delegate=self;
     self.userPwdField.delegate=self;
-    UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userNameFieldIcon"]];
+    UIImageView *image=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userNameFieldIcon"]] autorelease];
     image.frame=CGRectMake(15,0,24,24);
     self.userNameField.leftView=image;
     
-    UIImageView *image2=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pwdFieldIcon"]];
+    UIImageView *image2=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pwdFieldIcon"]] autorelease];
     image2.frame=CGRectMake(15,0,24,24);
     self.userPwdField.leftView=image2;
 }
@@ -129,8 +129,7 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
             if([[info objectForKey:@"status"] isEqualToString:@"1"]){
-                
-                [self.navigationController popViewControllerAnimated:YES];
+                [Utiles showToastView:self.view withTitle:nil andContent:@"登录成功" duration:2.0];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginKeeping" object:nil];
                 [[NSUserDefaults standardUserDefaults] setObject:[info objectForKey:@"token"] forKey:@"UserToken"];
                 
@@ -139,7 +138,8 @@
                 
                 NSLog(@"%@",[info objectForKey:@"token"]);
                 isGoIn=YES;
-
+                sleep(1);
+                [self.navigationController popViewControllerAnimated:YES];
             }else {
                 NSString *msg=@"";
                 if ([info[@"status"] isEqual:@"0"]) {

@@ -71,4 +71,5 @@ dependencies: \
   ../MathMonsters/Plugs/CorePlotHeaders/CPTXYGraph.h \
   ../MathMonsters/Plugs/CorePlotHeaders/CPTXYPlotSpace.h \
   ../MathMonsters/RightDetail/ComDetail/MultipleChartVC/DrawChartTool.h \
-  ../MathMonsters/Plugs/UIButton+BGColor.h
+  ../MathMonsters/Plugs/UIButton+BGColor.h \
+  ../Pods/RegexKitLite/RegexKitLite.h

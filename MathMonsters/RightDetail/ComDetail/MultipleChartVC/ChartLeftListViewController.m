@@ -78,6 +78,8 @@
     if (self.isOpen&&self.selectIndex.section == indexPath.section&&indexPath.row!=0){
         if([self.savedRowItems containsObject:[self.transData objectForKey:[self.sectionKeys objectAtIndex:self.selectIndex.section]][indexPath.row-1][@"name"]]){
             [cell setBackgroundColor:[Utiles colorWithHexString:@"#ccd4d9"]];
+        }else{
+            [cell setBackgroundColor:[UIColor whiteColor]];
         }
     }
 }

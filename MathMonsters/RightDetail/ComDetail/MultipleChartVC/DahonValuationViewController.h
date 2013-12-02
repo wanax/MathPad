@@ -40,10 +40,16 @@
 }
 @property (nonatomic,retain) NSNumberFormatter * f;
 
+@property (nonatomic,retain) NSArray *defaultColors;
 @property (nonatomic,retain) id jsonData;
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) NSArray *dateArr;
+@property (nonatomic,retain) NSDictionary *dateIndexMap;
 @property (nonatomic,retain) id chartData;
+
+@property (nonatomic,retain) NSDictionary *dcDic;
+@property (nonatomic,retain) NSDictionary *dcCodePointsDic;
+
 @property (nonatomic,retain) NSMutableDictionary *daHonIndexDateMap;
 @property (nonatomic,retain) NSDictionary *daHonDataDic;
 @property (nonatomic,retain) NSArray *daHonIndexSets;
@@ -61,6 +67,8 @@
 @property (nonatomic,retain) CPTScatterPlot * daHonLinePlot;
 @property (nonatomic,retain) CPTScatterPlot * gooGuuLinePlot;
 @property (nonatomic,retain) CPTScatterPlot * historyLinePlot;
+@property (nonatomic,retain) NSArray *lines;
+@property (nonatomic,retain) NSArray *identifiers;
 
 //绘图view
 @property (nonatomic,retain) CPTXYGraph * graph ;

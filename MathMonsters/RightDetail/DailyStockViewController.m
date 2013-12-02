@@ -28,6 +28,10 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [self getDailyStockNews];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
