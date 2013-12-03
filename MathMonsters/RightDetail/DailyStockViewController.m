@@ -36,10 +36,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
- 
     [self initComponents];
-    [self getDailyStockNews];
-    
 }
 
 -(void)initComponents{
@@ -164,14 +161,10 @@
     return NO;
 }
 
-- (NSUInteger)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskLandscapeRight;
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -249,6 +249,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (BOOL)shouldAutorotate{
+    return NO;
+}
 
 /*- (void)dumpView:(UIView *)aView atIndent:(int)indent into:(NSMutableString *)outstring
 {

@@ -19,8 +19,6 @@
 
 @implementation DahonValuationViewController
 
-static NSString * DAHON_DATALINE_IDENTIFIER =@"大行股价";
-static NSString * GOOGUU_DATALINE_IDENTIFIER =@"估股估值";
 static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 
 
@@ -34,7 +32,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
                        [Utiles cptcolorWithHexString:@"#3ec4df" andAlpha:0.8],
                        [Utiles cptcolorWithHexString:@"#ff1a49" andAlpha:0.8],
                        [Utiles cptcolorWithHexString:@"#5a86d5" andAlpha:0.8],
-                       [Utiles cptcolorWithHexString:@"#feffa3" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#9B59B6" andAlpha:0.8],
                        [Utiles cptcolorWithHexString:@"#bf8fec" andAlpha:0.8],
                        [Utiles cptcolorWithHexString:@"#0c3707" andAlpha:0.8],
                        nil];
@@ -167,7 +165,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         NSNumberFormatter * formatter   = [[NSNumberFormatter alloc] init];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         [formatter setPositiveFormat:@"##.##"];
-        self.chartData=resObj[@"stockHistoryData"][@"data"];
+        self.jsonData=resObj;
+        self.hisLineData=resObj[@"stockHistoryData"][@"data"];
         id info=resObj[@"stockHistoryData"][@"info"];
         
         NSString *open=[formatter stringForObjectValue:info[@"open"]==nil?@"":info[@"open"]];
@@ -177,18 +176,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         NSString *volume=[NSString stringWithFormat:@"%@",info[@"volume"]==nil?@"":info[@"volume"]];
         NSString *indicator=[NSString stringWithFormat:@"昨开盘:%@ 昨收盘:%@ 最高价:%@ 最低价:%@ 成交量:%@",open,close,high,low,volume];
  
-        self.dateArr=[Utiles sortDateArr:self.chartData];
-        self.daHonDataDic=resObj[@"dahonData"];
-        self.gooGuuDataDic=resObj[@"googuuData"];
-        
-        NSString *str=@"目标价由7.5元升至8.25元";
-        NSString *regexString  = @"\\d+.\\d+";
-        NSArray  *matchArray   = NULL;
-        matchArray = [str componentsMatchedByRegex:regexString];
-        for (NSString *str in matchArray) {
-            NSLog(@"%@",str);   
-        }
-     
+        self.dateArr=[Utiles sortDateArr:self.hisLineData];
+
         [self setDateMap];
         
         int count=[self.dateArr count];
@@ -217,33 +206,41 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     }];
 }
 
--(void)setDateMap{
-    
-    NSMutableDictionary *tempDcDic=[[[NSMutableDictionary alloc] init] autorelease];
-    for (id key in self.daHonDataDic) {
-        for (id obj in self.daHonDataDic[key]) {
-            if (![[tempDcDic allKeys] containsObject:obj[@"dahonName"]]) {
+-(void)buildDhDic:(NSMutableDictionary *)tempDic source:(id)dataDic{
+    for (id key in dataDic) {
+        for (id obj in dataDic[key]) {
+            if (![[tempDic allKeys] containsObject:obj[@"dahonName"]]) {
                 NSMutableArray *arr=[NSMutableArray arrayWithObject:obj];
-                [tempDcDic setObject:arr forKey:obj[@"dahonName"]];
+                [tempDic setObject:arr forKey:obj[@"dahonName"]];
             }else {
-                NSMutableArray *temps=tempDcDic[obj[@"dahonName"]];
+                NSMutableArray *temps=tempDic[obj[@"dahonName"]];
                 [temps addObject:obj];
             }
         }
     }
-    self.dcDic=tempDcDic;
+}
+
+-(void)setDateMap{
     
+    //将大行估值与估股估值统一放入大行字典
+    NSMutableDictionary *tempDhDic=[[[NSMutableDictionary alloc] init] autorelease];
+    [self buildDhDic:tempDhDic source:self.jsonData[@"dahonData"]];
+    [self buildDhDic:tempDhDic source:self.jsonData[@"googuuData"]];
+    self.dhDic=tempDhDic;
+    
+    //设置横坐标与时间的对应关系
     NSMutableDictionary *tempDic=[[NSMutableDictionary alloc] init];
     for(int i=0;i<[self.dateArr count];i++){
         [tempDic setValue:@(i) forKey:(self.dateArr)[i]];
     }
     self.dateIndexMap=tempDic;
     
+    //组建大行估值点坐标
     NSMutableDictionary *tempDcCodePointsDic=[[[NSMutableDictionary alloc] init] autorelease];
     NSString *regexString  = @"\\d+.\\d+|\\d+";
-    for (id key in self.dcDic) {
+    for (id key in self.dhDic) {
         NSMutableArray *points=[[[NSMutableArray alloc] init] autorelease];
-        for (id obj in self.dcDic[key]) {
+        for (id obj in self.dhDic[key]) {
             id x=[self dateToIndex:obj[@"date"]];
             NSArray  *matchArray   = NULL;
             matchArray = [obj[@"desc"] componentsMatchedByRegex:regexString];
@@ -256,16 +253,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         }
         [tempDcCodePointsDic setObject:points forKey:key];
     }
-    self.dcCodePointsDic=tempDcCodePointsDic;
-    
-    self.daHonIndexDateMap=[self dateRestruct:tempDic keys:[Utiles sortDateArr:[self.daHonDataDic allKeys]]];
-    self.daHonIndexSets=[self.daHonIndexDateMap allKeys];
-    
-    self.gooGuuIndexDateMap=[self dateRestruct:tempDic keys:[Utiles sortDateArr:[self.gooGuuDataDic allKeys]]];
-    self.gooGuuIndexSets=[self.gooGuuIndexDateMap allKeys];
-    
+    self.dhCodePointsDic=tempDcCodePointsDic;
     SAFE_RELEASE(tempDic);
-    
 }
 
 -(id)dateToIndex:(NSString *)date{
@@ -286,36 +275,6 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     }
 }
 
--(NSMutableDictionary *)dateRestruct:(NSMutableDictionary *)tempDic keys:(NSArray *)keys{
-    NSMutableDictionary *tempMap=[[NSMutableDictionary alloc] init];
-    NSMutableArray *scoreCounter=[[NSMutableArray alloc] init];
-    NSArray *dates=[Utiles sortDateArr:[tempDic allKeys]];
-    BOOL isAdd=NO;
-    for(id key in keys){
-        if([dates containsObject:key]){
-            [tempMap setValue:key forKey:[NSString stringWithFormat:@"%@",tempDic[key]]];
-            [scoreCounter addObject:tempDic[key]];
-        }else{
-            for(int n=[scoreCounter count]==0?0:[[scoreCounter lastObject] intValue];n<[dates count];n++){
-                if([Utiles isDate1:dates[n] beforeThanDate2:key]){
-                    continue;
-                }else{
-                    [tempMap setValue:key forKey:[NSString stringWithFormat:@"%d",n]];
-                    [scoreCounter addObject:@(n-1)];
-                    isAdd=YES;
-                    break;
-                }
-            }
-            if(!isAdd){
-                [tempMap setValue:key forKey:[NSString stringWithFormat:@"%d",[dates count]-1]];
-            }
-        }
-        
-    }
-    SAFE_RELEASE(scoreCounter);
-    return [tempMap autorelease];
-}
-
 -(void)setXYAxis{
 
     [self lineShowWithAnimation];
@@ -325,8 +284,13 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     for(id obj in self.dateArr){
         [xTmp addObject:@(n++)];
     }
-    for(id obj in self.chartData){
-        [yTmp addObject:(self.chartData)[obj][@"close"]];
+    for(id obj in self.hisLineData){
+        [yTmp addObject:self.hisLineData[obj][@"close"]];
+    }
+    for (id key in self.dhCodePointsDic) {
+        for (id obj in self.dhCodePointsDic[key]) {
+            [yTmp addObject:obj[@"y"]];
+        }
     }
     NSDictionary *xyDic=[DrawChartTool getXYAxisRangeFromxArr:xTmp andyArr:yTmp fromWhere:DahonModel screenHeight:HostViewHeight];
     XORTHOGONALCOORDINATE=[xyDic[@"xOrigin"] doubleValue];
@@ -356,28 +320,15 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot{
     int count=0;
     if([(NSString *)plot.identifier isEqualToString:HISTORY_DATALINE_IDENTIFIER]){
-        if(self.chartData){
-            count=[self.chartData count];
-        }else{
-            count=0;
-        }
-        
-    }else if([(NSString *)plot.identifier isEqualToString:DAHON_DATALINE_IDENTIFIER]){
-        if(self.daHonIndexSets){
-            count=[self.daHonIndexSets count];
-        }else{
-            count=0;
-        }
-    }else if([(NSString *)plot.identifier isEqualToString:GOOGUU_DATALINE_IDENTIFIER]){
-        if(self.gooGuuIndexSets){
-            count=[self.gooGuuIndexSets count];
+        if(self.hisLineData){
+            count=[self.hisLineData count];
         }else{
             count=0;
         }
     }else {
         for (id identifier in self.identifiers) {
             if ([identifier isEqual:(NSString *)plot.identifier]) {
-                count=[self.dcCodePointsDic[identifier] count];
+                count=[self.dhCodePointsDic[identifier] count];
             }
         }
     }
@@ -395,39 +346,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
                 if([key isEqualToString:@"x"]){
                     num=[NSNumber numberWithInt:index] ;
                 }else if([key isEqualToString:@"y"]){
-                    num=[self.chartData valueForKey:(self.dateArr)[index]][@"close"];
-                }
-            }
-            @catch (NSException *exception) {
-                NSLog(@"%@",exception);
-            }
-        }
-        
-    }else if([(NSString *)plot.identifier isEqualToString:DAHON_DATALINE_IDENTIFIER]){
-        if(index<[self.daHonIndexSets count]){
-            @try {
-                NSString *key=(fieldEnum==CPTScatterPlotFieldX?@"x":@"y");
-                NSInteger trueIndex=[(self.daHonIndexSets)[index] intValue];
-                if([key isEqualToString:@"x"]){
-                    num=@(trueIndex);
-                }else if([key isEqualToString:@"y"]){
-                    num=[self.chartData valueForKey:(self.dateArr)[trueIndex]][@"close"];
-                }
-            }
-            @catch (NSException *exception) {
-                NSLog(@"%@",exception);
-            }
-        }
-        
-    }else if([(NSString *)plot.identifier isEqualToString:GOOGUU_DATALINE_IDENTIFIER]){
-        if(index<[self.gooGuuIndexSets count]){
-            @try {
-                NSString *key=(fieldEnum==CPTScatterPlotFieldX?@"x":@"y");
-                NSInteger trueIndex=[(self.gooGuuIndexSets)[index] intValue];
-                if([key isEqualToString:@"x"]){
-                    num=@(trueIndex);
-                }else if([key isEqualToString:@"y"]){
-                    num=[self.chartData valueForKey:(self.dateArr)[trueIndex]][@"close"];
+                    num=[self.hisLineData valueForKey:(self.dateArr)[index]][@"close"];
                 }
             }
             @catch (NSException *exception) {
@@ -439,7 +358,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         for (id identifier in self.identifiers) {
             if ([identifier isEqual:(NSString *)plot.identifier]) {
                 NSString *key=(fieldEnum==CPTScatterPlotFieldX?@"x":@"y");
-                NSDictionary *point=self.dcCodePointsDic[identifier][index];
+                NSDictionary *point=self.dhCodePointsDic[identifier][index];
                 num = point[key];
             }
         }
@@ -449,45 +368,14 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 
 #pragma mark -
 #pragma mark Scatter Plot Methods Delegate
--(NSDictionary *)getDataFromDic:(NSDictionary *)dic dateMap:(NSMutableDictionary *)map andArr:(NSArray *)sets byIndex:(NSUInteger)idx{
-    
-    NSString *msg=[[[NSString alloc] init] autorelease];
-    NSString *title=nil;
-    NSNumber *trueIndex=@([sets[idx] intValue]);
-    NSString *date=map[[NSString stringWithFormat:@"%@",trueIndex]];
-    id data=dic[date];
-    title=[NSString stringWithFormat:@"%@",date];
-    for(id obj in data){
-        msg=[msg stringByAppendingFormat:@"%@:%@\n",obj[@"dahonName"],obj[@"desc"]];
-    }
-    return @{@"msg": msg,@"title": title};
-}
 
 -(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolWasSelectedAtRecordIndex:(NSUInteger)idx{
-    NSDictionary *info=nil;
-    NSDictionary *info2=nil;
-    if(plot.identifier==GOOGUU_DATALINE_IDENTIFIER){
-        info=[self getDataFromDic:self.gooGuuDataDic dateMap:self.gooGuuIndexDateMap andArr:self.gooGuuIndexSets byIndex:idx];
-        if([self.daHonIndexSets containsObject:(self.gooGuuIndexSets)[idx]]){
-            info2=[self getDataFromDic:self.daHonDataDic dateMap:self.daHonIndexDateMap andArr:self.daHonIndexSets byIndex:idx];
-        }
-    }else if(plot.identifier==DAHON_DATALINE_IDENTIFIER){
-        info=[self getDataFromDic:self.daHonDataDic dateMap:self.daHonIndexDateMap andArr:self.daHonIndexSets byIndex:idx];
-    } else {
-        for (id identifier in self.identifiers) {
-            if ([identifier isEqual:(NSString *)plot.identifier]) {
-                [Utiles showToastView:self.view withTitle:identifier andContent:self.dcDic[identifier][idx][@"desc"] duration:1.5];
-                return;
-            }
+    for (id identifier in self.identifiers) {
+        if ([identifier isEqual:(NSString *)plot.identifier]) {
+            [Utiles showToastView:self.view withTitle:identifier andContent:self.dhDic[identifier][idx][@"desc"] duration:2.5];
+            return;
         }
     }
-    NSString *msg=nil;
-    if(info2){
-        msg=[NSString stringWithFormat:@"%@%@",info[@"msg"],info2[@"msg"]];
-    }else{
-        msg=[NSString stringWithFormat:@"%@",info[@"msg"]];
-    }
-    [Utiles showToastView:self.view withTitle:info[@"title"] andContent:msg duration:1.5];
 }
 
 #pragma mark -
@@ -572,13 +460,12 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     symbolLineStyle.lineWidth = 1.0;
     
     CPTPlotSymbol * plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
-    
     plotSymbol.lineStyle     = symbolLineStyle;
     plotSymbol.size          = CGSizeMake(20, 20);
     NSMutableArray *tempLines=[[[NSMutableArray alloc] init] autorelease];
     NSMutableArray *tempIdentifiers=[[[NSMutableArray alloc] init] autorelease];
     int n=0;
-    for (id key in self.dcDic) {
+    for (id key in self.dhDic) {
         CPTScatterPlot *line=[[[CPTScatterPlot alloc] init] autorelease];
         lineStyle.miterLimit=0.0f;
         lineStyle.lineWidth=0.0f;
@@ -588,7 +475,19 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         line.labelOffset=5;
         line.dataSource=self;
         line.delegate=self;
-        plotSymbol.fill  = [CPTFill fillWithColor:self.defaultColors[n++]];
+        
+        if ([key isEqualToString:@"估股网"]) {
+            plotSymbol = [CPTPlotSymbol trianglePlotSymbol];
+            symbolLineStyle.lineWidth = 0.0;
+            plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#498641" andAlpha:1.0]];
+            
+        }else {
+            plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
+            symbolLineStyle.lineWidth = 1.0;
+            plotSymbol.fill  = [CPTFill fillWithColor:self.defaultColors[n++]];
+        }
+        plotSymbol.lineStyle     = symbolLineStyle;
+        plotSymbol.size          = CGSizeMake(20, 20);
         line.plotSymbol = plotSymbol;
         [tempIdentifiers addObject:key];
         [tempLines addObject:line];
@@ -596,40 +495,16 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     }
     self.lines=tempLines;
     self.identifiers=tempIdentifiers;
-    
-    CPTScatterPlot *c3=[[[CPTScatterPlot alloc] init] autorelease];
-    self.gooGuuLinePlot=c3;
-    lineStyle.miterLimit=0.0f;
-    lineStyle.lineWidth=0.0f;
-    lineStyle.lineColor=[CPTColor clearColor];
-    self.gooGuuLinePlot.dataLineStyle=lineStyle;
-    self.gooGuuLinePlot.identifier=GOOGUU_DATALINE_IDENTIFIER;
-    self.gooGuuLinePlot.labelOffset=5;
-    self.gooGuuLinePlot.dataSource=self;
-    self.gooGuuLinePlot.delegate=self;
 
-    plotSymbol = [CPTPlotSymbol trianglePlotSymbol];
-    plotSymbol.lineStyle     = symbolLineStyle;
-    symbolLineStyle.lineWidth = 0.0;
-    plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#498641" andAlpha:1.0]];
-    plotSymbol.size          = CGSizeMake(20, 20);
-    self.gooGuuLinePlot.plotSymbol=plotSymbol;
-    
     self.historyLinePlot.opacity = 0.0f;
-    //self.daHonLinePlot.opacity = 0.0f;
-    self.gooGuuLinePlot.opacity=0.0f;
     [self lineShowWithAnimation];
     
     CPTColor *areaColor       = [CPTColor purpleColor];
     CPTGradient *areaGradient = [CPTGradient gradientWithBeginningColor:areaColor endingColor:[CPTColor blackColor]];
     areaGradient.angle = 0.0f;
     self.historyLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
-    //self.daHonLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
-    self.gooGuuLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
     
     [graph addPlot:self.historyLinePlot];
-    //[graph addPlot:self.daHonLinePlot];
-    [graph addPlot:self.gooGuuLinePlot];
     
     // Add legend
     graph.legend                    = [CPTLegend legendWithGraph:graph];
@@ -650,9 +525,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     fadeInAnimation.removedOnCompletion = NO;
     fadeInAnimation.fillMode            = kCAFillModeBoth;
     fadeInAnimation.toValue             = @1.0f;
-    [self.daHonLinePlot addAnimation:fadeInAnimation forKey:@"animateOpacity"];
     [self.historyLinePlot addAnimation:fadeInAnimation forKey:@"animateOpacity"];
-    [self.gooGuuLinePlot addAnimation:fadeInAnimation forKey:@"animateOpacity"];
 }
 
 - (void)didReceiveMemoryWarning

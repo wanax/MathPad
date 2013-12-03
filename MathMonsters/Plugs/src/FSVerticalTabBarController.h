@@ -33,5 +33,8 @@
 
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 
+- (BOOL)shouldAutorotate   ;
+- (NSUInteger)supportedInterfaceOrientations;
+
 
 @end

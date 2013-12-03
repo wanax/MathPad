@@ -215,5 +215,17 @@
     }
 }
 
+//返回最上层的子Controller的shouldAutorotate
+//子类要实现屏幕旋转需重写该方法
+- (BOOL)shouldAutorotate{
+    NSLog(@"%s",__FUNCTION__);
+    return self.selectedViewController.shouldAutorotate;
+}
+
+//返回最上层的子Controller的supportedInterfaceOrientations
+- (NSUInteger)supportedInterfaceOrientations{
+    NSLog(@"%s",__FUNCTION__);
+    return self.selectedViewController.supportedInterfaceOrientations;
+}
 
 @end

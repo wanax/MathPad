@@ -32,6 +32,7 @@
     [self.view addSubview:back];
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

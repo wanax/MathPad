@@ -73,6 +73,7 @@
 -(void)initComponents{
     
     UITableView *temp=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,1024,610)] autorelease];
+    temp.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.proLossTable=temp;
     self.proLossTable.dataSource=self;
     self.proLossTable.delegate=self;
@@ -101,7 +102,7 @@
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath{
     MyProLossCell *c=(MyProLossCell *)cell;
     if (indexPath.row%2==0) {
-        c.backgroundColor=[UIColor belizeHoleColor];
+        c.backgroundColor=[Utiles colorWithHexString:@"#d3e9ff"];
     } else {
         c.backgroundColor=[UIColor whiteColor];
     }

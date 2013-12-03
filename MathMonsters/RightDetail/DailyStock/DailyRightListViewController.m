@@ -117,7 +117,9 @@
 }
 
 
-
+- (BOOL)shouldAutorotate{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {

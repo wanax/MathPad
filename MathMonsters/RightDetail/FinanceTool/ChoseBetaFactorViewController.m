@@ -132,6 +132,10 @@
     }
 }
 
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

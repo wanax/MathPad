@@ -78,6 +78,9 @@
     return [self.typeArr objectAtIndex:row];
 }
 
+- (BOOL)shouldAutorotate{
+    return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {

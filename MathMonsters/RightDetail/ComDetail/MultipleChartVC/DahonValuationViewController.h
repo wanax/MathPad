@@ -45,17 +45,10 @@
 @property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) NSArray *dateArr;
 @property (nonatomic,retain) NSDictionary *dateIndexMap;
-@property (nonatomic,retain) id chartData;
+@property (nonatomic,retain) id hisLineData;
 
-@property (nonatomic,retain) NSDictionary *dcDic;
-@property (nonatomic,retain) NSDictionary *dcCodePointsDic;
-
-@property (nonatomic,retain) NSMutableDictionary *daHonIndexDateMap;
-@property (nonatomic,retain) NSDictionary *daHonDataDic;
-@property (nonatomic,retain) NSArray *daHonIndexSets;
-@property (nonatomic,retain) NSMutableDictionary *gooGuuIndexDateMap;
-@property (nonatomic,retain) NSDictionary *gooGuuDataDic;
-@property (nonatomic,retain) NSArray *gooGuuIndexSets;
+@property (nonatomic,retain) NSDictionary *dhDic;
+@property (nonatomic,retain) NSDictionary *dhCodePointsDic;
 
 @property (nonatomic,retain) UIButton *oneMonth;
 @property (nonatomic,retain) UIButton *threeMonth;
@@ -64,8 +57,6 @@
 @property (nonatomic,retain) UIButton *lastMarkBt;
 @property (nonatomic,retain) UILabel *titleLabel;
 
-@property (nonatomic,retain) CPTScatterPlot * daHonLinePlot;
-@property (nonatomic,retain) CPTScatterPlot * gooGuuLinePlot;
 @property (nonatomic,retain) CPTScatterPlot * historyLinePlot;
 @property (nonatomic,retain) NSArray *lines;
 @property (nonatomic,retain) NSArray *identifiers;

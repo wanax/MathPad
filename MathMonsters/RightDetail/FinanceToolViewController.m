@@ -89,6 +89,9 @@
     [self.view addSubview:bt];
 }
 
+- (BOOL)shouldAutorotate{
+    return YES;
+}
 
 
 - (void)didReceiveMemoryWarning

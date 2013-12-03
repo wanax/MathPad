@@ -144,4 +144,8 @@
     return cell;
 }
 
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+
 @end

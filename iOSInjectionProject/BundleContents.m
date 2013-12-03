@@ -18,7 +18,7 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MultipleChartVC/DahonValuationViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/DailyStockViewController.m"
 
 
 @interface InjectionBundle2 : NSObject
@@ -27,8 +27,8 @@
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_DahonValuationViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_DahonValuationViewController notify:4];
+    extern Class OBJC_CLASS_$_DailyStockViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_DailyStockViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 
