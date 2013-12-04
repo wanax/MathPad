@@ -236,7 +236,6 @@
 		AEB3E32F17F40D4500A273E9 /* UIButton+BGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E32817F40D4500A273E9 /* UIButton+BGColor.m */; };
 		AEB3E33017F40D4500A273E9 /* UILabel+VerticalAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E32A17F40D4500A273E9 /* UILabel+VerticalAlign.m */; };
 		AEB3E33117F40D4500A273E9 /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E32C17F40D4500A273E9 /* UINavigationController+Autorotate.m */; };
-		AEB3E33217F40D4500A273E9 /* UITabBarController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E32E17F40D4500A273E9 /* UITabBarController+Autorotate.m */; };
 		AEB3E33517F40DA100A273E9 /* EnumSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E33417F40DA100A273E9 /* EnumSummary.m */; };
 		AEB3E33D17F4229900A273E9 /* GraphExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E33C17F4229900A273E9 /* GraphExchangeViewController.m */; };
 		AEB3E34017F422B100A273E9 /* DailyStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E33F17F422B100A273E9 /* DailyStockViewController.m */; };
@@ -701,8 +700,6 @@
 		AEB3E32A17F40D4500A273E9 /* UILabel+VerticalAlign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+VerticalAlign.m"; sourceTree = "<group>"; };
 		AEB3E32B17F40D4500A273E9 /* UINavigationController+Autorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Autorotate.h"; sourceTree = "<group>"; };
 		AEB3E32C17F40D4500A273E9 /* UINavigationController+Autorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Autorotate.m"; sourceTree = "<group>"; };
-		AEB3E32D17F40D4500A273E9 /* UITabBarController+Autorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Autorotate.h"; sourceTree = "<group>"; };
-		AEB3E32E17F40D4500A273E9 /* UITabBarController+Autorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Autorotate.m"; sourceTree = "<group>"; };
 		AEB3E33317F40DA100A273E9 /* EnumSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumSummary.h; sourceTree = "<group>"; };
 		AEB3E33417F40DA100A273E9 /* EnumSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumSummary.m; sourceTree = "<group>"; };
 		AEB3E33B17F4229900A273E9 /* GraphExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphExchangeViewController.h; path = MathMonsters/RightDetail/GraphExchangeViewController.h; sourceTree = SOURCE_ROOT; };
@@ -1003,8 +1000,6 @@
 				AEB3E32A17F40D4500A273E9 /* UILabel+VerticalAlign.m */,
 				AEB3E32B17F40D4500A273E9 /* UINavigationController+Autorotate.h */,
 				AEB3E32C17F40D4500A273E9 /* UINavigationController+Autorotate.m */,
-				AEB3E32D17F40D4500A273E9 /* UITabBarController+Autorotate.h */,
-				AEB3E32E17F40D4500A273E9 /* UITabBarController+Autorotate.m */,
 			);
 			name = CustomCatalog;
 			sourceTree = "<group>";
@@ -2110,7 +2105,6 @@
 				AEB3E33117F40D4500A273E9 /* UINavigationController+Autorotate.m in Sources */,
 				AE572B73182CB67E0000B193 /* DahonValuationViewController.m in Sources */,
 				AE31F85F182B38AD001CD0D0 /* AKOMultiColumnTextView.m in Sources */,
-				AEB3E33217F40D4500A273E9 /* UITabBarController+Autorotate.m in Sources */,
 				AE739ABD182257FB00CF82C5 /* NSMutableArray+convenience.m in Sources */,
 				AE30964E183DDC7A0074B84C /* ComIconListViewController.m in Sources */,
 				AE745E4F1823A88B000A60A7 /* FInanceDetailViewController.m in Sources */,

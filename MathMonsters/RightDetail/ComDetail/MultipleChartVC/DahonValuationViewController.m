@@ -63,10 +63,10 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     DrawChartTool *tool=[[DrawChartTool alloc] init];
     tool.standIn=self;
     //title
-    self.titleLabel=[tool addLabelToView:self.view withTitle:@"" Tag:6 frame:CGRectMake(10,5,600,30) fontSize:19.0 color:nil textColor:@"#63573d" location:NSTextAlignmentLeft];
+    self.titleLabel=[tool addLabelToView:self.view withTitle:@"" Tag:6 frame:CGRectMake(10,5,800,30) fontSize:19.0 color:nil textColor:@"#63573d" location:NSTextAlignmentLeft];
     
     //提示信息
-    [tool addLabelToView:self.view withTitle:@"*点击图标查看大行估值" Tag:6 frame:CGRectMake(620,5,200,30) fontSize:15.0 color:nil textColor:@"#63573d" location:NSTextAlignmentCenter];
+    [tool addLabelToView:self.view withTitle:@"*点击图标查看大行估值" Tag:6 frame:CGRectMake(820,5,200,30) fontSize:15.0 color:nil textColor:@"#63573d" location:NSTextAlignmentCenter];
     
     self.oneMonth=[tool addButtonToView:self.view withTitle:@"一个月" Tag:OneMonth frame:CGRectMake(10,570,80,30) andFun:@selector(changeDateInter:) withType:UIButtonTypeCustom andColor:nil textColor:@"#e97a31" normalBackGroundImg:nil highBackGroundImg:nil];
     [self.oneMonth.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:15.0]];
@@ -129,28 +129,31 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 }
 
 -(void)initChart{
-    graph=[[CPTXYGraph alloc] initWithFrame:CGRectZero];
-    graph.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#ffffff" andAlpha:0.9]];
+    
+    CPTXYGraph *tg=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
+    self.graph=tg;
+    CPTFill *tf=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#ffffff" andAlpha:0.9]];
+    self.graph.fill=tf;
     
     CPTGraphHostingView *tHostView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,40,SCREEN_HEIGHT-20,HostViewHeight)] autorelease];
     self.hostView=tHostView;
     [self.view addSubview:self.hostView];
-    [self.hostView setHostedGraph : graph ];
-    graph . paddingLeft = 0.0f ;
-    graph . paddingRight = 0.0f ;
-    graph . paddingTop = 0 ;
-    graph . paddingBottom = 0 ;
+    [self.hostView setHostedGraph : self.graph ];
+    self.graph . paddingLeft = 0.0f ;
+    self.graph . paddingRight = 0.0f ;
+    self.graph . paddingTop = 0 ;
+    self.graph . paddingBottom = 0 ;
     
-    graph.plotAreaFrame.paddingTop    = 10.0;
-    graph.plotAreaFrame.paddingBottom = 50.0;
-    graph.plotAreaFrame.paddingLeft   = 70.0;
-    graph.plotAreaFrame.paddingRight  = 0.0;
-    graph.plotAreaFrame.masksToBorder = NO;
+    self.graph.plotAreaFrame.paddingTop    = 10.0;
+    self.graph.plotAreaFrame.paddingBottom = 50.0;
+    self.graph.plotAreaFrame.paddingLeft   = 70.0;
+    self.graph.plotAreaFrame.paddingRight  = 0.0;
+    self.graph.plotAreaFrame.masksToBorder = NO;
     
     //graph.title=@"大行估值";
     [self.titleLabel setText:@"大行估值"];
     //绘制图形空间
-    self.plotSpace=(CPTXYPlotSpace *)graph.defaultPlotSpace;
+    self.plotSpace=(CPTXYPlotSpace *)self.graph.defaultPlotSpace;
     self.plotSpace.allowsUserInteraction=YES;
     [self.hostView setAllowPinchScaling:YES];
     DrawXYAxisWithoutXAxisOrYAxis;
@@ -163,7 +166,6 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     NSDictionary *params=@{@"stockcode": self.comInfo[@"stockcode"]};
     [Utiles getNetInfoWithPath:@"GetStockHistoryData" andParams:params besidesBlock:^(id resObj){
         NSNumberFormatter * formatter   = [[NSNumberFormatter alloc] init];
-        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         [formatter setPositiveFormat:@"##.##"];
         self.jsonData=resObj;
         self.hisLineData=resObj[@"stockHistoryData"][@"data"];
@@ -173,8 +175,9 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         NSString *close=[formatter stringForObjectValue:info[@"close"]==nil?@"":info[@"close"]];
         NSString *high=[formatter stringForObjectValue:info[@"high"]==nil?@"":info[@"high"]];
         NSString *low=[formatter stringForObjectValue:info[@"low"]==nil?@"":info[@"low"]];
-        NSString *volume=[NSString stringWithFormat:@"%@",info[@"volume"]==nil?@"":info[@"volume"]];
-        NSString *indicator=[NSString stringWithFormat:@"昨开盘:%@ 昨收盘:%@ 最高价:%@ 最低价:%@ 成交量:%@",open,close,high,low,volume];
+        [formatter setPositiveFormat:@"#,###"];
+        NSString *volume=[formatter stringFromNumber:info[@"volume"]];
+        NSString *indicator=[NSString stringWithFormat:@"昨开盘:%@   昨收盘:%@   最高价:%@   最低价:%@   成交量:%@",open,close,high,low,volume];
  
         self.dateArr=[Utiles sortDateArr:self.hisLineData];
 
@@ -301,7 +304,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     self.plotSpace.globalYRange=[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(YRANGEBEGIN) length:CPTDecimalFromDouble(YRANGELENGTH)];
     self.plotSpace.globalXRange=[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(-30) length:CPTDecimalFromDouble(320)];
     DrawXYAxisWithoutXAxisOrYAxis;
-    [graph reloadData];
+    [self.graph reloadData];
 }
 
 -(void)reflash:(UIButton *)bt{
@@ -491,7 +494,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         line.plotSymbol = plotSymbol;
         [tempIdentifiers addObject:key];
         [tempLines addObject:line];
-        [graph addPlot:line];
+        [self.graph addPlot:line];
     }
     self.lines=tempLines;
     self.identifiers=tempIdentifiers;
@@ -504,19 +507,19 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     areaGradient.angle = 0.0f;
     self.historyLinePlot.areaFill      = [CPTFill fillWithGradient:areaGradient];
     
-    [graph addPlot:self.historyLinePlot];
+    [self.graph addPlot:self.historyLinePlot];
     
     // Add legend
-    graph.legend                    = [CPTLegend legendWithGraph:graph];
-    //graph.legend.textStyle          = lineStyle;
-    graph.legend.fill               = graph.plotAreaFrame.fill;
-    graph.legend.borderLineStyle    = graph.plotAreaFrame.borderLineStyle;
-    graph.legend.cornerRadius       = 5.0;
-    graph.legend.swatchSize         = CGSizeMake(25.0, 25.0);
-    graph.legend.swatchCornerRadius = 5.0;
-    graph.legend.numberOfRows       = 1;
-    graph.legendAnchor              = CPTRectAnchorTopLeft;
-    graph.legendDisplacement        = CGPointMake(80.0, 0.0);
+    self.graph.legend                    = [CPTLegend legendWithGraph:self.graph];
+    //self.graph.legend.textStyle          = lineStyle;
+    self.graph.legend.fill               = self.graph.plotAreaFrame.fill;
+    self.graph.legend.borderLineStyle    = self.graph.plotAreaFrame.borderLineStyle;
+    self.graph.legend.cornerRadius       = 5.0;
+    self.graph.legend.swatchSize         = CGSizeMake(25.0, 25.0);
+    self.graph.legend.swatchCornerRadius = 5.0;
+    self.graph.legend.numberOfRows       = 1;
+    self.graph.legendAnchor              = CPTRectAnchorTopLeft;
+    self.graph.legendDisplacement        = CGPointMake(80.0, 0.0);
     
 }
 -(void)lineShowWithAnimation{

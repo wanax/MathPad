@@ -62,18 +62,6 @@
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backToRoot:)];
     self.navigationItem.leftBarButtonItem = anotherButton;
     [anotherButton release];
-
-    
-    AKOMultiPageTextView *a=[[[AKOMultiPageTextView alloc] initWithFrame:CGRectMake(0,0,1034,770)] autorelease];
-    self.multiPageView=a;
-    self.multiPageView.viewBackColor=[UIColor whiteColor];
-    self.multiPageView.color=[UIColor blackColor];
-    self.multiPageView.dataSource = self;
-    self.multiPageView.columnInset = CGPointMake(50, 30);
-    self.multiPageView.text = [Utiles stringFromFileNamed:@"lorem_ipsum.txt"];
-    self.multiPageView.font = [UIFont fontWithName:@"Georgia" size:24.0];
-    self.multiPageView.columnCount = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 2 : 3;
-    //[self.view addSubview:self.multiPageView];
     
 }
 
@@ -82,13 +70,10 @@
     [Utiles getNetInfoWithPath:@"ArticleURL" andParams:params besidesBlock:^(id article){
         
         self.articleContent=article;
-        UIWebView *web=[[[UIWebView alloc] initWithFrame:CGRectMake(0,0,512,768)] autorelease];
+        UIWebView *web=[[[UIWebView alloc] initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT)] autorelease];
         self.articleWeb=web;
         [self.articleWeb loadHTMLString:[article objectForKey:@"content"] baseURL:nil];
         self.articleWeb.delegate=self;
-        //[(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setBounces:NO];
-        //[(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setScrollEnabled:NO];
-        //[(UIScrollView *)[[self.articleWeb subviews] objectAtIndex:0] setContentSize:CGSizeMake(200,320)];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.view addSubview:self.articleWeb];
         
@@ -117,7 +102,6 @@
         [dic setObject:[NSNumber numberWithInt:(n++)] forKey:obj];
     }
     self.picIndexDic=dic;
-    [self reLayoutWeb:webView];
     [self addTapOnWebView];
 
 }
@@ -137,63 +121,27 @@
     self.imageUrlList=tempArr;
 }
 
--(void)reLayoutWeb:(UIWebView *)webView{
-    
-    CGFloat height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
-    CGRect frame = webView.frame;
-    float n=ceil(height/frame.size.height);
-    
-    UIScrollView *pageScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40, 1024, 768)];
-    pageScroll.contentSize = CGSizeMake(n*512,708);
-    pageScroll.pagingEnabled = YES;
-    pageScroll.delegate = self;
-    [pageScroll setShowsHorizontalScrollIndicator:YES];
-    
-    NSMutableArray *te=[[[NSMutableArray alloc] init] autorelease];
-    
-    for(int i=0;i<n;i++){
-        
-        UIWebView *aWeb=[[UIWebView alloc] initWithFrame:CGRectMake(i*512,-i*768,512,height)];
-        [aWeb loadHTMLString:[self.articleContent objectForKey:@"content"] baseURL:nil];
-        [(UIScrollView *)[[aWeb subviews] objectAtIndex:0] setScrollEnabled:NO];
-        [pageScroll addSubview:aWeb];
-        [te addObject:aWeb];
-        [aWeb release];
-        
-    }
-    self.webContainer=te;
-    [self.view addSubview:pageScroll];
-    [self.articleWeb removeFromSuperview];
-    
-}
-
 #pragma mark -
 #pragma mark UIWebView Delegate
 
 -(void)addTapOnWebView
 {
-    for (UIWebView *web in self.webContainer) {
-        UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-        [web addGestureRecognizer:singleTap];
-        singleTap.delegate = self;
-        singleTap.cancelsTouchesInView = NO;
-    }
-    
+    UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    [self.articleWeb addGestureRecognizer:singleTap];
+    singleTap.delegate = self;
+    singleTap.cancelsTouchesInView = NO;
 }
 
 -(void)handleSingleTap:(UITapGestureRecognizer *)sender
 {
-    for(UIWebView *web in self.webContainer){
-        CGPoint pt = [sender locationInView:web];
-        NSString *imgURL = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).src", pt.x, pt.y];
-        NSString *urlToSave = [web stringByEvaluatingJavaScriptFromString:imgURL];
-        if (urlToSave.length > 0) {
-            int index=[[self.picIndexDic objectForKey:urlToSave] intValue];
-            [self.browser setInitialPageIndex:index];
-            [self presentViewController:self.browser animated:YES completion:nil];
-        }
+    CGPoint pt = [sender locationInView:self.articleWeb];
+    NSString *imgURL = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).src", pt.x, pt.y];
+    NSString *urlToSave = [self.articleWeb stringByEvaluatingJavaScriptFromString:imgURL];
+    if (urlToSave.length > 0) {
+        int index=[[self.picIndexDic objectForKey:urlToSave] intValue];
+        [self.browser setInitialPageIndex:index];
+        [self presentViewController:self.browser animated:YES completion:nil];
     }
-    
 }
 
 #pragma mark -
@@ -290,9 +238,11 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotate{
     return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)didReceiveMemoryWarning

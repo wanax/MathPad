@@ -29,7 +29,6 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,8 +59,12 @@
 }
 
 - (BOOL)shouldAutorotate{
-    return NO;
+    return YES;
 }
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

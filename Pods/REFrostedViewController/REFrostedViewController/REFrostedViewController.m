@@ -30,6 +30,8 @@
 #import "UIViewController+REFrostedViewController.h"
 #import "RECommonFunctions.h"
 
+#define MinimumMenuViewSize 200
+
 @interface REFrostedViewController ()
 
 @property (assign, readwrite, nonatomic) CGFloat imageViewWidth;
@@ -155,7 +157,7 @@
     self.containerViewController.animateApperance = animateApperance;
     if (CGSizeEqualToSize(self.minimumMenuViewSize, CGSizeZero)) {
         if (self.direction == REFrostedViewControllerDirectionLeft || self.direction == REFrostedViewControllerDirectionRight)
-            self.minimumMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width - 50.0f, self.contentViewController.view.frame.size.height);
+            self.minimumMenuViewSize = CGSizeMake(MinimumMenuViewSize, self.contentViewController.view.frame.size.height);
         
         if (self.direction == REFrostedViewControllerDirectionTop || self.direction == REFrostedViewControllerDirectionBottom)
             self.minimumMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width, self.contentViewController.view.frame.size.height - 50.0f);
@@ -198,12 +200,17 @@
     return self.contentViewController.shouldAutorotate;
 }
 
+- (NSUInteger)supportedInterfaceOrientations{
+    return self.contentViewController.supportedInterfaceOrientations;
+}
+
+
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     if (self.visible) {
         if (self.direction == REFrostedViewControllerDirectionLeft || self.direction == REFrostedViewControllerDirectionRight)
-            self.minimumMenuViewSize = CGSizeMake(self.view.bounds.size.width - 50.0f, self.view.bounds.size.height);
+            self.minimumMenuViewSize = CGSizeMake(MinimumMenuViewSize, self.view.bounds.size.height);
         
         if (self.direction == REFrostedViewControllerDirectionTop || self.direction == REFrostedViewControllerDirectionBottom)
             self.minimumMenuViewSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 50.0f);

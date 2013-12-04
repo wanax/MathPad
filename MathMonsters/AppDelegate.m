@@ -30,7 +30,7 @@
     //[Crashlytics startWithAPIKey:@"c59317990c405b2f42582cacbe9f4fa9abe1fefb"];
     [self netChecked];
     [self shouldKeepLogin];
-    //[self setPonyDebugger];
+    [self setPonyDebugger];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self initComponents];

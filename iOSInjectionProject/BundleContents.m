@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle2
+#define INJECTION_BUNDLE InjectionBundle6
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/DailyStockViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MultipleChartVC/DahonValuationViewController.m"
 
 
-@interface InjectionBundle2 : NSObject
+@interface InjectionBundle6 : NSObject
 @end
-@implementation InjectionBundle2
+@implementation InjectionBundle6
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_DailyStockViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_DailyStockViewController notify:4];
+    extern Class OBJC_CLASS_$_DahonValuationViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_DahonValuationViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

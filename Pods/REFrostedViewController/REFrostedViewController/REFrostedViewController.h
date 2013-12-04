@@ -58,4 +58,7 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
 - (void)hideMenuViewController;
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer;
 
+- (BOOL)shouldAutorotate   ;
+- (NSUInteger)supportedInterfaceOrientations;
+
 @end

@@ -29,4 +29,11 @@
     [self.frostedViewController presentMenuViewController];
 }
 
+- (BOOL)shouldAutorotate{
+    return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 @end

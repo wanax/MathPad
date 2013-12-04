@@ -87,6 +87,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (BOOL)shouldAutorotate{
+    return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

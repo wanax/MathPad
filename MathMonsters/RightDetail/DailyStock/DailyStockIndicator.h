@@ -14,8 +14,11 @@
 
 @property (nonatomic,retain) UIImageView *comIconView;
 @property (nonatomic,retain) UILabel *comNameLabel;
+@property (nonatomic,retain) UIButton *comNameButton;
 @property (nonatomic,retain) UILabel *marketPriLabel;
 @property (nonatomic,retain) UILabel *googuuPriLabel;
+@property (nonatomic,retain) UILabel *marketLabel;
+@property (nonatomic,retain) UILabel *googuuLabel;
 @property (nonatomic,retain) UILabel *outLookLabel;
 
 @property (nonatomic,retain) AMProgressView *marketProgress;

@@ -130,7 +130,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
     
     if (indexPath.section == 0) {
@@ -144,8 +144,5 @@
     return cell;
 }
 
-- (BOOL)shouldAutorotate{
-    return NO;
-}
 
 @end

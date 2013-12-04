@@ -27,6 +27,6 @@
 @property (nonatomic,strong) PieChartView *pieChartView;
 @property (nonatomic,strong) UIView *pieContainer;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)arr;
+- (id)initWithData:(NSDictionary *)dic;
 
 @end

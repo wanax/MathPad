@@ -12,6 +12,7 @@
 #import "DailyStockIndicator.h"
 #import "DailyRightListViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ComContainerViewController.h"
 
 @interface DailyStockViewController ()
 
@@ -23,7 +24,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+        self.controllers=temp;
     }
     return self;
 }
@@ -35,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.firstLaunch=YES;
     self.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
     [self initComponents];
 }
@@ -45,13 +48,27 @@
     backImgView.frame=CGRectMake(0,0,924,716);
     [self.view addSubview:backImgView];
     
-    self.indicator=[[[DailyStockIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 60)] autorelease];
+    self.indicator=[[[DailyStockIndicator alloc] initWithFrame:CGRectMake(0,0, 924, 90)] autorelease];
     [self.view addSubview:self.indicator];
+    
+}
 
+-(void)comNameBtClicked:(UIButton *)bt{
+    ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
+    UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
+    comContainerVC.comInfo=self.companyInfo;
+    [self presentViewController:comNav animated:YES completion:nil];
 }
 
 -(void)addPieView:(NSDictionary *)valueDic driverIds:(NSArray *)ids classWithChildId:(NSDictionary *)dic{
-    PieViewController *vc=[[[PieViewController alloc] initWithNibName:nil bundle:nil data:valueDic] autorelease];
+    
+    for (int n=[self.controllers count];n>0;n--) {
+        UIViewController *controller=self.controllers[n-1];
+        [controller removeFromParentViewController];
+        [controller.view removeFromSuperview];
+    }
+    
+    PieViewController *vc=[[[PieViewController alloc] initWithData:valueDic] autorelease];
     vc.view.frame=CGRectMake(0,90,450,570);
     vc.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
     [self addChildViewController:vc];
@@ -65,35 +82,31 @@
     [self addChildViewController:rightList];
     [self.view addSubview:rightList.view];
 
+    [self.controllers addObject:vc];
+    [self.controllers addObject:rightList];
 }
 
 -(void)getDailyStockNews{
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [Utiles getNetInfoWithPath:@"DailyStock" andParams:nil besidesBlock:^(id obj){
         
         self.imageUrl=[NSString stringWithFormat:@"%@",[obj objectForKey:@"imageurl"]];
         self.companyInfo=obj;
         [self.indicator.comIconView setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:[UIImage imageNamed:@"icon"]];
-        NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[obj objectForKey:@"stockcode"],@"stockcode", nil];
-        [Utiles getNetInfoWithPath:@"QueryCompany" andParams:params besidesBlock:^(id resObj){
-            
-            NSNumber *marketPrice=[resObj objectForKey:@"marketprice"];
-            NSNumber *ggPrice=[resObj objectForKey:@"googuuprice"];
-            float outLook=([ggPrice floatValue]-[marketPrice floatValue])/[marketPrice floatValue];
-            if (outLook>=0) {
-                [self.indicator.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#89131E"]];
-            }
-            [self.indicator.outLookLabel setText:[NSString stringWithFormat:@"%.2f%%",outLook*100]];
-            
-            [self.indicator.comNameLabel setText:[NSString stringWithFormat:@"%@\n(%@.%@)",[obj objectForKey:@"companyname"],[obj objectForKey:@"stockcode"],[obj objectForKey:@"market"]]];
-            
-        } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-            NSLog(@"%@",error.localizedDescription);
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }];
-        NSDictionary *params1=[NSDictionary dictionaryWithObjectsAndKeys:[obj objectForKey:@"stockcode"],@"stockCode", nil];
-        [Utiles getNetInfoWithPath:@"CompanyModel" andParams:params1 besidesBlock:^(id resObj){
+        [self.indicator.googuuPriLabel setText:[NSString stringWithFormat:@"%.2f",[obj[@"googuuprice"] floatValue]]];
+        [self.indicator.marketPriLabel setText:[NSString stringWithFormat:@"%.2f",[obj[@"marketprice"] floatValue]]];
+        [self.indicator.comNameButton setTitle:[NSString stringWithFormat:@"%@\n(%@.%@)",[obj objectForKey:@"companyname"],[obj objectForKey:@"stockcode"],[obj objectForKey:@"market"]] forState:UIControlStateNormal];
+        [self.indicator.comNameButton addTarget:self action:@selector(comNameBtClicked:) forControlEvents:UIControlEventTouchUpInside];
+  
+        NSNumber *marketPrice=[obj objectForKey:@"marketprice"];
+        NSNumber *ggPrice=[obj objectForKey:@"googuuprice"];
+        float outLook=([ggPrice floatValue]-[marketPrice floatValue])/[marketPrice floatValue];
+        if (outLook>=0) {
+            [self.indicator.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#89131E"]];
+        }
+        [self.indicator.outLookLabel setText:[NSString stringWithFormat:@"%.2f%%",outLook*100]];
+
+        NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[obj objectForKey:@"stockcode"],@"stockCode", nil];
+        [Utiles getNetInfoWithPath:@"CompanyModel" andParams:params besidesBlock:^(id resObj){
             
             self.jsonData=resObj;
             NSArray *childs=resObj[@"model"][@"tree"][@"root"][@"child"];
@@ -105,9 +118,7 @@
             }
             NSMutableDictionary *dic=[[[NSMutableDictionary alloc] init] autorelease];
             [self addPieView:valueMainIncomeDic driverIds:[self getGrade2DriverIds:childs divisionData:resObj[@"model"][@"division"] classWithChildId:dic] classWithChildId:dic];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
         } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
         }];
 
@@ -158,7 +169,10 @@
 }
 
 - (BOOL)shouldAutorotate{
-    return NO;
+    return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 

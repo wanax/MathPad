@@ -22,9 +22,9 @@
 
 @implementation PieViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data:(NSDictionary *)dic
+- (id)initWithData:(NSDictionary *)dic
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         self.valueIncomeDic=dic;
         self.valueArray=[NSMutableArray arrayWithArray:[self.valueIncomeDic allKeys]];
@@ -73,11 +73,11 @@
     [self.view addSubview:self.pieContainer];
     
     [self.pieChartView setTitleText:@"主营收入"];
-    double sum=0.0;
+    long sum = 0;
     for(id obj in self.valueArray){
-        sum+=[obj doubleValue];
+        sum+=[obj longValue];
     }
-    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%.2f",sum]];
+    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%ld",sum]];
     
     UIImageView *selView = [[UIImageView alloc]init];
     selView.image = [UIImage imageNamed:@"select.png"];
@@ -97,7 +97,7 @@
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {
-    [self.selLabel setText:[NSString stringWithFormat:@"%@%2.2f%@",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"],per*100,@"%"]];
+    [self.selLabel setText:[NSString stringWithFormat:@"%@%2.2f",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"],per*100]];
     [self.delegate pieWasChoosen:[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"]];
 }
 

@@ -47,6 +47,12 @@
     iconTableVC.comListController=controller;
 }
 
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
+}
 
 - (void)didReceiveMemoryWarning
 {
