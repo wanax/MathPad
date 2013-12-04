@@ -178,9 +178,9 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         [formatter setPositiveFormat:@"#,###"];
         NSString *volume=[formatter stringFromNumber:info[@"volume"]];
         NSString *indicator=[NSString stringWithFormat:@"昨开盘:%@   昨收盘:%@   最高价:%@   最低价:%@   成交量:%@",open,close,high,low,volume];
- 
+        SAFE_RELEASE(formatter);
         self.dateArr=[Utiles sortDateArr:self.hisLineData];
-
+        
         [self setDateMap];
         
         int count=[self.dateArr count];
@@ -188,7 +188,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         XRANGELENGTH=269;
         XINTERVALLENGTH=50;
         [MBProgressHUD hideHUDForView:self.hostView animated:YES];
-        SAFE_RELEASE(formatter);
+        
         [self initChart];
         [self setXYAxis];
         [self.titleLabel setText:indicator];

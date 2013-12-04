@@ -134,8 +134,7 @@
         NSArray *list = [self.transData objectForKey:[self.sectionKeys objectAtIndex:indexPath.section]];
         NSString *driverId = [[list objectAtIndex:indexPath.row-1] objectForKey:@"id"];
         [self.delegate modelChanged:driverId];
-    }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }   
 }
 
 

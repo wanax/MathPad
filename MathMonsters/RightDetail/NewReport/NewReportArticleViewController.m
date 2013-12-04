@@ -181,7 +181,7 @@
         [navBarView addSubview:bkgView];
         
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [doneButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0]];
+        [doneButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0]];
         [doneButton setTitle:NSLocalizedString(@"返回",@"Dismiss button title") forState:UIControlStateNormal];
         [doneButton setFrame:CGRectMake(size.width - 120, 5,100, 60)];
         [doneButton addTarget:self action:@selector(photoBrowserDidTapDoneButton:) forControlEvents:UIControlEventTouchUpInside];

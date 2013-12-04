@@ -128,28 +128,21 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
     tool.standIn=self;
 
     self.saveBt=[tool addButtonToView:self.view withTitle:@"保存" Tag:SaveData frame:CGRectMake(480,10,72,45) andFun:@selector(chartAction:) withType:UIButtonTypeRoundedRect andColor:@"#3498DB" textColor:@"#000000" normalBackGroundImg:nil highBackGroundImg:nil];
-    
-    self.linkBt=[tool addButtonToView:self.view withTitle:@"点动" Tag:DragChartType frame:CGRectMake(560,10,72,45) andFun:@selector(chartAction:) withType:UIButtonTypeRoundedRect andColor:@"#3498DB" textColor:@"#000000" normalBackGroundImg:nil highBackGroundImg:nil];
+
+    self.linkBt=[tool addButtonToView:self.view withTitle:@"点动" Tag:DragChartType frame:CGRectMake(560,10,72,45) andFun:@selector(chartAction:) withType:UIButtonTypeRoundedRect andColor:@"#9B59B6" textColor:@"#000000" normalBackGroundImg:nil highBackGroundImg:nil];
     
     self.resetBt=[tool addButtonToView:self.view withTitle:@"复位" Tag:ResetChart frame:CGRectMake(640,10,72,45) andFun:@selector(chartAction:) withType:UIButtonTypeRoundedRect andColor:@"#3498DB" textColor:@"#000000" normalBackGroundImg:nil highBackGroundImg:nil];
 
-    UILabel *comNameLabel=[tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%@\n(%@.%@)",self.netComInfo[@"CompanyName"],self.netComInfo[@"StockCode"],self.netComInfo[@"Market"]] Tag:0 frame:CGRectMake(0,10,300,50) fontSize:18.0 color:nil textColor:@"#63573d" location:NSTextAlignmentCenter];
-    comNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    comNameLabel.numberOfLines = 0;
+    [tool addLabelToView:self.view withTitle:@"估股估值:HK$" Tag:11 frame:CGRectMake(10,0,180,35) fontSize:20.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
+    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%.2f",[self.netComInfo[@"GooguuValuation"] floatValue]] Tag:11 frame:CGRectMake(210,0,120,35) fontSize:20.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
 
-    [tool addLabelToView:self.view withTitle:@"估股估值:HK$" Tag:11 frame:CGRectMake(280,0,120,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
-    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%.2f",[self.netComInfo[@"GooguuValuation"] floatValue]] Tag:11 frame:CGRectMake(410,0,120,35) fontSize:18.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
-
-    self.myGGpriceLabel=[tool addLabelToView:self.view withTitle:@"我的估值:HK$" Tag:11 frame:CGRectMake(280,35,120,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
-    self.priceLabel=[tool addLabelToView:self.view withTitle:@"" Tag:11 frame:CGRectMake(410,35,120,35) fontSize:18.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
+    self.myGGpriceLabel=[tool addLabelToView:self.view withTitle:@"我的估值:HK$" Tag:11 frame:CGRectMake(10,35,180,35) fontSize:20.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
+    self.priceLabel=[tool addLabelToView:self.view withTitle:@"" Tag:11 frame:CGRectMake(210,35,120,35) fontSize:20.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
     
     if(self.sourceType!=MySavedType){
         [self.myGGpriceLabel setHidden:YES];
         [self.priceLabel setHidden:YES];
     }
-
-    [tool addLabelToView:self.view withTitle:@"市场价:HK$" Tag:11 frame:CGRectMake(540,70,100,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
-    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%.2f",[self.netComInfo[@"MarketPrice"] floatValue]] Tag:11 frame:CGRectMake(650,70,120,35) fontSize:18.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
     
     [self addScatterChart];
     SAFE_RELEASE(tool);
@@ -271,8 +264,8 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
         self.trueUnit=chartData[@"unit"];
         NSArray *sort=[Utiles arrSort:self.forecastPoints];
         self.yAxisUnit=[Utiles getUnitFromData:[[[sort lastObject] objectForKey:@"v"] stringValue] andUnit:self.trueUnit];
-        
-        self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",chartData[@"title"],self.yAxisUnit];
+
+        self.graph.title=[NSString stringWithFormat:@"%@:%@(单位:%@)",self.comInfo[@"companyname"],chartData[@"title"],self.yAxisUnit];
         [self setXYAxis];
         [self setStockPrice];
     }
@@ -539,13 +532,13 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
 
         for (NSDecimalNumber * tickLocation in locations) {
 
-            CPTMutableTextStyle * newStyle = [axis.labelTextStyle mutableCopy];
+            CPTMutableTextStyle * newStyle = [[axis.labelTextStyle mutableCopy] autorelease];
             newStyle.fontSize=16.0;
             newStyle.fontName=@"Heiti SC";
 
             NSString * labelString      = [Utiles yearFilled:[formatter stringForObjectValue:tickLocation]];
-            CPTTextLayer * newLabelLayer= [[CPTTextLayer alloc] initWithText:labelString style:newStyle];
-            CPTAxisLabel * newLabel     = [[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer];
+            CPTTextLayer * newLabelLayer= [[[CPTTextLayer alloc] initWithText:labelString style:newStyle] autorelease];
+            CPTAxisLabel * newLabel     = [[[CPTAxisLabel alloc] initWithContentLayer:newLabelLayer] autorelease];
             newLabel.tickLocation       = tickLocation.decimalValue;
             newLabel.offset             = 8;
             newLabel.rotation           = 0;
@@ -598,12 +591,12 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
         lineStyle.miterLimit=0.0f;
         lineStyle.lineWidth=0.0f;
         lineStyle.lineColor=[CPTColor colorWithComponentRed:87/255.0 green:168/255.0 blue:9/255.0 alpha:1.0];
-        self.barPlot = [CPTBarPlot tubularBarPlotWithColor:[Utiles cptcolorWithHexString:@"#9B59B6" andAlpha:1.0] horizontalBars:NO];
+        self.barPlot = [CPTBarPlot tubularBarPlotWithColor:[Utiles cptcolorWithHexString:@"#F1C40F" andAlpha:1.0] horizontalBars:NO];
         self.barPlot.baseValue  = CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
         self.barPlot.dataSource = self;
         self.barPlot.barOffset  = CPTDecimalFromFloat(-0.5f);
         self.barPlot.lineStyle=lineStyle;
-        self.barPlot.fill=[CPTFill fillWithColor:[CPTColor colorWithComponentRed:174/255.0 green:10/255.0 blue:148/255.0 alpha:0.3]];
+        self.barPlot.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#3498DB" andAlpha:0.3]];
         self.barPlot.identifier = COLUMNAR_DATALINE_IDENTIFIER;
         self.barPlot.barWidth=CPTDecimalFromFloat(0.5f);
         [self.graph addPlot:self.barPlot];

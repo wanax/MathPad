@@ -51,9 +51,10 @@
         self.googuuProgress.maximumValue=10;
         self.googuuProgress.progress=4;
         
-        self.outLookLabel=[self addLabel:@"潜在空间" frame:CGRectMake(805,25,73,34) size:18.0];
+        [self addLabel:@"潜在空间" frame:CGRectMake(805,5,73,20) size:18.0];
+        self.outLookLabel=[self addLabel:@"潜在空间" frame:CGRectMake(805,35,73,34) size:18.0];
         [self.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#3BDE56"]];
-        [self.outLookLabel setTextColor:[UIColor blackColor]];
+        [self.outLookLabel setTextColor:[UIColor whiteColor]];
         self.outLookLabel.layer.cornerRadius=3.0;
         self.outLookLabel.layer.borderWidth=0;
     }

@@ -80,7 +80,7 @@
     
     if(self.comList){
         id comInfo=[self.comList objectAtIndex:indexPath.row][@"info"];
-        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"market"]];
+        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@.%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"marketname"]];
 
         [cell.saveImg setImage:[UIImage imageNamed:@"unsavemodel"]];
         [cell.concernImg setImage:[UIImage imageNamed:@"unconcernmodel"]];
@@ -91,11 +91,11 @@
         float p = [priceStr floatValue];
         float outLook=(g-p)/p;
         cell.outLookLabel.text=[NSString stringWithFormat:@"%.2f%%",outLook*100];
-        if (outLook>=0) {
-            [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#BA0020"]];
+        if (outLook<0) {
+            [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#36871A"]];
             [cell.outLookImg setImage:[UIImage imageNamed:@"riseup"]];
         } else {
-            [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#36871A"]];
+            [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#BA0020"]];
             [cell.outLookImg setImage:[UIImage imageNamed:@"down"]];
         }
         

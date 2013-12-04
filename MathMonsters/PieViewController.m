@@ -8,6 +8,7 @@
 
 #import "PieViewController.h"
 #import "PieChartView.h"
+#import "ComContainerViewController.h"
 
 #define PIE_HEIGHT 420
 
@@ -22,10 +23,11 @@
 
 @implementation PieViewController
 
-- (id)initWithData:(NSDictionary *)dic
+- (id)initWithData:(NSDictionary *)dic comInfo:(id)comInfo
 {
     self = [super init];
     if (self) {
+        self.comInfo=comInfo;
         self.valueIncomeDic=dic;
         self.valueArray=[NSMutableArray arrayWithArray:[self.valueIncomeDic allKeys]];
         NSArray *temp=[NSArray arrayWithObjects:
@@ -77,7 +79,9 @@
     for(id obj in self.valueArray){
         sum+=[obj longValue];
     }
-    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%ld",sum]];
+    NSNumberFormatter * formatter   = [[[NSNumberFormatter alloc] init] autorelease];
+    [formatter setPositiveFormat:@"#,###"];
+    [self.pieChartView setAmountText:[formatter stringFromNumber:[NSNumber numberWithLong:sum]]];
     
     UIImageView *selView = [[UIImageView alloc]init];
     selView.image = [UIImage imageNamed:@"select.png"];
@@ -103,7 +107,10 @@
 
 - (void)onCenterClick:(PieChartView *)pieChartView
 {
-    
+    ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
+    UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
+    comContainerVC.comInfo=self.comInfo;
+    [self presentViewController:comNav animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -16,7 +16,7 @@
     if (self) {
         [self setBackgroundColor:[Utiles colorWithHexString:@"#291912"]];
         [self addLabel:@"流动比率" frame:CGRectMake(0,0,263,60)];
-        [self addLabel:@"折现率" frame:CGRectMake(263,0,150,60)];
+        [self addLabel:@"建议折现率" frame:CGRectMake(263,0,150,60)];
     }
     return self;
 }

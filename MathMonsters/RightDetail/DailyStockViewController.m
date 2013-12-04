@@ -68,7 +68,7 @@
         [controller.view removeFromSuperview];
     }
     
-    PieViewController *vc=[[[PieViewController alloc] initWithData:valueDic] autorelease];
+    PieViewController *vc=[[[PieViewController alloc] initWithData:valueDic comInfo:self.companyInfo] autorelease];
     vc.view.frame=CGRectMake(0,90,450,570);
     vc.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
     [self addChildViewController:vc];

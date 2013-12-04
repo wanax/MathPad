@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle6
+#define INJECTION_BUNDLE InjectionBundle2
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ComDetail/MultipleChartVC/DahonValuationViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModel/ComInfoListColumn1.m"
 
 
-@interface InjectionBundle6 : NSObject
+@interface InjectionBundle2 : NSObject
 @end
-@implementation InjectionBundle6
+@implementation InjectionBundle2
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_DahonValuationViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_DahonValuationViewController notify:4];
+    extern Class OBJC_CLASS_$_ComInfoListColumn1;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ComInfoListColumn1 notify:4];
     [bundleInjection loadedNotify:4];
 }
 

@@ -20,6 +20,7 @@
 
 @property (nonatomic,assign) id<PieViewDelegate> delegate;
 
+@property (nonatomic,retain) id comInfo;
 @property (nonatomic,retain) NSDictionary *valueIncomeDic;
 @property (nonatomic,strong) NSMutableArray *valueArray;
 @property (nonatomic,retain) NSArray *defaultColorArray;
@@ -27,6 +28,6 @@
 @property (nonatomic,strong) PieChartView *pieChartView;
 @property (nonatomic,strong) UIView *pieContainer;
 
-- (id)initWithData:(NSDictionary *)dic;
+- (id)initWithData:(NSDictionary *)dic comInfo:(id)comInfo;
 
 @end
