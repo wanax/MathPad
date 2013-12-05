@@ -9,6 +9,7 @@
 #import "ValuModelContainerViewController.h"
 #import "ComIconListViewController.h"
 #import "ComListController.h"
+#import "TipView.h"
 
 
 @interface ValuModelContainerViewController ()
@@ -30,6 +31,33 @@
 {
     [super viewDidLoad];
 	[self initComponents];
+    
+    TipView *t=[[[TipView alloc] initWithFrame:CGRectMake(0,0,924,SCREEN_HEIGHT)] autorelease];
+    self.tip=t;
+    
+    UITapGestureRecognizer *tap=[[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tipViewIsClicked:)] autorelease];
+    [self.tip addGestureRecognizer:tap];
+    
+    [self.view addSubview:self.tip];
+    
+}
+
+-(void)tipViewIsClicked:(UITapGestureRecognizer *)tap{
+    
+    [UIView animateWithDuration:0.6f
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.tip.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         [self.tip removeFromSuperview];
+                     }];
+    
+}
+
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    [self.tip removeFromSuperview];
 }
 
 -(void)initComponents{

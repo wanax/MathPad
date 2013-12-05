@@ -21,10 +21,18 @@
                         <rect key="frame" x="23" y="7" width="85" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7O-6P-4mP">
+                        <rect key="frame" x="26" y="9" width="79" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="backImg" destination="Jur-9e-wER" id="9vl-Li-onK"/>
+                <outlet property="comNameLabel" destination="g7O-6P-4mP" id="xU4-nk-Gli"/>
                 <outlet property="iconImg" destination="Lp3-Gj-sfR" id="z8m-rt-l97"/>
             </connections>
         </tableViewCell>

@@ -9,9 +9,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class TipView;
+
 @interface ValuModelContainerViewController : UIViewController<UIScrollViewDelegate>
 
 @property MarketType marketType;
+
+@property (nonatomic,retain) TipView *tip;
 
 - (id)initWithType:(MarketType)type;
 

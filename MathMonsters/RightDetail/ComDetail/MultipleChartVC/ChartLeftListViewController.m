@@ -103,7 +103,9 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil] objectAtIndex:0];
         }
+        
         NSString *name = [self.sectionDic objectForKey:[self.sectionKeys objectAtIndex:indexPath.section]];
+        [cell.classIcon setImage:[UIImage imageNamed:name]];
         cell.titleLabel.text = name;
         [cell changeArrowWithUp:([self.selectIndex isEqual:indexPath]?YES:NO)];
         return cell;

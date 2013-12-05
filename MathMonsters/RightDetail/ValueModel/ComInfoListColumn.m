@@ -100,8 +100,24 @@
                 [temp addObject:hisClassDatas[i]];
             }
             dataArr=[[temp reverseObjectEnumerator] allObjects];;
-        } else {
+        } else if ([hisClassDatas count]==4) {
             dataArr=hisClassDatas;
+        } else if ([hisClassDatas count]<4) {
+            int n = [hisClassDatas count];
+            NSNumberFormatter *formatter=[[[NSNumberFormatter alloc] init] autorelease];
+            [formatter setPositiveFormat:@"00"];
+            while (n++ < 4) {
+
+                id obj = hisClassDatas[0];
+                NSString *y=[NSString stringWithFormat:@"%@",[formatter stringFromNumber:@([obj[@"y"] integerValue]-1)]];
+                NSDictionary *point=@{@"y":y,
+                                      @"id":@"",
+                                      @"h":@(true),
+                                      @"v":@(0)
+                                      };
+                [hisClassDatas insertObject:point atIndex:0];
+                dataArr = hisClassDatas;
+            }
         }
         
         int n=0;

@@ -89,6 +89,8 @@ typedef enum {
 
 //浏览来源，当从保存列表进入时加载保存数据 ChartViewController
 typedef enum {
+    VerticalTabBar,
+    SettingMenu,
     ValuationModelType,
     MyConcernedType,
     MySavedType,

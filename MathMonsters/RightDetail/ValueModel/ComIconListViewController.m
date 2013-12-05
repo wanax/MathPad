@@ -103,8 +103,14 @@
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ComIconCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     }
-    
-    [cell.iconImg setImageWithURL:[NSURL URLWithString:self.comList[indexPath.row][@"info"][@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+
+    [cell.iconImg setImageWithURL:[NSURL URLWithString:self.comList[indexPath.row][@"info"][@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+        if (!image){
+            [cell.comNameLabel setBackgroundColor:[UIColor whiteColor]];
+            [cell.comNameLabel setText:self.comList[indexPath.row][@"info"][@"companyname"]];
+            cell.comNameLabel.layer.cornerRadius=3.0;
+        }
+    }];
     
     return cell;
 }

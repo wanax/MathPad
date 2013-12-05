@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "FSVerticalTabBarController.h"
 
-@interface VerticalTabBarViewController : FSVerticalTabBarController<FSTabBarControllerDelegate>
+@class SearchComListViewController;
+
+@interface VerticalTabBarViewController : FSVerticalTabBarController<FSTabBarControllerDelegate,UISearchBarDelegate,UIPopoverControllerDelegate>
+
+@property (nonatomic,retain) SearchComListViewController *searchListVC;
+
+@property (nonatomic,retain) UIPopoverController *popVC;
+@property (nonatomic,retain) UISearchBar *searchBar;
 
 @end

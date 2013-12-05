@@ -11,6 +11,7 @@
 #import "SVPullToRefresh.h"
 #import "NewComCell.h"
 #import "ComContainerViewController.h"
+#import "NewReportArticleViewController.h"
 
 @interface NewReportRightListViewController ()
 
@@ -151,12 +152,25 @@
 }
 
 -(void)comIconBtClicked:(UIButton *)bt{
-    
-    ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
-    UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
-    comContainerVC.comInfo=[self.comIcons objectAtIndex:bt.tag];
-    [self presentViewController:comNav animated:YES completion:nil];
 
+    NSDictionary *param=@{@"stockcode":self.comIcons[bt.tag][@"stockcode"]};
+    [Utiles getNetInfoWithPath:@"GetCompanyInfo" andParams:param besidesBlock:^(id obj) {
+        
+        if ([obj[@"hasmodel"] boolValue]) {
+            ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
+            UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
+            comContainerVC.comInfo=[self.comIcons objectAtIndex:bt.tag];
+            [self presentViewController:comNav animated:YES completion:nil];
+        } else {
+            NewReportArticleViewController *reportArticleVC=[[[NewReportArticleViewController alloc] init] autorelease];
+            UINavigationController *reportNav=[[[UINavigationController alloc] initWithRootViewController:reportArticleVC] autorelease];
+            reportArticleVC.comInfo=self.comIcons[bt.tag];
+            [self presentViewController:reportNav animated:YES completion:nil];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 

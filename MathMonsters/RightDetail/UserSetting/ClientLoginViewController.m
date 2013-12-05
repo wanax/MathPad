@@ -93,7 +93,11 @@
 }
 
 -(IBAction)cancelBtClicked:(UIButton *)bt{
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.sourceType == VerticalTabBar) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else if (self.sourceType == SettingMenu) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 -(IBAction)rememberPwd:(UISwitch *)s{
@@ -139,7 +143,11 @@
                 NSLog(@"%@",[info objectForKey:@"token"]);
                 isGoIn=YES;
                 sleep(1);
-                [self.navigationController popViewControllerAnimated:YES];
+                if (self.sourceType == VerticalTabBar) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                } else if (self.sourceType == SettingMenu) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
             }else {
                 NSString *msg=@"";
                 if ([info[@"status"] isEqual:@"0"]) {

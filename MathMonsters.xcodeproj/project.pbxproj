@@ -18,10 +18,28 @@
 		AE0F05181827484900DA13D4 /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F05161827484900DA13D4 /* IQSegmentedNextPrevious.m */; };
 		AE0F051B182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F051A182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m */; };
 		AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F051D1827495000DA13D4 /* CounterBankViewController.m */; };
-		AE1FCBB41828DBB9005D5E10 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1FCBAF1828DBB9005D5E10 /* left_arrow.png */; };
-		AE1FCBB51828DBB9005D5E10 /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1FCBB01828DBB9005D5E10 /* left_arrow@2x.png */; };
-		AE1FCBB61828DBB9005D5E10 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1FCBB11828DBB9005D5E10 /* right_arrow.png */; };
-		AE1FCBB71828DBB9005D5E10 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1FCBB21828DBB9005D5E10 /* right_arrow@2x.png */; };
+		AE1C3F161850671700DBBB36 /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C3F101850671700DBBB36 /* CKCalendarView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		AE1C3F171850671700DBBB36 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F121850671700DBBB36 /* left_arrow.png */; };
+		AE1C3F181850671700DBBB36 /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F131850671700DBBB36 /* left_arrow@2x.png */; };
+		AE1C3F191850671700DBBB36 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F141850671700DBBB36 /* right_arrow.png */; };
+		AE1C3F1A1850671700DBBB36 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F151850671700DBBB36 /* right_arrow@2x.png */; };
+		AE1C3F271850675800DBBB36 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C3F241850675800DBBB36 /* MJPopupBackgroundView.m */; };
+		AE1C3F281850675800DBBB36 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C3F261850675800DBBB36 /* UIViewController+MJPopupViewController.m */; };
+		AE1C3F3218507B9300DBBB36 /* 运营费用.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F2A18507B9300DBBB36 /* 运营费用.png */; };
+		AE1C3F3318507B9300DBBB36 /* 运营费用-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F2B18507B9300DBBB36 /* 运营费用-2.png */; };
+		AE1C3F3418507B9300DBBB36 /* 运营资本.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F2C18507B9300DBBB36 /* 运营资本.png */; };
+		AE1C3F3518507B9300DBBB36 /* 运营资本-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F2D18507B9300DBBB36 /* 运营资本-2.png */; };
+		AE1C3F3618507B9300DBBB36 /* 折现率.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F2E18507B9300DBBB36 /* 折现率.png */; };
+		AE1C3F3718507B9300DBBB36 /* 折现率-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F2F18507B9300DBBB36 /* 折现率-2.png */; };
+		AE1C3F3818507B9300DBBB36 /* 主营收入.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3018507B9300DBBB36 /* 主营收入.png */; };
+		AE1C3F3918507B9300DBBB36 /* 主营收入-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3118507B9300DBBB36 /* 主营收入-2.png */; };
+		AE1C3F4018507BA000DBBB36 /* 财务比例.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3A18507BA000DBBB36 /* 财务比例.png */; };
+		AE1C3F4118507BA000DBBB36 /* 财务比例-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3B18507BA000DBBB36 /* 财务比例-2.png */; };
+		AE1C3F4218507BA000DBBB36 /* 财务图表.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3C18507BA000DBBB36 /* 财务图表.png */; };
+		AE1C3F4318507BA000DBBB36 /* 财务指标-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */; };
+		AE1C3F4418507BA000DBBB36 /* 其它指标.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3E18507BA000DBBB36 /* 其它指标.png */; };
+		AE1C3F4518507BA000DBBB36 /* 其他指标-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */; };
+		AE291D2C18505CDE00A62244 /* SearchComListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE291D2B18505CDE00A62244 /* SearchComListViewController.m */; };
 		AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD3F182899D900E8E94C /* HelpViewController.m */; };
 		AE29CD4618289DE800E8E94C /* NewReportLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */; };
 		AE2CDA921843354F00226CDD /* MyGooGuuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */; };
@@ -46,7 +64,6 @@
 		AE3DE1BC1844775900F0FE64 /* NewReportRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3DE1BB1844775900F0FE64 /* NewReportRightListViewController.m */; };
 		AE3E70FB18334FA100A624AD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E70F918334FA100A624AD /* Default.png */; };
 		AE3E70FC18334FA100A624AD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E70FA18334FA100A624AD /* Default@2x.png */; };
-		AE3FA9091829E53F004EC28C /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FA9071829E53F004EC28C /* CKCalendarView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE3FCB8917E6D9C9001A04A1 /* Utiles.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB8817E6D9C9001A04A1 /* Utiles.m */; };
 		AE3FCB8C17E6DA23001A04A1 /* CommonlyMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FCB8B17E6DA23001A04A1 /* CommonlyMacros.m */; };
 		AE44AF6C1834A9020074E7D9 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE44AF6B1834A9020074E7D9 /* MHTabBarController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -255,6 +272,7 @@
 		AEDFE96217F279BE0085CA0F /* MGSplitDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE95E17F279BE0085CA0F /* MGSplitDividerView.m */; };
 		AEDFE96317F279BE0085CA0F /* MGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE96017F279BE0085CA0F /* MGSplitViewController.m */; };
 		AEE4ED2E183F043C00DD63AB /* ComInfoListColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE4ED2D183F043C00DD63AB /* ComInfoListColumn.m */; };
+		AEE5606B18502C0900469EF5 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE5606A18502C0900469EF5 /* TipView.m */; };
 		AEF3336A1842F606000D0C65 /* ValueModelIndicator4.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF333691842F606000D0C65 /* ValueModelIndicator4.m */; };
 		AEF3336D1842F69D000D0C65 /* ComInfoListColumn4.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF3336C1842F69D000D0C65 /* ComInfoListColumn4.m */; };
 		AEF59B301831BD7000CE99D8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF59B2F1831BD7000CE99D8 /* Crashlytics.framework */; };
@@ -304,10 +322,32 @@
 		AE0F051A182748B000DA13D4 /* FinanceToolGrade2LeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceToolGrade2LeftListViewController.m; sourceTree = "<group>"; };
 		AE0F051C1827495000DA13D4 /* CounterBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterBankViewController.h; sourceTree = "<group>"; };
 		AE0F051D1827495000DA13D4 /* CounterBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterBankViewController.m; sourceTree = "<group>"; };
-		AE1FCBAF1828DBB9005D5E10 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
-		AE1FCBB01828DBB9005D5E10 /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
-		AE1FCBB11828DBB9005D5E10 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
-		AE1FCBB21828DBB9005D5E10 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
+		AE1C3F0F1850671700DBBB36 /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
+		AE1C3F101850671700DBBB36 /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
+		AE1C3F121850671700DBBB36 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
+		AE1C3F131850671700DBBB36 /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
+		AE1C3F141850671700DBBB36 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
+		AE1C3F151850671700DBBB36 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
+		AE1C3F231850675800DBBB36 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		AE1C3F241850675800DBBB36 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		AE1C3F251850675800DBBB36 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		AE1C3F261850675800DBBB36 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		AE1C3F2A18507B9300DBBB36 /* 运营费用.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运营费用.png"; sourceTree = "<group>"; };
+		AE1C3F2B18507B9300DBBB36 /* 运营费用-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运营费用-2.png"; sourceTree = "<group>"; };
+		AE1C3F2C18507B9300DBBB36 /* 运营资本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运营资本.png"; sourceTree = "<group>"; };
+		AE1C3F2D18507B9300DBBB36 /* 运营资本-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运营资本-2.png"; sourceTree = "<group>"; };
+		AE1C3F2E18507B9300DBBB36 /* 折现率.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "折现率.png"; sourceTree = "<group>"; };
+		AE1C3F2F18507B9300DBBB36 /* 折现率-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "折现率-2.png"; sourceTree = "<group>"; };
+		AE1C3F3018507B9300DBBB36 /* 主营收入.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主营收入.png"; sourceTree = "<group>"; };
+		AE1C3F3118507B9300DBBB36 /* 主营收入-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主营收入-2.png"; sourceTree = "<group>"; };
+		AE1C3F3A18507BA000DBBB36 /* 财务比例.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "财务比例.png"; sourceTree = "<group>"; };
+		AE1C3F3B18507BA000DBBB36 /* 财务比例-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "财务比例-2.png"; sourceTree = "<group>"; };
+		AE1C3F3C18507BA000DBBB36 /* 财务图表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "财务图表.png"; sourceTree = "<group>"; };
+		AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "财务指标-2.png"; sourceTree = "<group>"; };
+		AE1C3F3E18507BA000DBBB36 /* 其它指标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其它指标.png"; sourceTree = "<group>"; };
+		AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其他指标-2.png"; sourceTree = "<group>"; };
+		AE291D2A18505CDE00A62244 /* SearchComListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchComListViewController.h; sourceTree = "<group>"; };
+		AE291D2B18505CDE00A62244 /* SearchComListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchComListViewController.m; sourceTree = "<group>"; };
 		AE29CD3E182899D900E8E94C /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		AE29CD3F182899D900E8E94C /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		AE29CD4418289DE800E8E94C /* NewReportLeftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportLeftListViewController.h; sourceTree = "<group>"; };
@@ -432,8 +472,6 @@
 		AE3DE1BB1844775900F0FE64 /* NewReportRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportRightListViewController.m; sourceTree = "<group>"; };
 		AE3E70F918334FA100A624AD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AE3E70FA18334FA100A624AD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		AE3FA9071829E53F004EC28C /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
-		AE3FA9081829E53F004EC28C /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
 		AE3FCB8717E6D9C9001A04A1 /* Utiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utiles.h; sourceTree = "<group>"; };
 		AE3FCB8817E6D9C9001A04A1 /* Utiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utiles.m; sourceTree = "<group>"; };
 		AE3FCB8A17E6DA23001A04A1 /* CommonlyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonlyMacros.h; sourceTree = "<group>"; };
@@ -735,6 +773,8 @@
 		AEDFE96017F279BE0085CA0F /* MGSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSplitViewController.m; sourceTree = "<group>"; };
 		AEE4ED2C183F043C00DD63AB /* ComInfoListColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInfoListColumn.h; sourceTree = "<group>"; };
 		AEE4ED2D183F043C00DD63AB /* ComInfoListColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComInfoListColumn.m; sourceTree = "<group>"; };
+		AEE5606918502C0800469EF5 /* TipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipView.h; sourceTree = "<group>"; };
+		AEE5606A18502C0900469EF5 /* TipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipView.m; sourceTree = "<group>"; };
 		AEF333681842F606000D0C65 /* ValueModelIndicator4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueModelIndicator4.h; sourceTree = "<group>"; };
 		AEF333691842F606000D0C65 /* ValueModelIndicator4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueModelIndicator4.m; sourceTree = "<group>"; };
 		AEF3336B1842F69D000D0C65 /* ComInfoListColumn4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComInfoListColumn4.h; sourceTree = "<group>"; };
@@ -783,26 +823,66 @@
 			path = IQKeyBoardManager;
 			sourceTree = "<group>";
 		};
-		AE1FCBAB1828DBB9005D5E10 /* CKCalendarView */ = {
+		AE1C3F0E1850671700DBBB36 /* CKCalendarView */ = {
 			isa = PBXGroup;
 			children = (
-				AE3FA9071829E53F004EC28C /* CKCalendarView.m */,
-				AE3FA9081829E53F004EC28C /* CKCalendarView.h */,
-				AE1FCBAE1828DBB9005D5E10 /* resources */,
+				AE1C3F0F1850671700DBBB36 /* CKCalendarView.h */,
+				AE1C3F101850671700DBBB36 /* CKCalendarView.m */,
+				AE1C3F111850671700DBBB36 /* resources */,
 			);
-			name = CKCalendarView;
-			path = Source;
+			path = CKCalendarView;
 			sourceTree = "<group>";
 		};
-		AE1FCBAE1828DBB9005D5E10 /* resources */ = {
+		AE1C3F111850671700DBBB36 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				AE1FCBAF1828DBB9005D5E10 /* left_arrow.png */,
-				AE1FCBB01828DBB9005D5E10 /* left_arrow@2x.png */,
-				AE1FCBB11828DBB9005D5E10 /* right_arrow.png */,
-				AE1FCBB21828DBB9005D5E10 /* right_arrow@2x.png */,
+				AE1C3F121850671700DBBB36 /* left_arrow.png */,
+				AE1C3F131850671700DBBB36 /* left_arrow@2x.png */,
+				AE1C3F141850671700DBBB36 /* right_arrow.png */,
+				AE1C3F151850671700DBBB36 /* right_arrow@2x.png */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		AE1C3F221850675800DBBB36 /* MJPopup */ = {
+			isa = PBXGroup;
+			children = (
+				AE1C3F231850675800DBBB36 /* MJPopupBackgroundView.h */,
+				AE1C3F241850675800DBBB36 /* MJPopupBackgroundView.m */,
+				AE1C3F251850675800DBBB36 /* UIViewController+MJPopupViewController.h */,
+				AE1C3F261850675800DBBB36 /* UIViewController+MJPopupViewController.m */,
+			);
+			path = MJPopup;
+			sourceTree = "<group>";
+		};
+		AE1C3F2918507B8400DBBB36 /* LeftListIcon */ = {
+			isa = PBXGroup;
+			children = (
+				AE1C3F3A18507BA000DBBB36 /* 财务比例.png */,
+				AE1C3F3B18507BA000DBBB36 /* 财务比例-2.png */,
+				AE1C3F3C18507BA000DBBB36 /* 财务图表.png */,
+				AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */,
+				AE1C3F3E18507BA000DBBB36 /* 其它指标.png */,
+				AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */,
+				AE1C3F2A18507B9300DBBB36 /* 运营费用.png */,
+				AE1C3F2B18507B9300DBBB36 /* 运营费用-2.png */,
+				AE1C3F2C18507B9300DBBB36 /* 运营资本.png */,
+				AE1C3F2D18507B9300DBBB36 /* 运营资本-2.png */,
+				AE1C3F2E18507B9300DBBB36 /* 折现率.png */,
+				AE1C3F2F18507B9300DBBB36 /* 折现率-2.png */,
+				AE1C3F3018507B9300DBBB36 /* 主营收入.png */,
+				AE1C3F3118507B9300DBBB36 /* 主营收入-2.png */,
+			);
+			name = LeftListIcon;
+			sourceTree = "<group>";
+		};
+		AE291D2718505CBA00A62244 /* AccessoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				AE291D2A18505CDE00A62244 /* SearchComListViewController.h */,
+				AE291D2B18505CDE00A62244 /* SearchComListViewController.m */,
+			);
+			name = AccessoryVC;
 			sourceTree = "<group>";
 		};
 		AE309634183DDBFA0074B84C /* ValueModel */ = {
@@ -815,6 +895,8 @@
 				AE30964D183DDC7A0074B84C /* ValuModelContainerViewController.m */,
 				AE309644183DDC7A0074B84C /* ComIconListViewController.h */,
 				AE309645183DDC7A0074B84C /* ComIconListViewController.m */,
+				AEE5606918502C0800469EF5 /* TipView.h */,
+				AEE5606A18502C0900469EF5 /* TipView.m */,
 			);
 			path = ValueModel;
 			sourceTree = "<group>";
@@ -1060,6 +1142,7 @@
 		AE44AF8A1834AADF0074E7D9 /* ComDetailImg */ = {
 			isa = PBXGroup;
 			children = (
+				AE1C3F2918507B8400DBBB36 /* LeftListIcon */,
 				AE44AF8B1834AADF0074E7D9 /* discountBack.png */,
 				AE44AF8C1834AADF0074E7D9 /* discountLabelBack.png */,
 				AE44AF8D1834AADF0074E7D9 /* dragDot.png */,
@@ -1265,6 +1348,7 @@
 		AE4D3E0517E3053C0044A7DF /* MathMonsters */ = {
 			isa = PBXGroup;
 			children = (
+				AE291D2718505CBA00A62244 /* AccessoryVC */,
 				AE7EF618181F5617002A3C9E /* CustomCell */,
 				AED071AD1803E15F00C28F32 /* NibFile */,
 				AEB3E33A17F4226F00A273E9 /* RightDetail */,
@@ -1444,6 +1528,8 @@
 		AE6FCEF017E93F6C00DCDB77 /* Plugs */ = {
 			isa = PBXGroup;
 			children = (
+				AE1C3F221850675800DBBB36 /* MJPopup */,
+				AE1C3F0E1850671700DBBB36 /* CKCalendarView */,
 				AE748EBD1833770500BD4F57 /* FSVerticalTabBar */,
 				AE44AF6F1834A93D0074E7D9 /* MBProgressHUD */,
 				AE44AF6E1834A9180074E7D9 /* CustomCatalog */,
@@ -1451,7 +1537,6 @@
 				AE44AF691834A8E80074E7D9 /* MHTabBarController */,
 				AE38981D182C8AB60059A319 /* CorePlotHeaders */,
 				AE31F848182B38AD001CD0D0 /* CoreTextWrapper */,
-				AE1FCBAB1828DBB9005D5E10 /* CKCalendarView */,
 				AE0F05121827484900DA13D4 /* IQKeyBoardManager */,
 				AE739AA3182257FB00CF82C5 /* Vurig Calendar */,
 				AE7E5741181E54B400A1391E /* AMProgressView */,
@@ -1828,6 +1913,7 @@
 				AE44B0271834AADF0074E7D9 /* start.png in Resources */,
 				AE44AFD91834AADF0074E7D9 /* financeToolBt.png in Resources */,
 				AE7EF617181F55A5002A3C9E /* NewComCell.xib in Resources */,
+				AE1C3F4518507BA000DBBB36 /* 其他指标-2.png in Resources */,
 				AE44AFEE1834AADF0074E7D9 /* blueArrow@2x.png in Resources */,
 				AE44B01D1834AADF0074E7D9 /* loginBack.png in Resources */,
 				AE44AFF21834AADF0074E7D9 /* DownAccessory.png in Resources */,
@@ -1837,6 +1923,7 @@
 				AEA90A5E181E142A00F3E4DB /* c.html in Resources */,
 				AE44B02E1834AADF0074E7D9 /* unsavemodel.png in Resources */,
 				AEA90A54181E13FD00F3E4DB /* BenchmarkIndex.plist in Resources */,
+				AE1C3F3218507B9300DBBB36 /* 运营费用.png in Resources */,
 				AE44B0231834AADF0074E7D9 /* pwdFieldIcon.png in Resources */,
 				AE4D3E0A17E3053C0044A7DF /* InfoPlist.strings in Resources */,
 				AE4D3E1217E3053C0044A7DF /* Default1.png in Resources */,
@@ -1846,6 +1933,7 @@
 				AE44B00A1834AADF0074E7D9 /* grayArrow.png in Resources */,
 				AE44B0121834AADF0074E7D9 /* 4.png in Resources */,
 				AE44B0241834AADF0074E7D9 /* qq.png in Resources */,
+				AE1C3F4018507BA000DBBB36 /* 财务比例.png in Resources */,
 				AE44B02C1834AADF0074E7D9 /* topQuestion.png in Resources */,
 				AE44B0141834AADF0074E7D9 /* newReportCellBack.png in Resources */,
 				AE44B0071834AADF0074E7D9 /* INVESTCOM.png in Resources */,
@@ -1857,24 +1945,25 @@
 				AE44B01A1834AADF0074E7D9 /* excelShortcuts.png in Resources */,
 				AE44AFDB1834AADF0074E7D9 /* googuuViewBt.png in Resources */,
 				AE44AFE21834AADF0074E7D9 /* NASC.png in Resources */,
+				AE1C3F181850671700DBBB36 /* left_arrow@2x.png in Resources */,
 				AE44AFDD1834AADF0074E7D9 /* graphExchangeBt.png in Resources */,
 				AE44AFF71834AADF0074E7D9 /* ValuaActionBt.png in Resources */,
 				AE44B0041834AADF0074E7D9 /* FREECRASH.png in Resources */,
 				AE44AFE41834AADF0074E7D9 /* newReportBtSe.png in Resources */,
 				AE44AFF81834AADF0074E7D9 /* ValuaActionBtSe.png in Resources */,
+				AE1C3F3618507B9300DBBB36 /* 折现率.png in Resources */,
+				AE1C3F3918507B9300DBBB36 /* 主营收入-2.png in Resources */,
 				AE44B0281834AADF0074E7D9 /* userNameFieldIcon.png in Resources */,
 				AEA90A51181E13FD00F3E4DB /* netrequesturl.plist in Resources */,
 				AE44AFEC1834AADF0074E7D9 /* blackArrow@2x.png in Resources */,
 				AED54F27183CC8BB00A6E965 /* ComIconCell.xib in Resources */,
 				AE44B0001834AADF0074E7D9 /* COMVALU.png in Resources */,
 				AE44AFF11834AADF0074E7D9 /* dragDot.png in Resources */,
-				AE1FCBB71828DBB9005D5E10 /* right_arrow@2x.png in Resources */,
-				AE1FCBB51828DBB9005D5E10 /* left_arrow@2x.png in Resources */,
 				AE44B0301834AADF0074E7D9 /* valueModelCellBack3.png in Resources */,
 				AE44AFF41834AADF0074E7D9 /* monthChoosenBt.png in Resources */,
 				AE44B0111834AADF0074E7D9 /* 3.png in Resources */,
 				AE44B0211834AADF0074E7D9 /* loginLBtBack.png in Resources */,
-				AE1FCBB61828DBB9005D5E10 /* right_arrow.png in Resources */,
+				AE1C3F4218507BA000DBBB36 /* 财务图表.png in Resources */,
 				AE44B0051834AADF0074E7D9 /* FUNDTIME.png in Resources */,
 				AEBE512F1839F1600041E1EA /* select.png in Resources */,
 				AE44AFFE1834AADF0074E7D9 /* BETA.png in Resources */,
@@ -1884,6 +1973,7 @@
 				AE44AFED1834AADF0074E7D9 /* blueArrow.png in Resources */,
 				AE44B04E1834D8C00074E7D9 /* GooGuuViewCell.xib in Resources */,
 				AE44B0031834AADF0074E7D9 /* finToolRightBack.png in Resources */,
+				AE1C3F4418507BA000DBBB36 /* 其它指标.png in Resources */,
 				AE44B0101834AADF0074E7D9 /* 2.png in Resources */,
 				AEA90A5F181E142A00F3E4DB /* calu.html in Resources */,
 				AEFC216818322ADF00F53470 /* DiscountRateView.xib in Resources */,
@@ -1895,19 +1985,22 @@
 				AE7EF615181F5599002A3C9E /* NewReportCell.xib in Resources */,
 				AE44B0021834AADF0074E7D9 /* finToolBack.png in Resources */,
 				AE44B02A1834AADF0074E7D9 /* title_googuu.png in Resources */,
-				AE1FCBB41828DBB9005D5E10 /* left_arrow.png in Resources */,
+				AE1C3F1A1850671700DBBB36 /* right_arrow@2x.png in Resources */,
 				AE44AFFF1834AADF0074E7D9 /* CASHCOUNT.png in Resources */,
 				AE44AFEF1834AADF0074E7D9 /* discountBack.png in Resources */,
 				AE44B01C1834AADF0074E7D9 /* inputBack.png in Resources */,
 				AE44B0091834AADF0074E7D9 /* WACC.png in Resources */,
 				AE44AFE11834AADF0074E7D9 /* myGooguuBtSe.png in Resources */,
 				AEF9502D1834690B00EB1631 /* selectionIndicatorImage.png in Resources */,
+				AE1C3F3418507B9300DBBB36 /* 运营资本.png in Resources */,
 				AE44B00E1834AADF0074E7D9 /* littleTag.png in Resources */,
+				AE1C3F3718507B9300DBBB36 /* 折现率-2.png in Resources */,
 				AE44AFFD1834AADF0074E7D9 /* ASTOCK.png in Resources */,
 				AE44B02F1834AADF0074E7D9 /* valueModelCellBack.png in Resources */,
 				AE09139C1827A4A6007A7B97 /* ChoseBetaFactorView.xib in Resources */,
 				AE44B0131834AADF0074E7D9 /* newReportBackImg.png in Resources */,
 				AE44AFE81834AADF0074E7D9 /* SZ.png in Resources */,
+				AE1C3F171850671700DBBB36 /* left_arrow.png in Resources */,
 				AEA90A4E181E13FD00F3E4DB /* TradeList.plist in Resources */,
 				AE44AFE31834AADF0074E7D9 /* newReportBt.png in Resources */,
 				AEA90A5D181E142A00F3E4DB /* cc.html in Resources */,
@@ -1922,6 +2015,7 @@
 				AE44AFE01834AADF0074E7D9 /* myGooguuBt.png in Resources */,
 				AE44B0011834AADF0074E7D9 /* EXCEL.png in Resources */,
 				AE09139A1827A34C007A7B97 /* BetaFactorCountView.xib in Resources */,
+				AE1C3F3818507B9300DBBB36 /* 主营收入.png in Resources */,
 				AEA90A56181E13FD00F3E4DB /* FrameParamConfig.plist in Resources */,
 				AEBE51311839F4FA0041E1EA /* dailyBackImg.png in Resources */,
 				AE3E70FC18334FA100A624AD /* Default@2x.png in Resources */,
@@ -1930,9 +2024,11 @@
 				AE44B0221834AADF0074E7D9 /* loginTableBack.png in Resources */,
 				AE44AFE51834AADF0074E7D9 /* settingBt.png in Resources */,
 				AE44AFE91834AADF0074E7D9 /* valuModelBt.png in Resources */,
+				AE1C3F3518507B9300DBBB36 /* 运营资本-2.png in Resources */,
 				AE44B01B1834AADF0074E7D9 /* hookImg.png in Resources */,
 				AE44B01E1834AADF0074E7D9 /* loginBtBack.png in Resources */,
 				AE44AFF31834AADF0074E7D9 /* DownAccessory@2x.png in Resources */,
+				AE1C3F4118507BA000DBBB36 /* 财务比例-2.png in Resources */,
 				AE44B0261834AADF0074E7D9 /* sina.png in Resources */,
 				AEA90A4F181E13FD00F3E4DB /* InterestList.plist in Resources */,
 				AEA90A55181E13FD00F3E4DB /* BPushConfig.plist in Resources */,
@@ -1944,6 +2040,7 @@
 				AE44AFFC1834AADF0074E7D9 /* down.png in Resources */,
 				AEA90A50181E13FD00F3E4DB /* OccupationalList.plist in Resources */,
 				AE44B00C1834AADF0074E7D9 /* icon.png in Resources */,
+				AE1C3F3318507B9300DBBB36 /* 运营费用-2.png in Resources */,
 				AE44AFE61834AADF0074E7D9 /* settingBtSe.png in Resources */,
 				AE572B87182CE0D60000B193 /* Cell1.xib in Resources */,
 				AEA90A5C181E142A00F3E4DB /* cnew.html in Resources */,
@@ -1951,7 +2048,9 @@
 				AE44B0191834AADF0074E7D9 /* checkImg.png in Resources */,
 				AE44B00F1834AADF0074E7D9 /* 1.png in Resources */,
 				AE44AFD81834AADF0074E7D9 /* dailyStockBtSe.png in Resources */,
+				AE1C3F4318507BA000DBBB36 /* 财务指标-2.png in Resources */,
 				AE44B00D1834AADF0074E7D9 /* icon@2x.png in Resources */,
+				AE1C3F191850671700DBBB36 /* right_arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2018,8 +2117,10 @@
 				AE7E5755181E54B400A1391E /* AMProgressViewGradient.m in Sources */,
 				AE739ABC182257FB00CF82C5 /* NSDate+convenience.m in Sources */,
 				AE7E5737181E3F7400A1391E /* RotatedView.m in Sources */,
+				AE1C3F161850671700DBBB36 /* CKCalendarView.m in Sources */,
 				AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */,
 				AE44B0511834D8DA0074E7D9 /* GooGuuViewCell.m in Sources */,
+				AE291D2C18505CDE00A62244 /* SearchComListViewController.m in Sources */,
 				AE600972182B70BB00BB3819 /* UIFont+CoreTextExtensions.m in Sources */,
 				AEFC216618322A3800F53470 /* DiscountRateViewController.m in Sources */,
 				AE3FCB8917E6D9C9001A04A1 /* Utiles.m in Sources */,
@@ -2057,12 +2158,12 @@
 				AE0F050C1827464B00DA13D4 /* CounterViewController.m in Sources */,
 				AE530C9717E99B3F007E5143 /* NGTabBar.m in Sources */,
 				AE530C9817E99B3F007E5143 /* NGTabBarController.m in Sources */,
-				AE3FA9091829E53F004EC28C /* CKCalendarView.m in Sources */,
 				AE8B44FF182101290047F4BB /* SettingMenuViewController.m in Sources */,
 				AE748EC71833770500BD4F57 /* FSVerticalTabBarButton.m in Sources */,
 				AE30965F183DE6750074B84C /* ValueModelIndicator3.m in Sources */,
 				AE44B04C1834D4BC0074E7D9 /* GooGuuViewListViewController.m in Sources */,
 				AE7EF62D181F6219002A3C9E /* EGORefreshTableHeaderView.m in Sources */,
+				AE1C3F281850675800DBBB36 /* UIViewController+MJPopupViewController.m in Sources */,
 				AE44AF6C1834A9020074E7D9 /* MHTabBarController.m in Sources */,
 				AE530C9917E99B3F007E5143 /* NGTabBarItem.m in Sources */,
 				AE530C9A17E99B3F007E5143 /* UINavigationController+NGTabBarNavigationDelegate.m in Sources */,
@@ -2112,6 +2213,7 @@
 				AE309651183DDC7A0074B84C /* ValueModelIndicator.m in Sources */,
 				AEB3E33517F40DA100A273E9 /* EnumSummary.m in Sources */,
 				AE7E5735181E3F7400A1391E /* PieChartView.m in Sources */,
+				AE1C3F271850675800DBBB36 /* MJPopupBackgroundView.m in Sources */,
 				AE30964F183DDC7A0074B84C /* ComInfoListColumn1.m in Sources */,
 				AEB3E33D17F4229900A273E9 /* GraphExchangeViewController.m in Sources */,
 				AEB3E34017F422B100A273E9 /* DailyStockViewController.m in Sources */,
@@ -2125,6 +2227,7 @@
 				AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */,
 				AE67B8D91830749100E00473 /* FinancalModelContainerViewController.m in Sources */,
 				AE29CD4618289DE800E8E94C /* NewReportLeftListViewController.m in Sources */,
+				AEE5606B18502C0900469EF5 /* TipView.m in Sources */,
 				AE67B8DD18307BDB00E00473 /* FinancalModelRightListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

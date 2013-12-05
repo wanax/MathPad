@@ -19,6 +19,9 @@
 #import "SettingViewController.h"
 #import "REFrostedViewController.h"
 #import "GooGuuViewListViewController.h"
+#import "SearchComListViewController.h"
+#import "UIViewController+MJPopupViewController.h"
+#import "ClientLoginViewController.h"
 
 @interface VerticalTabBarViewController () {
     NSArray* viewControllers;
@@ -32,6 +35,47 @@
 {
     [super viewDidLoad];
     [self initComponents];
+}
+
+-(void)questionBtClicked:(UIButton *)bt{
+    
+}
+
+-(void)loginBtClicked:(UIButton *)bt {
+    
+    ClientLoginViewController *loginVC = [[ClientLoginViewController alloc] init];
+    loginVC.sourceType=VerticalTabBar;
+    [self presentViewController:loginVC animated:YES completion:nil];
+    
+}
+
+#pragma mark -
+#pragma UIPopVC Methods Delegate
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController{
+    [self.searchBar resignFirstResponder];
+}
+
+#pragma mark -
+#pragma UISearchBar Methods Delegate
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+
+    [self.popVC presentPopoverFromRect:CGRectMake(770,00,240,55) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    NSDictionary *param = @{@"q":searchText};
+    [Utiles getNetInfoWithPath:@"QueryComList" andParams:param besidesBlock:^(id obj) {
+        
+        self.searchListVC.companys=obj;
+        [self.searchListVC.comTable reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
 }
 
 -(void)initComponents{
@@ -53,6 +97,26 @@
     [questionBt setBackgroundImage:[UIImage imageNamed:@"topQuestion"] forState:UIControlStateNormal];
     [questionBt addTarget:self action:@selector(questionBtClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:questionBt];
+    
+    UIButton *loginBt=[UIButton buttonWithType:UIButtonTypeCustom];
+    [loginBt setFrame:CGRectMake(60,14,60,30)];
+    [loginBt setTitle:@"登录" forState:UIControlStateNormal];
+    [loginBt addTarget:self action:@selector(loginBtClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:loginBt];
+    
+    UISearchBar *bar=[[[UISearchBar alloc] initWithFrame:CGRectMake(770,00,240,55)] autorelease];
+    bar.delegate=self;
+    bar.placeholder=@"公司搜索";
+    bar.backgroundColor=[UIColor clearColor];
+    bar.barTintColor=[UIColor clearColor];
+    self.searchBar=bar;
+    [self.view addSubview:self.searchBar];
+    
+    SearchComListViewController *st = [[[SearchComListViewController alloc] init] autorelease];
+    self.searchListVC=st;
+    UIPopoverController *p=[[[UIPopoverController alloc] initWithContentViewController:self.searchListVC] autorelease];
+    self.popVC=p;
+    self.popVC.delegate=self;
     
     NSMutableArray* controllersToAdd = [[[NSMutableArray alloc] init] autorelease];
     

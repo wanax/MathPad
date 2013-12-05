@@ -12,5 +12,6 @@
 
 @property (nonatomic,retain) IBOutlet UIImageView *iconImg;
 @property (nonatomic,retain) IBOutlet UIImageView *backImg;
+@property (nonatomic,retain) IBOutlet UILabel *comNameLabel;
 
 @end

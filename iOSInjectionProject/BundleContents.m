@@ -18,7 +18,7 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModel/ComInfoListColumn1.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/SearchComListViewController.m"
 
 
 @interface InjectionBundle2 : NSObject
@@ -27,8 +27,8 @@
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_ComInfoListColumn1;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ComInfoListColumn1 notify:4];
+    extern Class OBJC_CLASS_$_SearchComListViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_SearchComListViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

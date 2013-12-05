@@ -2,16 +2,17 @@ dependencies: \
   /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.m \
   /Applications/Injection\ Plugin.app/Contents/Resources/BundleInjection.h \
   /Users/xcode/wanax/oc/MathMonsters/iOSInjectionProject/BundleContents.h \
-  /Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/ValueModel/ComInfoListColumn1.m \
-  ../MathMonsters/RightDetail/ValueModel/ComInfoListColumn1.h \
-  ../MathMonsters/RightDetail/ValueModel/ComInfoListColumn.h \
-  ../MathMonsters/RightDetail/ValueModel/ValueModelIndicator.h \
-  ../MathMonsters/CustomCell/ValueModelCell.h \
-  ../MathMonsters/Plugs/AMProgressView/AMProgressView.h \
+  /Users/xcode/wanax/oc/MathMonsters/MathMonsters/SearchComListViewController.m \
+  ../MathMonsters/SearchComListViewController.h \
   ../MathMonsters/RightDetail/ComDetail/ComContainerViewController.h \
-  ../Pods/BuildHeaders/SDWebImage/UIImageView+WebCache.h \
-  ../Pods/BuildHeaders/SDWebImage/SDWebImageCompat.h \
-  ../Pods/BuildHeaders/SDWebImage/SDWebImageManager.h \
-  ../Pods/BuildHeaders/SDWebImage/SDWebImageOperation.h \
-  ../Pods/BuildHeaders/SDWebImage/SDWebImageDownloader.h \
-  ../Pods/BuildHeaders/SDWebImage/SDImageCache.h
+  ../MathMonsters/RightDetail/NewReport/NewReportArticleViewController.h \
+  ../MathMonsters/Plugs/Classes/Views/AKOMultiPageTextView.h \
+  ../MathMonsters/Plugs/Classes/Views/AKOMultiColumnTextViewDataSource.h \
+  ../MathMonsters/RightDetail/NewReport/PageController.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoBrowser.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhoto.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoProtocol.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoLoadingView.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXPhotoLoadingViewProtocol.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXBrowserNavBarView.h \
+  ../Pods/BuildHeaders/CXPhotoBrowser/CXBrowserToolBarView.h

@@ -51,23 +51,18 @@ static const NSInteger TAG_OFFSET = 1000;
 - (void)selectTabButton:(UIButton *)button
 {
     button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:20.0f];
-	UIImage *image = [[UIImage imageNamed:@"tabSelected"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
-	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button setBackgroundImage:image forState:UIControlStateHighlighted];
-	
-	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
 	//[button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.5f] forState:UIControlStateNormal];
 }
 
 - (void)deselectTabButton:(UIButton *)button
 {
     button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:20.0f];
-	UIImage *image = [[UIImage imageNamed:@"tabUnSelected"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
+	/*UIImage *image = [[UIImage imageNamed:@"tabUnSelected"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
 	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button setBackgroundImage:image forState:UIControlStateHighlighted];
-
-	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	[button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[button setBackgroundImage:image forState:UIControlStateHighlighted];*/
+	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
 
 - (void)removeTabButtons

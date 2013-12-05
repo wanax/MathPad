@@ -97,6 +97,7 @@
         AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
         [delegate.frostedViewController dismissViewControllerAnimated:YES completion:nil];
         ClientLoginViewController *homeViewController = [[ClientLoginViewController alloc] init];
+        homeViewController.sourceType=SettingMenu;
         [navigationController pushViewController:homeViewController animated:YES];
     } else {
         //DEMOSecondViewController *secondViewController = [[DEMOSecondViewController alloc] init];

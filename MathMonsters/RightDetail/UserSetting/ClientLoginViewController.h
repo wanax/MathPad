@@ -17,6 +17,8 @@
     BOOL isGoIn;
 }
 
+@property BrowseSourceType sourceType;
+
 @property (nonatomic,retain) IBOutlet UITextField *userNameField;
 @property (nonatomic,retain) IBOutlet UITextField *userPwdField;
 @property (nonatomic,retain) IBOutlet UIButton *loginBt;

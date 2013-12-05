@@ -13,7 +13,7 @@
 #define PIE_HEIGHT 420
 
 #define PIE_X 20
-#define PIE_Y 50
+#define PIE_Y 60
 
 @interface PieViewController ()
 

@@ -69,14 +69,14 @@
     }
     
     PieViewController *vc=[[[PieViewController alloc] initWithData:valueDic comInfo:self.companyInfo] autorelease];
-    vc.view.frame=CGRectMake(0,90,450,570);
+    vc.view.frame=CGRectMake(0,90,450,670);
     vc.view.backgroundColor=[Utiles colorWithHexString:@"#FDFBE4"];
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];
     
     DailyRightListViewController *rightList=[[[DailyRightListViewController alloc] initWithValueIncomeDic:valueDic driverIds:ids jsonData:self.jsonData comInfo:self.companyInfo] autorelease];
     rightList.view.backgroundColor=[UIColor clearColor];
-    rightList.view.frame=CGRectMake(450,90,500,900);
+    rightList.view.frame=CGRectMake(450,90,500,1000);
     rightList.classToChildIds=dic;
     vc.delegate=rightList;
     [self addChildViewController:rightList];
