@@ -10,6 +10,7 @@
                 <outlet property="loginBt" destination="Ra4-GH-JA4" id="HCN-TA-ACG"/>
                 <outlet property="regBt" destination="QvZ-t0-Zx1" id="Kto-V6-WRc"/>
                 <outlet property="rememberPwd" destination="ier-tb-MBv" id="pTH-rr-db6"/>
+                <outlet property="titleImg" destination="p6M-mJ-AkJ" id="d1M-ty-QYr"/>
                 <outlet property="userNameField" destination="Ip4-Oz-cdL" id="Qh4-GQ-cJg"/>
                 <outlet property="userPwdField" destination="iGj-cN-0lW" id="tfM-Vh-bri"/>
                 <outlet property="view" destination="1" id="Ae4-XA-BzU"/>
@@ -48,7 +49,7 @@
                     <rect key="frame" x="639" y="528" width="308" height="91"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                    <color key="textColor" red="1" green="0.96862745100000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="1" green="0.96862745098039216" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="记住登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3n-F4-9Jn">
@@ -77,7 +78,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="inputBack.png" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ip4-Oz-cdL">
-                    <rect key="frame" x="713" y="191" width="230" height="35"/>
+                    <rect key="frame" x="713" y="191" width="230" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="next"/>

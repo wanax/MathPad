@@ -12,13 +12,16 @@
 #import <QuartzCore/QuartzCore.h>
 
 @class LoginView;
+@class UserRegContainer;
 
 @interface ClientLoginViewController : UIViewController<UITextFieldDelegate>{
     BOOL isGoIn;
 }
 
 @property BrowseSourceType sourceType;
+@property BOOL isLoginView;
 
+@property (nonatomic,retain) IBOutlet UIImageView *titleImg;
 @property (nonatomic,retain) IBOutlet UITextField *userNameField;
 @property (nonatomic,retain) IBOutlet UITextField *userPwdField;
 @property (nonatomic,retain) IBOutlet UIButton *loginBt;
@@ -29,6 +32,8 @@
 @property (nonatomic,retain) IBOutlet UIImageView *autoCheckImg;
 @property (nonatomic,retain) IBOutlet UISwitch *rememberPwd;
 
+@property (nonatomic,retain) UserRegContainer *regContainer;
+
 -(IBAction)cancelBtClicked:(UIButton *)bt;
 -(IBAction)loginBtClicked:(id)sender;
 -(IBAction)backGroundIsClicked;
@@ -36,6 +41,8 @@
 -(IBAction)freeRegBtClicked:(id)sender;
 //-(IBAction)findPwdBtClicked:(id)sender;
 -(IBAction)rememberPwd:(UISwitch *)s;
+
+-(void)userLoginUserName:(NSString *)userName pwd:(NSString *)pwd;
 
 
 

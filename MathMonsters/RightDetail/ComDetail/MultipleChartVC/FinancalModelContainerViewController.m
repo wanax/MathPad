@@ -75,7 +75,7 @@
         
         
         FinancalModelRightListViewController *tRight=[[[FinancalModelRightListViewController alloc] initWithClassDic:transObj comInfo:self.comInfo jsonData:self.jsonForChart] autorelease];
-        tRight.view.frame=CGRectMake(350,0,600,1100);
+        tRight.view.frame=CGRectMake(340,0,600,1100);
         self.delegate=tRight;
         self.leftListVC.delegate=tRight;
         self.rightListVC=tRight;

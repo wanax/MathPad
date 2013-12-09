@@ -63,7 +63,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     CPTXYGraph *tempGraph=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
     self.graph=tempGraph;
     self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
-    CPTGraphHostingView *tempView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(0,10,640,HostViewHeight)] autorelease];
+    CPTGraphHostingView *tempView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,10,680,HostViewHeight)] autorelease];
     self.hostView=tempView;
     [self.view addSubview:self.hostView];
     [self.hostView setHostedGraph : self.graph ];

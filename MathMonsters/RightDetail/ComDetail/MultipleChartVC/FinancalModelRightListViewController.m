@@ -51,7 +51,7 @@
 
 -(void)initComponents{
     
-    UITableView *tView=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,650,610)] autorelease];
+    UITableView *tView=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,680,610)] autorelease];
     tView.separatorStyle=UITableViewCellSeparatorStyleNone;
     tView.dataSource=self;
     tView.delegate=self;

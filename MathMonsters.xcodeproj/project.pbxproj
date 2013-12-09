@@ -39,6 +39,10 @@
 		AE1C3F4318507BA000DBBB36 /* 财务指标-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */; };
 		AE1C3F4418507BA000DBBB36 /* 其它指标.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3E18507BA000DBBB36 /* 其它指标.png */; };
 		AE1C3F4518507BA000DBBB36 /* 其他指标-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */; };
+		AE28036B1855B73D008CAB1C /* POPDSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2803631855B73D008CAB1C /* POPDSampleViewController.m */; };
+		AE28036C1855B73D008CAB1C /* POPDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2803651855B73D008CAB1C /* POPDViewController.m */; };
+		AE2803721855B767008CAB1C /* POPDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2803701855B767008CAB1C /* POPDCell.m */; };
+		AE2803731855B767008CAB1C /* POPDCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2803711855B767008CAB1C /* POPDCell.xib */; };
 		AE291D2C18505CDE00A62244 /* SearchComListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE291D2B18505CDE00A62244 /* SearchComListViewController.m */; };
 		AE29CD40182899D900E8E94C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD3F182899D900E8E94C /* HelpViewController.m */; };
 		AE29CD4618289DE800E8E94C /* NewReportLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD4518289DE800E8E94C /* NewReportLeftListViewController.m */; };
@@ -266,6 +270,10 @@
 		AED54F2A183CC95000A6E965 /* ComIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED54F29183CC95000A6E965 /* ComIconCell.m */; };
 		AED98534183C571F00E97093 /* MyProLossCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED98533183C571F00E97093 /* MyProLossCell.m */; };
 		AED98536183C573400E97093 /* MyProLossCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED98535183C573400E97093 /* MyProLossCell.xib */; };
+		AEDA282218556063002356AD /* UserRegContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDA282118556063002356AD /* UserRegContainer.m */; };
+		AEDA28271855608A002356AD /* UserRegByEmailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDA28261855608A002356AD /* UserRegByEmailVC.m */; };
+		AEDA282A185560A1002356AD /* UserRegByPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDA2829185560A1002356AD /* UserRegByPhoneVC.m */; };
+		AEDA282C185567C4002356AD /* tabUnSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = AEDA282B185567C4002356AD /* tabUnSelected.png */; };
 		AEDD0830181FAA6D0095BDA1 /* ValueModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */; };
 		AEDD0833181FAA900095BDA1 /* ValueModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDD0832181FAA900095BDA1 /* ValueModelCell.m */; };
 		AEDFE96117F279BE0085CA0F /* MGSplitCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFE95C17F279BE0085CA0F /* MGSplitCornersView.m */; };
@@ -346,6 +354,13 @@
 		AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "财务指标-2.png"; sourceTree = "<group>"; };
 		AE1C3F3E18507BA000DBBB36 /* 其它指标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其它指标.png"; sourceTree = "<group>"; };
 		AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其他指标-2.png"; sourceTree = "<group>"; };
+		AE2803621855B73D008CAB1C /* POPDSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POPDSampleViewController.h; path = ../../Plugs/popdowntable/POPDSampleViewController.h; sourceTree = "<group>"; };
+		AE2803631855B73D008CAB1C /* POPDSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POPDSampleViewController.m; path = ../../Plugs/popdowntable/POPDSampleViewController.m; sourceTree = "<group>"; };
+		AE2803641855B73D008CAB1C /* POPDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPDViewController.h; sourceTree = "<group>"; };
+		AE2803651855B73D008CAB1C /* POPDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPDViewController.m; sourceTree = "<group>"; };
+		AE28036F1855B767008CAB1C /* POPDCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPDCell.h; sourceTree = "<group>"; };
+		AE2803701855B767008CAB1C /* POPDCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPDCell.m; sourceTree = "<group>"; };
+		AE2803711855B767008CAB1C /* POPDCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POPDCell.xib; sourceTree = "<group>"; };
 		AE291D2A18505CDE00A62244 /* SearchComListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchComListViewController.h; sourceTree = "<group>"; };
 		AE291D2B18505CDE00A62244 /* SearchComListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchComListViewController.m; sourceTree = "<group>"; };
 		AE29CD3E182899D900E8E94C /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
@@ -760,6 +775,13 @@
 		AED98532183C571F00E97093 /* MyProLossCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProLossCell.h; sourceTree = "<group>"; };
 		AED98533183C571F00E97093 /* MyProLossCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProLossCell.m; sourceTree = "<group>"; };
 		AED98535183C573400E97093 /* MyProLossCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProLossCell.xib; sourceTree = "<group>"; };
+		AEDA282018556063002356AD /* UserRegContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegContainer.h; sourceTree = "<group>"; };
+		AEDA282118556063002356AD /* UserRegContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegContainer.m; sourceTree = "<group>"; };
+		AEDA28251855608A002356AD /* UserRegByEmailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegByEmailVC.h; sourceTree = "<group>"; };
+		AEDA28261855608A002356AD /* UserRegByEmailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegByEmailVC.m; sourceTree = "<group>"; };
+		AEDA2828185560A1002356AD /* UserRegByPhoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegByPhoneVC.h; sourceTree = "<group>"; };
+		AEDA2829185560A1002356AD /* UserRegByPhoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegByPhoneVC.m; sourceTree = "<group>"; };
+		AEDA282B185567C4002356AD /* tabUnSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabUnSelected.png; sourceTree = "<group>"; };
 		AEDCE52218483418008F3FD3 /* ChartLeftListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartLeftListDelegate.h; sourceTree = "<group>"; };
 		AEDCE5251848358F008F3FD3 /* ValueModelChartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueModelChartDelegate.h; sourceTree = "<group>"; };
 		AEDD082F181FAA6D0095BDA1 /* ValueModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValueModelCell.xib; path = ../../NibFile/CellNib/ValueModelCell.xib; sourceTree = "<group>"; };
@@ -874,6 +896,18 @@
 				AE1C3F3118507B9300DBBB36 /* 主营收入-2.png */,
 			);
 			name = LeftListIcon;
+			sourceTree = "<group>";
+		};
+		AE2803591855B73D008CAB1C /* popdowntable */ = {
+			isa = PBXGroup;
+			children = (
+				AE28036F1855B767008CAB1C /* POPDCell.h */,
+				AE2803701855B767008CAB1C /* POPDCell.m */,
+				AE2803711855B767008CAB1C /* POPDCell.xib */,
+				AE2803641855B73D008CAB1C /* POPDViewController.h */,
+				AE2803651855B73D008CAB1C /* POPDViewController.m */,
+			);
+			path = popdowntable;
 			sourceTree = "<group>";
 		};
 		AE291D2718505CBA00A62244 /* AccessoryVC */ = {
@@ -1056,6 +1090,7 @@
 		AE44AF691834A8E80074E7D9 /* MHTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				AEDA282B185567C4002356AD /* tabUnSelected.png */,
 				AE44AF6A1834A9020074E7D9 /* MHTabBarController.h */,
 				AE44AF6B1834A9020074E7D9 /* MHTabBarController.m */,
 			);
@@ -1528,6 +1563,7 @@
 		AE6FCEF017E93F6C00DCDB77 /* Plugs */ = {
 			isa = PBXGroup;
 			children = (
+				AE2803591855B73D008CAB1C /* popdowntable */,
 				AE1C3F221850675800DBBB36 /* MJPopup */,
 				AE1C3F0E1850671700DBBB36 /* CKCalendarView */,
 				AE748EBD1833770500BD4F57 /* FSVerticalTabBar */,
@@ -1575,6 +1611,8 @@
 			isa = PBXGroup;
 			children = (
 				AEF59B311831D37500CE99D8 /* UserLogin */,
+				AE2803621855B73D008CAB1C /* POPDSampleViewController.h */,
+				AE2803631855B73D008CAB1C /* POPDSampleViewController.m */,
 				AE29CD3E182899D900E8E94C /* HelpViewController.h */,
 				AE29CD3F182899D900E8E94C /* HelpViewController.m */,
 				AEB3E34117F422BC00A273E9 /* SettingViewController.h */,
@@ -1832,6 +1870,12 @@
 				AEF59B381831D3D400CE99D8 /* ClientLoginViewController.h */,
 				AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */,
 				AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */,
+				AEDA282018556063002356AD /* UserRegContainer.h */,
+				AEDA282118556063002356AD /* UserRegContainer.m */,
+				AEDA28251855608A002356AD /* UserRegByEmailVC.h */,
+				AEDA28261855608A002356AD /* UserRegByEmailVC.m */,
+				AEDA2828185560A1002356AD /* UserRegByPhoneVC.h */,
+				AEDA2829185560A1002356AD /* UserRegByPhoneVC.m */,
 			);
 			name = UserLogin;
 			sourceTree = "<group>";
@@ -1947,6 +1991,7 @@
 				AE44AFE21834AADF0074E7D9 /* NASC.png in Resources */,
 				AE1C3F181850671700DBBB36 /* left_arrow@2x.png in Resources */,
 				AE44AFDD1834AADF0074E7D9 /* graphExchangeBt.png in Resources */,
+				AE2803731855B767008CAB1C /* POPDCell.xib in Resources */,
 				AE44AFF71834AADF0074E7D9 /* ValuaActionBt.png in Resources */,
 				AE44B0041834AADF0074E7D9 /* FREECRASH.png in Resources */,
 				AE44AFE41834AADF0074E7D9 /* newReportBtSe.png in Resources */,
@@ -2010,6 +2055,7 @@
 				AE44B0151834AADF0074E7D9 /* newReportCellBack1.png in Resources */,
 				AE44B0251834AADF0074E7D9 /* regUserFieldIcon.png in Resources */,
 				AE44B0061834AADF0074E7D9 /* HSTOCK.png in Resources */,
+				AEDA282C185567C4002356AD /* tabUnSelected.png in Resources */,
 				AE44AFF01834AADF0074E7D9 /* discountLabelBack.png in Resources */,
 				AEA90A53181E13FD00F3E4DB /* userconfigure.plist in Resources */,
 				AE44AFE01834AADF0074E7D9 /* myGooguuBt.png in Resources */,
@@ -2141,6 +2187,8 @@
 				AE6FCF1517E9403800DCDB77 /* Toast+UIView.m in Sources */,
 				AEF59B3A1831D3D400CE99D8 /* ClientLoginViewController.m in Sources */,
 				AEBE51341839FB8C0041E1EA /* DailyRightListViewController.m in Sources */,
+				AE28036C1855B73D008CAB1C /* POPDViewController.m in Sources */,
+				AE2803721855B767008CAB1C /* POPDCell.m in Sources */,
 				AE6FCF1817E940DA00DCDB77 /* MBProgressHUD.m in Sources */,
 				AE0F050E1827464B00DA13D4 /* ChoseBetaFactorViewController.m in Sources */,
 				AE7EF610181F4C93002A3C9E /* NewReportIndicator.m in Sources */,
@@ -2178,11 +2226,13 @@
 				AE63E8D81830D2F8002043DC /* ValuationModelContainerViewController.m in Sources */,
 				AE530CA117E99B9F007E5143 /* NGColoredViewController.m in Sources */,
 				AE530CA217E99B9F007E5143 /* NGTestTabBarController.m in Sources */,
+				AEDA28271855608A002356AD /* UserRegByEmailVC.m in Sources */,
 				AE0F051E1827495000DA13D4 /* CounterBankViewController.m in Sources */,
 				AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */,
 				AE62F155183B3EFD00FD75D7 /* MyProLossContainerViewController.m in Sources */,
 				AEF6E800183AF79200FD90EE /* DailyStockBarChartViewController.m in Sources */,
 				AE641EDE1820A91600E77775 /* FinancePicViewController.m in Sources */,
+				AEDA282A185560A1002356AD /* UserRegByPhoneVC.m in Sources */,
 				AE8B4508182101930047F4BB /* SettingNavigationController.m in Sources */,
 				AEAD74DE17EE7FAB00A659FA /* KLCircleViewController.m in Sources */,
 				AE748EC81833770500BD4F57 /* FSVerticalTabBarController.m in Sources */,
@@ -2212,6 +2262,7 @@
 				AE7EF61B181F5630002A3C9E /* NewReportCell.m in Sources */,
 				AE309651183DDC7A0074B84C /* ValueModelIndicator.m in Sources */,
 				AEB3E33517F40DA100A273E9 /* EnumSummary.m in Sources */,
+				AE28036B1855B73D008CAB1C /* POPDSampleViewController.m in Sources */,
 				AE7E5735181E3F7400A1391E /* PieChartView.m in Sources */,
 				AE1C3F271850675800DBBB36 /* MJPopupBackgroundView.m in Sources */,
 				AE30964F183DDC7A0074B84C /* ComInfoListColumn1.m in Sources */,
@@ -2223,6 +2274,7 @@
 				AE7E5740181E51EB00A1391E /* DailyStockIndicator.m in Sources */,
 				AE309659183DE6520074B84C /* ComInfoListColumn3.m in Sources */,
 				AEB3E34917F422D700A273E9 /* NewReportViewController.m in Sources */,
+				AEDA282218556063002356AD /* UserRegContainer.m in Sources */,
 				AEB3E34F17F422EE00A273E9 /* FinanceToolViewController.m in Sources */,
 				AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */,
 				AE67B8D91830749100E00473 /* FinancalModelContainerViewController.m in Sources */,

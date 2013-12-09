@@ -148,7 +148,7 @@
         NSMutableDictionary *cellValueDic=[[[NSMutableDictionary alloc] init] autorelease];
         
         [self produceProgressForClass:comInfo[@"data"] className:@"Current ratio" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
-        [tempDiscountRates addObject:comInfo[@"data"][@"Discount Rate"][@"array"][0][@"v"]];
+        [tempDiscountRates addObject:comInfo[@"data"][@"Discount rate"][@"array"][0][@"v"]];
         [temp addObject:tempGrade2];
         [tempYearValueArr addObject:cellValueDic];
     }

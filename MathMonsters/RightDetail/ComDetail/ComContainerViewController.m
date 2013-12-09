@@ -76,7 +76,7 @@
     NSArray *viewControllers = [NSArray arrayWithObjects:self.valueContainer, self.finContainer,self.dahonContainer,self.myProLossContainer, nil];
     MHTabBarController *h=[[[MHTabBarController alloc] init] autorelease];
 	h.viewControllers = viewControllers;
-    h.view.frame=CGRectMake(0,100,750,1000);
+    h.view.frame=CGRectMake(0,100,770,1000);
     self.tabBarController=h;
     [self addChildViewController:self.tabBarController];
     [self.view addSubview:self.tabBarController.view];

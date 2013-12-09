@@ -79,6 +79,7 @@
     for(id obj in self.valueArray){
         sum+=[obj longValue];
     }
+    
     NSNumberFormatter * formatter   = [[[NSNumberFormatter alloc] init] autorelease];
     [formatter setPositiveFormat:@"#,###"];
     [self.pieChartView setAmountText:[formatter stringFromNumber:[NSNumber numberWithLong:sum]]];
@@ -101,7 +102,8 @@
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {
-    [self.selLabel setText:[NSString stringWithFormat:@"%@%2.2f",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"],per*100]];
+    //[self.selLabel setText:[NSString stringWithFormat:@"%@%2.2f",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"],per*100]];
+    [self.selLabel setText:[NSString stringWithFormat:@"%@",[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"]]];
     [self.delegate pieWasChoosen:[self.valueIncomeDic objectForKey:[self.valueArray objectAtIndex:index]][@"text"]];
 }
 

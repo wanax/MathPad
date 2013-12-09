@@ -106,7 +106,7 @@
     
     UISearchBar *bar=[[[UISearchBar alloc] initWithFrame:CGRectMake(770,00,240,55)] autorelease];
     bar.delegate=self;
-    bar.placeholder=@"公司搜索";
+    bar.placeholder=@"拼音/代码/全称";
     bar.backgroundColor=[UIColor clearColor];
     bar.barTintColor=[UIColor clearColor];
     self.searchBar=bar;

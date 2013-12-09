@@ -10,6 +10,7 @@
 
 #import "ClientLoginViewController.h"
 #import "UserRegisterViewController.h"
+#import "UserRegContainer.h"
 
 
 @interface ClientLoginViewController ()
@@ -22,6 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.isLoginView = YES;
     }
     return self;
 }
@@ -62,6 +64,11 @@
     UIImageView *image2=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pwdFieldIcon"]] autorelease];
     image2.frame=CGRectMake(15,0,24,24);
     self.userPwdField.leftView=image2;
+    
+    UserRegContainer *regcontainer = [[[UserRegContainer alloc] init] autorelease];
+    self.regContainer = regcontainer;
+    self.regContainer.view.frame = CGRectMake(618, 138, 337, 522);
+    [self addChildViewController:self.regContainer];
 }
 
 
@@ -111,9 +118,23 @@
 
 -(IBAction)freeRegBtClicked:(id)sender{
     //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.googuu.net/pages/user/newRegister.htm"]];
-    UserRegisterViewController *regVC=[[[UserRegisterViewController alloc] init] autorelease];
+    /*UserRegisterViewController *regVC=[[[UserRegisterViewController alloc] init] autorelease];
     regVC.actionType=UserRegister;
-    [self presentViewController:regVC animated:YES completion:nil];
+    [self presentViewController:regVC animated:YES completion:nil];*/
+    
+    if (self.isLoginView) {
+        [self.view addSubview:self.regContainer.view];
+        [self.titleImg setImage:[UIImage imageNamed:@"userRegTextImg"]];
+        [self.regBt setTitle:@"登录" forState:UIControlStateNormal];
+        self.isLoginView = NO;
+    } else {
+        [self.regContainer.view removeFromSuperview];
+        [self.titleImg setImage:[UIImage imageNamed:@"loginGGTextImg"]];
+        [self.regBt setTitle:@"注册" forState:UIControlStateNormal];
+        self.isLoginView = YES;
+    }
+    
+    
 }
 
 -(IBAction)backGroundIsClicked{

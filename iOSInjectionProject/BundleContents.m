@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle2
+#define INJECTION_BUNDLE InjectionBundle9
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/SearchComListViewController.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/UserSetting/UserRegByEmailVC.m"
 
 
-@interface InjectionBundle2 : NSObject
+@interface InjectionBundle9 : NSObject
 @end
-@implementation InjectionBundle2
+@implementation InjectionBundle9
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_SearchComListViewController;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_SearchComListViewController notify:4];
+    extern Class OBJC_CLASS_$_UserRegByEmailVC;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_UserRegByEmailVC notify:4];
     [bundleInjection loadedNotify:4];
 }
 

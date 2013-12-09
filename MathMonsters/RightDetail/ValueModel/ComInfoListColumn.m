@@ -102,7 +102,7 @@
             dataArr=[[temp reverseObjectEnumerator] allObjects];;
         } else if ([hisClassDatas count]==4) {
             dataArr=hisClassDatas;
-        } else if ([hisClassDatas count]<4) {
+        } else if ([hisClassDatas count]<4 && [hisClassDatas count] > 0) {
             int n = [hisClassDatas count];
             NSNumberFormatter *formatter=[[[NSNumberFormatter alloc] init] autorelease];
             [formatter setPositiveFormat:@"00"];
@@ -115,6 +115,7 @@
                                       @"h":@(true),
                                       @"v":@(0)
                                       };
+                NSAssert(point, @"nilnil");
                 [hisClassDatas insertObject:point atIndex:0];
                 dataArr = hisClassDatas;
             }

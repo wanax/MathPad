@@ -53,14 +53,13 @@ static const NSInteger TAG_OFFSET = 1000;
     button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:20.0f];
 	[button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
 	//[button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.5f] forState:UIControlStateNormal];
+    button.backgroundColor = [Utiles colorWithHexString:@"#281810"];
 }
 
 - (void)deselectTabButton:(UIButton *)button
 {
     button.titleLabel.font=[UIFont fontWithName:@"Heiti SC" size:20.0f];
-	/*UIImage *image = [[UIImage imageNamed:@"tabUnSelected"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
-	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button setBackgroundImage:image forState:UIControlStateHighlighted];*/
+    button.backgroundColor = [Utiles colorWithHexString:@"#281810"];
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
 }

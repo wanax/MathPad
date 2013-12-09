@@ -59,34 +59,9 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex
-{
-    if (sectionIndex == 0)
-        return nil;
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 34)];
-    view.backgroundColor = [UIColor colorWithRed:167/255.0f green:167/255.0f blue:167/255.0f alpha:0.6f];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 8, 0, 0)];
-    label.text = @"Friends Online";
-    label.font = [UIFont systemFontOfSize:15];
-    label.textColor = [UIColor whiteColor];
-    label.backgroundColor = [UIColor clearColor];
-    [label sizeToFit];
-    [view addSubview:label];
-    
-    return [view autorelease];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex
-{
-    if (sectionIndex == 0)
-        return 0;
-    
-    return 34;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,14 +89,9 @@
     return 54;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 3;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,13 +104,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
     
-    if (indexPath.section == 0) {
-        NSArray *titles = @[@"登录/注册",@"设置涨跌颜色", @"WIFI下加载图片"];
-        cell.textLabel.text = titles[indexPath.row];
-    } else {
-        NSArray *titles = @[@"设置涨跌颜色", @"WIFI下加载图片", @"启动检查更新",@"图片保存路径",@"清除缓存",@"意见反馈"];
-        cell.textLabel.text = titles[indexPath.row];
-    }
+    NSArray *titles = @[@"登录/注册",@"设置涨跌颜色", @"WIFI下加载图片",@"设置涨跌颜色", @"WIFI下加载图片", @"启动检查更新",@"图片保存路径",@"清除缓存",@"意见反馈"];
+    cell.textLabel.text = titles[indexPath.row];
     
     return cell;
 }
