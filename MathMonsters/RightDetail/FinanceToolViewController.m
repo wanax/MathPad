@@ -59,7 +59,7 @@
     self.detail.toolType=BetaFactor;
 
     MGSplitViewController *split=[[MGSplitViewController alloc] init];
-    split.view.frame=CGRectMake(0,0,668,960);
+    split.view.frame=CGRectMake(0,0,928,1200);
     split.splitPosition=200;
     split.viewControllers=@[leftListNav,detailNav];
     split.view.backgroundColor=[UIColor grayColor];

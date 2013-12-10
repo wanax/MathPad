@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.title=@"帮助文档";
     [self.view setBackgroundColor:[UIColor clearColor]];
-	if (self.type==UserHelp) {
+    if (self.type==UserHelp) {
         self.imageView=[[UIImageView alloc] initWithFrame:CGRectMake(110,0,320,1900)];
         [self.imageView setImage:[UIImage imageNamed:@"help"]];
     } else {

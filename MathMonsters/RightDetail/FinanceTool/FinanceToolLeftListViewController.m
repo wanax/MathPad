@@ -35,7 +35,7 @@
 
 -(void)initComponents{
     
-    self.view.frame=CGRectMake(0,0,200,768);
+    self.view.frame=CGRectMake(0,0,200,1200);
     UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,234,928)] autorelease];
     self.cusTable=t;
     self.cusTable.dataSource=self;

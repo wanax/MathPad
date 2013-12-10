@@ -151,7 +151,6 @@
     
     int section = self.selectIndex.section;
     int contentCount = [[self.transData objectForKey:[self.sectionKeys objectAtIndex:section]] count];
-    
 	NSMutableArray* rowToInsert = [[NSMutableArray alloc] init];
 	for (NSUInteger i = 1; i < contentCount + 1; i++) {
 		NSIndexPath* indexPathToInsert = [NSIndexPath indexPathForRow:i inSection:section];

@@ -21,9 +21,9 @@
 #import "CKCalendarView.h"
 
 #define BUTTON_MARGIN 4
-#define CALENDAR_MARGIN 0
-#define TOP_HEIGHT 0
-#define DAYS_HEADER_HEIGHT 30
+#define CALENDAR_MARGIN 5
+#define TOP_HEIGHT 44
+#define DAYS_HEADER_HEIGHT 22
 #define DEFAULT_CELL_WIDTH 43
 #define CELL_BORDER_WIDTH 1
 
@@ -80,10 +80,8 @@
     if (date) {
         NSDateComponents *comps = [self.calendar components:NSDayCalendarUnit|NSMonthCalendarUnit fromDate:date];
         [self setTitle:[NSString stringWithFormat:@"%d", comps.day] forState:UIControlStateNormal];
-        [self setBackgroundColor:[UIColor brownColor]];
     } else {
         [self setTitle:@"" forState:UIControlStateNormal];
-        [self setBackgroundColor:[UIColor brownColor]];
     }
 }
 
@@ -181,10 +179,10 @@
 
     // THE CALENDAR ITSELF
     UIView *calendarContainer = [[UIView alloc] initWithFrame:CGRectZero];
-    calendarContainer.layer.borderWidth = 0.0f;
+    calendarContainer.layer.borderWidth = 1.0f;
     calendarContainer.layer.borderColor = [UIColor blackColor].CGColor;
     calendarContainer.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
-    calendarContainer.layer.cornerRadius = 0.0f;
+    calendarContainer.layer.cornerRadius = 4.0f;
     calendarContainer.clipsToBounds = YES;
     [self addSubview:calendarContainer];
     self.calendarContainer = calendarContainer;
@@ -274,8 +272,6 @@
     for (UILabel *dayLabel in self.dayOfWeekLabels) {
         dayLabel.frame = CGRectMake(CGRectGetMaxX(lastDayFrame) + CELL_BORDER_WIDTH, lastDayFrame.origin.y, self.cellWidth, self.daysHeader.frame.size.height);
         lastDayFrame = dayLabel.frame;
-        [dayLabel setFont:[UIFont fontWithName:@"Heiti SC" size:23.0]];
-        [dayLabel setTextColor:[UIColor blackColor]];
     }
 
     for (DateButton *dateButton in self.dateButtons) {
@@ -300,11 +296,12 @@
     NSUInteger dateButtonPosition = 0;
     while ([date laterDate:endDate] != date) {
         DateButton *dateButton = [self.dateButtons objectAtIndex:dateButtonPosition];
+
         dateButton.date = date;
         CKDateItem *item = [[CKDateItem alloc] init];
         if ([self _dateIsToday:dateButton.date]) {
             item.textColor = UIColorFromRGB(0xF2F2F2);
-            item.backgroundColor = [UIColor brownColor];
+            item.backgroundColor = [UIColor lightGrayColor];
         } else if (!self.onlyShowCurrentMonth && [self _compareByMonth:date toDate:self.monthShowing] != NSOrderedSame) {
             item.textColor = [UIColor lightGrayColor];
         }
@@ -316,11 +313,9 @@
         if (self.selectedDate && [self date:self.selectedDate isSameDayAsDate:date]) {
             [dateButton setTitleColor:item.selectedTextColor forState:UIControlStateNormal];
             dateButton.backgroundColor = item.selectedBackgroundColor;
-            [dateButton setBackgroundImage:item.backImg forState:UIControlStateNormal];
         } else {
             [dateButton setTitleColor:item.textColor forState:UIControlStateNormal];
             dateButton.backgroundColor = item.backgroundColor;
-            [dateButton setBackgroundImage:item.backImg forState:UIControlStateNormal];
         }
 
         dateButton.frame = [self _calculateDayCellFrame:date];
@@ -337,7 +332,7 @@
 }
 
 - (void)_updateDayOfWeekLabels {
-    NSArray *weekdays = @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
+    NSArray *weekdays = [self.dateFormatter shortWeekdaySymbols];
     // adjust array depending on which weekday should be first
     NSUInteger firstWeekdayIndex = [self.calendar firstWeekday] - 1;
     if (firstWeekdayIndex > 0) {
@@ -347,7 +342,7 @@
 
     NSUInteger i = 0;
     for (NSString *day in weekdays) {
-        [[self.dayOfWeekLabels objectAtIndex:i] setText:day];
+        [[self.dayOfWeekLabels objectAtIndex:i] setText:[day uppercaseString]];
         i++;
     }
 }
@@ -533,7 +528,7 @@
 }
 
 - (void)setDayOfWeekBottomColor:(UIColor *)bottomColor topColor:(UIColor *)topColor {
-    [self.daysHeader setBackgroundColor:[UIColor lightGrayColor]];
+    [self.daysHeader setColors:[NSArray arrayWithObjects:topColor, bottomColor, nil]];
 }
 
 - (void)setDateFont:(UIFont *)font {

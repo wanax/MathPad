@@ -23,8 +23,6 @@
 @property (nonatomic, strong) UIColor *selectedBackgroundColor;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIColor *selectedTextColor;
-@property (nonatomic, strong) UIImage *backImg;
-@property (nonatomic, strong) UIImage *selectedBackImg;
 
 @end
 
@@ -46,8 +44,6 @@ typedef enum {
 @property (nonatomic) BOOL onlyShowCurrentMonth;
 @property (nonatomic) BOOL adaptHeightToNumberOfWeeksInMonth;
 
-- (void)setMonthShowing:(NSDate *)aMonthShowing;
-
 @property (nonatomic, weak) id<CKCalendarDelegate> delegate;
 
 // Theming
@@ -68,6 +64,8 @@ typedef enum {
 // Helper methods for delegates, etc.
 - (BOOL)date:(NSDate *)date1 isSameDayAsDate:(NSDate *)date2;
 - (BOOL)dateIsInCurrentMonth:(NSDate *)date;
+
+- (void)setMonthShowing:(NSDate *)aMonthShowing;
 
 @end
 

@@ -11,6 +11,10 @@
 
 @interface SettingMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic,retain) NSArray *sections;
+
 @property (nonatomic,retain) UITableView *cusTable;
+@property (nonatomic,retain) NSIndexPath *selectIndex;
+@property (assign)BOOL isOpen;
 
 @end

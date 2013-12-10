@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle9
+#define INJECTION_BUNDLE InjectionBundle3
 
 #import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 
@@ -18,17 +18,17 @@
 
 #import "BundleContents.h"
 
-#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/UserSetting/UserRegByEmailVC.m"
+#import "/Users/xcode/wanax/oc/MathMonsters/MathMonsters/RightDetail/MyGooGuu/ClientCalendarViewController.m"
 
 
-@interface InjectionBundle9 : NSObject
+@interface InjectionBundle3 : NSObject
 @end
-@implementation InjectionBundle9
+@implementation InjectionBundle3
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
-    extern Class OBJC_CLASS_$_UserRegByEmailVC;
-	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_UserRegByEmailVC notify:4];
+    extern Class OBJC_CLASS_$_ClientCalendarViewController;
+	[bundleInjection loadedClass:INJECTION_BRIDGE(Class)(void *)&OBJC_CLASS_$_ClientCalendarViewController notify:4];
     [bundleInjection loadedNotify:4];
 }
 

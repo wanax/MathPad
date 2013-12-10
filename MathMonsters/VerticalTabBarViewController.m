@@ -99,8 +99,17 @@
     [self.view addSubview:questionBt];
     
     UIButton *loginBt=[UIButton buttonWithType:UIButtonTypeCustom];
-    [loginBt setFrame:CGRectMake(60,14,60,30)];
-    [loginBt setTitle:@"登录" forState:UIControlStateNormal];
+    
+    if ([Utiles isLogin]) {
+        [loginBt setFrame:CGRectMake(60,14,200,30)];
+        id userInfo = GetUserDefaults(@"UserInfo");
+        [loginBt setTitle:userInfo[@"username"] forState:UIControlStateDisabled];
+        loginBt.enabled = NO;
+    } else {
+        [loginBt setTitle:@"登录" forState:UIControlStateNormal];
+        [loginBt setFrame:CGRectMake(60,14,60,30)];
+    }
+    
     [loginBt addTarget:self action:@selector(loginBtClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginBt];
     

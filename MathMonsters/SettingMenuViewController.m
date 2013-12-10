@@ -9,12 +9,20 @@
 #import "SettingMenuViewController.h"
 #import "UIViewController+REFrostedViewController.h"
 #import "ClientLoginViewController.h"
+#import "Cell1.h"
+#import "Cell2.h"
+#import "SettingCell.h"
+#import "FeedBackViewController.h"
+#import "DisclaimersViewController.h"
+#import "AboutUsViewController.h"
 
 @implementation SettingMenuViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.sections = @[@"登录/注册",@"清除缓存",@"意见反馈",@"新版本检测",@"使用说明",@"免责声明",@"关于我们"];
     
     UITableView *teT=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,200,768)] autorelease];
     self.cusTable=teT;
@@ -48,11 +56,14 @@
         [view addSubview:label];
         view;
     });
+    self.cusTable.sectionFooterHeight = 0;
+    self.cusTable.sectionHeaderHeight = 0;
+    self.isOpen = NO;
     [self.view addSubview:self.cusTable];
 }
 
-#pragma mark -
-#pragma mark UITableView Delegate
+
+#pragma mark - Table view data source
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -62,53 +73,150 @@
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
-    
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
-        [delegate.frostedViewController dismissViewControllerAnimated:YES completion:nil];
-        ClientLoginViewController *homeViewController = [[ClientLoginViewController alloc] init];
-        homeViewController.sourceType=SettingMenu;
-        [navigationController pushViewController:homeViewController animated:YES];
-    } else {
-        //DEMOSecondViewController *secondViewController = [[DEMOSecondViewController alloc] init];
-        //navigationController.viewControllers = @[secondViewController];
+    return [self.sections count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (self.isOpen) {
+        if (self.selectIndex.section == section) {
+            return 2;
+        }
     }
-    [self.frostedViewController hideMenuViewController];
+    return 1;
 }
 
-#pragma mark -
-#pragma mark UITableView Datasource
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 54;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
-{
-    return 8;
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+    if (self.isOpen&&self.selectIndex.section == indexPath.section&&indexPath.row!=0) {
+        
+        if (indexPath.section == 3) {
+            
+            static NSString *CellIdentifier = @"SettingCellIdentifier";
+            SettingCell *cell = (SettingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (!cell) {
+                cell = [[[SettingCell alloc] initWithReuseIdentifier:CellIdentifier cellName:self.sections[indexPath.section]] autorelease];
+            }
+
+            return cell;
+            
+        } else {
+            static NSString *CellIdentifier = @"Cell2";
+            UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (!cell) {
+                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            }
+            cell.textLabel.text = @"subtitle";
+            return cell;
+        }
+
+    }else{
+        static NSString *CellIdentifier = @"Cell1";
+        UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+
+        cell.textLabel.text = self.sections[indexPath.section];
+
+        return cell;
     }
-    
-    NSArray *titles = @[@"登录/注册",@"设置涨跌颜色", @"WIFI下加载图片",@"设置涨跌颜色", @"WIFI下加载图片", @"启动检查更新",@"图片保存路径",@"清除缓存",@"意见反馈"];
-    cell.textLabel.text = titles[indexPath.row];
-    
-    return cell;
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
+    if (indexPath.section == 0) {
+
+        ClientLoginViewController *homeViewController = [[[ClientLoginViewController alloc] init] autorelease];
+        homeViewController.sourceType=SettingMenu;
+        [navigationController pushViewController:homeViewController animated:YES];
+        [self.frostedViewController hideMenuViewController];
+        
+    } else if (indexPath.section == 1) {
+        sleep(1);
+        [Utiles showToastView:self.view withTitle:nil andContent:@"清除成功" duration:1.0];
+    } else if (indexPath.section == 2) {
+        
+        FeedBackViewController *feedBack = [[[FeedBackViewController alloc] init] autorelease];
+        feedBack.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:feedBack animated:YES completion:nil];
+        
+    } else if (indexPath.section == 3) {
+        if ([indexPath isEqual:self.selectIndex]) {
+            self.isOpen = NO;
+            [self didSelectCellRowFirstDo:NO nextDo:NO];
+            self.selectIndex = nil;
+        }else{
+            if (!self.selectIndex) {
+                self.selectIndex = indexPath;
+                [self didSelectCellRowFirstDo:YES nextDo:NO];
+            }else{
+                //[self didSelectCellRowFirstDo:NO nextDo:YES];
+            }
+        }
+    } else if (indexPath.section == 4) {
+        
+        DisclaimersViewController *dis = [[[DisclaimersViewController alloc] init] autorelease];
+        dis.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:dis animated:YES completion:nil];
+        
+    } else if (indexPath.section == 5) {
+        
+        DisclaimersViewController *dis = [[[DisclaimersViewController alloc] init] autorelease];
+        dis.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:dis animated:YES completion:nil];
+        
+    } else if (indexPath.section == 6) {
+        
+        AboutUsViewController *about = [[[AboutUsViewController alloc] init] autorelease];
+        about.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:about animated:YES completion:nil];
+        
+    }
+}
+
+
+- (void)didSelectCellRowFirstDo:(BOOL)firstDoInsert nextDo:(BOOL)nextDoInsert
+{
+    self.isOpen = firstDoInsert;
+    
+    [self.cusTable beginUpdates];
+    
+    int section = self.selectIndex.section;
+    int contentCount = 1;
+	NSMutableArray* rowToInsert = [[NSMutableArray alloc] init];
+	for (NSUInteger i = 1; i < contentCount + 1; i++) {
+		NSIndexPath* indexPathToInsert = [NSIndexPath indexPathForRow:i inSection:section];
+		[rowToInsert addObject:indexPathToInsert];
+	}
+	
+	if (firstDoInsert){
+        [self.cusTable insertRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
+    }else{
+        [self.cusTable deleteRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
+    }
+    
+	[rowToInsert release];
+	
+	[self.cusTable endUpdates];
+    if (nextDoInsert) {
+        self.isOpen = YES;
+        self.selectIndex = [self.cusTable indexPathForSelectedRow];
+        [self didSelectCellRowFirstDo:YES nextDo:NO];
+    }
+    if (self.isOpen) [self.cusTable scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
 
 @end
