@@ -33,7 +33,7 @@
     [super viewDidLoad];
 	[self initComponents];
     [MBProgressHUD showHUDAddedTo:self.comIconTable animated:YES];
-    [self addComIcon];
+    [self addComIcon:YES];
 }
 
 
@@ -49,7 +49,7 @@
     [self.view addSubview:self.comIconTable];
     
     [self.comIconTable addInfiniteScrollingWithActionHandler:^{
-        [self addComIcon];
+        [self addComIcon:NO];
     }];
     if(_refreshHeaderView == nil)
     {
@@ -67,26 +67,34 @@
 #pragma mark -
 #pragma Net Get JSON Data
 
--(void)addComIcon{
+-(void)addComIcon:(BOOL)isReflash{
     
+    if (isReflash) {
+        self.articleId = @"";
+    }
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];;
     [Utiles getNetInfoWithPath:@"NewestAnalyseReportURL" andParams:params besidesBlock:^(id resObj){
         
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
-        for(id obj in self.comIcons){
-            [temp addObject:obj];
+        if (!isReflash) {
+            for(id obj in self.comIcons){
+                [temp addObject:obj];
+            }
+            self.articleId=[[self.comIcons lastObject] objectForKey:@"articleid"];
+        } else {
+            doubleLoad = YES;
         }
         for (id data in [resObj objectForKey:@"data"]) {
             [temp addObject:data];
         }
         self.comIcons=temp;
         [self.comIconTable reloadData];
-        self.articleId=[[self.comIcons lastObject] objectForKey:@"articleid"];
         [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.comIconTable];
         [self.comIconTable.infiniteScrollingView stopAnimating];
-        if(!doubleLoad){
-            [self addComIcon];
-            doubleLoad=YES;
+        if(doubleLoad){
+            self.articleId=[[self.comIcons lastObject] objectForKey:@"articleid"];
+            [self addComIcon:NO];
+            doubleLoad=NO;
         }
         [MBProgressHUD hideHUDForView:self.comIconTable animated:YES];
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){
@@ -188,7 +196,7 @@
 
 - (void)doneLoadingTableViewData{
     
-    [self addComIcon];
+    [self addComIcon:YES];
     _reloading = NO;
     
 }

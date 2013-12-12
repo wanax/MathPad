@@ -9,7 +9,6 @@
 
 
 #import "ClientLoginViewController.h"
-#import "UserRegisterViewController.h"
 #import "UserRegContainer.h"
 
 
@@ -34,7 +33,7 @@
     }
 
     if([[Utiles getConfigureInfoFrom:@"userconfigure" andKey:@"rememberPwd" inUserDomain:YES] isEqual:@"1"]){
-        id userInfo=[[NSUserDefaults standardUserDefaults] objectForKey:@"UserInfo"];
+        id userInfo=[GetUserDefaults(@"UserInfo") objectFromJSONString];
         if (userInfo) {
             [self.userNameField setText:userInfo[@"username"]];
             [self.userPwdField setText:userInfo[@"password"]];
@@ -84,8 +83,14 @@
  
         NSString *name=[self.userNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         NSString *pwd=[self.userPwdField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        
-        [self userLoginUserName:name pwd:pwd];
+
+        [ComFun userLoginUserName:name pwd:pwd callBack:^(id obj) {
+            if (self.sourceType == VerticalTabBar) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else if (self.sourceType == SettingMenu) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }];
         [textField resignFirstResponder];
     }
     return YES;
@@ -96,7 +101,13 @@
 
 
 -(IBAction)loginBtClicked:(id)sender{
-    [self userLoginUserName:self.userNameField.text pwd:self.userPwdField.text];
+    [ComFun userLoginUserName:self.userNameField.text pwd:self.userPwdField.text callBack:^(id obj) {
+        if (self.sourceType == VerticalTabBar) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else if (self.sourceType == SettingMenu) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 -(IBAction)cancelBtClicked:(UIButton *)bt{
@@ -142,56 +153,17 @@
     [self.userPwdField resignFirstResponder];
 }
 
--(void)userLoginUserName:(NSString *)userName pwd:(NSString *)pwd{
-    if ([Utiles isNetConnected]) {
-        
-        [MBProgressHUD showHUDAddedTo:self.view withTitle:@"正在登录" animated:YES];
-       
-        NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[userName lowercaseString],@"username",[Utiles md5:pwd],@"password",@"googuu",@"from", nil];
-        
-        [Utiles getNetInfoWithPath:@"Login" andParams:params besidesBlock:^(id info){
 
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-            if([[info objectForKey:@"status"] isEqualToString:@"1"]){
-                [Utiles showToastView:self.view withTitle:nil andContent:@"登录成功" duration:2.0];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginKeeping" object:nil];
-                [[NSUserDefaults standardUserDefaults] setObject:[info objectForKey:@"token"] forKey:@"UserToken"];
-                
-                NSDictionary *userInfo=[NSDictionary dictionaryWithObjectsAndKeys:userName,@"username",pwd,@"password", nil];
-                [[NSUserDefaults standardUserDefaults] setObject:userInfo forKey:@"UserInfo"];
-                
-                NSLog(@"%@",[info objectForKey:@"token"]);
-                isGoIn=YES;
-                sleep(1);
-                if (self.sourceType == VerticalTabBar) {
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                } else if (self.sourceType == SettingMenu) {
-                    [self.navigationController popViewControllerAnimated:YES];
-                }
-            }else {
-                NSString *msg=@"";
-                if ([info[@"status"] isEqual:@"0"]) {
-                    msg=@"用户不存在";
-                } else if ([info[@"status"] isEqual:@"2"]){
-                    msg=@"邮箱未激活";
-                } else if ([info[@"status"] isEqual:@"3"]){
-                    msg=@"密码错误";
-                }
-                [Utiles ToastNotification:msg andView:self.view andLoading:NO andIsBottom:NO andIsHide:YES];
-            }
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
-        } failure:^(AFHTTPRequestOperation *operation,NSError *error){
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
-        }];
-    } else {
-        [Utiles showToastView:self.view withTitle:nil andContent:@"网络异常" duration:1.5];
-    }
+
+-(void)getUserInfo:(NSString *)token {
     
-  
+    NSDictionary *params = @{@"token":token};
+    [Utiles getNetInfoWithPath:@"UserInfo" andParams:params besidesBlock:^(id obj) {
+        SetUserDefaults(obj,@"UserInfo");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
 }
 
 -(void)animationFinished:(NSString *)animationID finished:(BOOL)finished context:(void *)context{

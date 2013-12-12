@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addLabel:@"最新年报简析" frame:CGRectMake(230,15,150,30) size:20.0];
+        [self addLabel:@"业绩图文简析" frame:CGRectMake(230,15,150,30) size:20.0];
         [self addLabel:@"最新公司" frame:CGRectMake(700,15,80,30) size:20.0];
     }
     return self;

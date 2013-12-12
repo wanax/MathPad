@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ClientCalendarDelegate <NSObject>
+-(void)dateIsSelected:(NSString *)date;
+@end
+
+@class CKCalendarView;
+@class ClientCalendarListViewController;
+
 @interface ClientCalendarViewController : UIViewController
 
+@property (nonatomic,retain) id<ClientCalendarDelegate> delegate;
+
 @property (nonatomic,retain) NSArray *events;
+@property (nonatomic,retain) NSArray *eventsDates;
+
+@property (nonatomic,retain) ClientCalendarListViewController *calendarEventsVC;
+@property (nonatomic,retain) CKCalendarView *calendar;
 
 @end

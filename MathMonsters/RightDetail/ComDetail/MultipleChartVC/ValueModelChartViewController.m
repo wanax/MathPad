@@ -16,6 +16,7 @@
 #import "UIButton+BGColor.h"
 #import <CoreText/CoreText.h>
 #import "DiscountRateViewController.h"
+#import "UIViewController+MJPopupViewController.h"
 
 
 
@@ -106,7 +107,7 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
 -(void)initPlotSpace{
 
     CPTXYGraph *tGraph=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
-    tGraph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
+    tGraph.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#FCFADD" andAlpha:1.0]];
     CPTGraphHostingView *tHostView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,70,700,520) ] autorelease];
     [self.view addSubview:tHostView];
     [tHostView setHostedGraph : tGraph ];
@@ -133,10 +134,10 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
     
     self.resetBt=[tool addButtonToView:self.view withTitle:@"复位" Tag:ResetChart frame:CGRectMake(640,10,72,45) andFun:@selector(chartAction:) withType:UIButtonTypeRoundedRect andColor:@"#3498DB" textColor:@"#000000" normalBackGroundImg:nil highBackGroundImg:nil];
 
-    [tool addLabelToView:self.view withTitle:@"估股估值:HK$" Tag:11 frame:CGRectMake(10,0,180,35) fontSize:20.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
-    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"%.2f",[self.netComInfo[@"GooguuValuation"] floatValue]] Tag:11 frame:CGRectMake(210,0,120,35) fontSize:20.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
+    [tool addLabelToView:self.view withTitle:@"估股估值" Tag:11 frame:CGRectMake(10,0,180,35) fontSize:20.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
+    [tool addLabelToView:self.view withTitle:[NSString stringWithFormat:@"HK$:%.2f",[self.netComInfo[@"GooguuValuation"] floatValue]] Tag:11 frame:CGRectMake(210,0,120,35) fontSize:20.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
 
-    self.myGGpriceLabel=[tool addLabelToView:self.view withTitle:@"我的估值:HK$" Tag:11 frame:CGRectMake(10,35,180,35) fontSize:20.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
+    self.myGGpriceLabel=[tool addLabelToView:self.view withTitle:@"我的估值" Tag:11 frame:CGRectMake(10,35,180,35) fontSize:20.0 color:nil textColor:@"#817a6b" location:NSTextAlignmentLeft];
     self.priceLabel=[tool addLabelToView:self.view withTitle:@"" Tag:11 frame:CGRectMake(210,35,120,35) fontSize:20.0 color:nil textColor:@"#e18e14" location:NSTextAlignmentLeft];
     
     if(self.sourceType!=MySavedType){
@@ -247,6 +248,7 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
     if ([driverId intValue]==DiscountRate) {
         NSString *values=[Utiles getObjectDataFromJsFun:self.webView funName:@"getValues" byData:nil shouldTrans:NO];
         DiscountRateViewController *rateViewController=[[DiscountRateViewController alloc] initWithNibName:@"DiscountRateView" bundle:nil];
+        rateViewController.modalPresentationStyle = UIModalPresentationPageSheet;
         rateViewController.comInfo=self.comInfo;
         rateViewController.jsonData=self.jsonForChart;
         rateViewController.valuesStr=values;
@@ -446,7 +448,7 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
     [formatter setNumberStyle:NSNumberFormatterPercentStyle];
     
     if([self.trueUnit isEqualToString:@"%"]){
-        [formatter setPositiveFormat:@"0.00%;0.00%;-0.00%"];
+        [formatter setPositiveFormat:@"0.0%;0.0%;-0.0%"];
         numberString = [formatter stringFromNumber:@([arr[index][@"v"] floatValue])];
         SAFE_RELEASE(formatter);
     }else{
@@ -636,7 +638,8 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
         //创建默认对比数据线
         lineStyle.lineWidth=1.0f;
         lineStyle.lineColor=[Utiles cptcolorWithHexString:@"#9B9689" andAlpha:0.8];
-        self.forecastDefaultLinePlot = [[CPTScatterPlot alloc] init];
+        CPTScatterPlot *ttp = [[[CPTScatterPlot alloc] init] autorelease];
+        self.forecastDefaultLinePlot = ttp;
         self.forecastDefaultLinePlot.dataLineStyle = lineStyle;
         self.forecastDefaultLinePlot.identifier = FORECAST_DEFAULT_DATALINE_IDENTIFIER;
         self.forecastDefaultLinePlot.labelOffset=10;
@@ -646,7 +649,8 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
         //创建历史数据线段
         lineStyle.lineWidth=2.0f;
         lineStyle.lineColor=[CPTColor colorWithComponentRed:144/255.0 green:142/255.0 blue:140/255.0 alpha:1.0];
-        self.historyLinePlot = [[CPTScatterPlot alloc] init];
+        CPTScatterPlot *tp = [[[CPTScatterPlot alloc] init] autorelease];
+        self.historyLinePlot = tp;
         self.historyLinePlot.dataLineStyle = lineStyle;
         self.historyLinePlot.identifier = HISTORY_DATALINE_IDENTIFIER;
         self.historyLinePlot.labelOffset=10;
@@ -660,11 +664,11 @@ static NSString * COLUMNAR_DATALINE_IDENTIFIER =@"columnar_dataline_identifier";
         plotSymbol.fill          = [CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"dragDot"].CGImage]];
         plotSymbol.lineStyle     = symbolLineStyle;
         plotSymbol.size          = CGSizeMake(23,23);
-        
         self.forecastLinePlot.plotSymbol = plotSymbol;
+        
         symbolLineStyle.lineColor = [CPTColor whiteColor];
-        plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#27AE60" andAlpha:1.0]];
-        plotSymbol.size          = CGSizeMake(1, 1);
+        plotSymbol.fill          = [CPTFill fillWithColor:[CPTColor grayColor]];
+        plotSymbol.size          = CGSizeMake(8, 8);
         self.historyLinePlot.plotSymbol=plotSymbol;
         
         [self.graph addPlot:self.forecastDefaultLinePlot];

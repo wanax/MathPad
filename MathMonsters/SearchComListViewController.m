@@ -66,7 +66,8 @@
     }
     
     if (self.companys) {
-        cell.textLabel.text=self.companys[indexPath.row][@"companyname"];
+        id model = self.companys[indexPath.row];
+        cell.textLabel.text=[NSString stringWithFormat:@"%@(%@.%@)",model[@"companyname"],model[@"stockcode"],model[@"market"]];
     }
     
     return cell;

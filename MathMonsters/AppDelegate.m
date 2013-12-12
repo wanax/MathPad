@@ -13,6 +13,7 @@
 #import "Reachability.h"
 #import <Crashlytics/Crashlytics.h>
 #import "VerticalTabBarViewController.h"
+#import "ClientLoginViewController.h"
 
 @implementation AppDelegate
 
@@ -97,23 +98,9 @@
 
 - (void) handleTimer: (NSTimer *) timer{
     
-    NSUserDefaults *userDeaults=[NSUserDefaults standardUserDefaults];
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[[[userDeaults objectForKey:@"UserInfo"] objectForKey:@"username"] lowercaseString],@"username",[Utiles md5:[[userDeaults objectForKey:@"UserInfo"] objectForKey:@"password"]],@"password",@"googuu",@"from", nil];
-    [Utiles getNetInfoWithPath:@"Login" andParams:params besidesBlock:^(id resObj){
-        
-        if([[resObj objectForKey:@"status"] isEqualToString:@"1"]){
-            NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-            [userDefaults removeObjectForKey:@"UserToke"];
-            [userDefaults setObject:[resObj objectForKey:@"token"] forKey:@"UserToken"];
-            
-            NSLog(@"%@",[resObj objectForKey:@"token"]);
-            
-        }else {
-            NSLog(@"%@",[resObj objectForKey:@"msg"]);
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+    id userInfo = [GetUserDefaults(@"UserInfo") objectFromJSONString];
+    [ComFun userLoginUserName:userInfo[@"userid"] pwd:userInfo[@"password"] callBack:^(id obj) {
+        NSLog(@"Login Success");
     }];
 }
 

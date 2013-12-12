@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClientLoginViewController">
@@ -29,22 +29,6 @@
                     <rect key="frame" x="611" y="83" width="353" height="574"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-gT-Kwu">
-                    <rect key="frame" x="666" y="410" width="115" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="新浪微博" image="sina.png" backgroundImage="loginLBtBack.png">
-                        <color key="titleColor" red="1" green="0.96862745100000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRS-Lh-P5N">
-                    <rect key="frame" x="806" y="410" width="115" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="QQ登录" image="qq.png" backgroundImage="loginLBtBack.png">
-                        <color key="titleColor" red="1" green="0.96862745100000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="免责声明:估股网竭力提供准确而可靠的数据,但并不保证数据绝对无误,数据如有错误而令阁下蒙受损失,本公司概不负责." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="308" translatesAutoresizingMaskIntoConstraints="NO" id="dZN-fE-4dF">
                     <rect key="frame" x="639" y="528" width="308" height="91"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,7 +62,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="inputBack.png" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ip4-Oz-cdL">
-                    <rect key="frame" x="713" y="191" width="230" height="30"/>
+                    <rect key="frame" x="713" y="191" width="230" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -137,11 +121,27 @@
                 <action selector="backGroundIsClicked" destination="-1" eventType="touchUpInside" id="fWe-5K-YiP"/>
             </connections>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WDf-gT-Kwu">
+            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+            <state key="normal" title="新浪微博" image="sina.png" backgroundImage="loginLBtBack.png">
+                <color key="titleColor" red="1" green="0.96862745100000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+            </state>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zRS-Lh-P5N">
+            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+            <state key="normal" title="QQ登录" image="qq.png" backgroundImage="loginLBtBack.png">
+                <color key="titleColor" red="1" green="0.96862745100000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+            </state>
+        </button>
     </objects>
     <resources>
         <image name="inputBack.png" width="469" height="74"/>
         <image name="loginBack.png" width="2048" height="1536"/>
-        <image name="loginBtBack.png" width="232" height="49"/>
+        <image name="loginBtBack.png" width="232" height="71"/>
         <image name="loginGGTextImg.png" width="209" height="49"/>
         <image name="loginLBtBack.png" width="232" height="49"/>
         <image name="loginTableBack.png" width="742" height="1184"/>

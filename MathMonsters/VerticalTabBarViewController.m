@@ -43,7 +43,7 @@
 
 -(void)loginBtClicked:(UIButton *)bt {
     
-    ClientLoginViewController *loginVC = [[ClientLoginViewController alloc] init];
+    ClientLoginViewController *loginVC = [[[ClientLoginViewController alloc] init] autorelease];
     loginVC.sourceType=VerticalTabBar;
     [self presentViewController:loginVC animated:YES completion:nil];
     
@@ -102,8 +102,8 @@
     
     if ([Utiles isLogin]) {
         [loginBt setFrame:CGRectMake(60,14,200,30)];
-        id userInfo = GetUserDefaults(@"UserInfo");
-        [loginBt setTitle:userInfo[@"username"] forState:UIControlStateDisabled];
+        id userInfo = [GetUserDefaults(@"UserInfo") objectFromJSONString];
+        [loginBt setTitle:userInfo[@"userid"] forState:UIControlStateDisabled];
         loginBt.enabled = NO;
     } else {
         [loginBt setTitle:@"登录" forState:UIControlStateNormal];

@@ -35,6 +35,22 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
                        [Utiles cptcolorWithHexString:@"#9B59B6" andAlpha:0.8],
                        [Utiles cptcolorWithHexString:@"#bf8fec" andAlpha:0.8],
                        [Utiles cptcolorWithHexString:@"#0c3707" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#55460d" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#003300" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#a7d3ff" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#9f37d0" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#191970" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#cfff02" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#00ffd2" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#c9a0dc" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#6b4423" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#750082" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#340024" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#e87511" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#002649" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#73fb76" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#ffc0cb" andAlpha:0.8],
+                       [Utiles cptcolorWithHexString:@"#c9a8e0" andAlpha:0.8],
                        nil];
         self.defaultColors=temp;
     }
@@ -247,14 +263,15 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
             id x=[self dateToIndex:obj[@"date"]];
             NSArray  *matchArray   = NULL;
             matchArray = [obj[@"desc"] componentsMatchedByRegex:regexString];
-            id y=[matchArray lastObject];
             if ([matchArray count]>0) {
+                id y=[matchArray lastObject];
                 NSDictionary *point=@{@"x":x,@"y":y};
                 [points addObject:point];
             }
-            
         }
-        [tempDcCodePointsDic setObject:points forKey:key];
+        if ([points count] >0) {
+            [tempDcCodePointsDic setObject:points forKey:key];
+        }
     }
     self.dhCodePointsDic=tempDcCodePointsDic;
     SAFE_RELEASE(tempDic);
@@ -419,7 +436,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     }else{
         NSNumberFormatter * formatter   = (NSNumberFormatter *)axis.labelFormatter;
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        [formatter setPositiveFormat:@"##.##"];
+        [formatter setPositiveFormat:@"##"];
         NSMutableSet * newLabels        = [NSMutableSet set];
 
         for (NSDecimalNumber * tickLocation in locations) {
@@ -459,8 +476,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     
     
     CPTMutableLineStyle * symbolLineStyle = [CPTMutableLineStyle lineStyle];
-    symbolLineStyle.lineColor = [Utiles cptcolorWithHexString:@"#2980B9" andAlpha:1.0];
-    symbolLineStyle.lineWidth = 1.0;
+    symbolLineStyle.lineWidth = 0.0;
     
     CPTPlotSymbol * plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
     plotSymbol.lineStyle     = symbolLineStyle;
@@ -469,32 +485,35 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     NSMutableArray *tempIdentifiers=[[[NSMutableArray alloc] init] autorelease];
     int n=0;
     for (id key in self.dhDic) {
-        CPTScatterPlot *line=[[[CPTScatterPlot alloc] init] autorelease];
-        lineStyle.miterLimit=0.0f;
-        lineStyle.lineWidth=0.0f;
-        lineStyle.lineColor=[CPTColor clearColor];
-        line.dataLineStyle=lineStyle;
-        line.identifier=key;
-        line.labelOffset=5;
-        line.dataSource=self;
-        line.delegate=self;
-        
-        if ([key isEqualToString:@"估股网"]) {
-            plotSymbol = [CPTPlotSymbol trianglePlotSymbol];
-            symbolLineStyle.lineWidth = 0.0;
-            plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#498641" andAlpha:1.0]];
+        //只显示具有估价的大行数据点
+        if ([[self.dhCodePointsDic allKeys] containsObject:key]) {
+            CPTScatterPlot *line=[[[CPTScatterPlot alloc] init] autorelease];
+            lineStyle.miterLimit=0.0f;
+            lineStyle.lineWidth=0.0f;
+            lineStyle.lineColor=[CPTColor clearColor];
+            line.dataLineStyle=lineStyle;
+            line.identifier=key;
+            line.labelOffset=5;
+            line.dataSource=self;
+            line.delegate=self;
             
-        }else {
-            plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
-            symbolLineStyle.lineWidth = 1.0;
-            plotSymbol.fill  = [CPTFill fillWithColor:self.defaultColors[n++]];
+            if ([key isEqualToString:@"估股网"]) {
+                plotSymbol = [CPTPlotSymbol trianglePlotSymbol];
+                symbolLineStyle.lineWidth = 0.0;
+                plotSymbol.fill          = [CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#498641" andAlpha:1.0]];
+                plotSymbol.size          = CGSizeMake(25, 25);
+            }else {
+                plotSymbol = [CPTPlotSymbol ellipsePlotSymbol];
+                symbolLineStyle.lineWidth = 0.0;
+                plotSymbol.fill  = [CPTFill fillWithColor:self.defaultColors[n++]];
+                plotSymbol.size          = CGSizeMake(20,20);
+            }
+            plotSymbol.lineStyle     = symbolLineStyle;
+            line.plotSymbol = plotSymbol;
+            [tempIdentifiers addObject:key];
+            [tempLines addObject:line];
+            [self.graph addPlot:line];
         }
-        plotSymbol.lineStyle     = symbolLineStyle;
-        plotSymbol.size          = CGSizeMake(20, 20);
-        line.plotSymbol = plotSymbol;
-        [tempIdentifiers addObject:key];
-        [tempLines addObject:line];
-        [self.graph addPlot:line];
     }
     self.lines=tempLines;
     self.identifiers=tempIdentifiers;
@@ -517,7 +536,12 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     self.graph.legend.cornerRadius       = 5.0;
     self.graph.legend.swatchSize         = CGSizeMake(25.0, 25.0);
     self.graph.legend.swatchCornerRadius = 5.0;
-    self.graph.legend.numberOfRows       = 1;
+    if ([self.lines count] > 15) {
+        self.graph.legend.numberOfRows       = 2;
+    } else {
+        self.graph.legend.numberOfRows       = 1;
+    }
+    
     self.graph.legendAnchor              = CPTRectAnchorTopLeft;
     self.graph.legendDisplacement        = CGPointMake(80.0, 0.0);
     

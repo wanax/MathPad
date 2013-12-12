@@ -42,7 +42,7 @@
 //-(IBAction)findPwdBtClicked:(id)sender;
 -(IBAction)rememberPwd:(UISwitch *)s;
 
--(void)userLoginUserName:(NSString *)userName pwd:(NSString *)pwd;
+
 
 
 

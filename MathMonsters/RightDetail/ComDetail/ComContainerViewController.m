@@ -66,7 +66,7 @@
     
     self.valueContainer.title=@"估值模型";
     self.valueContainer.comInfo=self.comInfo;
-    self.finContainer.title=@"财务数据";
+    self.finContainer.title=@"财务分析";
     self.finContainer.comInfo=self.comInfo;
     self.dahonContainer.title=@"大行估值";
     self.dahonContainer.comInfo=self.comInfo;

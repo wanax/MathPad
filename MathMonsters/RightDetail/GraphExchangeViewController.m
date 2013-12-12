@@ -44,7 +44,7 @@
     
     UISearchBar *bar=[[[UISearchBar alloc] initWithFrame:CGRectMake(700,30,200,44)] autorelease];
     bar.delegate=self;
-    bar.placeholder=@"输入关键字";
+    bar.placeholder=@"搜图";
     bar.backgroundColor=[UIColor clearColor];
     bar.barTintColor=[UIColor clearColor];
     [self.view addSubview:bar];

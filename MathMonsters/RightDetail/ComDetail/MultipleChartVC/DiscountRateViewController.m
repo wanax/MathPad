@@ -254,23 +254,15 @@
     SAFE_RELEASE(formatter);
 }
 
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-
-    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
-    } else if(UIInterfaceOrientationIsLandscape(toInterfaceOrientation)){
-        self.view.frame=CGRectMake(0,40,SCREEN_HEIGHT,SCREEN_WIDTH-40);
-    }
-}
-
 -(NSUInteger)supportedInterfaceOrientations{
     
-    return UIInterfaceOrientationMaskLandscapeRight;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL)shouldAutorotate
 {
 
-    return YES;
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning

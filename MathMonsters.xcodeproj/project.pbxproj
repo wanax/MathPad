@@ -38,6 +38,8 @@
 		AE1C3F4318507BA000DBBB36 /* 财务指标-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */; };
 		AE1C3F4418507BA000DBBB36 /* 其它指标.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3E18507BA000DBBB36 /* 其它指标.png */; };
 		AE1C3F4518507BA000DBBB36 /* 其他指标-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */; };
+		AE21694118599C6800654770 /* loginBtBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE21694018599C6800654770 /* loginBtBack.png */; };
+		AE27D7EF18594AA600F6601E /* ComFun.m in Sources */ = {isa = PBXBuildFile; fileRef = AE27D7EE18594AA600F6601E /* ComFun.m */; };
 		AE28036C1855B73D008CAB1C /* POPDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2803651855B73D008CAB1C /* POPDViewController.m */; };
 		AE2803721855B767008CAB1C /* POPDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2803701855B767008CAB1C /* POPDCell.m */; };
 		AE2803731855B767008CAB1C /* POPDCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2803711855B767008CAB1C /* POPDCell.xib */; };
@@ -150,7 +152,6 @@
 		AE44B01B1834AADF0074E7D9 /* hookImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFBB1834AADF0074E7D9 /* hookImg.png */; };
 		AE44B01C1834AADF0074E7D9 /* inputBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFBC1834AADF0074E7D9 /* inputBack.png */; };
 		AE44B01D1834AADF0074E7D9 /* loginBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFBD1834AADF0074E7D9 /* loginBack.png */; };
-		AE44B01E1834AADF0074E7D9 /* loginBtBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFBE1834AADF0074E7D9 /* loginBtBack.png */; };
 		AE44B01F1834AADF0074E7D9 /* loginBtBack1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFBF1834AADF0074E7D9 /* loginBtBack1.png */; };
 		AE44B0201834AADF0074E7D9 /* loginGGTextImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFC01834AADF0074E7D9 /* loginGGTextImg.png */; };
 		AE44B0211834AADF0074E7D9 /* loginLBtBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE44AFC11834AADF0074E7D9 /* loginLBtBack.png */; };
@@ -225,7 +226,6 @@
 		AE739AC1182257FB00CF82C5 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AB4182257FB00CF82C5 /* VRGCalendarView.m */; };
 		AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */; };
 		AE745E4F1823A88B000A60A7 /* FInanceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */; };
-		AE748EBC18336C5100BD4F57 /* UserRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EBB18336C5100BD4F57 /* UserRegisterViewController.m */; };
 		AE748EC61833770500BD4F57 /* FSVerticalTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */; };
 		AE748EC71833770500BD4F57 /* FSVerticalTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EC11833770500BD4F57 /* FSVerticalTabBarButton.m */; };
 		AE748EC81833770500BD4F57 /* FSVerticalTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EC31833770500BD4F57 /* FSVerticalTabBarController.m */; };
@@ -275,6 +275,8 @@
 		AEBE512F1839F1600041E1EA /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE512E1839F1600041E1EA /* select.png */; };
 		AEBE51311839F4FA0041E1EA /* dailyBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBE51301839F4FA0041E1EA /* dailyBackImg.png */; };
 		AEBE51341839FB8C0041E1EA /* DailyRightListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */; };
+		AECF37AB1858077C002A3593 /* ClientCalendarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECF37AA1858077C002A3593 /* ClientCalendarListViewController.m */; };
+		AECF37AF1858127F002A3593 /* ClientCalendarEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AECF37AE1858127F002A3593 /* ClientCalendarEventCell.xib */; };
 		AED54F27183CC8BB00A6E965 /* ComIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED54F26183CC8BB00A6E965 /* ComIconCell.xib */; };
 		AED54F2A183CC95000A6E965 /* ComIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED54F29183CC95000A6E965 /* ComIconCell.m */; };
 		AED98534183C571F00E97093 /* MyProLossCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED98533183C571F00E97093 /* MyProLossCell.m */; };
@@ -364,6 +366,9 @@
 		AE1C3F3D18507BA000DBBB36 /* 财务指标-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "财务指标-2.png"; sourceTree = "<group>"; };
 		AE1C3F3E18507BA000DBBB36 /* 其它指标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其它指标.png"; sourceTree = "<group>"; };
 		AE1C3F3F18507BA000DBBB36 /* 其他指标-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其他指标-2.png"; sourceTree = "<group>"; };
+		AE21694018599C6800654770 /* loginBtBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBtBack.png; sourceTree = "<group>"; };
+		AE27D7ED18594AA600F6601E /* ComFun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComFun.h; sourceTree = "<group>"; };
+		AE27D7EE18594AA600F6601E /* ComFun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComFun.m; sourceTree = "<group>"; };
 		AE2803641855B73D008CAB1C /* POPDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPDViewController.h; sourceTree = "<group>"; };
 		AE2803651855B73D008CAB1C /* POPDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPDViewController.m; sourceTree = "<group>"; };
 		AE28036F1855B767008CAB1C /* POPDCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPDCell.h; sourceTree = "<group>"; };
@@ -585,7 +590,6 @@
 		AE44AFBB1834AADF0074E7D9 /* hookImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hookImg.png; sourceTree = "<group>"; };
 		AE44AFBC1834AADF0074E7D9 /* inputBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inputBack.png; sourceTree = "<group>"; };
 		AE44AFBD1834AADF0074E7D9 /* loginBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBack.png; sourceTree = "<group>"; };
-		AE44AFBE1834AADF0074E7D9 /* loginBtBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBtBack.png; sourceTree = "<group>"; };
 		AE44AFBF1834AADF0074E7D9 /* loginBtBack1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBtBack1.png; sourceTree = "<group>"; };
 		AE44AFC01834AADF0074E7D9 /* loginGGTextImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginGGTextImg.png; sourceTree = "<group>"; };
 		AE44AFC11834AADF0074E7D9 /* loginLBtBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginLBtBack.png; sourceTree = "<group>"; };
@@ -711,8 +715,6 @@
 		AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceToolLeftListViewController.m; sourceTree = "<group>"; };
 		AE745E4D1823A88B000A60A7 /* FInanceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FInanceDetailViewController.h; sourceTree = "<group>"; };
 		AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FInanceDetailViewController.m; sourceTree = "<group>"; };
-		AE748EBA18336C5100BD4F57 /* UserRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegisterViewController.h; sourceTree = "<group>"; };
-		AE748EBB18336C5100BD4F57 /* UserRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegisterViewController.m; sourceTree = "<group>"; };
 		AE748EBE1833770500BD4F57 /* FSVerticalTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBar.h; sourceTree = "<group>"; };
 		AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVerticalTabBar.m; sourceTree = "<group>"; };
 		AE748EC01833770500BD4F57 /* FSVerticalTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBarButton.h; sourceTree = "<group>"; };
@@ -791,6 +793,9 @@
 		AEBE51301839F4FA0041E1EA /* dailyBackImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dailyBackImg.png; sourceTree = "<group>"; };
 		AEBE51321839FB8C0041E1EA /* DailyRightListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyRightListViewController.h; sourceTree = "<group>"; };
 		AEBE51331839FB8C0041E1EA /* DailyRightListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyRightListViewController.m; sourceTree = "<group>"; };
+		AECF37A91858077C002A3593 /* ClientCalendarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientCalendarListViewController.h; sourceTree = "<group>"; };
+		AECF37AA1858077C002A3593 /* ClientCalendarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientCalendarListViewController.m; sourceTree = "<group>"; };
+		AECF37AE1858127F002A3593 /* ClientCalendarEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClientCalendarEventCell.xib; path = ../../NibFile/CellNib/ClientCalendarEventCell.xib; sourceTree = "<group>"; };
 		AED54F26183CC8BB00A6E965 /* ComIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComIconCell.xib; sourceTree = "<group>"; };
 		AED54F28183CC95000A6E965 /* ComIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComIconCell.h; sourceTree = "<group>"; };
 		AED54F29183CC95000A6E965 /* ComIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComIconCell.m; sourceTree = "<group>"; };
@@ -1121,6 +1126,8 @@
 				AE3FCB8B17E6DA23001A04A1 /* CommonlyMacros.m */,
 				AE3FCB8717E6D9C9001A04A1 /* Utiles.h */,
 				AE3FCB8817E6D9C9001A04A1 /* Utiles.m */,
+				AE27D7ED18594AA600F6601E /* ComFun.h */,
+				AE27D7EE18594AA600F6601E /* ComFun.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1272,13 +1279,13 @@
 		AE44AFB81834AADF0074E7D9 /* SettingImg */ = {
 			isa = PBXGroup;
 			children = (
+				AE21694018599C6800654770 /* loginBtBack.png */,
 				AE3F07831856EB4D00C5044D /* companyLogo.png */,
 				AE44AFB91834AADF0074E7D9 /* checkImg.png */,
 				AE44AFBA1834AADF0074E7D9 /* excelShortcuts.png */,
 				AE44AFBB1834AADF0074E7D9 /* hookImg.png */,
 				AE44AFBC1834AADF0074E7D9 /* inputBack.png */,
 				AE44AFBD1834AADF0074E7D9 /* loginBack.png */,
-				AE44AFBE1834AADF0074E7D9 /* loginBtBack.png */,
 				AE44AFBF1834AADF0074E7D9 /* loginBtBack1.png */,
 				AE44AFC01834AADF0074E7D9 /* loginGGTextImg.png */,
 				AE44AFC11834AADF0074E7D9 /* loginLBtBack.png */,
@@ -1359,6 +1366,7 @@
 		AE44B03F1834B0580074E7D9 /* MyGooGuu */ = {
 			isa = PBXGroup;
 			children = (
+				AECF37AE1858127F002A3593 /* ClientCalendarEventCell.xib */,
 				AE2CDA911843354F00226CDD /* MyGooGuuCell.xib */,
 				AE2CDA96184337DF00226CDD /* MyGooGuuIndicator.h */,
 				AE2CDA97184337DF00226CDD /* MyGooGuuIndicator.m */,
@@ -1368,6 +1376,8 @@
 				AE44B0441834B0920074E7D9 /* ClientRelationStockListViewController.m */,
 				AE44B0461834B1AD0074E7D9 /* ClientCalendarViewController.h */,
 				AE44B0471834B1AD0074E7D9 /* ClientCalendarViewController.m */,
+				AECF37A91858077C002A3593 /* ClientCalendarListViewController.h */,
+				AECF37AA1858077C002A3593 /* ClientCalendarListViewController.m */,
 			);
 			path = MyGooGuu;
 			sourceTree = "<group>";
@@ -1908,8 +1918,6 @@
 		AEF59B311831D37500CE99D8 /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
-				AE748EBA18336C5100BD4F57 /* UserRegisterViewController.h */,
-				AE748EBB18336C5100BD4F57 /* UserRegisterViewController.m */,
 				AEF59B381831D3D400CE99D8 /* ClientLoginViewController.h */,
 				AEF59B391831D3D400CE99D8 /* ClientLoginViewController.m */,
 				AEF59B3B1831D5DC00CE99D8 /* ClientLoginView.xib */,
@@ -2001,6 +2009,7 @@
 				AE44AFD91834AADF0074E7D9 /* financeToolBt.png in Resources */,
 				AE3F077D1856E5CF00C5044D /* announce.txt in Resources */,
 				AE7EF617181F55A5002A3C9E /* NewComCell.xib in Resources */,
+				AECF37AF1858127F002A3593 /* ClientCalendarEventCell.xib in Resources */,
 				AE3F07861856EB7A00C5044D /* AboutUsView.xib in Resources */,
 				AE1C3F4518507BA000DBBB36 /* 其他指标-2.png in Resources */,
 				AE44AFEE1834AADF0074E7D9 /* blueArrow@2x.png in Resources */,
@@ -2073,6 +2082,7 @@
 				AE44AFEB1834AADF0074E7D9 /* blackArrow.png in Resources */,
 				AE572B89182CE0D60000B193 /* Cell2.xib in Resources */,
 				AE3E70FB18334FA100A624AD /* Default.png in Resources */,
+				AE21694118599C6800654770 /* loginBtBack.png in Resources */,
 				AE7EF615181F5599002A3C9E /* NewReportCell.xib in Resources */,
 				AE3F079A185706CB00C5044D /* right_arrow@2x.png in Resources */,
 				AE44B0021834AADF0074E7D9 /* finToolBack.png in Resources */,
@@ -2120,7 +2130,6 @@
 				AE44AFE91834AADF0074E7D9 /* valuModelBt.png in Resources */,
 				AE1C3F3518507B9300DBBB36 /* 运营资本-2.png in Resources */,
 				AE44B01B1834AADF0074E7D9 /* hookImg.png in Resources */,
-				AE44B01E1834AADF0074E7D9 /* loginBtBack.png in Resources */,
 				AE44AFF31834AADF0074E7D9 /* DownAccessory@2x.png in Resources */,
 				AE1C3F4118507BA000DBBB36 /* 财务比例-2.png in Resources */,
 				AE44B0261834AADF0074E7D9 /* sina.png in Resources */,
@@ -2207,6 +2216,7 @@
 				AE572B86182CE0D60000B193 /* Cell1.m in Sources */,
 				AE0F050D1827464B00DA13D4 /* BetaFactorCountViewController.m in Sources */,
 				AE4D3E1017E3053C0044A7DF /* AppDelegate.m in Sources */,
+				AECF37AB1858077C002A3593 /* ClientCalendarListViewController.m in Sources */,
 				AE7E5736181E3F7400A1391E /* RenderView.m in Sources */,
 				AE7E5755181E54B400A1391E /* AMProgressViewGradient.m in Sources */,
 				AE739ABC182257FB00CF82C5 /* NSDate+convenience.m in Sources */,
@@ -2242,7 +2252,6 @@
 				AE309652183DDC7A0074B84C /* ValuModelContainerViewController.m in Sources */,
 				AE6FCF1C17E9410100DCDB77 /* GCDiscreetNotificationView.m in Sources */,
 				AE3F07891856ED6800C5044D /* AboutUsViewController.m in Sources */,
-				AE748EBC18336C5100BD4F57 /* UserRegisterViewController.m in Sources */,
 				AED98534183C571F00E97093 /* MyProLossCell.m in Sources */,
 				AEF3336A1842F606000D0C65 /* ValueModelIndicator4.m in Sources */,
 				AE530C8417E997B8007E5143 /* GTMStackTrace.m in Sources */,
@@ -2315,6 +2324,7 @@
 				AEB3E33517F40DA100A273E9 /* EnumSummary.m in Sources */,
 				AE7E5735181E3F7400A1391E /* PieChartView.m in Sources */,
 				AE1C3F271850675800DBBB36 /* MJPopupBackgroundView.m in Sources */,
+				AE27D7EF18594AA600F6601E /* ComFun.m in Sources */,
 				AE30964F183DDC7A0074B84C /* ComInfoListColumn1.m in Sources */,
 				AEB3E33D17F4229900A273E9 /* GraphExchangeViewController.m in Sources */,
 				AEB3E34017F422B100A273E9 /* DailyStockViewController.m in Sources */,

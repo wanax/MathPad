@@ -24,6 +24,7 @@
     #import "AppDelegate.h"
     #import "FlatUIKit.h"
     #import "EGORefreshTableHeaderView.h"
+    #import "ComFun.h"
 #endif
 
 // From here to end of file added by Injection Plugin //

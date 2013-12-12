@@ -78,7 +78,7 @@
 }
 
 -(void)cancelBtClicked:(UIButton *)bt {
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    [(ClientLoginViewController *)self.parentViewController.parentViewController.parentViewController cancelBtClicked:nil];
 }
 
 -(void)regBtClicked:(UIButton *)bt {
@@ -99,7 +99,14 @@
             if([[obj objectForKey:@"status"] integerValue]!=1){
                 [Utiles showToastView:self.view withTitle:nil andContent:[obj objectForKey:@"msg"] duration:2.0];
             }else{
-                [(ClientLoginViewController *)self.parentViewController userLoginUserName:phoneNum pwd:passWord];
+                [ComFun userLoginUserName:phoneNum pwd:passWord callBack:^(id obj) {
+                    ClientLoginViewController *parent = (ClientLoginViewController *)self.parentViewController;
+                    if (parent.sourceType == VerticalTabBar) {
+                        [parent dismissViewControllerAnimated:YES completion:nil];
+                    } else if (parent.sourceType == SettingMenu) {
+                        [parent.navigationController popViewControllerAnimated:YES];
+                    }
+                }];
             }
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -14,7 +14,7 @@
 #import "DrawChartTool.h"
 #import "ChartLeftListViewController.h"
 
-#define HostViewHeight 250.0
+#define HostViewHeight 270.0
 
 @interface FinancalModelChartViewController ()
 
@@ -62,7 +62,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 
     CPTXYGraph *tempGraph=[[[CPTXYGraph alloc] initWithFrame:CGRectZero] autorelease];
     self.graph=tempGraph;
-    self.graph.fill=[CPTFill fillWithImage:[CPTImage imageWithCGImage:[UIImage imageNamed:@"discountBack"].CGImage]];
+    self.graph.fill=[CPTFill fillWithColor:[Utiles cptcolorWithHexString:@"#FCFADD" andAlpha:1.0]];
     CPTGraphHostingView *tempView=[[[ CPTGraphHostingView alloc ] initWithFrame :CGRectMake(10,10,680,HostViewHeight)] autorelease];
     self.hostView=tempView;
     [self.view addSubview:self.hostView];
@@ -104,7 +104,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     self.trueUnit=[temp objectForKey:@"unit"];
     NSArray *sort=[Utiles arrSort:self.points];
     self.yAxisUnit=[Utiles getUnitFromData:[[[sort lastObject] objectForKey:@"v"] stringValue] andUnit:self.trueUnit];
-    self.graph.title=[NSString stringWithFormat:@"%@(单位:%@)",[temp objectForKey:@"title"],self.yAxisUnit];
+    self.graph.title=[NSString stringWithFormat:@"%@:%@(单位:%@)",self.comInfo[@"companyname"],[temp objectForKey:@"title"],self.yAxisUnit];
     [self setXYAxis];
     self.barPlot.baseValue=CPTDecimalFromFloat(XORTHOGONALCOORDINATE);
     [self.graph reloadData];
@@ -143,7 +143,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
     NSString *numberString =nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     if([self.trueUnit isEqualToString:@"%"]){
-        [formatter setPositiveFormat:@"0.00;0.00;-0.00"];
+        [formatter setPositiveFormat:@"0.0;0.0;-0.0"];
         numberString = [formatter stringFromNumber:[NSNumber numberWithFloat:[[[self.points objectAtIndex:index] objectForKey:@"v"] floatValue]*100]];
     }else{
         numberString=[[[self.points objectAtIndex:index] objectForKey:@"v"] stringValue];

@@ -159,12 +159,12 @@
         float p = [priceStr floatValue];
         float outLook=(g-p)/p;
         cell.outLookLabel.text=[NSString stringWithFormat:@"%.2f%%",outLook*100];
-        if (outLook>=0) {
+        if (outLook<0) {
             [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#BA0020"]];
-            [cell.outLookImg setImage:[UIImage imageNamed:@"riseup"]];
+            [cell.outLookImg setImage:[UIImage imageNamed:@"down"]];
         } else {
             [cell.outLookLabel setBackgroundColor:[Utiles colorWithHexString:@"#36871A"]];
-            [cell.outLookImg setImage:[UIImage imageNamed:@"down"]];
+            [cell.outLookImg setImage:[UIImage imageNamed:@"riseup"]];
         }
         
         AMProgressView *am=[[[AMProgressView alloc] initWithFrame:CGRectMake(517, 8, 180, 18)

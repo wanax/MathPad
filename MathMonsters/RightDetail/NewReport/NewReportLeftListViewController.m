@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
 	[self initComponents];
-    [self addReport];
+    [self addReport:YES];
 }
 
 
@@ -49,7 +49,7 @@
     [self.view addSubview:self.reportTable];
     
     [self.reportTable addInfiniteScrollingWithActionHandler:^{
-        [self addReport];
+        [self addReport:NO];
     }];
     if(_refreshHeaderView == nil)
     {
@@ -67,14 +67,21 @@
 #pragma mark -
 #pragma Net Get JSON Data
 
--(void)addReport{
+-(void)addReport:(BOOL)isReflash{
+    if (isReflash) {
+        self.articleId = @"";
+    }
     [MBProgressHUD showHUDAddedTo:self.reportTable animated:YES];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.articleId,@"articleid", nil];
     [Utiles getNetInfoWithPath:@"NewestAnalyseReportURL" andParams:params besidesBlock:^(id resObj){
         
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
-        for(id obj in self.reports){
-            [temp addObject:obj];
+        
+        if (!isReflash) {
+            for(id obj in self.reports){
+                [temp addObject:obj];
+            }
+            
         }
         for (id data in [resObj objectForKey:@"data"]) {
             [temp addObject:data];
@@ -118,7 +125,7 @@
         id model=[self.reports objectAtIndex:indexPath.row];
         
         [cell.comIconImg setImageWithURL:[NSURL URLWithString:[model objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defauleIcon"]];
-        [cell.comTitleLabel setText:[model objectForKey:@"companyname"]];
+        [cell.comTitleLabel setText:[model objectForKey:@"title"]];
         [cell.updateTimeLabel setText:[model objectForKey:@"updatetime"]];
         cell.conciseView.backgroundColor = [UIColor clearColor];
         cell.conciseView.opaque = NO;
@@ -170,7 +177,7 @@
 
 - (void)doneLoadingTableViewData{
     
-    [self addReport];
+    [self addReport:YES];
     _reloading = NO;
     
 }
