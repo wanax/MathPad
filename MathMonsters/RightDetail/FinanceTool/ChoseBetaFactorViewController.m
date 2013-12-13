@@ -23,12 +23,23 @@
     return self;
 }
 
+-(void)backPressed: (id)sender
+{
+    [self.navigationController popViewControllerAnimated: YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backPressed:)];
+    self.navigationItem.leftBarButtonItem = btn;
+    [btn release];
+    
     NSMutableArray *temp=[[NSMutableArray alloc] init];
     NSMutableArray *temp2=[[NSMutableArray alloc] init];
-    self.numberFormatter = [[NSNumberFormatter alloc] init];
+    NSNumberFormatter *fr = [[[NSNumberFormatter alloc] init] autorelease];
+    self.numberFormatter = fr;
     [self.numberFormatter setPositiveFormat:@"###0.##"];
     for (id obj in self.benchMark){
         [temp addObject:obj];
@@ -103,7 +114,7 @@
         [mycom setTextAlignment:NSTextAlignmentCenter];
         mycom.text =[self.component2Source objectAtIndex:row];
     }
-    return mycom;
+    return [mycom autorelease];
 }
 
 

@@ -13,33 +13,24 @@
 + (void)userLoginUserName:(NSString *)userName pwd:(NSString *)pwd callBack:(void (^)(id))block{
     
     if ([Utiles isNetConnected]) {
-        NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:[userName lowercaseString],@"username",[Utiles md5:pwd],@"password",@"googuu",@"from", nil];
+
+        NSDictionary *params = @{@"username":[userName lowercaseString],
+                                 @"password":[Utiles md5:pwd],
+                                 @"from":@"googuu",
+                                 @"version":@"1"};
         
-        [Utiles getNetInfoWithPath:@"Login" andParams:params besidesBlock:^(id info){
+        [Utiles getNetInfoWithPath:@"UserLoginWithInfo" andParams:params besidesBlock:^(id info){
             
             if([[info objectForKey:@"status"] isEqualToString:@"1"]){
-                
+
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginKeeping" object:nil];
                 SetUserDefaults(info[@"token"],@"UserToken");
-
-                NSDictionary *params = @{@"token":info[@"token"],
-                                         @"from":@"googuu"};
-                
-                [Utiles getNetInfoWithPath:@"UserInfo" andParams:params besidesBlock:^(id obj) {
-                    NSMutableDictionary *temp = [[[NSMutableDictionary alloc] init] autorelease];
-                    for (id key in obj[@"data"]) {
-                        [temp setObject:obj[@"data"][key] forKey:key];
-                    }
-                    [temp setObject:obj[@"msg"] forKey:@"msg"];
-                    [temp setObject:obj[@"status"] forKey:@"status"];
-                    NSDictionary *userInfo = temp;
-                    SetUserDefaults([userInfo JSONString],@"UserInfo");
-                    block(obj);
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    NSLog(@"%@",error);
-                }];
-                
-                NSLog(@"%@",[info objectForKey:@"token"]);
+                NSMutableDictionary *dic = [[[NSMutableDictionary alloc] initWithDictionary:info] autorelease];
+                [dic setObject:pwd forKey:@"password"];
+                [dic setObject:userName forKey:@"username"];
+                SetUserDefaults([dic JSONString],@"UserInfo");
+                block(info);
+               
             }/*else {
                 NSString *msg=@"";
                 if ([info[@"status"] isEqual:@"0"]) {

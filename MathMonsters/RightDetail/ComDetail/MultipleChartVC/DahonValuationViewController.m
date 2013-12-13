@@ -68,7 +68,6 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	[self.view setBackgroundColor:[Utiles colorWithHexString:@"#F2EFE1"]];
     [self initDahonViewComponents];
     [self initData];
@@ -179,6 +178,7 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 
 -(void)initData{
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *params=@{@"stockcode": self.comInfo[@"stockcode"]};
     [Utiles getNetInfoWithPath:@"GetStockHistoryData" andParams:params besidesBlock:^(id resObj){
         NSNumberFormatter * formatter   = [[NSNumberFormatter alloc] init];
@@ -203,7 +203,6 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
         XRANGEBEGIN=count-269;
         XRANGELENGTH=269;
         XINTERVALLENGTH=50;
-        [MBProgressHUD hideHUDForView:self.hostView animated:YES];
         
         [self initChart];
         [self setXYAxis];
@@ -322,12 +321,6 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     self.plotSpace.globalXRange=[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(-30) length:CPTDecimalFromDouble(320)];
     DrawXYAxisWithoutXAxisOrYAxis;
     [self.graph reloadData];
-}
-
--(void)reflash:(UIButton *)bt{
-    [MBProgressHUD showHUDAddedTo:self.hostView animated:YES];
-    [self initData];
-    
 }
 
 -(void)backTo:(UIButton *)bt{

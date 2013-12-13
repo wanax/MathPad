@@ -7,7 +7,7 @@
 //
 
 #import "ComContainerIndicator.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation ComContainerIndicator
 
@@ -24,7 +24,7 @@
 -(void)drawRect:(CGRect)rect{
     [self setBackgroundColor:[Utiles colorWithHexString:@"#291912"]];
     [self addImgView:[self.comInfo objectForKey:@"comanylogourl"] frame:CGRectMake(30,13,70,38)];
-    [self addLabel:[NSString stringWithFormat:@"%@(%@.%@)",[self.comInfo objectForKey:@"companyname"],[self.comInfo objectForKey:@"stockcode"],[self.comInfo objectForKey:@"marketname"]] frame:CGRectMake(150,10,300,40)];
+    [self addLabel:[NSString stringWithFormat:@"%@(%@.%@)",[self.comInfo objectForKey:@"companyname"],[self.comInfo objectForKey:@"stockcode"],[self.comInfo objectForKey:@"market"]] frame:CGRectMake(150,10,300,40)];
     [self addLabel:[NSString stringWithFormat:@"市场价:%.2f",[[self.comInfo objectForKey:@"marketprice"] floatValue]] frame:CGRectMake(470,10,160,40)];
     [self addLabel:[NSString stringWithFormat:@"估股价:%.2f",[[self.comInfo objectForKey:@"googuuprice"] floatValue]] frame:CGRectMake(650,10,160,40)];
     
@@ -44,7 +44,24 @@
 -(void)addImgView:(NSString *)url frame:(CGRect)rect{
     
     UIImageView *iconView=[[[UIImageView alloc] initWithFrame:rect] autorelease];
-    [iconView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"icon"]];
+
+    if ([Utiles isBlankString:url]) {
+        UILabel *substitute = [[[UILabel alloc] initWithFrame:CGRectMake(30,13,70,38)] autorelease];
+        [substitute setBackgroundColor:[UIColor whiteColor]];
+        [substitute setText:self.comInfo[@"companyname"]];
+        substitute.layer.cornerRadius=3.0;
+        [self addSubview:substitute];
+    } else {
+        [iconView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"icon"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            if (!image){
+                UILabel *substitute = [[[UILabel alloc] initWithFrame:CGRectMake(30,13,70,38)] autorelease];
+                [substitute setBackgroundColor:[UIColor whiteColor]];
+                [substitute setText:self.comInfo[@"companyname"]];
+                substitute.layer.cornerRadius=3.0;
+            }
+        }];
+    }
+
     [self addSubview:iconView];
     
 }

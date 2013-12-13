@@ -46,7 +46,7 @@ static NSString * BAR_IDENTIFIER =@"bar_identifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[Utiles colorWithHexString:@"#F2EFE1"]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 
     UIWebView *web=[[[UIWebView alloc] init] autorelease];
     self.webView=web;

@@ -59,16 +59,20 @@
     pageScroll.pagingEnabled = YES;
     pageScroll.delegate = self;
     [pageScroll setShowsHorizontalScrollIndicator:YES];
+    
+    NSDictionary *range = [self getProLossTableYearRange:classArr];
+    int begin = [range[@"min"] integerValue];
+    int gap = ceil(([range[@"max"] integerValue] - begin + 1)/3);
 
-    MyProLossListViewController *list1=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(0),@"end":@(5),@"count":@(6)}] autorelease];
+    MyProLossListViewController *list1=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(begin),@"end":@(begin+gap),@"count":@(gap)}] autorelease];
     list1.view.frame=CGRectMake(0,0,1024,768);
     list1.delegate=self;
     
-    MyProLossListViewController *list2=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(6),@"end":@(11),@"count":@(6)}] autorelease];
+    MyProLossListViewController *list2=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(begin+gap+1),@"end":@(begin+2*gap+1),@"count":@(gap)}] autorelease];
     list2.view.frame=CGRectMake(1024,0,1024,768);
     list2.delegate=self;
     
-    MyProLossListViewController *list3=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(12),@"end":@(17),@"count":@(6)}] autorelease];
+    MyProLossListViewController *list3=[[[MyProLossListViewController alloc] initWithClassArr:classArr andRangDic:@{@"begin":@(begin+2*gap+2),@"end":range[@"max"],@"count":@([range[@"max"] integerValue]-begin-2*gap-1)}] autorelease];
     list3.view.frame=CGRectMake(2048,0,1024,768);
     list3.delegate=self;
     
@@ -82,6 +86,26 @@
     self.proLossLists=[NSArray arrayWithObjects:list1,list2,list3, nil];
     [self.view addSubview:pageScroll];
     
+}
+
+//确定损益表显示年份范围
+-(NSDictionary *)getProLossTableYearRange:(NSArray *)classArr{
+    
+    int yearMin = [classArr[0][@"array"][0][@"y"] integerValue];
+    int yearMax = yearMin;
+    
+    for (id classObj in classArr) {
+        for (id obj in classObj[@"array"]) {
+            int y = [obj[@"y"] integerValue];
+            if (y > yearMax) {
+                yearMax = y;
+            } else if (y < yearMin && y != 0){
+                yearMin = y;
+            }
+        }
+    }
+    NSDictionary *range = @{@"max":@(yearMax),@"min":@(yearMin)};
+    return range;
 }
 
 #pragma mark -

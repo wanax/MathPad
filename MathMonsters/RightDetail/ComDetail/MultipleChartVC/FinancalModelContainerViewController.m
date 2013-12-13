@@ -38,7 +38,8 @@
 
 -(void)initComponents{
     
-    self.webView=[[UIWebView alloc] init];
+    UIWebView *web = [[[UIWebView alloc] init] autorelease];
+    self.webView=web;
     self.webView.delegate=self;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"c" ofType:@"html"];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];

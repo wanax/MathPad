@@ -19,14 +19,17 @@
 {
     self = [super init];
     if (self) {
+        
         self.rangeDic=rangeDic;
         self.proLossArr=classArr;
+        
         //初始化损益表年份指示牌
         NSNumberFormatter *formatter=[[[NSNumberFormatter alloc] init] autorelease];
         [formatter setPositiveFormat:@"00"];
         NSMutableArray *temp=[[[NSMutableArray alloc] init] autorelease];
+        
         for(int i=[rangeDic[@"begin"] integerValue];i<=[rangeDic[@"end"] integerValue];i++){
-            [temp addObject:[formatter stringFromNumber:[NSNumber numberWithFloat:(6.0+i)]]];
+            [temp addObject:[formatter stringFromNumber:[NSNumber numberWithFloat:(i)]]];
         }
         self.yearArr=temp;
         
@@ -43,6 +46,7 @@
          然后再通过rangeDic的begin与count取出该table所应显示的范围填写至cell中。
          
          ps:这是一个很屎的数据结构，由它长长的注释就可以发现，希望以后可以不用再碰到它了。
+         pps:2013-12-13 我又回到了此处...
          */
         NSMutableArray *arr=[[[NSMutableArray alloc] init] autorelease];
         for(id obj in classArr){
@@ -52,6 +56,8 @@
                 [formatter setPositiveFormat:@"0.00%;0.00%;-0.00%"];
             }else if([obj[@"unit"] isEqualToString:@"1.0"]){
                 [formatter setPositiveFormat:@"##0.0"];
+            } else if ([obj[@"unit"] isEqualToString:@"1000000.0"]){
+                [formatter setPositiveFormat:@"#,###',000'"];
             }
             NSMutableDictionary *dic=[[[NSMutableDictionary alloc] init] autorelease];
             for(id valueData in obj[@"array"]){
@@ -120,12 +126,11 @@
     if (indexPath.row==0) {
         cell.label0.text=@"种类(单位:1000)";
         
-        cell.label1.text=self.yearArr[0];
-        cell.label2.text=self.yearArr[1];
-        cell.label3.text=self.yearArr[2];
-        cell.label4.text=self.yearArr[3];
-        cell.label5.text=self.yearArr[4];
-        cell.label6.text=self.yearArr[5];
+        NSArray *labels = @[cell.label1,cell.label2,cell.label3,cell.label4,cell.label5,cell.label6];
+        for (int n = 0;n < [self.yearArr count]; n++) {
+            ((UILabel *)labels[n]).text = self.yearArr[n];
+        }
+        
     } else {
         
         cell.label0.text=[self.proLossArr objectAtIndex:(indexPath.row-1)][@"name"];
@@ -135,13 +140,20 @@
         NSNumberFormatter *formatter=[[[NSNumberFormatter alloc] init] autorelease];
         [formatter setPositiveFormat:@"00"];
         id valueDic=[self.yearToValueDicArr objectAtIndex:(indexPath.row-1)];
-        cell.label1.text=valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:(6+[self.rangeDic[@"begin"] floatValue])]]];
-        cell.label2.text=valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:(6+[self.rangeDic[@"begin"] floatValue]+1)]]];
-        cell.label3.text=valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:(6+[self.rangeDic[@"begin"] floatValue]+2)]]];
-        cell.label4.text=valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:(6+[self.rangeDic[@"begin"] floatValue]+3)]]];
-        cell.label5.text=valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:(6+[self.rangeDic[@"begin"] floatValue]+4)]]];
-        cell.label6.text=valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:(6+[self.rangeDic[@"begin"] floatValue]+5)]]];
-
+        NSArray *labels = @[cell.label1,cell.label2,cell.label3,cell.label4,cell.label5,cell.label6];
+        if ([valueDic count] > 1) {
+            
+            for (int n = 0;n < [self.yearArr count]; n++) {
+                ((UILabel *)labels[n]).text = valueDic[[formatter stringFromNumber:[NSNumber numberWithFloat:([self.rangeDic[@"begin"] floatValue]+n)]]];
+            }
+            
+        } else {
+            id key = [valueDic allKeys][0];
+            cell.label1.text = valueDic[key];
+            for (int i = 1;i < [labels count]; i++) {
+                ((UILabel *)labels[i]).text = @"";
+            }
+        }
     }
 
     return cell;

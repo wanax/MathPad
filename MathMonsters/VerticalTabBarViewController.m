@@ -103,7 +103,7 @@
     if ([Utiles isLogin]) {
         [loginBt setFrame:CGRectMake(60,14,200,30)];
         id userInfo = [GetUserDefaults(@"UserInfo") objectFromJSONString];
-        [loginBt setTitle:userInfo[@"userid"] forState:UIControlStateDisabled];
+        [loginBt setTitle:userInfo[@"info"][@"nickname~"] forState:UIControlStateDisabled];
         loginBt.enabled = NO;
     } else {
         [loginBt setTitle:@"登录" forState:UIControlStateNormal];
@@ -118,6 +118,7 @@
     bar.placeholder=@"拼音/代码/全称";
     bar.backgroundColor=[UIColor clearColor];
     bar.barTintColor=[UIColor clearColor];
+
     self.searchBar=bar;
     [self.view addSubview:self.searchBar];
     

@@ -9,7 +9,6 @@
 #import "FinanceToolViewController.h"
 #import "FinanceToolLeftListViewController.h"
 #import "CounterViewController.h"
-#import "FInanceDetailViewController.h"
 #import "MGSplitViewController.h"
 #import "FlatUIKit.h"
 
@@ -47,18 +46,19 @@
     UIImageView *backView=[[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"finToolBack"]] autorelease];
     [self.view addSubview:backView];
     
-    FinanceToolLeftListViewController *leftList=[[FinanceToolLeftListViewController alloc] init];
+    FinanceToolLeftListViewController *leftList=[[[FinanceToolLeftListViewController alloc] init] autorelease];
     leftList.delegate=self;
-    UINavigationController *leftListNav=[[UINavigationController alloc] initWithRootViewController:leftList];
+    UINavigationController *leftListNav=[[[UINavigationController alloc] initWithRootViewController:leftList] autorelease];
     leftListNav.view.backgroundColor=[UIColor greenSeaColor];
     
-    self.detail=[[CounterViewController alloc] init];
+    CounterViewController *countVC = [[[CounterViewController alloc] init] autorelease];
+    self.detail = countVC;
     UINavigationController *detailNav=[[[UINavigationController alloc] initWithRootViewController:self.detail] autorelease];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"贝塔系数,债务占比,有效税率",@"pName",@"0,%,%",@"pUnit",@"股权占比,无杠杆贝塔系数",@"rName",@"%,1",@"rUnit", nil];
     self.detail.params=params;
     self.detail.toolType=BetaFactor;
 
-    MGSplitViewController *split=[[MGSplitViewController alloc] init];
+    MGSplitViewController *split=[[[MGSplitViewController alloc] init] autorelease];
     split.view.frame=CGRectMake(0,0,928,1200);
     split.splitPosition=200;
     split.viewControllers=@[leftListNav,detailNav];

@@ -25,9 +25,19 @@
     return self;
 }
 
+-(void)backPressed: (id)sender
+{
+    [self.navigationController popViewControllerAnimated: YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backPressed:)];
+    self.navigationItem.leftBarButtonItem = btn;
+    [btn release];
+    
     self.stockCodeInput.returnKeyType=UIReturnKeyGo;
     self.stockCodeInput.keyboardType=UIKeyboardAppearanceDefault;
 }

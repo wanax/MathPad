@@ -94,7 +94,7 @@
         [self.indicator.comIconView setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:[UIImage imageNamed:@"icon"]];
         [self.indicator.googuuPriLabel setText:[NSString stringWithFormat:@"%.2f",[obj[@"googuuprice"] floatValue]]];
         [self.indicator.marketPriLabel setText:[NSString stringWithFormat:@"%.2f",[obj[@"marketprice"] floatValue]]];
-        [self.indicator.comNameButton setTitle:[NSString stringWithFormat:@"%@\n(%@.%@)",[obj objectForKey:@"companyname"],[obj objectForKey:@"stockcode"],[obj objectForKey:@"market"]] forState:UIControlStateNormal];
+        [self.indicator.comNameButton setTitle:[NSString stringWithFormat:@"%@\n(%@.%@)",[obj objectForKey:@"companyname"],[obj objectForKey:@"stockcode"],[obj objectForKey:@"marketname"]] forState:UIControlStateNormal];
         [self.indicator.comNameButton addTarget:self action:@selector(comNameBtClicked:) forControlEvents:UIControlEventTouchUpInside];
   
         NSNumber *marketPrice=[obj objectForKey:@"marketprice"];

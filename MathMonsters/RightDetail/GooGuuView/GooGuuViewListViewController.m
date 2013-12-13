@@ -40,7 +40,7 @@
     UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,924,800)] autorelease];
     t.dataSource=self;
     t.delegate=self;
-    t.separatorStyle=UITableViewCellSeparatorStyleSingleLineEtched;
+    t.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.ggViewTable=t;
     [self.view addSubview:self.ggViewTable];
     
@@ -97,7 +97,7 @@
 }
 
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 127.0;
+    return 160.0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -138,8 +138,8 @@
     cell.backLabel.layer.borderColor = [UIColor grayColor].CGColor;
     cell.backLabel.layer.borderWidth = 0;
     
-    [cell.contentView setBackgroundColor:[Utiles colorWithHexString:[Utiles getConfigureInfoFrom:@"colorconfigure" andKey:@"NormalCellColor" inUserDomain:NO]]];
-    
+    [cell.contentView setBackgroundColor:[UIColor silverColor]];
+
     UIButton *cellBt=[[[UIButton alloc] initWithFrame:CGRectMake(0,0,924,200)] autorelease];
     cellBt.tag=indexPath.row;
     [cellBt addTarget:self action:@selector(cellBtClicked:) forControlEvents:UIControlEventTouchUpInside];

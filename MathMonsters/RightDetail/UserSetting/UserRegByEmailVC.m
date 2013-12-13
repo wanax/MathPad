@@ -29,7 +29,7 @@
 	self.view.backgroundColor = [Utiles colorWithHexString:@"#281810"];
     
     UILabel *tip = [[[UILabel alloc] initWithFrame:CGRectMake(40,80,308,90)] autorelease];
-    tip.text = @"暂不支持，请使用手机号码注册。";
+    tip.text = @"暂不支持，请到网站进行邮箱注册";
     tip.font = [UIFont fontWithName:@"Heiti SC" size:15.0];
     tip.textColor = [Utiles colorWithHexString:@"#FFF7E1"];
     tip.numberOfLines = 0;

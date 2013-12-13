@@ -25,6 +25,11 @@
     return self;
 }
 
+-(void)backPressed: (id)sender
+{
+    [self.navigationController popViewControllerAnimated: YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +37,10 @@
 }
 
 -(void)initComponents{
+    
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(backPressed:)];
+    self.navigationItem.leftBarButtonItem = btn;
+    [btn release];
     
     UITableView *t=[[[UITableView alloc] initWithFrame:CGRectMake(0,0,324,920) style:UITableViewStyleGrouped] autorelease];
     self.customTabel=t;

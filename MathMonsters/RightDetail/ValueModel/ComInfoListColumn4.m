@@ -94,7 +94,7 @@
 
 -(void)setCell:(ValueModelCell4 *)cell classDic:(NSDictionary *)dic{
 
-    [self setCellProcess:cell yearValueDic:dic[@"Current ratio"] yearLableArr:[NSArray arrayWithObjects:cell.row00,cell.row10,cell.row20,cell.row30, nil] valueLable:[NSArray arrayWithObjects:cell.row01,cell.row11,cell.row21,cell.row31, nil] x:55];
+    [self setCellProcess:cell yearValueDic:dic[@"current ratio"] yearLableArr:[NSArray arrayWithObjects:cell.row00,cell.row10,cell.row20,cell.row30, nil] valueLable:[NSArray arrayWithObjects:cell.row01,cell.row11,cell.row21,cell.row31, nil] x:55];
 
 }
 
@@ -147,8 +147,8 @@
         NSMutableArray *tempGrade2=[[[NSMutableArray alloc] init] autorelease];
         NSMutableDictionary *cellValueDic=[[[NSMutableDictionary alloc] init] autorelease];
         
-        [self produceProgressForClass:comInfo[@"data"] className:@"Current ratio" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
-        [tempDiscountRates addObject:comInfo[@"data"][@"Discount rate"][@"array"][0][@"v"]];
+        [self produceProgressForClass:comInfo[@"data"] className:@"current ratio" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
+        [tempDiscountRates addObject:comInfo[@"data"][@"discount rate"][@"array"][0][@"v"]];
         [temp addObject:tempGrade2];
         [tempYearValueArr addObject:cellValueDic];
     }

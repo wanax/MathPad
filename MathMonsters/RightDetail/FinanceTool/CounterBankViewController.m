@@ -117,7 +117,7 @@
 -(void)panView:(UIPanGestureRecognizer *)tap{
     CGPoint change=[tap translationInView:self.view];
     if(tap.state==UIGestureRecognizerStateChanged){
-        self.view.frame=CGRectMake(0,MAX(MIN(standard.y+change.y,0),-800),SCREEN_WIDTH,ScreenHeight);
+        self.view.frame=CGRectMake(0,MAX(MIN(standard.y+change.y,0),-730),SCREEN_WIDTH,ScreenHeight);
     }else if(tap.state==UIGestureRecognizerStateEnded){
         standard=self.view.frame.origin;
     }
@@ -288,7 +288,7 @@
     [bt.titleLabel setFont:[UIFont fontWithName:@"Heiti SC" size:12.0]];
     [bt setTitle:title forState:UIControlStateNormal];
     [bt setFrame:rect];
-    bt.buttonColor = [UIColor concreteColor];
+    bt.buttonColor = [UIColor sunflowerColor];
     [bt setSelected:YES];
     bt.shadowHeight = 2.0f;
     bt.cornerRadius = 0.0f;

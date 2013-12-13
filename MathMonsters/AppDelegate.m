@@ -99,7 +99,7 @@
 - (void) handleTimer: (NSTimer *) timer{
     
     id userInfo = [GetUserDefaults(@"UserInfo") objectFromJSONString];
-    [ComFun userLoginUserName:userInfo[@"userid"] pwd:userInfo[@"password"] callBack:^(id obj) {
+    [ComFun userLoginUserName:userInfo[@"username"] pwd:userInfo[@"password"] callBack:^(id obj) {
         NSLog(@"Login Success");
     }];
 }

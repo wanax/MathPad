@@ -34,16 +34,10 @@
     self.view.alpha = 0.8;
     self.view.backgroundColor = [Utiles colorWithHexString:@"#EFEBD9"];
     
-    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(20,30,150,40)] autorelease];
-    label.text = @"意见反馈";
-    label.font = [UIFont fontWithName:@"Heiti SC" size:16.0];
-    self.titleLabel = label;
-    [self.view addSubview:self.titleLabel];
+    [self addButton:@"取消" frame:CGRectMake(20,10,60,30) fun:@selector(viewDisMiss)];
+    [self addButton:@"提交" frame:CGRectMake(100,10,60,30) fun:@selector(msgSubmit)];
     
-    [self addButton:@"取消" frame:CGRectMake(460,30,60,30) fun:@selector(viewDisMiss)];
-    [self addButton:@"提交" frame:CGRectMake(390,30,60,30) fun:@selector(msgSubmit)];
-    
-    UITextView *con = [[[UITextView alloc] initWithFrame:CGRectMake(20,100,500,200)] autorelease];
+    UITextView *con = [[[UITextView alloc] initWithFrame:CGRectMake(20,50,500,180)] autorelease];
     con.delegate = self;
     con.font = [UIFont fontWithName:@"Heiti SC" size:16.0];
     self.contentView = con;

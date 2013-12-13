@@ -225,7 +225,6 @@
 		AE739ABF182257FB00CF82C5 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AB0182257FB00CF82C5 /* UIView+convenience.m */; };
 		AE739AC1182257FB00CF82C5 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE739AB4182257FB00CF82C5 /* VRGCalendarView.m */; };
 		AE745E2618237EA4000A60A7 /* FinanceToolLeftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */; };
-		AE745E4F1823A88B000A60A7 /* FInanceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */; };
 		AE748EC61833770500BD4F57 /* FSVerticalTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */; };
 		AE748EC71833770500BD4F57 /* FSVerticalTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EC11833770500BD4F57 /* FSVerticalTabBarButton.m */; };
 		AE748EC81833770500BD4F57 /* FSVerticalTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE748EC31833770500BD4F57 /* FSVerticalTabBarController.m */; };
@@ -713,8 +712,6 @@
 		AE739AB4182257FB00CF82C5 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
 		AE745E2418237EA4000A60A7 /* FinanceToolLeftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceToolLeftListViewController.h; sourceTree = "<group>"; };
 		AE745E2518237EA4000A60A7 /* FinanceToolLeftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceToolLeftListViewController.m; sourceTree = "<group>"; };
-		AE745E4D1823A88B000A60A7 /* FInanceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FInanceDetailViewController.h; sourceTree = "<group>"; };
-		AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FInanceDetailViewController.m; sourceTree = "<group>"; };
 		AE748EBE1833770500BD4F57 /* FSVerticalTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBar.h; sourceTree = "<group>"; };
 		AE748EBF1833770500BD4F57 /* FSVerticalTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVerticalTabBar.m; sourceTree = "<group>"; };
 		AE748EC01833770500BD4F57 /* FSVerticalTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBarButton.h; sourceTree = "<group>"; };
@@ -1707,8 +1704,6 @@
 				AE0F05091827464B00DA13D4 /* BetaFactorCountViewController.m */,
 				AE0F050A1827464B00DA13D4 /* ChoseBetaFactorViewController.h */,
 				AE0F050B1827464B00DA13D4 /* ChoseBetaFactorViewController.m */,
-				AE745E4D1823A88B000A60A7 /* FInanceDetailViewController.h */,
-				AE745E4E1823A88B000A60A7 /* FInanceDetailViewController.m */,
 			);
 			path = FinanceTool;
 			sourceTree = "<group>";
@@ -2318,7 +2313,6 @@
 				AE31F85F182B38AD001CD0D0 /* AKOMultiColumnTextView.m in Sources */,
 				AE739ABD182257FB00CF82C5 /* NSMutableArray+convenience.m in Sources */,
 				AE30964E183DDC7A0074B84C /* ComIconListViewController.m in Sources */,
-				AE745E4F1823A88B000A60A7 /* FInanceDetailViewController.m in Sources */,
 				AE7EF61B181F5630002A3C9E /* NewReportCell.m in Sources */,
 				AE309651183DDC7A0074B84C /* ValueModelIndicator.m in Sources */,
 				AEB3E33517F40DA100A273E9 /* EnumSummary.m in Sources */,

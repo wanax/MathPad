@@ -90,11 +90,11 @@
 
 -(void)setCell:(ValueModelCell2 *)cell classDic:(NSDictionary *)dic{
 
-    [self setCellProcess:cell yearValueDic:dic[@"Revenue growth rate"] yearLableArr:[NSArray arrayWithObjects:cell.row00,cell.row10,cell.row20,cell.row30, nil] valueLable:[NSArray arrayWithObjects:cell.row01,cell.row11,cell.row21,cell.row31, nil] x:55];
+    [self setCellProcess:cell yearValueDic:dic[@"revenue growth rate"] yearLableArr:[NSArray arrayWithObjects:cell.row00,cell.row10,cell.row20,cell.row30, nil] valueLable:[NSArray arrayWithObjects:cell.row01,cell.row11,cell.row21,cell.row31, nil] x:55];
     
-    [self setCellProcess:cell yearValueDic:dic[@"Net income growth rate"] yearLableArr:[NSArray arrayWithObjects:cell.row02,cell.row12,cell.row22,cell.row32, nil] valueLable:[NSArray arrayWithObjects:cell.row03,cell.row13,cell.row23,cell.row33, nil] x:310];
+    [self setCellProcess:cell yearValueDic:dic[@"net income growth rate"] yearLableArr:[NSArray arrayWithObjects:cell.row02,cell.row12,cell.row22,cell.row32, nil] valueLable:[NSArray arrayWithObjects:cell.row03,cell.row13,cell.row23,cell.row33, nil] x:310];
     
-    [self setCellProcess:cell yearValueDic:dic[@"Gross profit margin"] yearLableArr:[NSArray arrayWithObjects:cell.row04,cell.row14,cell.row24,cell.row34, nil] valueLable:[NSArray arrayWithObjects:cell.row05,cell.row15,cell.row25,cell.row35, nil] x:570];
+    [self setCellProcess:cell yearValueDic:dic[@"gross profit margin"] yearLableArr:[NSArray arrayWithObjects:cell.row04,cell.row14,cell.row24,cell.row34, nil] valueLable:[NSArray arrayWithObjects:cell.row05,cell.row15,cell.row25,cell.row35, nil] x:570];
 }
 
 -(void)setCellProcess:(ValueModelCell2 *)cell yearValueDic:(id)dic yearLableArr:(NSArray *)labels1 valueLable:(NSArray *)labels2 x:(int)x{
@@ -151,9 +151,9 @@
         
         NSMutableDictionary *cellValueDic=[[[NSMutableDictionary alloc] init] autorelease];
         
-        [self produceProgressForClass:comInfo[@"data"] className:@"Revenue growth rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
-        [self produceProgressForClass:comInfo[@"data"] className:@"Net income growth rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:310];
-        [self produceProgressForClass:comInfo[@"data"] className:@"Gross profit margin" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:570];
+        [self produceProgressForClass:comInfo[@"data"] className:@"revenue growth rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:55];
+        [self produceProgressForClass:comInfo[@"data"] className:@"net income growth rate" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:310];
+        [self produceProgressForClass:comInfo[@"data"] className:@"gross profit margin" tempGrade2:tempGrade2 cellValueDic:cellValueDic color:colorArr x:570];
         
         [temp addObject:tempGrade2];
         [tempYearValueArr addObject:cellValueDic];

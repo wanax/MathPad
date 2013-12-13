@@ -31,8 +31,8 @@
     if([Utiles isLogin]){
         //[self.navigationController popViewControllerAnimated:YES];
     }
-
-    if([[Utiles getConfigureInfoFrom:@"userconfigure" andKey:@"rememberPwd" inUserDomain:YES] isEqual:@"1"]){
+    
+    if([GetConfigure(@"userconfigure", @"rememberPwd", YES) isEqual:@"1"]){
         id userInfo=[GetUserDefaults(@"UserInfo") objectFromJSONString];
         if (userInfo) {
             [self.userNameField setText:userInfo[@"username"]];

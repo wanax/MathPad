@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor peterRiverColor];
+    self.view.backgroundColor=[UIColor whiteColor];
     [self initComponents];
 }
 
